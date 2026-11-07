@@ -62,26 +62,30 @@ header p{color:var(--mut);max-width:50ch;font-size:clamp(17px,1.7vw,20px)}
 .extra h3{font:800 clamp(30px,4vw,50px)/1 var(--sans);letter-spacing:-.04em}
 .extra p{color:#b3afb7;margin-top:10px}
 .extra a{padding:14px 24px;border-radius:99px;background:var(--azul);color:#151417;font-weight:700}
-.precios-mini{border-top:1px solid var(--line);padding:clamp(70px,9vw,110px) 0 20px}
-.precios-mini .top{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
-.precios-mini h2{font:800 clamp(40px,6vw,84px)/.92 var(--sans);letter-spacing:-.05em}
-.precios-mini .g{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.pm{border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid var(--line);transition:transform .5s var(--fx-ease)}
-.pm:hover{transform:translateY(-6px)}
-.pm b{font:700 13px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
-.pm .p{font:800 clamp(40px,4vw,56px)/1 var(--sans);letter-spacing:-.05em}
-.pm .p small{display:block;font:500 13px var(--sans);letter-spacing:0;color:var(--mut);margin-bottom:4px}
-.pm span{font-size:14px;color:var(--mut)}
-.pm.pro{background:linear-gradient(160deg,#dfe9fb,#ece4fb);border-color:rgba(255,255,255,.8)}
-.pm.top{background:#151417;color:#fff;border-color:#151417}.pm.top b,.pm.top span,.pm.top .p small{color:#b3afb7}
-.ver-precios{display:inline-flex;gap:8px;align-items:center;padding:14px 24px;border-radius:99px;background:var(--burdeos);color:#fff;font-weight:700;--fill:#151417}
-@media (max-width:900px){.precios-mini .g{grid-template-columns:1fr 1fr}}
+.contacto{border-top:1px solid var(--line);padding:clamp(70px,9vw,110px) 0 20px}
+.contacto .caja{position:relative;overflow:hidden;border-radius:36px;padding:clamp(30px,6vw,72px);background:linear-gradient(150deg,#dfe9fb,#ece4fb 55%,#f6e9ee);border:1px solid rgba(255,255,255,.85);box-shadow:0 30px 80px -40px rgba(60,40,90,.35)}
+.contacto .k{font:600 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--burdeos)}
+.contacto h2{font:800 clamp(40px,6.4vw,92px)/.92 var(--sans);letter-spacing:-.05em;margin-top:18px;max-width:14ch}
+.contacto h2 em{font-family:var(--serif);font-weight:400;color:var(--burdeos)}
+.contacto .intro{font-size:clamp(17px,1.6vw,20px);line-height:1.55;color:#3d3a40;max-width:62ch;margin-top:22px}
+.contacto .dos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:34px}
+.contacto .op{background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.9);border-radius:24px;padding:22px 24px}
+.contacto .op b{display:block;font:800 22px/1.1 var(--sans);letter-spacing:-.03em}
+.contacto .op span{display:block;margin-top:8px;color:var(--mut);font-size:15px;line-height:1.45}
+.contacto .op i{font-style:normal;font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--burdeos);display:block;margin-bottom:12px}
+.contacto .bts{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.contacto .bts a{display:inline-flex;align-items:center;gap:10px;padding:17px 26px;border-radius:99px;font:700 16px/1 var(--sans);color:#fff;text-decoration:none}
+.contacto .bts .wa{background:#25d366;--fill:#151417}
+.contacto .bts .ig{background:linear-gradient(90deg,#f58529,#dd2a7b 45%,#8134af 80%,#515bd4);--fill:#151417}
+.contacto .bts img,.contacto .bts svg{width:20px;height:20px;flex:none}
+.contacto .nota{margin-top:16px;font-size:14px;color:var(--mut)}
+@media (max-width:700px){.contacto .dos{grid-template-columns:1fr}.contacto .bts a{flex:1 1 100%;justify-content:center}}
 </style>
 </head>
 <body data-fondo>
 <div class="barra">
   <a class="ig-tag" href="https://www.instagram.com/acevvedoo/" target="_blank" rel="noopener"><span class="av"><img src="_base/yo.jpg" alt="Nicolás Acevedo"></span><span><b>@acevvedoo</b><small>Webs a medida</small></span></a>
-  <nav><a href="index.html#estilos" class="on">Estilos</a><a href="muestrario/index.html">Efectos</a><a href="precios.html">Precios</a></nav>
+  <nav><a href="index.html#estilos" class="on">Estilos</a><a href="muestrario/index.html">Efectos</a><a href="index.html#contacto">Contacto</a></nav>
   <a class="escr fx-btn-fill" data-fx="magnetic" href="https://ig.me/m/acevvedoo" target="_blank" rel="noopener"><img src="_base/ig.png" alt=""><span>Escríbeme</span></a>
 </div>
 <header class="wrap" style="position:relative">
@@ -95,20 +99,26 @@ header p{color:var(--mut);max-width:50ch;font-size:clamp(17px,1.7vw,20px)}
 
 <main class="wrap estilos" id="estilos"></main>
 
-<section class="wrap precios-mini" id="precios">
-  <div class="top"><div><span class="k" style="font:600 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--burdeos)">Precios</span><h2 data-fx="split" data-by="words" style="margin-top:16px">Cuanto más trabajada, <em>más impacto.</em></h2></div>
-  <a class="ver-precios fx-btn-fill" data-fx="magnetic" href="precios.html">Ver precios y comparativa →</a></div>
-  <div class="g" data-stagger=".08">
-    <a class="pm" href="precios.html"><b>Esencial</b><div class="p"><small>desde</small>390 €</div><span>1 página con uno de estos estilos</span></a>
-    <a class="pm pro" href="precios.html"><b>Pro · la más pedida</b><div class="p"><small>desde</small>790 €</div><span>Diseño a medida + 3-4 efectos</span></a>
-    <a class="pm top" href="precios.html"><b>Top inmersiva</b><div class="p"><small>desde</small>1.490 €</div><span>Scroll de cine, vitrinas, todo único</span></a>
-    <a class="pm" href="precios.html"><b>Tienda online</b><div class="p"><small>desde</small>990 €</div><span>Shopify a tu nombre</span></a>
+<section class="wrap contacto" id="contacto">
+  <div class="caja" data-fx="reveal">
+    <span class="k">¿Hablamos?</span>
+    <h2 data-fx="split" data-by="words">Tu web es lo primero que ve <em>tu cliente.</em></h2>
+    <p class="intro">Hoy la gente te busca en el móvil antes de llamarte o de entrar por la puerta. Si todavía no tienes página, o la tuya se ha quedado antigua, lenta o no se ve bien en el móvil, estás perdiendo clientes sin darte cuenta. Te la diseño desde cero o te la renuevo con un estilo moderno, de los que se llevan ahora.</p>
+    <div class="dos" data-stagger=".08">
+      <div class="op"><i>Aún no tengo web</i><b>Diseñar mi página</b><span>Empezamos con buen pie: una web que da confianza desde el primer segundo y que lleva a tus clientes directos a escribirte.</span></div>
+      <div class="op"><i>Ya tengo una</i><b>Renovar mi página</b><span>Le damos la vuelta entera: moderna, rápida, pensada para el móvil y con tu esencia de siempre.</span></div>
+    </div>
+    <div class="bts">
+      <a class="wa fx-btn-fill" data-fx="magnetic" href="https://wa.me/34642383441?text=Hola%20Nicol%C3%A1s%2C%20vengo%20de%20tu%20cat%C3%A1logo%20de%20webs%20y%20me%20interesa%20una%20p%C3%A1gina%20para%20mi%20negocio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Escríbeme por WhatsApp</a>
+      <a class="ig fx-btn-fill" data-fx="magnetic" href="https://ig.me/m/acevvedoo" target="_blank" rel="noopener"><img src="_base/ig.png" alt="">Escríbeme por Instagram</a>
+    </div>
+    <p class="nota">Te respondo yo en persona · Presupuesto a medida y sin compromiso</p>
   </div>
 </section>
 <section class="wrap prox">
   <div class="extra">
     <div><h3>Y además, efectos.</h3><p>Letras animadas, formas líquidas, cristal, partículas, scroll de cine… cada uno con su número.</p></div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap"><a href="muestrario/index.html">Ver el muestrario →</a><a href="precios.html" style="background:#fff">Ver precios →</a></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><a href="muestrario/index.html">Ver el muestrario →</a><a href="index.html#contacto" style="background:#fff">Quiero mi web →</a></div>
   </div>
 </section>
 
