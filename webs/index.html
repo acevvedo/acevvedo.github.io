@@ -79,6 +79,10 @@ header p{color:var(--mut);max-width:50ch;font-size:clamp(17px,1.7vw,20px)}
 .contacto .bts .ig{background:linear-gradient(90deg,#f58529,#dd2a7b 45%,#8134af 80%,#515bd4);--fill:#151417}
 .contacto .bts img,.contacto .bts svg{width:20px;height:20px;flex:none}
 .contacto .nota{margin-top:16px;font-size:14px;color:var(--mut)}
+.contacto.arriba{border-top:0;padding:clamp(40px,6vw,70px) 0 clamp(50px,7vw,90px)}
+.contacto .bajar{display:inline-flex;align-items:center;gap:10px;margin-top:30px;font:700 17px/1 var(--sans);color:var(--fg);text-decoration:none;border-bottom:2px solid var(--burdeos);padding-bottom:6px}
+.contacto .bajar span{display:inline-block;color:var(--burdeos);animation:bajar 1.6s ease-in-out infinite}
+@keyframes bajar{50%{transform:translateY(5px)}}
 @media (max-width:700px){.contacto .dos{grid-template-columns:1fr}.contacto .bts a{flex:1 1 100%;justify-content:center}}
 </style>
 </head>
@@ -97,28 +101,38 @@ header p{color:var(--mut);max-width:50ch;font-size:clamp(17px,1.7vw,20px)}
   <div class="pasos" data-stagger=".08"><span><b>1</b> Mira los vídeos</span><span><b>2</b> Elige un número</span><span><b>3</b> Elige efectos del muestrario</span><span><b>4</b> La hacemos tuya</span></div>
 </header>
 
-<main class="wrap estilos" id="estilos"></main>
-
-<section class="wrap contacto" id="contacto">
+<section class="wrap contacto arriba" id="por-que">
   <div class="caja" data-fx="reveal">
-    <span class="k">¿Hablamos?</span>
+    <span class="k">Antes de nada</span>
     <h2 data-fx="split" data-by="words">Tu web es lo primero que ve <em>tu cliente.</em></h2>
     <p class="intro">Hoy la gente te busca en el móvil antes de llamarte o de entrar por la puerta. Si todavía no tienes página, o la tuya se ha quedado antigua, lenta o no se ve bien en el móvil, estás perdiendo clientes sin darte cuenta. Te la diseño desde cero o te la renuevo con un estilo moderno, de los que se llevan ahora.</p>
     <div class="dos" data-stagger=".08">
       <div class="op"><i>Aún no tengo web</i><b>Diseñar mi página</b><span>Empezamos con buen pie: una web que da confianza desde el primer segundo y que lleva a tus clientes directos a escribirte.</span></div>
       <div class="op"><i>Ya tengo una</i><b>Renovar mi página</b><span>Le damos la vuelta entera: moderna, rápida, pensada para el móvil y con tu esencia de siempre.</span></div>
     </div>
+    <a class="bajar" href="index.html#estilos">Mira lo que puedo hacer por tu negocio <span>↓</span></a>
+  </div>
+</section>
+
+<main class="wrap estilos" id="estilos"></main>
+
+<section class="wrap prox">
+  <div class="extra">
+    <div><h3>Y además, efectos.</h3><p>Letras animadas, formas líquidas, cristal, partículas, scroll de cine… cada uno con su número.</p></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><a href="muestrario/index.html">Ver el muestrario →</a><a href="index.html#contacto" style="background:#fff">Quiero mi web →</a></div>
+  </div>
+</section>
+
+<section class="wrap contacto" id="contacto">
+  <div class="caja" data-fx="reveal">
+    <span class="k">¿Hablamos?</span>
+    <h2 data-fx="split" data-by="words">¿Te imaginas tu negocio <em>así?</em></h2>
+    <p class="intro">Elige el estilo que más te guste, o cuéntame tu idea, y te digo cómo quedaría tu página. Si ya tienes web, mándamela y te digo qué le cambiaría.</p>
     <div class="bts">
       <a class="wa fx-btn-fill" data-fx="magnetic" href="https://wa.me/34642383441?text=Hola%20Nicol%C3%A1s%2C%20vengo%20de%20tu%20cat%C3%A1logo%20de%20webs%20y%20me%20interesa%20una%20p%C3%A1gina%20para%20mi%20negocio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Escríbeme por WhatsApp</a>
       <a class="ig fx-btn-fill" data-fx="magnetic" href="https://ig.me/m/acevvedoo" target="_blank" rel="noopener"><img src="_base/ig.png" alt="">Escríbeme por Instagram</a>
     </div>
     <p class="nota">Te respondo yo en persona · Presupuesto a medida y sin compromiso</p>
-  </div>
-</section>
-<section class="wrap prox">
-  <div class="extra">
-    <div><h3>Y además, efectos.</h3><p>Letras animadas, formas líquidas, cristal, partículas, scroll de cine… cada uno con su número.</p></div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap"><a href="muestrario/index.html">Ver el muestrario →</a><a href="index.html#contacto" style="background:#fff">Quiero mi web →</a></div>
   </div>
 </section>
 
