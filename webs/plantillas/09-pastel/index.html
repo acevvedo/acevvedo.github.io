@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calma · Centro de psicología</title>
+<meta name="description" content="Plantilla 09 · Pastel / Soft UI. Centro de psicología ficticio con test interactivo.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<style>
+:root{--bg:#f7f5fc;--fg:#24233a;--mut:#6d6a85;--azul:#7c95e8;--azul-s:#e6ecff;--lila:#b59cf0;--lila-s:#efe8ff;--melo:#ffb59a;--melo-s:#fff0ea;--menta:#8fd6c0;--menta-s:#e6f7f1;
+  --sans:"Outfit",system-ui,sans-serif;--r:30px;--sombra:0 24px 60px -24px rgba(90,100,200,.28);--fx-dur:1s}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.02}
+h2{font-size:clamp(36px,5vw,62px)}
+.k{display:inline-flex;gap:8px;align-items:center;padding:8px 16px;border-radius:99px;background:#fff;box-shadow:var(--sombra);font-size:14px;font-weight:500;color:var(--azul)}
+.lead{color:var(--mut);font-size:clamp(17px,1.6vw,20px);max-width:46ch}
+section{padding:clamp(80px,10vw,130px) 0;position:relative}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:99px;background:var(--fg);color:#fff;font-weight:600;--fill:var(--azul);box-shadow:0 14px 30px -12px rgba(36,35,58,.5)}
+.btn.suave{background:#fff;color:var(--fg);--fill:var(--lila-s);box-shadow:var(--sombra)}
+
+nav{position:fixed;top:14px;left:0;right:0;z-index:40}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:10px 10px 10px 22px;border-radius:99px}
+.logo{font-weight:700;font-size:22px;letter-spacing:-.04em;display:flex;gap:9px;align-items:center}
+.logo i{width:26px;height:26px;border-radius:50%;background:conic-gradient(var(--azul),var(--lila),var(--melo),var(--menta),var(--azul))}
+nav ul{display:flex;gap:28px;list-style:none;padding:0;font-size:15px;color:var(--mut)}
+nav .btn{padding:11px 20px;font-size:15px;box-shadow:none}
+@media (max-width:820px){nav ul{display:none}}
+
+/* hero */
+.hero{min-height:100svh;display:grid;align-items:center;padding:130px 0 70px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(46px,6.8vw,92px);margin:24px 0 22px}
+.hero h1 .g{background:linear-gradient(90deg,var(--azul),var(--lila),var(--melo));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.burbuja{position:relative;aspect-ratio:1;width:min(100%,520px);justify-self:center}
+.burbuja svg{position:absolute;inset:0;width:100%;height:100%}
+.burbuja .b2{transform:scale(1.12) rotate(30deg);opacity:.7;filter:blur(2px)}
+.burbuja .chip{position:absolute;padding:12px 16px;border-radius:20px;font-size:14px;font-weight:500;display:flex;gap:10px;align-items:center}
+.burbuja .chip b{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;font-size:16px}
+.c1{left:-4%;top:14%}.c2{right:-2%;top:46%}.c3{left:8%;bottom:6%}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.burbuja{width:min(88%,420px)}}
+
+/* test */
+.test{background:#fff;border-radius:40px;padding:clamp(28px,5vw,60px);box-shadow:var(--sombra);display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+.opciones{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.op{border:0;cursor:pointer;text-align:left;padding:20px;border-radius:24px;font:500 17px/1.3 var(--sans);color:var(--fg);transition:transform .4s var(--fx-ease),box-shadow .4s}
+.op:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
+.op.on{outline:3px solid var(--fg)}
+.op small{display:block;color:var(--mut);font-weight:400;font-size:14px;margin-top:4px}
+.resultado{margin-top:18px;padding:18px 20px;border-radius:22px;background:var(--bg);display:none}
+.resultado.on{display:block;animation:sube .6s var(--fx-ease)}
+@keyframes sube{from{opacity:0;transform:translateY(10px)}}
+@media (max-width:900px){.test{grid-template-columns:1fr}}
+@media (max-width:480px){.opciones{grid-template-columns:1fr}}
+
+/* terapias */
+.ters{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:50px}
+.ter{border-radius:var(--r);padding:28px;min-height:270px;display:flex;flex-direction:column;justify-content:space-between}
+.ter .ic{width:56px;height:56px;border-radius:20px;background:#fff;display:grid;place-items:center;box-shadow:0 10px 24px -12px rgba(0,0,0,.2)}
+.ter .ic svg{width:26px;height:26px}
+.ter h3{font-size:24px;margin-bottom:6px}
+.ter p{color:var(--mut);font-size:15px}
+@media (max-width:980px){.ters{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.ters{grid-template-columns:1fr}.ter{min-height:0;gap:26px}}
+
+/* centro */
+.centro{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.centro figure{margin:0;border-radius:40px;overflow:hidden;aspect-ratio:4/3.4;box-shadow:var(--sombra)}
+.centro img{width:100%;height:100%;object-fit:cover}
+.equipo{display:flex;margin-top:30px}
+.equipo i{width:54px;height:54px;border-radius:50%;border:4px solid var(--bg);margin-left:-12px;display:grid;place-items:center;font:600 16px var(--sans);font-style:normal}
+.equipo i:first-child{margin-left:0}
+@media (max-width:860px){.centro{grid-template-columns:1fr}}
+
+.ops{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}
+.opi{background:#fff;border-radius:var(--r);padding:28px;box-shadow:var(--sombra)}
+.opi p{font-size:18px}
+.opi span{display:block;margin-top:16px;color:var(--mut);font-size:14px}
+@media (max-width:900px){.ops{grid-template-columns:1fr}}
+
+.final{border-radius:44px;margin:0 16px 16px;text-align:center;background:linear-gradient(135deg,var(--azul-s),var(--lila-s) 50%,var(--melo-s));overflow:hidden}
+.final h2{font-size:clamp(42px,7vw,96px);max-width:14ch;margin:20px auto 30px}
+.final svg{position:absolute;width:420px;height:420px;opacity:.5}
+footer{padding:20px 0 50px;color:var(--mut);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+</style>
+</head>
+<body>
+<nav><div class="wrap fx-glass fx-glass-light">
+  <a href="#" class="logo"><i></i>calma</a>
+  <ul><li><a href="#test">¿Cómo estás?</a></li><li><a href="#terapias">Terapias</a></li><li><a href="#centro">El centro</a></li></ul>
+  <a href="#cita" class="btn fx-btn-fill" data-fx="magnetic">Pedir cita</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <span class="k" data-fx="reveal">● Primera sesión de valoración gratis</span>
+    <h1 data-fx="split" data-by="words" data-style="blur" data-step=".08">Un lugar seguro para <span class="g">volver a estar bien.</span></h1>
+    <p class="lead" data-fx="reveal" data-delay=".6">Psicología para adultos, parejas y niños. Presencial en Madrid u online, con psicólogas sanitarias colegiadas y sin listas de espera.</p>
+    <div class="cta" data-fx="reveal" data-delay=".75"><a href="#cita" class="btn fx-btn-fill" data-fx="magnetic">Reservar primera sesión</a><a href="#test" class="btn suave fx-btn-fill">Hacer el test (1 min)</a></div>
+  </div>
+  <div class="burbuja" data-fx="reveal" data-dir="scale">
+    <svg class="b2" data-fx="blob" data-points="7" data-wobble=".14" data-speed=".5" aria-hidden="true"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb59a"/><stop offset="1" stop-color="#b59cf0"/></linearGradient></defs><path fill="url(#g2)"/></svg>
+    <svg data-fx="blob" data-points="6" data-wobble=".12" data-speed=".6" aria-hidden="true"><defs><clipPath id="m"><path/></clipPath></defs><path fill="#e6ecff"/><image href="img/calma.webp" x="-100" y="-100" width="200" height="200" preserveAspectRatio="xMidYMid slice" clip-path="url(#m)"/></svg>
+    <div class="chip c1 fx-glass fx-glass-light" data-fx="parallax" data-speed="-0.1"><b style="background:var(--menta-s);color:#3c9b80">●</b>Ansiedad y estrés</div>
+    <div class="chip c2 fx-glass fx-glass-light" data-fx="parallax" data-speed="0.08"><b style="background:var(--melo-s);color:#e07f5c">●</b>Online o presencial</div>
+    <div class="chip c3 fx-glass fx-glass-light" data-fx="parallax" data-speed="-0.06"><b style="background:var(--azul-s);color:#5a74cf">★</b>4,9 · 210 opiniones</div>
+  </div>
+</div></header>
+
+<section id="test" style="padding-top:0"><div class="wrap">
+  <div class="test" data-fx="reveal">
+    <div>
+      <span class="k">Test rápido</span>
+      <h2 style="margin:18px 0 14px" data-fx="split" data-by="words">¿Cómo te sientes últimamente?</h2>
+      <p class="lead">Elige lo que más se parezca a lo que vives. Te diré qué terapia te encaja y podrás escribirnos con un clic.</p>
+    </div>
+    <div>
+      <div class="opciones">
+        <button class="op" style="background:var(--menta-s)" data-r="Terapia de ansiedad">Me cuesta desconectar<small>nervios, insomnio, presión</small></button>
+        <button class="op" style="background:var(--azul-s)" data-r="Terapia individual">Me siento bajo/a<small>sin ganas, triste, cansado/a</small></button>
+        <button class="op" style="background:var(--lila-s)" data-r="Terapia de pareja">Discutimos mucho<small>pareja, comunicación</small></button>
+        <button class="op" style="background:var(--melo-s)" data-r="Psicología infantil">Me preocupa mi hijo/a<small>conducta, colegio, emociones</small></button>
+      </div>
+      <div class="resultado" aria-live="polite"><b>Te recomendamos: <span class="r"></span></b><br><span style="color:var(--mut);font-size:15px">La primera sesión de valoración es gratis.</span><br><a class="btn fx-btn-fill wa" style="margin-top:14px" target="_blank" rel="noopener">Escribir por WhatsApp →</a></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="terapias" style="padding-top:0"><div class="wrap">
+  <span class="k">Terapias</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:18px">Te acompañamos en lo que necesites.</h2>
+  <div class="ters" data-stagger=".08">
+    <article class="ter" style="background:var(--menta-s)" data-fx="tilt" data-max="6"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3c9b80" stroke-width="1.8" stroke-linecap="round"><path d="M12 21c-5-3-8-6.5-8-10a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 3.5-3 7-8 10z"/></svg></div><div><h3>Ansiedad</h3><p>Herramientas para calmar la mente y recuperar el control.</p></div></article>
+    <article class="ter" style="background:var(--azul-s)" data-fx="tilt" data-max="6"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#5a74cf" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div><div><h3>Individual</h3><p>Autoestima, duelo, cambios vitales, estado de ánimo.</p></div></article>
+    <article class="ter" style="background:var(--lila-s)" data-fx="tilt" data-max="6"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#8a6fd0" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c.8-3 3-4.5 6-4.5s5.2 1.5 6 4.5M10 20c.8-3 3-4.5 6-4.5s5.2 1.5 6 4.5"/></svg></div><div><h3>Pareja</h3><p>Comunicación, confianza y acuerdos que funcionan.</p></div></article>
+    <article class="ter" style="background:var(--melo-s)" data-fx="tilt" data-max="6"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#e07f5c" stroke-width="1.8" stroke-linecap="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2 8 12.7 4 8.8 9.5 8z"/></svg></div><div><h3>Infantil</h3><p>Sesiones con juego para peques y guía para familias.</p></div></article>
+  </div>
+</div></section>
+
+<section id="centro" style="padding-top:0"><div class="wrap centro">
+  <figure data-fx="reveal" data-dir="clip"><img src="img/sala.webp" alt="Sala del centro, luminosa y con plantas" loading="lazy"></figure>
+  <div>
+    <span class="k">El centro</span>
+    <h2 data-fx="split" data-by="words" style="margin:18px 0 16px">Luz, plantas y nada de prisas.</h2>
+    <p class="lead" data-fx="reveal">Un espacio pensado para que te sientas cómodo/a desde que entras. Sesiones de 50 minutos, en horario de mañana y tarde.</p>
+    <div class="equipo" data-fx="reveal"><i style="background:var(--azul-s)">LM</i><i style="background:var(--lila-s)">AR</i><i style="background:var(--melo-s)">SP</i><i style="background:var(--menta-s)">+3</i></div>
+    <p style="color:var(--mut);font-size:14px;margin-top:10px">6 psicólogas sanitarias colegiadas</p>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <span class="k">Opiniones</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:18px">Lo que nos cuentan.</h2>
+  <div class="ops" data-stagger=".1">
+    <div class="opi"><p>"Llegué con ataques de ansiedad casi diarios. Hoy tengo herramientas y vuelvo a dormir."</p><span>Paula · Ansiedad</span></div>
+    <div class="opi"><p>"Nos ayudaron a hablar sin hacernos daño. Ojalá hubiéramos venido antes."</p><span>Sergio y Ana · Pareja</span></div>
+    <div class="opi"><p>"Mi hijo entra contento a las sesiones. Y yo salgo con pautas claras."</p><span>Elena · Infantil</span></div>
+  </div>
+</div></section>
+
+<section class="final" id="cita">
+  <svg data-fx="blob" data-points="6" data-wobble=".15" data-speed=".5" style="left:-120px;top:-120px" aria-hidden="true"><path fill="#ffffff"/></svg>
+  <div class="wrap" style="position:relative">
+    <span class="k">Primera sesión gratis</span>
+    <h2 data-fx="split" data-by="words">Dar el primer paso ya es cuidarte.</h2>
+    <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20la%20primera%20sesi%C3%B3n" class="btn fx-btn-fill" data-fx="magnetic" target="_blank" rel="noopener">Reservar por WhatsApp →</a>
+  </div>
+</section>
+<footer><div class="wrap"><span>calma · Plantilla 09 · Pastel</span><span>Madrid y online · Lunes a sábado</span></div></footer>
+<script src="fx.js" defer></script>
+<script>
+// Test → recomendación → WhatsApp con el mensaje escrito
+const res = document.querySelector('.resultado');
+document.querySelectorAll('.op').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.op').forEach(x => x.classList.remove('on')); b.classList.add('on');
+  res.querySelector('.r').textContent = b.dataset.r;
+  res.querySelector('.wa').href = 'https://wa.me/34600000000?text=' + encodeURIComponent('Hola, hice el test de la web y me interesa: ' + b.dataset.r);
+  res.classList.remove('on'); void res.offsetWidth; res.classList.add('on');
+}));
+</script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* marca.css — firma personal de @acevvedoo en el catálogo y los precios (barra superior, autor y pie). */
+.barra{position:fixed;top:12px;left:50%;translate:-50% 0;z-index:80;width:min(1180px,100% - 20px);display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:7px 7px 7px 8px;border-radius:99px;background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.8);
+  -webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);box-shadow:0 14px 40px -18px rgba(40,30,60,.35)}
+.ig-tag{display:flex;align-items:center;gap:10px;padding-right:10px;color:#151417;text-decoration:none}
+.ig-tag .av{width:38px;height:38px;border-radius:50%;padding:2px;background:conic-gradient(from 210deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);flex:none;animation:ig-gira 6s linear infinite}
+.ig-tag .av img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px solid #fff;display:block;animation:ig-gira 6s linear infinite reverse}
+@keyframes ig-gira{to{rotate:360deg}}
+.ig-tag b{font:700 15px/1.1 "Inter Tight",system-ui,sans-serif;letter-spacing:-.02em;display:flex;align-items:center;gap:5px}
+.ig-tag b i{width:15px;height:15px;border-radius:50%;background:#3897f0;display:inline-grid;place-items:center;color:#fff;font:700 9px/1 system-ui;font-style:normal}
+.ig-tag small{display:block;font:500 11px/1.2 "Inter Tight",system-ui,sans-serif;color:#77737a}
+.barra nav{display:flex;gap:2px}
+.barra nav a{padding:10px 15px;border-radius:99px;font:600 14px/1 "Inter Tight",system-ui,sans-serif;color:#3b3940;text-decoration:none;transition:background .3s}
+.barra nav a:hover,.barra nav a.on{background:rgba(21,20,23,.07);color:#151417}
+.barra .escr{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:99px;background:#151417;color:#fff;font:700 14px/1 "Inter Tight",system-ui,sans-serif;text-decoration:none;--fill:#7a2b3a}
+.barra .escr img{width:16px;height:16px}
+@media (max-width:820px){.barra nav{display:none}.ig-tag small{display:none}}
+@media (max-width:420px){.barra .escr span{display:none}}
+
+.autor{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font:500 15px/1.2 "Inter Tight",system-ui,sans-serif;color:#77737a}
+.autor img{width:30px;height:30px;border-radius:50%;object-fit:cover}
+.autor a{color:#151417;font-weight:700;text-decoration:none;border-bottom:1.5px solid #c9b6f2}
+
+/* pie con firma grande */
+.firma-pie{position:relative;overflow:hidden;background:#151417;color:#f4f1ec;border-radius:36px 36px 0 0;padding:clamp(60px,9vw,110px) 0 40px;margin-top:40px}
+.firma-pie .w{width:min(1240px,100% - 32px);margin-inline:auto;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end}
+.firma-pie .kk{font:600 12px/1 "Inter Tight",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#a9c7f5}
+.firma-pie h2{font:800 clamp(48px,9vw,150px)/.88 "Inter Tight",system-ui,sans-serif;letter-spacing:-.055em;margin:18px 0 0;display:flex;align-items:center;gap:.18em;flex-wrap:wrap}
+.firma-pie h2 .av{width:.82em;height:.82em;border-radius:50%;padding:.05em;background:conic-gradient(from 210deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);flex:none}
+.firma-pie h2 .av img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:.04em solid #151417;display:block}
+.firma-pie h2 em{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-style:italic;color:#c9b6f2;letter-spacing:-.02em}
+.firma-pie p{color:#b3afb7;max-width:42ch;margin-bottom:22px}
+.firma-pie .bts{display:flex;gap:10px;flex-wrap:wrap}
+.firma-pie .bts a{display:inline-flex;align-items:center;gap:9px;padding:14px 22px;border-radius:99px;font:700 15px/1 "Inter Tight",system-ui,sans-serif;text-decoration:none}
+.firma-pie .bts .ig{background:linear-gradient(90deg,#f58529,#dd2a7b 45%,#8134af 80%,#515bd4);color:#fff}
+.firma-pie .bts .wa{background:#25d366;color:#fff}
+.firma-pie .bts img{width:18px;height:18px}
+.firma-pie .legal{width:min(1240px,100% - 32px);margin:60px auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:#77737a;border-top:1px solid rgba(255,255,255,.1);padding-top:22px}
+@media (max-width:860px){.firma-pie .w{grid-template-columns:1fr}}

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Raíz · Estudio capilar natural</title>
+<meta name="description" content="Plantilla 02 · Natural. Salón capilar ficticio con tratamientos, productos y reservas.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<style>
+:root{--bg:#f3ece1;--sf:#ebe2d3;--card:#faf6ef;--fg:#2b2620;--mut:#7a6f62;--line:rgba(43,38,32,.14);--salvia:#7f8f72;--terra:#b5654a;--arena:#d9c9b0;
+  --display:"Fraunces",Georgia,serif;--text:"DM Sans",system-ui,sans-serif;--fx-dur:1.1s;--fx-dist:24px}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.65 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:min(1220px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:350;letter-spacing:-.02em;line-height:1.02}
+h2{font-size:clamp(40px,6vw,82px)}
+h2 em,h1 em{font-style:italic;color:var(--terra)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:500 13px/1 var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--salvia);margin-bottom:20px}
+.eyebrow::before{content:"";width:26px;height:1px;background:currentColor}
+.lead{color:var(--mut);font-size:clamp(17px,1.6vw,19px);max-width:48ch}
+section{padding:clamp(80px,11vw,150px) 0;position:relative}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:16px 28px;border-radius:99px;font:500 16px/1 var(--text);background:var(--fg);color:var(--bg);--fill:var(--terra)}
+.btn.line{background:transparent;color:var(--fg);border:1px solid var(--fg);--fill:var(--fg)}
+.btn.line:hover{color:var(--bg)}
+.btn.line{transition:color .4s}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:40;padding:18px 0;transition:background .5s,padding .5s}
+nav.solid{background:rgba(243,236,225,.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);padding:10px 0}
+nav .wrap{display:flex;align-items:center;justify-content:space-between}
+.logo{font:400 30px/1 var(--display);font-style:italic;letter-spacing:-.02em}
+nav ul{display:flex;gap:32px;list-style:none;padding:0;font-size:15px}
+@media (max-width:860px){nav ul{display:none}}
+
+/* hero */
+.hero{padding:130px 0 60px;min-height:100svh;display:grid;align-items:center}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(54px,8.6vw,132px);font-weight:300}
+.hero .lead{margin:28px 0 36px}
+.arco{position:relative;justify-self:center;width:min(100%,460px)}
+.arco .foto{border-radius:999px 999px 28px 28px;overflow:hidden;aspect-ratio:3/4.2;position:relative;z-index:1}
+.arco img{width:100%;height:100%;object-fit:cover}
+.arco svg{position:absolute;width:135%;height:auto;aspect-ratio:1;left:-34%;top:30%;z-index:0}
+.hero .wrap>div:first-child{position:relative;z-index:2}
+.arco .sello{position:absolute;z-index:2;right:-16px;bottom:40px;width:118px;height:118px;border-radius:50%;background:var(--salvia);color:var(--bg);display:grid;place-items:center;text-align:center;font:400 15px/1.15 var(--display);font-style:italic;animation:gira 22s linear infinite}
+@keyframes gira{to{rotate:360deg}}
+.hero .datos{display:flex;gap:34px;margin-top:46px;color:var(--mut);font-size:14px}
+.hero .datos b{display:block;font:400 34px/1 var(--display);color:var(--fg)}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.arco{width:min(86%,400px);margin-top:20px}.arco .sello{right:-6px;width:96px;height:96px;font-size:13px}}
+
+.cinta{background:var(--salvia);color:var(--bg);padding:20px 0;font:300 clamp(24px,3vw,36px)/1 var(--display)}
+.cinta span{display:inline-flex;align-items:center;gap:28px}
+.cinta span::after{content:"✿";font-size:.6em;opacity:.7}
+
+/* filosofía (texto que se enciende) */
+.filo p{font:300 clamp(30px,4.4vw,62px)/1.18 var(--display);letter-spacing:-.02em;max-width:22ch}
+.filo p em{font-style:italic;color:var(--terra)}
+
+/* servicios */
+.serv{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
+.serv .foto{position:sticky;top:110px;border-radius:28px;overflow:hidden;aspect-ratio:4/5}
+.serv .foto img{width:100%;height:100%;object-fit:cover}
+.menu{list-style:none;padding:0;margin-top:40px}
+.menu li{display:grid;grid-template-columns:1fr auto;gap:6px 20px;padding:24px 0;border-bottom:1px solid var(--line)}
+.menu h3{font-size:clamp(24px,2.4vw,32px)}
+.menu .precio{font:400 24px/1 var(--display);align-self:center}
+.menu p{color:var(--mut);font-size:15px;grid-column:1/-1}
+.menu small{color:var(--salvia);font-weight:600}
+@media (max-width:900px){.serv{grid-template-columns:1fr;gap:30px}.serv .foto{position:relative;top:0;aspect-ratio:4/3.4}}
+
+/* productos */
+.prods{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.prod{background:var(--card);border-radius:26px;padding:16px;display:flex;flex-direction:column}
+.prod .img{border-radius:18px;overflow:hidden;aspect-ratio:1;position:relative}
+.prod .img img{width:100%;height:100%;object-fit:cover;transition:scale 1.2s var(--fx-ease)}
+.prod:hover .img img{scale:1.07}
+.prod .tag{position:absolute;top:12px;left:12px;background:var(--bg);border-radius:99px;padding:6px 12px;font-size:12px;font-weight:600}
+.prod .info{display:flex;justify-content:space-between;align-items:end;padding:18px 6px 4px;gap:10px}
+.prod h3{font-size:24px}
+.prod p{color:var(--mut);font-size:14px}
+.prod .add{width:46px;height:46px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;font-size:22px;flex:none;--fill:var(--terra)}
+@media (max-width:900px){.prods{grid-template-columns:1fr}}
+
+/* ritual / galería */
+.galeria{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:18px;align-items:center;margin-top:56px}
+.galeria figure{margin:0;border-radius:24px;overflow:hidden}
+.galeria img{width:100%;height:100%;object-fit:cover}
+.galeria figure:nth-child(1){aspect-ratio:3/4}
+.galeria figure:nth-child(2){aspect-ratio:4/5;border-radius:999px 999px 24px 24px}
+.galeria figure:nth-child(3){aspect-ratio:3/4.4}
+@media (max-width:760px){.galeria{grid-template-columns:1fr 1fr}.galeria figure:nth-child(2){grid-column:1/-1;order:-1;aspect-ratio:4/4.4}}
+
+/* opiniones */
+.ops{background:var(--sf)}
+.ops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.op{border-top:1px solid var(--line);padding-top:26px}
+.op p{font:300 24px/1.35 var(--display);font-style:italic}
+.op span{display:block;margin-top:18px;color:var(--mut);font-size:14px}
+@media (max-width:900px){.ops-grid{grid-template-columns:1fr}}
+
+/* reservar */
+.reserva{text-align:center;overflow:hidden}
+.reserva h2{font-size:clamp(50px,9vw,140px);font-weight:300;max-width:11ch;margin:0 auto 38px}
+.reserva .blob-bg{position:absolute;width:min(780px,140vw);aspect-ratio:1;left:50%;top:50%;translate:-50% -50%;z-index:-1;opacity:.55}
+.reserva .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{padding:40px 0 60px;border-top:1px solid var(--line);font-size:14px;color:var(--mut)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+</style>
+</head>
+<body>
+<nav id="nav"><div class="wrap">
+  <a href="#" class="logo">raíz</a>
+  <ul><li><a href="#filosofia">Filosofía</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#tienda">Tienda</a></li><li><a href="#opiniones">Opiniones</a></li></ul>
+  <a href="#reservar" class="btn fx-btn-fill" data-fx="magnetic" style="padding:12px 22px;font-size:15px">Reservar</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow" data-fx="reveal">Estudio capilar · Malasaña</span>
+    <h1 data-fx="split" data-by="words" data-style="blur" data-step=".1">Tu pelo, en su <em>versión más sana.</em></h1>
+    <p class="lead" data-fx="reveal" data-delay=".7">Cortes, color y tratamientos con ingredientes naturales. Sin prisas, sin químicos agresivos y con un diagnóstico de tu cabello en cada visita.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap" data-fx="reveal" data-delay=".85">
+      <a href="#reservar" class="btn fx-btn-fill" data-fx="magnetic">Reservar cita</a>
+      <a href="#servicios" class="btn line fx-btn-fill">Ver servicios</a>
+    </div>
+    <div class="datos" data-stagger=".1"><div><b data-fx="counter" data-to="96" data-suffix="%">0</b>ingredientes naturales</div><div><b data-fx="counter" data-to="4.9">0</b>en Google</div></div>
+  </div>
+  <div class="arco" data-fx="reveal" data-dir="scale">
+    <svg data-fx="blob" data-points="6" data-wobble=".14" data-speed=".6" aria-hidden="true"><path fill="#d9c9b0"/></svg>
+    <div class="foto"><img src="img/hero.webp" alt="Clienta con el pelo suelto de perfil" fetchpriority="high"></div>
+    <div class="sello">hecho<br>con calma</div>
+  </div>
+</div></header>
+
+<div class="cinta" data-fx="marquee" data-speed="40"><span>Diagnóstico capilar</span><span>Color sin amoníaco</span><span>Alisado orgánico</span><span>Cosmética vegana</span><span>Envases reciclables</span></div>
+
+<section class="filo" id="filosofia"><div class="wrap">
+  <span class="eyebrow">Filosofía</span>
+  <p data-fx="fill">Creemos que un buen pelo empieza mucho antes del secador: en lo que le pones, en cómo lo tratas y en el tiempo que le dedicas. Por eso aquí nadie corre.</p>
+</div></section>
+
+<section id="servicios" style="padding-top:0"><div class="wrap serv">
+  <div class="foto" data-fx="reveal" data-dir="clip"><img src="img/salon.webp" alt="Rincón del salón con espejo y olivo" loading="lazy"></div>
+  <div>
+    <span class="eyebrow">Servicios</span>
+    <h2 data-fx="split" data-by="words">Carta de <em>servicios.</em></h2>
+    <ul class="menu" data-stagger=".07">
+      <li><h3>Corte y peinado</h3><span class="precio">38 €</span><p>Diagnóstico, lavado con ritual de masaje, corte y secado. <small>· 60 min</small></p></li>
+      <li><h3>Color natural</h3><span class="precio">desde 55 €</span><p>Tintes vegetales y sin amoníaco que respetan tu cuero cabelludo. <small>· 90 min</small></p></li>
+      <li><h3>Alisado orgánico</h3><span class="precio">desde 120 €</span><p>Liso, brillante y sin formol. Dura hasta 4 meses. <small>· 2-3 h</small></p></li>
+      <li><h3>Ritual de hidratación</h3><span class="precio">45 €</span><p>Mascarilla de aceites puros, vapor y masaje craneal. <small>· 45 min</small></p></li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="tienda" style="background:var(--sf)"><div class="wrap">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap">
+    <div><span class="eyebrow">Tienda</span><h2 data-fx="split" data-by="words">Llévate el ritual <em>a casa.</em></h2></div>
+    <p class="lead" data-fx="reveal">Los mismos productos que usamos en el salón. Envío en 24/48 h a toda España.</p>
+  </div>
+  <div class="prods" data-stagger=".1">
+    <article class="prod"><div class="img"><img src="img/productos.webp" alt="Champú y acondicionador" loading="lazy"><span class="tag">Más vendido</span></div><div class="info"><div><h3>Dúo nutritivo</h3><p>Champú + acondicionador · 34 €</p></div><a href="#" class="add fx-btn-fill" data-fx="magnetic" aria-label="Añadir">+</a></div></article>
+    <article class="prod"><div class="img"><img src="img/ritual.webp" alt="Aceites y sérums naturales" loading="lazy"></div><div class="info"><div><h3>Aceite de puntas</h3><p>Argán y jojoba · 22 €</p></div><a href="#" class="add fx-btn-fill" data-fx="magnetic" aria-label="Añadir">+</a></div></article>
+    <article class="prod"><div class="img"><img src="img/botes.webp" alt="Botes de crema capilar" loading="lazy"><span class="tag">Nuevo</span></div><div class="info"><div><h3>Mascarilla intensa</h3><p>Karité y avena · 28 €</p></div><a href="#" class="add fx-btn-fill" data-fx="magnetic" aria-label="Añadir">+</a></div></article>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div style="text-align:center"><span class="eyebrow">El estudio</span><h2 data-fx="split" data-by="words">Luz natural y <em>tiempo para ti.</em></h2></div>
+  <div class="galeria">
+    <figure data-fx="parallax reveal" data-speed="-0.08"><img src="img/ritual.webp" alt="" loading="lazy"></figure>
+    <figure data-fx="reveal" data-dir="clip"><img src="img/luz.webp" alt="Pelo con luz de tarde" loading="lazy"></figure>
+    <figure data-fx="parallax reveal" data-speed="0.08"><img src="img/salon.webp" alt="" loading="lazy"></figure>
+  </div>
+</div></section>
+
+<section class="ops" id="opiniones"><div class="wrap">
+  <span class="eyebrow">Opiniones</span>
+  <h2 data-fx="split" data-by="words">Lo que dicen <em>al salir.</em></h2>
+  <div class="ops-grid" data-stagger=".12">
+    <div class="op"><p>"Primera vez que salgo de una peluquería sintiendo que me escucharon. El color es precioso."</p><span>Marta · Color natural</span></div>
+    <div class="op"><p>"El alisado orgánico me ha durado casi cinco meses y el pelo sigue suave."</p><span>Daniela · Alisado</span></div>
+    <div class="op"><p>"El masaje del ritual de hidratación vale cada euro. Vuelvo cada mes."</p><span>Irene · Ritual</span></div>
+  </div>
+</div></section>
+
+<section class="reserva" id="reservar"><div class="wrap">
+  <svg class="blob-bg" data-fx="blob" data-points="8" data-wobble=".12" data-speed=".5" aria-hidden="true"><path fill="#d9c9b0"/></svg>
+  <span class="eyebrow">Reservar</span>
+  <h2 data-fx="split" data-by="words" data-style="blur">Date una <em>pausa.</em></h2>
+  <div class="cta" data-fx="reveal">
+    <a href="#" class="btn fx-btn-fill" data-fx="magnetic">Reservar online</a>
+    <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20reservar" class="btn line fx-btn-fill" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><span>raíz · Plantilla 02 · Natural</span><span>Calle Ejemplo 8, Madrid · Martes a sábado 10–20 h</span></div></footer>
+<script src="fx.js" defer></script>
+<script>const n=document.getElementById('nav');addEventListener('scroll',()=>n.classList.toggle('solid',scrollY>30),{passive:true});</script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maison Ombre · Parfums</title>
+<meta name="description" content="Plantilla 03 · Lujo editorial. Perfumería ficticia con vitrina de producto y ficha animada.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<style>
+:root{--bg:#0a0a0b;--sf:#121113;--fg:#f1ede6;--mut:#8d8983;--line:rgba(241,237,230,.12);--acc:#c9a27e;
+  --serif:"Instrument Serif",Georgia,serif;--sans:"Inter",system-ui,sans-serif;--fx-dur:1.3s;--fx-dist:30px}
+*{box-sizing:border-box;margin:0}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--fg);font:300 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:min(1320px,100% - 32px);margin-inline:auto}
+.cap{font:400 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--mut)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:.95}
+h2{font-size:clamp(46px,7vw,110px)}
+em{font-style:italic}
+section{padding:clamp(90px,12vw,170px) 0;position:relative}
+.btn{display:inline-flex;align-items:center;gap:14px;padding:17px 30px;border:1px solid rgba(241,237,230,.35);border-radius:99px;font:400 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;--fill:var(--fg);transition:color .5s}
+.btn:hover{color:var(--bg)}
+
+nav{position:fixed;inset:0 0 auto;z-index:40;mix-blend-mode:difference;color:#fff}
+nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:78px}
+nav .links{display:flex;gap:28px}
+nav .logo{font:400 26px/1 var(--serif);letter-spacing:.32em;text-transform:uppercase;text-align:center}
+nav .right{justify-self:end;display:flex;gap:24px}
+@media (max-width:820px){nav .links,nav .right a:not(:last-child){display:none}nav .wrap{grid-template-columns:auto 1fr auto}nav .logo{font-size:20px;text-align:left}}
+
+/* hero */
+.hero{height:100svh;min-height:620px;position:relative;overflow:hidden;padding:0}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;scale:1.08;animation:respira 14s ease-in-out infinite alternate}
+@keyframes respira{to{scale:1.16}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.55),transparent 35%,transparent 55%,rgba(10,10,11,.95))}
+.hero .txt{position:absolute;z-index:2;left:0;right:0;bottom:clamp(40px,7vh,80px)}
+.hero h1{font-size:clamp(68px,15vw,250px);line-height:.85}
+.hero .row{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-top:26px}
+.hero p{max-width:38ch;color:#cfcac2}
+
+/* manifiesto */
+.mani p{font:400 clamp(32px,4.6vw,68px)/1.12 var(--serif);max-width:24ch;margin-top:30px}
+
+/* vitrina */
+.vit-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:50px}
+.vitrina{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.nicho{position:relative;aspect-ratio:3/4.6;overflow:hidden;cursor:pointer;background:#000;border-radius:4px}
+.nicho img{width:100%;height:100%;object-fit:cover;transition:scale 1.4s var(--fx-ease),filter .8s var(--fx-ease)}
+.nicho::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(70% 40% at 50% 0%,rgba(255,255,255,.18),transparent 70%),linear-gradient(180deg,transparent 55%,rgba(0,0,0,.85));pointer-events:none}
+.nicho .lbl{position:absolute;z-index:2;left:20px;right:20px;bottom:18px;display:flex;justify-content:space-between;align-items:end}
+.nicho .lbl b{font:400 30px/1 var(--serif)}
+.nicho .lbl span{font-size:12px;color:#cfcac2}
+.vitrina:hover .nicho img{filter:brightness(.4) saturate(.6)}
+.vitrina .nicho:hover img{filter:none;scale:1.06}
+@media (max-width:900px){.vitrina{grid-template-columns:1fr 1fr}}
+
+/* ficha */
+.ficha{position:fixed;inset:0;z-index:60;background:var(--bg);display:none;grid-template-columns:1.1fr 1fr}
+.ficha.open{display:grid}
+.ficha .foto{position:relative;overflow:hidden;background:#000}
+.ficha .foto img{width:100%;height:100%;object-fit:cover}
+.ficha .info{padding:clamp(28px,6vw,100px);display:flex;flex-direction:column;justify-content:center;gap:22px}
+.ficha h3{font-size:clamp(56px,7vw,120px)}
+.ficha p{color:var(--mut);max-width:42ch}
+.ficha .notas{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);padding-top:18px;gap:14px;font-size:14px}
+.ficha .notas b{display:block;font-weight:400;color:var(--fg)}
+.ficha .compra{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.ficha .precio{font:400 34px/1 var(--serif)}
+.ficha .tam{display:flex;gap:8px}
+.ficha .tam button{background:none;border:1px solid var(--line);color:var(--fg);border-radius:99px;padding:9px 14px;font:400 13px var(--sans);cursor:pointer}
+.ficha .tam button.on{border-color:var(--fg)}
+.ficha .x{position:absolute;top:18px;right:18px;z-index:3;width:48px;height:48px;border-radius:50%;border:0;color:#fff;font-size:22px;cursor:pointer}
+@media (max-width:860px){.ficha{grid-template-columns:1fr;grid-template-rows:46svh 1fr;overflow:auto}.ficha .info{justify-content:flex-start}}
+
+/* notas olfativas */
+.piramide{display:grid;grid-template-columns:repeat(3,1fr);margin-top:60px;border-top:1px solid var(--line)}
+.piramide div{padding:34px 26px 0 0;border-right:1px solid var(--line)}
+.piramide div:last-child{border-right:0}
+.piramide .n{font:400 clamp(60px,7vw,110px)/1 var(--serif);font-style:italic;color:var(--acc)}
+.piramide h3{font-size:34px;margin:14px 0 8px}
+.piramide p{color:var(--mut);font-size:15px;max-width:30ch}
+@media (max-width:820px){.piramide{grid-template-columns:1fr}.piramide div{border-right:0;border-bottom:1px solid var(--line);padding-bottom:30px}}
+
+/* maison */
+.maison{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,100px);align-items:center}
+.maison figure{margin:0;aspect-ratio:4/5;overflow:hidden}
+.maison figure img{width:100%;height:100%;object-fit:cover}
+.maison p{color:var(--mut);margin-top:26px;max-width:46ch}
+@media (max-width:820px){.maison{grid-template-columns:1fr}}
+
+.cinta{border-block:1px solid var(--line);padding:26px 0;font:400 clamp(30px,4vw,54px)/1 var(--serif);font-style:italic}
+.cinta span{display:inline-flex;gap:40px;align-items:center}
+.cinta span::after{content:"—";font-style:normal;color:var(--mut)}
+
+.cierre{text-align:center}
+.cierre h2{font-size:clamp(56px,10vw,170px);margin-bottom:40px}
+.news{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:520px;margin:0 auto}
+.news input{flex:1;min-width:220px;background:none;border:0;border-bottom:1px solid rgba(241,237,230,.35);color:var(--fg);font:300 16px var(--sans);padding:14px 4px;outline:none}
+footer{border-top:1px solid var(--line);padding:36px 0 60px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body data-fx-cursor>
+<nav><div class="wrap">
+  <div class="links cap" style="color:#fff"><a href="#coleccion">Colección</a><a href="#notas">Notas</a><a href="#maison">Maison</a></div>
+  <a href="#" class="logo">Ombre</a>
+  <div class="right cap" style="color:#fff"><a href="#">Buscar</a><a href="#">Bolsa (0)</a></div>
+</div></nav>
+
+<header class="hero">
+  <picture><source media="(max-width:700px)" srcset="img/grenat.webp"><img src="img/hero.webp" alt="Frasco de perfume sobre fondo negro" fetchpriority="high"></picture>
+  <div class="txt wrap">
+    <span class="cap" data-fx="reveal">Maison de parfum · Desde 1998</span>
+    <h1 data-fx="split" data-by="chars" data-style="blur" data-step=".05">Ombre <em>Noire</em></h1>
+    <div class="row">
+      <p data-fx="reveal" data-delay=".8">Perfumes de autor creados a mano en pequeñas tiradas. Cada frasco, numerado.</p>
+      <a href="#coleccion" class="btn fx-btn-fill" data-fx="magnetic reveal" data-delay="1">Descubrir la colección</a>
+    </div>
+  </div>
+</header>
+
+<section class="mani"><div class="wrap">
+  <span class="cap">La casa</span>
+  <p data-fx="fill">Un perfume no se lleva: se recuerda. Por eso trabajamos como antes, con materias primas nobles, maceraciones lentas y ninguna prisa.</p>
+</div></section>
+
+<section id="coleccion" style="padding-top:0"><div class="wrap">
+  <div class="vit-head">
+    <div><span class="cap">Colección 2026</span><h2 data-fx="split" data-by="words" style="margin-top:18px">La <em>vitrina.</em></h2></div>
+    <p style="color:var(--mut);max-width:34ch" data-fx="reveal">Toca un frasco para ver su ficha, sus notas y su precio.</p>
+  </div>
+  <div class="vitrina" data-stagger=".1">
+    <div class="nicho" data-n="Noire" data-e="Lune" data-p="185 €" data-img="img/hero.webp" data-d="Cuero, iris y humo de incienso. Para la noche."><img src="img/hero.webp" alt="Ombre Noire" loading="lazy" style="object-position:50% 60%;scale:1.6"><div class="lbl"><b>Noire</b><span>Nº 01</span></div></div>
+    <div class="nicho" data-n="Ambre" data-e="Doré" data-p="165 €" data-img="img/ambar.webp" data-d="Ámbar gris, vainilla de Madagascar y madera de oud."><img src="img/ambar.webp" alt="Ombre Ambre" loading="lazy"><div class="lbl"><b>Ambre</b><span>Nº 02</span></div></div>
+    <div class="nicho" data-n="Cristal" data-e="Blanc" data-p="150 €" data-img="img/cristal.webp" data-d="Almizcle blanco, neroli y pera. Limpio como el lino."><img src="img/cristal.webp" alt="Ombre Cristal" loading="lazy"><div class="lbl"><b>Cristal</b><span>Nº 03</span></div></div>
+    <div class="nicho" data-n="Grenat" data-e="Rouge" data-p="175 €" data-img="img/grenat.webp" data-d="Rosa turca, pimienta rosa y pachuli. Intenso."><img src="img/grenat.webp" alt="Ombre Grenat" loading="lazy"><div class="lbl"><b>Grenat</b><span>Nº 04</span></div></div>
+  </div>
+</div></section>
+
+<div class="cinta" data-fx="marquee" data-speed="38"><span>Hecho a mano en Grasse</span><span>Tiradas numeradas</span><span>Envío con muestra de regalo</span><span>Grabado gratuito</span></div>
+
+<section id="notas"><div class="wrap">
+  <span class="cap">Anatomía de un perfume</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:18px;max-width:14ch">Tres <em>tiempos,</em> una historia.</h2>
+  <div class="piramide" data-stagger=".14">
+    <div><span class="n">I</span><h3>Salida</h3><p>Los primeros quince minutos. Bergamota, pimienta rosa, neroli.</p></div>
+    <div><span class="n">II</span><h3>Corazón</h3><p>El carácter. Iris, rosa turca, jazmín sambac.</p></div>
+    <div><span class="n">III</span><h3>Fondo</h3><p>Lo que queda en la piel al día siguiente. Ámbar, cuero, oud.</p></div>
+  </div>
+</div></section>
+
+<section id="maison" style="padding-top:0"><div class="wrap maison">
+  <figure data-fx="reveal" data-dir="clip"><img src="img/nuit.webp" alt="Frasco con reflejos azules" loading="lazy" data-fx="parallax" data-speed="-0.06" style="scale:1.12"></figure>
+  <div>
+    <span class="cap">Maison</span>
+    <h2 data-fx="split" data-by="words" style="margin-top:18px">El tiempo es el <em>ingrediente.</em></h2>
+    <p data-fx="reveal">Cada fragancia madura entre seis y nueve meses antes de embotellarse. Trabajamos con cultivadores de Grasse, Calabria y Madagascar, y numeramos cada frasco a mano.</p>
+    <div style="margin-top:34px" data-fx="reveal"><a href="#" class="btn fx-btn-fill" data-fx="magnetic">Nuestra historia</a></div>
+  </div>
+</div></section>
+
+<section class="cierre"><div class="wrap">
+  <span class="cap">Cartas de la maison</span>
+  <h2 data-fx="split" data-by="words" data-style="blur" style="margin-top:20px">Primeras <em>noticias.</em></h2>
+  <form class="news" onsubmit="event.preventDefault();this.innerHTML='<p class=cap>Gracias. Te escribiremos pronto.</p>'" data-fx="reveal">
+    <input type="email" placeholder="Tu correo electrónico" aria-label="Correo electrónico" required>
+    <button class="btn fx-btn-fill" style="background:none;color:inherit;cursor:pointer">Suscribirme</button>
+  </form>
+</div></section>
+
+<footer><div class="wrap cap"><span>Maison Ombre · Plantilla 03 · Lujo</span><span>Madrid · París</span></div></footer>
+
+<div class="ficha" role="dialog" aria-modal="true" aria-label="Ficha de perfume">
+  <div class="foto"><img alt=""></div>
+  <div class="info">
+    <span class="cap num"></span>
+    <h3><span class="t1"></span> <em class="t2"></em></h3>
+    <p class="desc"></p>
+    <div class="notas"><div><b>Salida</b>Bergamota</div><div><b>Corazón</b>Iris</div><div><b>Fondo</b>Ámbar</div></div>
+    <div class="tam"><button>30 ml</button><button class="on">50 ml</button><button>100 ml</button></div>
+    <div class="compra"><span class="precio"></span><a href="#" class="btn fx-btn-fill cerrar2">Añadir a la bolsa</a></div>
+  </div>
+  <button class="x fx-glass" aria-label="Cerrar">×</button>
+</div>
+
+<script src="fx.js" defer></script>
+<script>
+// Vitrina → ficha: la foto "vuela" con View Transitions (sin soporte, cambia sin animación)
+const f = document.querySelector('.ficha'), fImg = f.querySelector('.foto img');
+const vt = fn => (document.startViewTransition && !(window.FX && FX.reduced)) ? document.startViewTransition(fn) : fn();
+let origen = null;
+document.querySelectorAll('.nicho').forEach((n, i) => n.addEventListener('click', () => {
+  document.querySelectorAll('.nicho img').forEach(im => im.style.viewTransitionName = '');
+  origen = n.querySelector('img'); origen.style.viewTransitionName = 'frasco';
+  vt(() => {
+    origen.style.viewTransitionName = '';
+    fImg.src = n.dataset.img; fImg.alt = n.dataset.n; fImg.style.cssText = origen.style.cssText; fImg.style.viewTransitionName = 'frasco';
+    f.querySelector('.t1').textContent = n.dataset.n; f.querySelector('.t2').textContent = n.dataset.e;
+    f.querySelector('.num').textContent = 'Nº 0' + (i + 1) + ' · Extrait de parfum';
+    f.querySelector('.desc').textContent = n.dataset.d; f.querySelector('.precio').textContent = n.dataset.p;
+    f.classList.add('open'); document.body.style.overflow = 'hidden';
+  });
+}));
+const cerrar = () => vt(() => { fImg.style.viewTransitionName = ''; if (origen) origen.style.viewTransitionName = 'frasco'; f.classList.remove('open'); document.body.style.overflow = ''; });
+f.querySelector('.x').onclick = cerrar;
+f.querySelector('.cerrar2').onclick = e => { e.preventDefault(); cerrar(); };
+f.querySelectorAll('.tam button').forEach(b => b.onclick = () => { f.querySelectorAll('.tam button').forEach(x => x.classList.remove('on')); b.classList.add('on'); });
+addEventListener('keydown', e => e.key === 'Escape' && f.classList.contains('open') && cerrar());
+</script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>

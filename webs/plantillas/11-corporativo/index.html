@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ortega &amp; Sanz Abogados</title>
+<meta name="description" content="Plantilla 11 · Corporativo / Swiss. Despacho de abogados ficticio.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<style>
+:root{--bg:#ffffff;--sf:#f4f5f7;--fg:#0b1220;--mut:#5b6474;--line:#dfe2e7;--navy:#0b2545;--rojo:#d4231a;
+  --sans:"Inter",system-ui,sans-serif;--disp:"Inter Tight",system-ui,sans-serif;--fx-dur:.9s;--fx-dist:16px}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+.lbl{font:600 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);display:flex;align-items:center;gap:10px}
+.lbl::before{content:"";width:8px;height:8px;background:var(--rojo)}
+h1,h2,h3{font-family:var(--disp);font-weight:700;letter-spacing:-.035em;line-height:1}
+h2{font-size:clamp(36px,4.8vw,64px)}
+section{padding:clamp(80px,10vw,130px) 0;border-top:1px solid var(--line)}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 26px;background:var(--navy);color:#fff;font-weight:600;font-size:15px;--fill:var(--rojo)}
+.btn.o{background:transparent;color:var(--fg);border:1px solid var(--fg);--fill:var(--fg);transition:color .4s}
+.btn.o:hover{color:#fff}
+
+nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:72px}
+.logo{font:700 20px/1 var(--disp);letter-spacing:-.03em}
+.logo span{color:var(--rojo)}
+nav ul{display:flex;gap:30px;list-style:none;padding:0;font-size:15px;color:var(--mut)}
+nav ul a:hover{color:var(--fg)}
+@media (max-width:860px){nav ul{display:none}}
+
+/* hero en rejilla */
+.hero{padding:clamp(50px,7vw,90px) 0 0;border:0}
+.hero .g{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end}
+.hero h1{grid-column:1/9;font-size:clamp(46px,7.2vw,108px);letter-spacing:-.05em}
+.hero h1 .r{color:var(--rojo)}
+.hero .lado{grid-column:9/13;padding-bottom:10px}
+.hero .lado p{color:var(--mut);margin-bottom:26px}
+.hero .foto{grid-column:1/-1;margin-top:50px;height:clamp(260px,42vw,560px);overflow:hidden;position:relative}
+.hero .foto img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);scale:1.12}
+.hero .foto .ficha{position:absolute;right:0;bottom:0;background:var(--navy);color:#fff;padding:24px 28px;display:flex;gap:36px}
+.hero .foto .ficha b{display:block;font:700 34px/1 var(--disp);letter-spacing:-.04em}
+.hero .foto .ficha span{font-size:13px;color:#b7c3d6}
+@media (max-width:860px){.hero h1,.hero .lado{grid-column:1/-1}.hero .foto .ficha{position:relative;gap:24px;flex-wrap:wrap}}
+
+/* áreas */
+.areas{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:1px solid var(--fg)}
+.area{padding:30px 26px 34px 0;border-bottom:1px solid var(--line);position:relative;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;transition:padding .5s var(--fx-ease)}
+.area:not(:nth-child(3n)){border-right:1px solid var(--line)}
+.area:not(:nth-child(3n+1)){padding-left:26px}
+.area .n{font:600 13px var(--sans);color:var(--rojo)}
+.area h3{font-size:26px;margin:14px 0 8px}
+.area p{color:var(--mut);font-size:15px}
+.area .mas{font-size:14px;font-weight:600;opacity:0;translate:-8px 0;transition:.4s var(--fx-ease)}
+.area:hover .mas{opacity:1;translate:0}
+.area::after{content:"";position:absolute;left:0;top:-1px;height:3px;width:0;background:var(--rojo);transition:width .6s var(--fx-ease)}
+.area:not(:nth-child(3n+1))::after{left:26px}
+.area:hover::after{width:60px}
+@media (max-width:860px){.areas{grid-template-columns:1fr}.area{border-right:0!important;padding-left:0!important;min-height:0}.area .mas{opacity:1;translate:0}}
+
+/* números */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px}
+.num{border-left:1px solid var(--line);padding-left:20px}
+.num b{display:block;font:700 clamp(46px,5.4vw,78px)/1 var(--disp);letter-spacing:-.05em}
+.num span{color:var(--mut);font-size:14px}
+@media (max-width:760px){.nums{grid-template-columns:1fr 1fr;row-gap:34px}}
+
+.mani{background:var(--navy);color:#fff;border:0}
+.mani .lbl{color:#9fb0c9}
+.mani p{font:600 clamp(28px,3.8vw,52px)/1.18 var(--disp);letter-spacing:-.035em;max-width:24ch;margin-top:30px}
+
+/* equipo */
+.equipo{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px}
+.socio .av{aspect-ratio:4/5;background:linear-gradient(160deg,#e9ecf1,#cfd5de);display:grid;place-items:center;font:700 54px var(--disp);color:#8a94a6;letter-spacing:-.04em;margin-bottom:16px}
+.socio h3{font-size:20px;letter-spacing:-.02em}
+.socio p{color:var(--mut);font-size:14px}
+@media (max-width:860px){.equipo{grid-template-columns:1fr 1fr}}
+
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
+.duo figure{margin:0;aspect-ratio:16/11;overflow:hidden}
+.duo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+@media (max-width:760px){.duo{grid-template-columns:1fr}}
+
+/* contacto */
+.contacto .g{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+form{display:grid;gap:14px}
+label{font-size:13px;font-weight:600;color:var(--mut)}
+input,select,textarea{width:100%;margin-top:6px;padding:14px;border:1px solid var(--line);background:var(--sf);font:400 16px var(--sans);color:var(--fg);outline:none;transition:border-color .3s}
+input:focus,select:focus,textarea:focus{border-color:var(--navy)}
+.datos p{margin-top:16px;color:var(--mut)}
+.datos b{color:var(--fg);display:block}
+@media (max-width:860px){.contacto .g{grid-template-columns:1fr}}
+footer{background:var(--fg);color:#9aa3b2;padding:30px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+</style>
+</head>
+<body>
+<div class="fx-progress" style="--mesh-1:var(--rojo)"></div>
+<nav><div class="wrap">
+  <a href="#" class="logo">Ortega <span>&amp;</span> Sanz</a>
+  <ul><li><a href="#areas">Áreas</a></li><li><a href="#despacho">Despacho</a></li><li><a href="#equipo">Equipo</a></li></ul>
+  <a href="#contacto" class="btn fx-btn-fill" style="padding:12px 18px">Primera consulta</a>
+</div></nav>
+
+<header class="hero"><div class="wrap g">
+  <h1 data-fx="split" data-by="words" data-step=".06">Defendemos lo que has construido<span class="r">.</span></h1>
+  <div class="lado" data-fx="reveal" data-delay=".5">
+    <p>Despacho de abogados especializado en empresa, familia y patrimonio. Más de 25 años resolviendo asuntos complejos con un trato cercano y honorarios claros.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><a href="#contacto" class="btn fx-btn-fill" data-fx="magnetic">Solicitar consulta →</a><a href="#areas" class="btn o fx-btn-fill">Áreas</a></div>
+  </div>
+  <div class="foto" data-fx="reveal" data-dir="clip"><img src="img/edificio.webp" alt="Fachada de cristal de un edificio de oficinas" fetchpriority="high" data-fx="parallax" data-speed="-0.08"><div class="ficha"><div><b>25</b><span>años</span></div><div><b>1.800+</b><span>casos</span></div><div><b>94 %</b><span>resueltos a favor</span></div></div></div>
+</div></header>
+
+<section id="areas"><div class="wrap">
+  <span class="lbl">Áreas de práctica</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:20px;max-width:18ch">Especialistas en lo que de verdad importa.</h2>
+  <div class="areas" data-stagger=".07">
+    <a class="area" href="#contacto"><span class="n">01</span><div><h3>Mercantil</h3><p>Constitución de sociedades, pactos de socios, contratos y operaciones.</p></div><span class="mas">Más información →</span></a>
+    <a class="area" href="#contacto"><span class="n">02</span><div><h3>Familia</h3><p>Divorcios, custodias y pensiones con la máxima discreción.</p></div><span class="mas">Más información →</span></a>
+    <a class="area" href="#contacto"><span class="n">03</span><div><h3>Herencias</h3><p>Testamentos, particiones y planificación patrimonial.</p></div><span class="mas">Más información →</span></a>
+    <a class="area" href="#contacto"><span class="n">04</span><div><h3>Laboral</h3><p>Despidos, reclamaciones y asesoramiento a empresas.</p></div><span class="mas">Más información →</span></a>
+    <a class="area" href="#contacto"><span class="n">05</span><div><h3>Inmobiliario</h3><p>Compraventas, arrendamientos y conflictos de comunidad.</p></div><span class="mas">Más información →</span></a>
+    <a class="area" href="#contacto"><span class="n">06</span><div><h3>Penal económico</h3><p>Defensa en delitos societarios y fiscales.</p></div><span class="mas">Más información →</span></a>
+  </div>
+</div></section>
+
+<section id="despacho"><div class="wrap">
+  <span class="lbl">El despacho en cifras</span>
+  <div class="nums" data-stagger=".08">
+    <div class="num"><b data-fx="counter" data-to="25">0</b><span>años de experiencia</span></div>
+    <div class="num"><b data-fx="counter" data-to="1800" data-suffix="+">0</b><span>asuntos resueltos</span></div>
+    <div class="num"><b data-fx="counter" data-to="12">0</b><span>abogados colegiados</span></div>
+    <div class="num"><b data-fx="counter" data-to="48" data-suffix=" h">0</b><span>para tu primer informe</span></div>
+  </div>
+  <div class="duo">
+    <figure data-fx="reveal" data-dir="clip"><img src="img/reunion.webp" alt="Reunión con clientes firmando un contrato" loading="lazy"></figure>
+    <figure data-fx="reveal" data-dir="clip" data-delay=".12"><img src="img/sala.webp" alt="Sala de reuniones del despacho" loading="lazy"></figure>
+  </div>
+</div></section>
+
+<section class="mani"><div class="wrap">
+  <span class="lbl">Nuestra forma de trabajar</span>
+  <p data-fx="fill">Te explicamos tu caso en lenguaje claro, te damos un presupuesto cerrado antes de empezar y te informamos de cada paso. Sin letra pequeña.</p>
+</div></section>
+
+<section id="equipo"><div class="wrap">
+  <span class="lbl">Socios</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:20px">Quién lleva tu caso.</h2>
+  <div class="equipo" data-stagger=".08">
+    <div class="socio"><div class="av">MO</div><h3>Marta Ortega</h3><p>Socia fundadora · Mercantil</p></div>
+    <div class="socio"><div class="av">JS</div><h3>Javier Sanz</h3><p>Socio fundador · Familia</p></div>
+    <div class="socio"><div class="av">LR</div><h3>Lucía Romero</h3><p>Socia · Herencias</p></div>
+    <div class="socio"><div class="av">DP</div><h3>Daniel Prieto</h3><p>Socio · Laboral</p></div>
+  </div>
+</div></section>
+
+<section class="contacto" id="contacto"><div class="wrap g">
+  <div class="datos">
+    <span class="lbl">Contacto</span>
+    <h2 data-fx="split" data-by="words" style="margin:20px 0 10px">Cuéntanos tu caso.</h2>
+    <p>Respondemos en menos de 24 horas laborables. La primera valoración es gratuita y confidencial.</p>
+    <p><b>Teléfono</b>910 000 000</p>
+    <p><b>Dirección</b>Paseo Ejemplo 45, 28046 Madrid</p>
+    <p><b>Horario</b>Lunes a viernes, 9:00 – 19:00</p>
+  </div>
+  <form data-fx="reveal" onsubmit="event.preventDefault();this.innerHTML='<h3>Gracias. Te llamamos en menos de 24 h.</h3>'">
+    <label>Nombre<input required autocomplete="name"></label>
+    <label>Teléfono o email<input required></label>
+    <label>Área<select><option>Mercantil</option><option>Familia</option><option>Herencias</option><option>Laboral</option><option>Inmobiliario</option><option>Otro</option></select></label>
+    <label>Tu consulta<textarea rows="4"></textarea></label>
+    <button class="btn fx-btn-fill" style="border:0;cursor:pointer;justify-self:start">Enviar consulta →</button>
+  </form>
+</div></section>
+<footer><div class="wrap"><span>Ortega &amp; Sanz Abogados · Plantilla 11 · Corporativo</span><span>Aviso legal · Privacidad · Cookies</span></div></footer>
+<script src="fx.js" defer></script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>

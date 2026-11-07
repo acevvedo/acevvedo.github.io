@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inés Vidal · Fotografía</title>
+<meta name="description" content="Plantilla 08 · Editorial / brutalista. Portfolio ficticio de una fotógrafa.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<style>
+:root{--bg:#f2f0eb;--fg:#0e0e0e;--mut:#6b6966;--acc:#ff3b00;--line:#0e0e0e;
+  --disp:"Anton",Impact,sans-serif;--sans:"Inter Tight",system-ui,sans-serif;--mono:"Space Mono",ui-monospace,monospace;--fx-ease:cubic-bezier(.77,0,.18,1);--fx-dur:1s}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.5 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.mono{font:400 12px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.04em}
+.pad{padding-inline:16px}
+.disp{font-family:var(--disp);font-weight:400;text-transform:uppercase;line-height:.84;letter-spacing:-.01em}
+
+header.top{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:14px 16px;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30;background:var(--bg)}
+header.top a:hover{color:var(--acc)}
+header.top .r{text-align:right}
+@media (max-width:760px){header.top{grid-template-columns:1fr 1fr}header.top .h{display:none}}
+
+/* nombre gigante a todo el ancho */
+.disp .fx-w{padding-top:.14em;margin-top:-.14em}
+.nombre{font-size:clamp(70px,25.5vw,520px);white-space:nowrap;padding:6vw 12px 0;margin-left:-.02em}
+.intro{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:20px 16px 0;border-top:1px solid var(--line);margin-top:2vw}
+.intro p{font:500 clamp(18px,1.8vw,24px)/1.25 var(--sans);letter-spacing:-.02em;grid-column:span 2}
+.intro .yo{grid-column:4;aspect-ratio:3/4;overflow:hidden;margin-bottom:16px}
+.intro .yo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1)}
+.rojo{color:var(--acc)}
+@media (max-width:760px){.intro{grid-template-columns:1fr 1fr}.intro p{grid-column:1/-1}.intro .yo{grid-column:2}}
+
+.cinta{background:var(--fg);color:var(--bg);padding:14px 0;font-size:clamp(34px,5vw,70px)}
+.cinta span{display:inline-flex;gap:28px;align-items:center}
+.cinta span::after{content:"●";font-size:.35em;color:var(--acc)}
+
+/* portfolio asimétrico */
+.trabajo{padding:90px 0 40px}
+.trabajo .tit{display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between;align-items:end;border-bottom:1px solid var(--line);padding:0 16px 14px}
+.trabajo .tit h2,.serv .tit h2{font-size:clamp(54px,14vw,190px)!important;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;padding:16px}
+.foto{position:relative;overflow:hidden;cursor:pointer;background:#ddd}
+.foto img{width:100%;height:100%;object-fit:cover;transition:scale 1.2s var(--fx-ease),filter .6s}
+.foto:hover img{scale:1.05}
+.foto figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;padding:10px 12px;background:var(--bg);translate:0 101%;transition:translate .6s var(--fx-ease)}
+.foto:hover figcaption{translate:0 0}
+.g1{grid-column:1/6;aspect-ratio:3/4}.g2{grid-column:7/13;aspect-ratio:4/3;align-self:end}
+.g3{grid-column:3/8;aspect-ratio:4/5}.g4{grid-column:9/13;aspect-ratio:3/4;margin-top:20vh}
+.g5{grid-column:1/13;aspect-ratio:21/9}
+.g6{grid-column:1/5;aspect-ratio:3/4}.g7{grid-column:6/9;aspect-ratio:3/4;margin-top:12vh}.g8{grid-column:10/13;aspect-ratio:3/4}
+.g9{grid-column:2/7;aspect-ratio:4/5}.g10{grid-column:8/12;aspect-ratio:3/4;margin-top:16vh}
+@media (max-width:760px){.grid{grid-template-columns:1fr 1fr;gap:10px}.grid .foto{grid-column:auto!important;margin-top:0!important;aspect-ratio:3/4}.g5{grid-column:1/-1!important;aspect-ratio:4/3!important}.foto figcaption{translate:0 0}}
+
+/* servicios */
+.serv{border-top:1px solid var(--line)}
+.serv-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:22px 16px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .4s,color .4s}
+.serv-row:hover{background:var(--fg);color:var(--bg)}
+.serv-row h3{font-size:clamp(40px,6vw,96px);grid-column:span 2}
+.serv-row p{color:inherit;opacity:.7}
+.serv-row .pr{text-align:right;font:400 18px var(--mono)}
+@media (max-width:760px){.serv-row{grid-template-columns:1fr 1fr}.serv-row h3{grid-column:1/-1}.serv-row .pr{text-align:left}}
+
+/* contacto */
+.contacto{padding:110px 0 0;border-top:1px solid var(--line);overflow:hidden}
+.contacto .mail{display:block;font-size:clamp(46px,11.5vw,230px);padding:0 12px;white-space:nowrap;transition:color .3s}
+.contacto .mail:hover{color:var(--acc)}
+.pie{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:30px 16px 40px;border-top:1px solid var(--line);margin-top:30px}
+@media (max-width:760px){.pie{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body data-fx-cursor>
+<header class="top mono">
+  <a href="#">Inés Vidal ©</a>
+  <span class="h">Fotógrafa · Madrid</span>
+  <span class="h"><a href="#trabajo">Trabajo</a> · <a href="#servicios">Servicios</a></span>
+  <a href="#contacto" class="r">Disponible 2027 <span class="rojo">●</span></a>
+</header>
+
+<h1 class="nombre disp" data-fx="split" data-by="chars" data-step=".04">Inés Vidal</h1>
+<div class="intro">
+  <span class="mono" data-fx="reveal">(Índice 01)<br>Retrato · Bodas · Marcas</span>
+  <p data-fx="split" data-by="words" data-style="fade" data-step=".03">Fotografío personas tal y como son: <span class="rojo">sin poses,</span> con luz natural y mucha paciencia. Trabajo en película y digital para particulares, novios y marcas que buscan algo honesto.</p>
+  <figure class="yo" data-fx="reveal" data-dir="clip"><img src="img/yo.webp" alt="Inés Vidal con su cámara" fetchpriority="high"></figure>
+</div>
+
+<div class="cinta disp" data-fx="marquee" data-speed="26"><span>Retratos</span><span>Bodas</span><span>Editorial</span><span>Marcas</span><span>Analógico</span></div>
+
+<section class="trabajo" id="trabajo">
+  <div class="tit"><h2 class="disp" data-fx="split" data-by="chars" data-step=".03">Trabajo</h2><span class="mono">(10) Selección 2024—2026</span></div>
+  <div class="grid">
+    <figure class="foto g1" data-fx="reveal" data-dir="clip"><img src="img/p01.webp" alt="Retrato en el bosque" loading="lazy"><figcaption class="mono"><span>Niebla</span><span>2026</span></figcaption></figure>
+    <figure class="foto g2" data-fx="reveal" data-dir="clip"><img src="img/p05.webp" alt="Silueta tras paneles" loading="lazy"><figcaption class="mono"><span>Cristal</span><span>2025</span></figcaption></figure>
+    <figure class="foto g3" data-fx="reveal" data-dir="clip"><img src="img/p03.webp" alt="Retrato en blanco y negro" loading="lazy"><figcaption class="mono"><span>Clara</span><span>2026</span></figcaption></figure>
+    <figure class="foto g4" data-fx="reveal" data-dir="clip"><img src="img/p04.webp" alt="Retrato con fondo azul" loading="lazy"><figcaption class="mono"><span>Azul</span><span>2025</span></figcaption></figure>
+    <figure class="foto g5" data-fx="reveal" data-dir="clip"><img src="img/p08.webp" alt="Arquitectura curva" loading="lazy" data-fx="parallax" data-speed="-0.05" style="scale:1.15"><figcaption class="mono"><span>Curvas · para estudio de arquitectura</span><span>2026</span></figcaption></figure>
+    <figure class="foto g6" data-fx="reveal" data-dir="clip"><img src="img/p02.webp" alt="Retrato en el bosque" loading="lazy"><figcaption class="mono"><span>Otoño</span><span>2024</span></figcaption></figure>
+    <figure class="foto g7" data-fx="reveal" data-dir="clip"><img src="img/p06.webp" alt="Escalera en espiral" loading="lazy"><figcaption class="mono"><span>Espiral</span><span>2025</span></figcaption></figure>
+    <figure class="foto g8" data-fx="reveal" data-dir="clip"><img src="img/p07.webp" alt="Pasillo de arcos" loading="lazy"><figcaption class="mono"><span>Arcos</span><span>2025</span></figcaption></figure>
+    <figure class="foto g9" data-fx="reveal" data-dir="clip"><img src="img/p09.webp" alt="Retrato con luz cálida" loading="lazy"><figcaption class="mono"><span>Interior</span><span>2026</span></figcaption></figure>
+    <figure class="foto g10" data-fx="reveal" data-dir="clip"><img src="img/p10.webp" alt="Retrato junto a la ventana" loading="lazy"><figcaption class="mono"><span>Ventana</span><span>2024</span></figcaption></figure>
+  </div>
+</section>
+
+<section class="serv" id="servicios">
+  <div class="tit pad" style="padding-top:90px;padding-bottom:14px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end"><h2 class="disp" style="font-size:clamp(60px,11vw,190px)" data-fx="split" data-by="chars" data-step=".03">Servicios</h2><span class="mono">(04)</span></div>
+  <div style="border-top:1px solid var(--line)" data-stagger=".06">
+    <a class="serv-row" href="#contacto"><span class="mono">01</span><h3 class="disp">Retrato</h3><span class="pr">desde 180 €</span><p style="grid-column:2/-1">Sesión de 1 h, 30 fotos editadas, en exterior o estudio.</p></a>
+    <a class="serv-row" href="#contacto"><span class="mono">02</span><h3 class="disp">Bodas</h3><span class="pr">desde 1.400 €</span><p style="grid-column:2/-1">Cobertura completa, película + digital y álbum de lino.</p></a>
+    <a class="serv-row" href="#contacto"><span class="mono">03</span><h3 class="disp">Marcas</h3><span class="pr">a medida</span><p style="grid-column:2/-1">Producto, equipo y campañas para redes y web.</p></a>
+    <a class="serv-row" href="#contacto"><span class="mono">04</span><h3 class="disp">Talleres</h3><span class="pr">90 €</span><p style="grid-column:2/-1">Aprende a revelar y a mirar la luz. Grupos de 6.</p></a>
+  </div>
+</section>
+
+<section class="contacto" id="contacto">
+  <span class="mono pad">(Contacto) Respondo en 24 h</span>
+  <a class="mail disp" href="mailto:hola@inesvidal.example" data-fx="marquee" data-speed="18"><span>hola@inesvidal.com —&nbsp;</span></a>
+  <div class="pie mono"><span>Inés Vidal ©2026</span><a href="#">Instagram ↗</a><a href="#">Vimeo ↗</a><span style="text-align:right">Plantilla 08 · Editorial</span></div>
+</section>
+<script src="fx.js" defer></script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>

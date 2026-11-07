@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Colclinic Dental · Estética dental en Madrid</title>
+<meta name="description" content="Clínica dental en Madrid especializada en carillas, implantes, ortodoncia y estética dental. Agenda tu primera visita.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<style>
+/* Marca Colclinic: petróleo (#0B1C23, sacado del logo) + dorado. Nuestro estilo: serif grande + sans, mucho aire. */
+:root{--pet:#0b1c23;--pet2:#11272f;--pet3:#173640;--marfil:#f6f2ea;--marfil2:#ece5d8;--fg:#132026;--mut:#5f6b6f;
+  --oro:#c9a04a;--oro-c:#f1d58a;--oro-o:#8c6a2c;--oro-g:linear-gradient(100deg,#8c6a2c,#e6c574 35%,#f6e2a6 50%,#c9a04a 70%,#8c6a2c);
+  --serif:"Instrument Serif",Georgia,serif;--sans:"Inter Tight",system-ui,sans-serif;--marca:"Cinzel",Georgia,serif;
+  --fx-dur:1.1s;--mesh-1:#c9a04a;--oro-t:linear-gradient(100deg,#d8b260,#f4dc9c 45%,#e2bf72 75%,#cfa654)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--marfil);color:var(--fg);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:min(1220px,100% - 32px);margin-inline:auto}
+.eyebrow{font:600 12px/1 var(--marca);letter-spacing:.28em;text-transform:uppercase;color:var(--oro-o);display:inline-flex;align-items:center;gap:12px}
+.eyebrow::before{content:"✦";font-size:10px}
+.oscuro .eyebrow{color:var(--oro)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:.98;letter-spacing:-.01em}
+h2{font-size:clamp(44px,6.4vw,92px)}
+h2 em,h1 em{font-style:italic;background:var(--oro-t);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:clamp(17px,1.6vw,19px);max-width:48ch}
+.oscuro{background:var(--pet);color:var(--marfil)}
+.oscuro .lead{color:#a9b8bb}
+section{padding:clamp(90px,11vw,150px) 0;position:relative}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:99px;font:600 15px/1 var(--sans);background:var(--oro-g);background-size:200% 100%;color:var(--pet);--fill:#fff3d2;box-shadow:0 14px 34px -14px rgba(201,160,74,.7);transition:background-position .6s}
+.btn:hover{background-position:100% 0}
+.btn.linea{background:transparent;color:inherit;border:1px solid rgba(201,160,74,.6);box-shadow:none;--fill:rgba(201,160,74,.15)}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .5s,box-shadow .5s}
+nav.solid{background:rgba(11,28,35,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(201,160,74,.25)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:78px;color:var(--marfil)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .cc{font:600 30px/1 var(--marca);background:var(--oro-g);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.06em}
+.logo .nm{font:600 17px/1 var(--marca);letter-spacing:.14em;color:var(--marfil)}
+.logo .nm small{display:block;font-size:9px;letter-spacing:.32em;color:var(--oro);margin-top:5px}
+nav ul{display:flex;gap:30px;list-style:none;padding:0;font-size:14px;color:#c9d3d5}
+nav ul a:hover{color:var(--oro-c)}
+nav .btn{padding:12px 20px;font-size:14px}
+@media (max-width:900px){nav ul{display:none}nav .btn{padding:10px 14px}}
+
+/* hero */
+.hero{min-height:100svh;display:grid;align-items:center;padding:120px 0 70px;overflow:hidden;position:relative}
+.hero::before{content:"";position:absolute;width:900px;height:900px;right:-260px;top:-220px;background:radial-gradient(closest-side,rgba(201,160,74,.18),transparent);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;position:relative}
+.hero h1{font-size:clamp(58px,8.6vw,132px);margin:24px 0 24px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.hero .lema{margin-top:44px;font:500 11px/1 var(--marca);letter-spacing:.3em;color:#8fa3a8}
+.arco{position:relative;justify-self:center;width:min(100%,440px)}
+.arco .foto{border-radius:999px 999px 30px 30px;overflow:hidden;aspect-ratio:3/4.1;position:relative;z-index:1}
+.arco .foto img{width:100%;height:100%;object-fit:cover;object-position:40% 50%}
+.arco::before{content:"";position:absolute;inset:-14px;border-radius:999px 999px 40px 40px;border:1px solid rgba(201,160,74,.55);z-index:0}
+.arco .chip{position:absolute;z-index:2;left:-40px;bottom:60px;padding:14px 18px;border-radius:18px;font-size:14px;color:var(--marfil)}
+.arco .chip b{display:block;font:400 26px/1 var(--serif);color:var(--oro-c)}
+.arco .chip2{left:auto;right:-30px;bottom:auto;top:70px}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.arco{width:min(84%,380px);margin-top:20px}.arco .chip{left:-14px}.arco .chip2{right:-14px}}
+
+.cinta{background:var(--pet2);color:var(--oro-c);border-block:1px solid rgba(201,160,74,.25);padding:20px 0;font:400 clamp(26px,3vw,38px)/1 var(--serif);font-style:italic}
+.cinta span{display:inline-flex;align-items:center;gap:30px}
+.cinta span::after{content:"✦";font-style:normal;font-size:.5em;color:var(--oro)}
+
+/* tratamientos */
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:56px}
+.trats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.trat{background:#fff;border:1px solid var(--marfil2);border-radius:24px;padding:30px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.trat .n{font:600 12px var(--marca);letter-spacing:.2em;color:var(--oro-o)}
+.trat h3{font-size:34px;margin:12px 0 8px}
+.trat p{color:var(--mut);font-size:15px}
+.trat .mas{font-size:14px;font-weight:600;margin-top:18px;color:var(--pet3)}
+.trat.dest{background:var(--pet);color:var(--marfil);border-color:var(--pet)}
+.trat.dest p{color:#a9b8bb}.trat.dest .mas{color:var(--oro-c)}
+.trat.dest .tag{position:absolute;top:22px;right:22px;font:600 10px var(--marca);letter-spacing:.2em;padding:7px 12px;border-radius:99px;background:var(--oro-g);color:var(--pet)}
+@media (max-width:900px){.trats{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.trats{grid-template-columns:1fr}.trat{min-height:0}}
+
+/* antes / después arrastrable */
+.ad{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+.comparador{position:relative;aspect-ratio:4/3;border-radius:28px;overflow:hidden;user-select:none;cursor:ew-resize;--pos:50%;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.comparador img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.comparador .antes{filter:sepia(.55) saturate(1.3) brightness(.86) contrast(.95) hue-rotate(-8deg);clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.comparador .despues{filter:brightness(1.06) saturate(.92) contrast(1.04)}
+.comparador .linea{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:var(--oro-c);box-shadow:0 0 18px rgba(241,213,138,.8);translate:-1px 0}
+.comparador .tirador{position:absolute;top:50%;left:var(--pos);width:58px;height:58px;translate:-50% -50%;border-radius:50%;background:var(--oro-g);display:grid;place-items:center;color:var(--pet);font:700 18px var(--sans);box-shadow:0 10px 30px rgba(0,0,0,.4);transition:scale .3s}
+.comparador.arrastrando .tirador{scale:1.12}
+.comparador .et{position:absolute;top:18px;padding:8px 14px;border-radius:99px;font:600 11px var(--marca);letter-spacing:.2em;color:#fff;background:rgba(11,28,35,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.comparador .et.a{left:18px}.comparador .et.d{right:18px}
+.comparador input{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:ew-resize;margin:0}
+.nota{font-size:12px;color:#7d8d91;margin-top:12px}
+.casos{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.casos button{padding:10px 16px;border-radius:99px;border:1px solid rgba(201,160,74,.45);background:none;color:inherit;font:500 14px var(--sans);cursor:pointer}
+.casos button.on{background:var(--oro-g);color:var(--pet);border-color:transparent}
+@media (max-width:900px){.ad{grid-template-columns:1fr;gap:34px}}
+
+/* carillas */
+.car{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.mosaico{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mosaico figure{margin:0;border-radius:22px;overflow:hidden}
+.mosaico img{width:100%;height:100%;object-fit:cover;transition:scale 1.2s var(--fx-ease)}
+.mosaico figure:hover img{scale:1.06}
+.mosaico figure:first-child{grid-row:span 2;aspect-ratio:3/4.4}
+.mosaico figure:not(:first-child){aspect-ratio:1}
+.compara{margin-top:30px;border-top:1px solid var(--marfil2)}
+.compara div{display:grid;grid-template-columns:1fr auto auto;gap:24px;padding:14px 0;border-bottom:1px solid var(--marfil2);font-size:15px}
+.compara div span:not(:first-child){text-align:right;font-weight:600;min-width:80px}
+.compara .h{font:600 11px var(--marca);letter-spacing:.18em;color:var(--oro-o)}
+@media (max-width:900px){.car{grid-template-columns:1fr}}
+
+/* reels (huecos vacíos) */
+.reels{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.reel{aspect-ratio:9/16;border-radius:24px;border:1.5px dashed rgba(201,160,74,.45);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,0));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#8fa3a8;text-align:center;padding:16px;transition:border-color .4s,background .4s}
+.reel:hover{border-color:var(--oro);background:rgba(201,160,74,.06)}
+.reel .play{width:56px;height:56px;border-radius:50%;border:1px solid rgba(201,160,74,.6);display:grid;place-items:center;color:var(--oro-c)}
+.reel b{font:600 11px var(--marca);letter-spacing:.2em;color:var(--oro)}
+@media (max-width:900px){.reels{grid-template-columns:1fr 1fr}}
+
+/* por qué */
+.porque p.big{font:400 clamp(32px,4.4vw,62px)/1.12 var(--serif);max-width:24ch;margin-top:26px}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:70px}
+.num{border-top:1px solid rgba(19,32,38,.15);padding-top:20px}
+.num b{display:block;font:400 clamp(52px,6vw,84px)/1 var(--serif)}
+.num span{color:var(--mut);font-size:14px}
+@media (max-width:800px){.nums{grid-template-columns:1fr 1fr;row-gap:30px}}
+
+/* opiniones */
+.ops{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.op{background:#fff;border-radius:24px;padding:28px;border:1px solid var(--marfil2);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.op .st{color:var(--oro);letter-spacing:3px}
+.op p{font:400 22px/1.35 var(--serif);font-style:italic}
+.op .who{display:flex;gap:12px;align-items:center;font-size:14px;color:var(--mut)}
+.op .who img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.op .who b{display:block;color:var(--fg)}
+@media (max-width:900px){.ops{grid-template-columns:1fr}}
+
+/* cita */
+.cita .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.form{border-radius:28px;padding:30px;display:grid;gap:14px}
+.form label{font:600 11px var(--marca);letter-spacing:.18em;color:var(--oro)}
+.form input,.form select{width:100%;margin-top:8px;padding:15px 16px;border-radius:14px;border:1px solid rgba(201,160,74,.3);background:rgba(255,255,255,.05);color:var(--marfil);font:400 16px var(--sans);outline:none}
+.form input:focus,.form select:focus{border-color:var(--oro)}
+.form select option{color:#111}
+.mapa{margin-top:28px;border-radius:22px;aspect-ratio:16/9;border:1.5px dashed rgba(201,160,74,.4);display:grid;place-items:center;color:#8fa3a8;font-size:14px;text-align:center}
+.datos{display:grid;gap:12px;margin-top:26px;color:#c9d3d5}
+.datos a:hover{color:var(--oro-c)}
+@media (max-width:900px){.cita .wrap{grid-template-columns:1fr}}
+footer{background:var(--pet);border-top:1px solid rgba(201,160,74,.2);color:#8fa3a8;padding:50px 0 90px;font-size:14px;text-align:center}
+footer img{width:200px;margin:0 auto 18px}
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6)}
+.wa svg{width:28px;height:28px;fill:#fff}
+</style>
+</head>
+<body>
+<div class="fx-progress"></div>
+<nav id="nav"><div class="wrap">
+  <a href="#" class="logo" aria-label="Colclinic Dental"><span class="cc">CC</span><span class="nm">COLCLINIC<small>CLÍNICA DENTAL</small></span></a>
+  <ul><li><a href="#tratamientos">Tratamientos</a></li><li><a href="#antes-despues">Antes y después</a></li><li><a href="#carillas">Carillas</a></li><li><a href="#opiniones">Opiniones</a></li></ul>
+  <a href="#cita" class="btn fx-btn-fill" data-fx="magnetic">Pedir cita</a>
+</div></nav>
+
+<header class="hero oscuro"><div class="wrap">
+  <div>
+    <span class="eyebrow" data-fx="reveal">Clínica dental · Madrid</span>
+    <h1 data-fx="split" data-by="words" data-style="blur" data-step=".09">Tu sonrisa, <em>nuestra pasión.</em></h1>
+    <p class="lead" data-fx="reveal" data-delay=".6">Especialistas en carillas, implantes, ortodoncia y estética dental. Un lugar donde tu sonrisa es nuestra prioridad.</p>
+    <div class="cta" data-fx="reveal" data-delay=".75">
+      <a href="#cita" class="btn fx-btn-fill" data-fx="magnetic">Agenda tu primera visita</a>
+      <a href="#antes-despues" class="btn linea fx-btn-fill">Ver resultados</a>
+    </div>
+    <div class="lema" data-fx="reveal" data-delay=".9">ESTÉTICA DENTAL · ARMONÍA · CONFIANZA</div>
+  </div>
+  <div class="arco" data-fx="reveal" data-dir="scale" data-delay=".2">
+    <div class="foto"><img src="img/hero.webp" alt="Paciente sonriendo" fetchpriority="high"></div>
+    <div class="chip fx-glass" data-fx="parallax" data-speed="-0.1"><b>Primera visita</b>con diagnóstico completo</div>
+    <div class="chip chip2 fx-glass" data-fx="parallax" data-speed="0.08"><b>★ 5,0</b>opiniones de pacientes</div>
+  </div>
+</div></header>
+
+<div class="cinta" data-fx="marquee" data-speed="36"><span>Carillas de cerámica</span><span>Implantes dentales</span><span>Ortodoncia invisible</span><span>Resina de alta estética</span><span>Lentes de zirconio</span></div>
+
+<section id="tratamientos"><div class="wrap">
+  <div class="head">
+    <div><span class="eyebrow">Tratamientos</span><h2 data-fx="split" data-by="words" style="margin-top:18px">Todo para tu <em>sonrisa.</em></h2></div>
+    <p class="lead" data-fx="reveal">Odontólogos con amplia experiencia y tecnología digital para resultados naturales y duraderos.</p>
+  </div>
+  <div class="trats" data-stagger=".08">
+    <article class="trat dest" data-fx="tilt" data-max="5"><span class="tag">MÁS PEDIDO</span><span class="n">01</span><div><h3>Carillas</h3><p>De resina o cerámica. Corrigen color, forma y pequeñas separaciones.</p><a class="mas" href="#carillas">Ver carillas →</a></div></article>
+    <article class="trat" data-fx="tilt" data-max="5"><span class="n">02</span><div><h3>Implantes</h3><p>Recupera dientes perdidos con una solución fija y natural.</p><a class="mas" href="#cita">Pedir valoración →</a></div></article>
+    <article class="trat" data-fx="tilt" data-max="5"><span class="n">03</span><div><h3>Ortodoncia</h3><p>Brackets estéticos o alineadores invisibles, para adultos y niños.</p><a class="mas" href="#cita">Pedir valoración →</a></div></article>
+    <article class="trat" data-fx="tilt" data-max="5"><span class="n">04</span><div><h3>Lentes cerámicas</h3><p>Láminas ultrafinas para una sonrisa perfecta con mínimo desgaste.</p><a class="mas" href="#cita">Pedir valoración →</a></div></article>
+    <article class="trat" data-fx="tilt" data-max="5"><span class="n">05</span><div><h3>Lentes de zirconio</h3><p>Máxima resistencia y estética para casos exigentes.</p><a class="mas" href="#cita">Pedir valoración →</a></div></article>
+    <article class="trat" data-fx="tilt" data-max="5"><span class="n">06</span><div><h3>Resina estética</h3><p>Reconstrucciones invisibles en una sola sesión.</p><a class="mas" href="#cita">Pedir valoración →</a></div></article>
+  </div>
+</div></section>
+
+<section class="oscuro" id="antes-despues"><div class="wrap ad">
+  <div>
+    <span class="eyebrow">Antes y después</span>
+    <h2 data-fx="split" data-by="words" style="margin:18px 0 18px">Desliza y <em>compruébalo.</em></h2>
+    <p class="lead" data-fx="reveal">Arrastra la línea dorada para ver el cambio. Resultados reales de nuestros pacientes, siempre con un diseño de sonrisa a medida.</p>
+    <div class="casos" data-fx="reveal" role="group" aria-label="Elegir caso">
+      <button class="on">Carillas</button><button>Blanqueamiento</button><button>Ortodoncia</button>
+    </div>
+  </div>
+  <div data-fx="reveal" data-dir="scale">
+    <div class="comparador" id="comparador">
+      <img class="despues" src="img/antes-despues.webp" alt="Sonrisa después del tratamiento">
+      <img class="antes" src="img/antes-despues.webp" alt="Sonrisa antes del tratamiento">
+      <span class="et a">ANTES</span><span class="et d">DESPUÉS</span>
+      <div class="linea"></div><div class="tirador" aria-hidden="true">⟷</div>
+      <input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después">
+    </div>
+    <p class="nota">Imagen de ejemplo para la maqueta: aquí irán las fotos reales de la clínica.</p>
+  </div>
+</div></section>
+
+<section id="carillas"><div class="wrap car">
+  <div class="mosaico">
+    <figure data-fx="reveal" data-dir="clip"><img src="img/carilla2.webp" alt="Sonrisa con carillas" loading="lazy"></figure>
+    <figure data-fx="reveal" data-dir="clip" data-delay=".1"><img src="img/carilla1.webp" alt="Detalle de carillas" loading="lazy"></figure>
+    <figure data-fx="reveal" data-dir="clip" data-delay=".2"><img src="img/carilla3.webp" alt="Perfil de sonrisa" loading="lazy"></figure>
+  </div>
+  <div>
+    <span class="eyebrow">Carillas</span>
+    <h2 data-fx="split" data-by="words" style="margin:18px 0 18px">La sonrisa que <em>siempre quisiste.</em></h2>
+    <p class="lead" data-fx="reveal">Diseñamos tu sonrisa en digital antes de empezar, para que veas el resultado desde el primer día.</p>
+    <div class="compara" data-stagger=".06">
+      <div class="h"><span></span><span>RESINA</span><span>CERÁMICA</span></div>
+      <div><span>Sesiones</span><span>1</span><span>2-3</span></div>
+      <div><span>Duración aproximada</span><span>5-7 años</span><span>+15 años</span></div>
+      <div><span>Color y brillo</span><span>muy bueno</span><span>excelente</span></div>
+      <div><span>Desgaste del diente</span><span>mínimo</span><span>mínimo</span></div>
+    </div>
+    <div style="margin-top:30px" data-fx="reveal"><a href="#cita" class="btn fx-btn-fill" data-fx="magnetic">Quiero mi diseño de sonrisa</a></div>
+  </div>
+</div></section>
+
+<section class="oscuro" id="reels"><div class="wrap">
+  <div class="head" style="margin-bottom:0">
+    <div><span class="eyebrow">En Instagram</span><h2 data-fx="split" data-by="words" style="margin-top:18px">Mira cómo <em>trabajamos.</em></h2></div>
+    <a href="https://www.instagram.com/colclinicdental/" target="_blank" rel="noopener" class="btn linea fx-btn-fill">@colclinicdental ↗</a>
+  </div>
+  <div class="reels" data-stagger=".08">
+    <div class="reel"><span class="play">▶</span><b>REEL 1</b><span>Espacio para un vídeo<br>de la clínica</span></div>
+    <div class="reel"><span class="play">▶</span><b>REEL 2</b><span>Espacio para un vídeo<br>de la clínica</span></div>
+    <div class="reel"><span class="play">▶</span><b>REEL 3</b><span>Espacio para un vídeo<br>de la clínica</span></div>
+    <div class="reel"><span class="play">▶</span><b>REEL 4</b><span>Espacio para un vídeo<br>de la clínica</span></div>
+  </div>
+</div></section>
+
+<section class="porque"><div class="wrap">
+  <span class="eyebrow">Por qué Colclinic</span>
+  <p class="big" data-fx="fill">Estética, armonía y confianza: tres palabras que guían cada tratamiento. Te explicamos todo antes de empezar y diseñamos una sonrisa que encaje con tu cara.</p>
+  <div class="nums" data-stagger=".08">
+    <div class="num"><b data-fx="counter" data-to="10" data-suffix="+">0</b><span>años de experiencia</span></div>
+    <div class="num"><b data-fx="counter" data-to="2500" data-suffix="+">0</b><span>sonrisas tratadas</span></div>
+    <div class="num"><b data-fx="counter" data-to="6">0</b><span>especialidades</span></div>
+    <div class="num"><b data-fx="counter" data-to="5.0">0</b><span>valoración de pacientes</span></div>
+  </div>
+</div></section>
+
+<section id="opiniones" style="padding-top:0"><div class="wrap">
+  <div class="head"><div><span class="eyebrow">Opiniones</span><h2 data-fx="split" data-by="words" style="margin-top:18px">Lo que dicen <em>nuestros pacientes.</em></h2></div></div>
+  <div class="ops" data-stagger=".1">
+    <div class="op"><span class="st">★★★★★</span><p>"Me hice carillas y no paro de sonreír. Me explicaron todo y el resultado es súper natural."</p><div class="who"><img src="img/paciente1.webp" alt="" loading="lazy"><div><b>Laura G.</b>Carillas de cerámica</div></div></div>
+    <div class="op"><span class="st">★★★★★</span><p>"Trato cercano y muy profesional. El implante quedó perfecto y sin dolor."</p><div class="who"><img src="img/paciente2.webp" alt="" loading="lazy"><div><b>Carmen R.</b>Implantes</div></div></div>
+    <div class="op"><span class="st">★★★★★</span><p>"La ortodoncia invisible fue rapidísima. Recomiendo Colclinic al cien por cien."</p><div class="who"><img src="img/paciente3.webp" alt="" loading="lazy"><div><b>Andrea M.</b>Ortodoncia</div></div></div>
+  </div>
+  <p class="nota" style="text-align:center;margin-top:22px">Opiniones de ejemplo: en la versión final se conectan las reseñas reales de Google.</p>
+</div></section>
+
+<section class="oscuro cita" id="cita"><div class="wrap">
+  <div>
+    <span class="eyebrow">Pide tu cita</span>
+    <h2 data-fx="split" data-by="words" style="margin:18px 0 18px">Tu sonrisa merece <em>la mejor atención.</em></h2>
+    <p class="lead">Rellena el formulario y te escribimos por WhatsApp para darte hora. Sin compromiso.</p>
+    <div class="datos">
+      <a href="https://wa.me/34654759909" target="_blank" rel="noopener">WhatsApp · +34 654 75 99 09</a>
+      <a href="mailto:colclinic.colclinic@gmail.com">colclinic.colclinic@gmail.com</a>
+      <a href="https://www.instagram.com/colclinicdental/" target="_blank" rel="noopener">Instagram · @colclinicdental</a>
+    </div>
+    <div class="mapa">Aquí va el mapa de Google<br>con la dirección de la clínica</div>
+  </div>
+  <form class="form fx-glass" id="form" data-fx="reveal">
+    <label>NOMBRE<input name="n" required autocomplete="name"></label>
+    <label>TELÉFONO<input name="t" required inputmode="tel" autocomplete="tel"></label>
+    <label>TRATAMIENTO<select name="s"><option>Carillas</option><option>Implantes</option><option>Ortodoncia</option><option>Lentes cerámicas / zirconio</option><option>Resina estética</option><option>Revisión general</option></select></label>
+    <label>¿CUÁNDO TE VIENE BIEN?<select name="h"><option>Mañanas</option><option>Tardes</option><option>Me da igual</option></select></label>
+    <button class="btn fx-btn-fill" style="border:0;cursor:pointer;justify-content:center;margin-top:6px">Enviar por WhatsApp →</button>
+  </form>
+</div></section>
+
+<footer>
+  <img src="img/logo-original.png" alt="Colclinic Clínica Dental">
+  <p>© 2026 Colclinic Dental · Madrid · Aviso legal · Privacidad · Cookies</p>
+  <p style="margin-top:8px;font-size:12px;opacity:.7">Maqueta de propuesta · Plan Pro</p>
+</footer>
+<a class="wa" href="https://wa.me/34654759909" aria-label="WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.8-1.1-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4 0 .1 0 .7-.2 1.3z"/></svg></a>
+<script src="fx.js" defer></script>
+<script>
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 30), { passive: true });
+
+// Antes / después: arrastrar la línea (ratón o dedo) o con teclado (input range invisible)
+const comp = document.getElementById('comparador'), rango = comp.querySelector('input');
+const poner = p => { p = Math.max(0, Math.min(100, p)); comp.style.setProperty('--pos', p + '%'); rango.value = p; };
+// el input range invisible cubre toda la foto: el navegador gestiona arrastre con ratón, dedo y teclado
+rango.addEventListener("pointerdown", () => comp.classList.add("arrastrando"));
+addEventListener("pointerup", () => comp.classList.remove("arrastrando"));
+rango.addEventListener('input', () => poner(+rango.value));
+// pequeño "guiño" la primera vez que se ve, para que se entienda que se puede arrastrar
+new IntersectionObserver(([en], o) => { if (!en.isIntersecting || FX.reduced) return; o.disconnect();
+  let t0 = null; const anim = t => { t0 ??= t; const k = (t - t0) / 1600; poner(50 + Math.sin(k * Math.PI * 2) * 22 * (1 - k)); if (k < 1) requestAnimationFrame(anim); else poner(50); };
+  requestAnimationFrame(anim); }, { threshold: .6 }).observe(comp);
+document.querySelectorAll('.casos button').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('.casos button').forEach(x => x.classList.remove('on')); b.classList.add('on'); poner(50); }));
+
+// Formulario → WhatsApp con el mensaje escrito
+document.getElementById('form').addEventListener('submit', e => {
+  e.preventDefault(); const f = new FormData(e.target);
+  const txt = `Hola, soy ${f.get('n')}. Me interesa: ${f.get('s')}. Prefiero ${f.get('h').toLowerCase()}. Mi teléfono: ${f.get('t')}`;
+  window.open('https://wa.me/34654759909?text=' + encodeURIComponent(txt), '_blank', 'noopener');
+});
+</script>
+<script src="../../_base/firma.js" data-modo="propuesta" defer></script>
+</body>
+</html>

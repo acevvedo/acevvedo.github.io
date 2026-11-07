@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PULSO · Entrenamiento funcional</title>
+<meta name="description" content="Plantilla 04 · Moderno / divertido. Gimnasio ficticio con clases, planes y prueba gratis.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<style>
+:root{--bg:#f4f2ec;--ink:#111;--mut:#5d5b56;--azul:#3a5bff;--lima:#d4ff3a;--rosa:#ff5fa2;--line:#111;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;--text:"DM Sans",system-ui,sans-serif;
+  --fx-ease:cubic-bezier(.34,1.56,.64,1);--fx-dur:.65s;--fx-dist:40px}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:min(1260px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.04em;line-height:.9}
+h2{font-size:clamp(46px,8vw,120px);text-transform:uppercase}
+section{padding:clamp(80px,10vw,130px) 0;position:relative}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:17px 28px;border-radius:99px;border:2px solid var(--ink);background:var(--lima);color:var(--ink);font:700 16px/1 var(--text);box-shadow:5px 5px 0 var(--ink);transition:translate .25s var(--fx-ease),box-shadow .25s var(--fx-ease)}
+.btn:hover{translate:-3px -3px;box-shadow:8px 8px 0 var(--ink)}
+.btn.blanco{background:#fff}
+.sticker{display:inline-block;padding:8px 16px;border-radius:99px;border:2px solid var(--ink);font:700 14px/1 var(--text);background:#fff;rotate:-4deg}
+
+nav{position:fixed;top:12px;left:0;right:0;z-index:40}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;background:#fff;border:2px solid var(--ink);border-radius:99px;padding:8px 8px 8px 22px;box-shadow:4px 4px 0 var(--ink)}
+.logo{font:800 26px/1 var(--display);letter-spacing:-.05em;display:flex;align-items:center;gap:6px}
+.logo i{width:14px;height:14px;border-radius:50%;background:var(--rosa);animation:late 1s infinite}
+@keyframes late{50%{scale:1.5}}
+nav ul{display:flex;gap:26px;list-style:none;padding:0;font-weight:500}
+nav .btn{padding:11px 20px;box-shadow:none;font-size:15px}
+@media (max-width:820px){nav ul{display:none}}
+
+/* hero */
+.hero{padding:120px 0 60px}
+.hero h1{font-size:clamp(64px,13.5vw,220px);text-transform:uppercase}
+.hero h1 .azul{color:var(--azul)}
+.hero h1 .marco{display:inline-block;background:var(--lima);border:3px solid var(--ink);border-radius:.18em;padding:0 .12em;rotate:-2deg;box-shadow:.05em .05em 0 var(--ink)}
+.hero .bajo{display:grid;grid-template-columns:1fr 1.3fr;gap:30px;align-items:end;margin-top:34px}
+.hero .bajo p{font-size:clamp(18px,1.8vw,21px);max-width:34ch;margin-bottom:26px}
+.hero .foto{position:relative;border:3px solid var(--ink);border-radius:30px;overflow:hidden;aspect-ratio:16/10;box-shadow:8px 8px 0 var(--ink)}
+.hero .foto img{width:100%;height:100%;object-fit:cover}
+.hero .foto .sticker{position:absolute;top:16px;right:16px;background:var(--rosa);color:#fff;rotate:6deg}
+@media (max-width:860px){.hero .bajo{grid-template-columns:1fr}}
+
+.cintas{overflow:hidden;padding:24px 0}
+.cinta{background:var(--ink);color:var(--lima);padding:18px 0;font:800 clamp(30px,4vw,54px)/1 var(--display);text-transform:uppercase;rotate:-1.5deg;margin:0 -20px}
+.cinta span{display:inline-flex;align-items:center;gap:30px}
+.cinta span::after{content:"✸";color:var(--rosa)}
+.cinta.dos{background:var(--azul);color:#fff;rotate:1.5deg;margin-top:-30px}
+
+/* clases */
+.clases{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}
+.clase{border:2px solid var(--ink);border-radius:26px;padding:24px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;background:#fff;transition:background .3s}
+.clase:nth-child(1){background:var(--lima)}
+.clase:nth-child(3){background:var(--azul);color:#fff}
+.clase .em{font:800 56px/1 var(--display);letter-spacing:-.05em;opacity:.9}
+.clase h3{font-size:34px;text-transform:uppercase}
+.clase p{font-size:15px;margin-top:6px;opacity:.85}
+.clase .dur{font-weight:700;font-size:14px;margin-top:14px;display:block}
+@media (max-width:980px){.clases{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.clases{grid-template-columns:1fr}.clase{min-height:0;gap:26px}}
+
+/* fotos + números */
+.dupla{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;margin-top:50px}
+.dupla figure{margin:0;border:3px solid var(--ink);border-radius:30px;overflow:hidden;position:relative}
+.dupla img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3.4}
+.dupla .nums{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.num{border:2px solid var(--ink);border-radius:26px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;background:#fff}
+.num b{font:800 clamp(46px,5vw,76px)/1 var(--display);letter-spacing:-.05em}
+.num:nth-child(2){background:var(--rosa);color:#fff}
+.num:nth-child(3){background:var(--ink);color:var(--lima)}
+@media (max-width:860px){.dupla{grid-template-columns:1fr}}
+
+/* planes */
+.planes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px;align-items:stretch}
+.plan{border:3px solid var(--ink);border-radius:30px;padding:30px;background:#fff;display:flex;flex-direction:column;gap:18px}
+.plan.top{background:var(--ink);color:#fff;scale:1.03;box-shadow:8px 8px 0 var(--azul)}
+.plan h3{font-size:30px;text-transform:uppercase}
+.plan .precio{font:800 64px/1 var(--display);letter-spacing:-.05em}
+.plan .precio small{font:500 16px var(--text);letter-spacing:0}
+.plan ul{list-style:none;padding:0;display:grid;gap:10px;flex:1}
+.plan li::before{content:"✓ ";font-weight:700;color:var(--azul)}
+.plan.top li::before{color:var(--lima)}
+@media (max-width:900px){.planes{grid-template-columns:1fr}.plan.top{scale:1}}
+
+/* cierre */
+.cierre{background:var(--azul);color:#fff;border-radius:40px;margin:0 16px 16px;text-align:center;overflow:hidden}
+.cierre h2{font-size:clamp(56px,11vw,180px);margin:20px 0 34px}
+.cierre h2 span{color:var(--lima)}
+.cierre .bg{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.cierre .wrap{position:relative}
+footer{padding:30px 0 50px;font-weight:500}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="#" class="logo">PULSO<i></i></a>
+  <ul><li><a href="#clases">Clases</a></li><li><a href="#centro">El centro</a></li><li><a href="#planes">Planes</a></li></ul>
+  <a href="#prueba" class="btn" data-fx="magnetic">Prueba gratis</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="sticker" data-fx="reveal">● Nuevo centro en Lavapiés</span>
+  <h1 style="margin-top:18px"><span data-fx="split" data-by="chars" data-step=".03">Entrena</span><br><span class="marco" data-fx="reveal" data-dir="scale" data-delay=".35">fuerte,</span> <span class="azul" data-fx="split" data-by="chars" data-delay=".5" data-step=".03">vive</span><br><span data-fx="split" data-by="chars" data-delay=".7" data-step=".03">mejor.</span></h1>
+  <div class="bajo">
+    <div data-fx="reveal" data-delay=".9">
+      <p>Clases de 45 minutos en grupos pequeños, con un entrenador que se sabe tu nombre. Sin permanencia.</p>
+      <a href="#prueba" class="btn" data-fx="magnetic">Quiero mi semana gratis →</a>
+    </div>
+    <div class="foto" data-fx="reveal" data-dir="clip" data-delay=".4"><img src="img/hero.webp" alt="Persona levantando una barra en el gimnasio" fetchpriority="high"><span class="sticker">-50 % 1er mes</span></div>
+  </div>
+</div></header>
+
+<div class="cintas"><div class="cinta" data-fx="marquee" data-speed="22"><span>Fuerza</span><span>HIIT</span><span>Movilidad</span><span>Boxeo</span><span>Funcional</span></div>
+<div class="cinta dos" data-fx="marquee" data-speed="26" data-reverse><span>Sin permanencia</span><span>Grupos de 12</span><span>Abierto 6:00–23:00</span></div></div>
+
+<section id="clases"><div class="wrap">
+  <h2 data-fx="split" data-by="chars" data-step=".025">Elige tu <span style="color:var(--azul)">clase</span></h2>
+  <div class="clases" data-stagger=".09">
+    <article class="clase" data-fx="tilt" data-max="8"><span class="em">01</span><div><h3>Fuerza</h3><p>Barras, mancuernas y técnica de verdad.</p><span class="dur">45 min · todos los niveles</span></div></article>
+    <article class="clase" data-fx="tilt" data-max="8"><span class="em">02</span><div><h3>HIIT</h3><p>Intervalos que te dejan nuevo en 30 minutos.</p><span class="dur">30 min · intenso</span></div></article>
+    <article class="clase" data-fx="tilt" data-max="8"><span class="em">03</span><div><h3>Boxeo</h3><p>Saco, guantes y mucha descarga.</p><span class="dur">50 min · iniciación</span></div></article>
+    <article class="clase" data-fx="tilt" data-max="8"><span class="em">04</span><div><h3>Movilidad</h3><p>Para que el resto de la semana no duela.</p><span class="dur">40 min · suave</span></div></article>
+  </div>
+</div></section>
+
+<section id="centro" style="padding-top:0"><div class="wrap">
+  <h2 data-fx="split" data-by="chars" data-step=".025">El <span style="color:var(--rosa)">centro</span></h2>
+  <div class="dupla">
+    <figure data-fx="reveal" data-dir="clip"><img src="img/cuerdas.webp" alt="Dos personas entrenando con cuerdas" loading="lazy"></figure>
+    <div class="nums" data-stagger=".08">
+      <div class="num"><b data-fx="counter" data-to="600" data-suffix="m²">0</b>de sala</div>
+      <div class="num"><b data-fx="counter" data-to="1200" data-suffix="+">0</b>socios felices</div>
+      <div class="num"><b data-fx="counter" data-to="42">0</b>clases a la semana</div>
+      <div class="num" style="padding:0;overflow:hidden"><img src="img/fuerza.webp" alt="Mujer levantando barra" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="planes" style="padding-top:0"><div class="wrap">
+  <h2 data-fx="split" data-by="chars" data-step=".025">Planes <span style="color:var(--azul)">claros</span></h2>
+  <div class="planes" data-stagger=".1">
+    <div class="plan"><h3>Básico</h3><div class="precio">29 €<small>/mes</small></div><ul><li>Sala libre</li><li>2 clases a la semana</li><li>App de entrenos</li></ul><a href="#prueba" class="btn blanco">Empezar</a></div>
+    <div class="plan top"><span class="sticker" style="background:var(--lima);color:var(--ink);align-self:start">El favorito</span><h3>Ilimitado</h3><div class="precio">49 €<small>/mes</small></div><ul><li>Todas las clases</li><li>Sala libre 6:00–23:00</li><li>Revisión mensual con tu entrenador</li></ul><a href="#prueba" class="btn" data-fx="magnetic">Empezar</a></div>
+    <div class="plan"><h3>Personal</h3><div class="precio">35 €<small>/sesión</small></div><ul><li>Entrenador 1 a 1</li><li>Plan de nutrición</li><li>Seguimiento por WhatsApp</li></ul><a href="#prueba" class="btn blanco">Reservar</a></div>
+  </div>
+</div></section>
+
+<section class="cierre" id="prueba">
+  <canvas class="bg" data-fx="particles" data-color="#d4ff3a" data-count="60" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <span class="sticker" style="color:var(--ink)">Sin tarjeta · sin compromiso</span>
+    <h2 data-fx="split" data-by="chars" data-step=".03">Tu primera <span>semana</span> gratis</h2>
+    <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20mi%20semana%20gratis" class="btn" data-fx="magnetic" target="_blank" rel="noopener">Reservar por WhatsApp →</a>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>PULSO · Plantilla 04 · Moderno</span><span>Calle Ejemplo 3, Madrid · @pulso</span></div></footer>
+<script src="fx.js" defer></script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>
