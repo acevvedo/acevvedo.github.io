@@ -14,8 +14,11 @@
 .barra nav a:hover,.barra nav a.on{background:rgba(21,20,23,.07);color:#151417}
 .barra .escr{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:99px;background:#151417;color:#fff;font:700 14px/1 "Inter Tight",system-ui,sans-serif;text-decoration:none;--fill:#7a2b3a}
 .barra .escr img{width:16px;height:16px}
-@media (max-width:820px){.barra nav{display:none}.ig-tag small{display:none}}
-@media (max-width:420px){.barra .escr span{display:none}}
+@media (max-width:820px){.ig-tag small{display:none}.barra nav a{padding:10px 12px}}
+/* móvil: el menú se queda; se esconde el texto del perfil y el botón queda solo con el icono */
+@media (max-width:600px){.ig-tag{padding-right:0}.ig-tag > span:last-child{display:none}.barra .escr span{display:none}.barra .escr{padding:11px}
+  .barra nav a{padding:9px 10px;font-size:13px}}
+@media (max-width:350px){.barra nav a{padding:8px 7px;font-size:12.5px}}
 
 .autor{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font:500 15px/1.2 "Inter Tight",system-ui,sans-serif;color:#77737a}
 .autor img{width:30px;height:30px;border-radius:50%;object-fit:cover}
