@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diaman Group · Empresas, residencia y viajes en Dubái</title>
+<meta name="description" content="Crea tu empresa en Dubái y Emiratos Árabes Unidos de la A a la Z: licencia, residencia, estudios y viajes a medida. Consultoría gratuita.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Diaman Group","url":"https://diamangroup.com/","telephone":"+971 54 375 8808","email":"soporte@diamangroup.com","address":{"@type":"PostalAddress","streetAddress":"Dubai Silicon Oasis","addressLocality":"Dubái","addressCountry":"AE"},"sameAs":["https://www.instagram.com/diaman_group/"]}</script>
+<style>
+/* Diaman: noche de Dubái + oro del logo. Jost (geométrica, como su logotipo) + Cormorant en cursiva para los acentos. */
+:root{--noche:#07090d;--noche2:#0d1117;--noche3:#141a22;--crema:#f4efe6;--mut:#9aa1aa;--linea:rgba(214,178,106,.22);
+  --oro:#d6b26a;--oro-c:#f3dc9e;--oro-o:#9c7430;--oro-g:linear-gradient(100deg,#8f6a2a,#d9b468 30%,#f6e3a8 50%,#c99d4f 72%,#8f6a2a);
+  --oro-t:linear-gradient(100deg,#c79a4e,#f5dea0 45%,#d8b167 75%,#b98d40);
+  --sans:"Jost",system-ui,sans-serif;--serif:"Cormorant Garamond",Georgia,serif;--fx-dur:1.1s}
+*{box-sizing:border-box;margin:0}
+html{background:var(--noche)}
+body{background:var(--noche);color:var(--crema);font:300 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+section{position:relative;padding:clamp(90px,11vw,150px) 0}
+.eyebrow{font:500 12px/1 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--oro);display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--oro-g);flex:none}
+@media (max-width:600px){.eyebrow{letter-spacing:.2em;font-size:11px}}
+h1,h2,h3{font-family:var(--sans);font-weight:300;letter-spacing:-.02em;line-height:1.02}
+h2{font-size:clamp(40px,5.8vw,86px)}
+h1 em,h2 em,h3 em{font:italic 500 1.08em/0.9 var(--serif);letter-spacing:-.01em;background:var(--oro-t);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.lead{color:var(--mut);font-size:clamp(17px,1.5vw,19px);max-width:52ch}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:99px;font:500 15px/1 var(--sans);letter-spacing:.02em;background:var(--oro-g);background-size:200% 100%;color:#120d05;--fill:#fff1cc;box-shadow:0 16px 40px -16px rgba(214,178,106,.8);transition:background-position .7s}
+.btn:hover{background-position:100% 0}
+.btn.linea{background:rgba(255,255,255,.04);color:var(--crema);border:1px solid rgba(214,178,106,.5);box-shadow:none;--fill:rgba(214,178,106,.16);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:60px}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .5s,box-shadow .5s}
+nav.solid{background:rgba(7,9,13,.82);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--linea)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:80px}
+nav .logo img{height:30px;width:auto;mix-blend-mode:screen}
+nav ul{display:flex;gap:32px;list-style:none;padding:0;font-size:14px;letter-spacing:.06em;color:#c8ccd2}
+nav ul a{transition:color .3s}nav ul a:hover{color:var(--oro-c)}
+nav .btn{padding:12px 20px;font-size:14px}
+@media (max-width:960px){nav ul{display:none}nav .logo img{height:24px}nav .btn{padding:10px 15px;font-size:13px}}
+
+/* portada: vuelo sobre Dubái controlado por el scroll */
+.vuelo .fx-scrub-sticky{position:sticky;top:0;height:100svh;overflow:hidden}
+.vuelo canvas{position:absolute;inset:0;width:100%;height:100%}
+.vuelo .velo{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,9,13,.55),rgba(7,9,13,.15) 40%,rgba(7,9,13,.85)),radial-gradient(ellipse at 20% 60%,rgba(7,9,13,.65),transparent 60%)}
+.vuelo .polvo{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:screen;opacity:.7}
+.capa{position:absolute;left:0;right:0;bottom:clamp(70px,13vh,140px);opacity:0;translate:0 40px;transition:opacity .8s var(--fx-ease),translate .9s var(--fx-ease);pointer-events:none}
+.capa.is-in{opacity:1;translate:0 0;pointer-events:auto}
+.capa h1,.capa .t{font-size:clamp(46px,8vw,124px);font-weight:300;line-height:.98;max-width:13ch;margin:22px 0 22px}
+.capa p{color:#c9ced5;font-size:clamp(17px,1.6vw,20px);max-width:44ch}
+.capa .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.capa .num{font:italic 500 18px var(--serif);color:var(--oro)}
+.bajar{position:absolute;left:50%;bottom:24px;translate:-50% 0;font:500 11px var(--sans);letter-spacing:.3em;color:#aab0b8;display:flex;flex-direction:column;align-items:center;gap:10px;opacity:calc(1 - var(--p,0)*8)}
+.bajar::after{content:"";width:1px;height:46px;background:linear-gradient(var(--oro),transparent);animation:baja 2s ease-in-out infinite}
+@keyframes baja{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.barra-vuelo{position:absolute;right:clamp(16px,3vw,40px);top:50%;translate:0 -50%;display:grid;gap:14px}
+.barra-vuelo span{width:2px;height:44px;background:rgba(255,255,255,.18);position:relative;overflow:hidden;border-radius:2px}
+.barra-vuelo span::after{content:"";position:absolute;inset:0;background:var(--oro);transform-origin:top;transform:scaleY(var(--k,0))}
+@media (max-width:700px){.barra-vuelo{display:none}}
+
+/* socios */
+.socios{padding:34px 0;border-block:1px solid var(--linea);background:var(--noche2)}
+.socios .fila{display:flex;align-items:center;gap:70px;padding-right:70px}
+.socios img{height:44px;width:auto;mix-blend-mode:screen;filter:grayscale(1) brightness(1.25) contrast(1.1);opacity:.75;transition:opacity .4s,filter .4s}
+.socios img:hover{opacity:1;filter:none}
+.socios img.fab{mix-blend-mode:normal;filter:brightness(0) invert(.85)}
+.socios .k{font:500 11px var(--sans);letter-spacing:.3em;color:var(--mut);white-space:nowrap}
+
+/* ¿te suena? */
+.suena .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.dolor{border:1px solid var(--linea);border-radius:22px;padding:26px 24px;background:linear-gradient(160deg,rgba(255,255,255,.035),rgba(255,255,255,0));display:flex;gap:16px;align-items:flex-start;min-height:130px}
+.dolor .x{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid rgba(214,178,106,.45);display:grid;place-items:center;color:var(--oro);font-size:15px;transition:background .6s .4s,color .6s .4s}
+.dolor.is-in .x{background:var(--oro-g);color:#120d05}
+.dolor p{font-size:18px;line-height:1.4;color:#dfe2e6}
+.suena .remate{margin-top:56px;font:italic 500 clamp(28px,3.4vw,46px)/1.15 var(--serif);color:var(--crema);text-align:center}
+.suena .remate b{font-weight:500;background:var(--oro-t);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (max-width:900px){.suena .grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.suena .grid{grid-template-columns:1fr}.dolor{min-height:0}}
+
+/* servicios */
+.servicios{background:linear-gradient(180deg,var(--noche),var(--noche2))}
+.servs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.serv{position:relative;border-radius:28px;overflow:hidden;min-height:580px;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;isolation:isolate;border:1px solid var(--linea)}
+.serv>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:scale 1.4s var(--fx-ease)}
+.serv::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,9,13,.1),rgba(7,9,13,.55) 45%,rgba(7,9,13,.96))}
+.serv:hover>img{scale:1.07}
+.serv .n{font:italic 500 64px/1 var(--serif);background:var(--oro-t);-webkit-background-clip:text;background-clip:text;color:transparent}
+.serv h3{font-size:clamp(28px,2.6vw,38px);margin:8px 0 12px}
+.serv p{color:#c4c9d0;font-size:15.5px}
+.serv ul{list-style:none;padding:0;margin:18px 0 22px;display:grid;gap:8px;font-size:14.5px;color:#e3e5e8}
+.serv li{display:flex;gap:10px}.serv li::before{content:"✦";color:var(--oro);font-size:11px;margin-top:4px}
+.serv .mas{font-weight:500;font-size:15px;color:var(--oro-c);display:inline-flex;gap:8px;align-items:center}
+.serv .alianza{position:absolute;top:22px;left:22px;padding:8px 14px;border-radius:99px;font:500 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;background:rgba(7,9,13,.55);border:1px solid var(--linea);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+@media (max-width:1000px){.servs{grid-template-columns:1fr}.serv{min-height:470px}}
+
+/* por qué Emiratos */
+.porque{overflow:hidden}
+.porque .foto{position:absolute;inset:0;z-index:-1}
+.porque .foto img{width:100%;height:100%;object-fit:cover;opacity:.22}
+.porque .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--noche2),transparent 30%,transparent 70%,var(--noche))}
+.porque p.big{font:300 clamp(30px,4vw,58px)/1.15 var(--sans);max-width:22ch;margin-top:26px;letter-spacing:-.02em}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:80px}
+.num{border:1px solid var(--linea);border-radius:24px;padding:28px 24px;background:rgba(7,9,13,.5);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.num b{display:block;font:300 clamp(52px,5.4vw,78px)/1 var(--sans);letter-spacing:-.04em;color:var(--oro-c);text-shadow:0 0 30px rgba(214,178,106,.35)}
+.num span{color:var(--mut);font-size:15px;display:block;margin-top:10px}
+.porque .nota{font-size:12px;color:#6f767f;margin-top:16px}
+@media (max-width:900px){.nums{grid-template-columns:1fr 1fr}}
+
+/* proceso: la línea dorada se dibuja con el scroll */
+.proceso .pasos{position:relative;display:grid;gap:clamp(60px,9vw,120px);padding-left:clamp(56px,8vw,110px)}
+.proceso .riel{position:absolute;left:clamp(20px,3vw,40px);top:6px;bottom:6px;width:2px;background:rgba(255,255,255,.08)}
+.proceso .riel::after{content:"";position:absolute;inset:0;background:var(--oro-g);transform-origin:top;transform:scaleY(var(--k,0));box-shadow:0 0 18px rgba(214,178,106,.7)}
+.paso{position:relative;display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,60px);align-items:baseline}
+.paso::before{content:"";position:absolute;left:calc(-1 * clamp(56px,8vw,110px) + clamp(20px,3vw,40px) - 8px);top:22px;width:18px;height:18px;border-radius:50%;background:var(--noche);border:2px solid rgba(214,178,106,.4);transition:background .5s,border-color .5s,box-shadow .5s}
+.paso.on::before{background:var(--oro);border-color:var(--oro-c);box-shadow:0 0 0 6px rgba(214,178,106,.15)}
+.paso .n{font:italic 500 clamp(80px,11vw,170px)/.8 var(--serif);color:transparent;-webkit-text-stroke:1px rgba(214,178,106,.55)}
+.paso.on .n{background:var(--oro-t);-webkit-background-clip:text;background-clip:text;-webkit-text-stroke:0}
+.paso h3{font-size:clamp(32px,4vw,58px)}
+.paso p{color:var(--mut);max-width:46ch;margin-top:14px;font-size:18px}
+.paso .chip{display:inline-block;margin-top:18px;padding:9px 16px;border-radius:99px;border:1px solid var(--linea);font-size:14px;color:var(--oro-c)}
+@media (max-width:700px){.paso{grid-template-columns:1fr;gap:6px}}
+
+/* viajes: galería horizontal que avanza con el scroll */
+.viajes{padding:0}
+.viajes .pin{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:40px}
+.viajes .pista{display:flex;gap:20px;padding-left:max(16px,calc((100vw - 1240px)/2));will-change:transform}
+.exp{flex:none;width:clamp(280px,30vw,440px);aspect-ratio:3/4;border-radius:26px;overflow:hidden;position:relative;border:1px solid var(--linea)}
+.exp img{width:100%;height:100%;object-fit:cover;transition:scale 1.2s var(--fx-ease)}
+.exp:hover img{scale:1.06}
+.exp::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(7,9,13,.88))}
+.exp figcaption{position:absolute;z-index:1;left:22px;right:22px;bottom:22px}
+.exp figcaption b{display:block;font:400 26px/1.1 var(--sans)}
+.exp figcaption span{font-size:14px;color:#c4c9d0}
+.exp.final{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:22px;padding:34px;background:var(--noche3)}
+.exp.final::after{display:none}
+.exp.final h3{font-size:40px}
+@media (max-width:900px){.viajes .pin{position:static;height:auto;padding:100px 0}.viajes .pista{overflow-x:auto;scroll-snap-type:x mandatory;padding-right:16px;scrollbar-width:none;transform:none!important}.viajes .pista::-webkit-scrollbar{display:none}.exp{scroll-snap-align:start;width:78vw}}
+
+/* oferta con cuenta atrás */
+.oferta .caja{position:relative;overflow:hidden;border-radius:36px;padding:clamp(34px,6vw,80px);border:1px solid rgba(214,178,106,.4);background:radial-gradient(ellipse at 85% 0%,rgba(214,178,106,.28),transparent 55%),radial-gradient(ellipse at 0% 100%,rgba(214,178,106,.14),transparent 50%),var(--noche3);display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.oferta h2{font-size:clamp(38px,5vw,72px)}
+.oferta .pct{font:italic 500 1.25em var(--serif)}
+.reloj{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.reloj div{border-radius:20px;border:1px solid var(--linea);background:rgba(7,9,13,.55);padding:20px 8px;text-align:center}
+.reloj b{display:block;font:300 clamp(36px,4vw,58px)/1 var(--sans);font-variant-numeric:tabular-nums;color:var(--oro-c)}
+.reloj span{font:500 10px var(--sans);letter-spacing:.24em;color:var(--mut)}
+.oferta .sin{font-size:13px;color:var(--mut);margin-top:12px}
+@media (max-width:900px){.oferta .caja{grid-template-columns:1fr}}
+
+/* contacto */
+.contacto .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.form{border-radius:30px;padding:32px;display:grid;gap:14px;border:1px solid var(--linea);background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.01));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.form label{font:500 11px var(--sans);letter-spacing:.22em;color:var(--oro);text-transform:uppercase}
+.form input,.form select{width:100%;margin-top:8px;padding:15px 16px;border-radius:14px;border:1px solid rgba(214,178,106,.28);background:rgba(7,9,13,.5);color:var(--crema);font:400 16px var(--sans);outline:none}
+.form input:focus,.form select:focus{border-color:var(--oro)}
+.form select option{color:#111}
+.form .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.form .chips input{position:absolute;opacity:0;width:1px;height:1px}
+.form .chips span{display:inline-block;padding:10px 16px;border-radius:99px;border:1px solid rgba(214,178,106,.35);font:400 14px var(--sans);letter-spacing:0;text-transform:none;color:var(--crema);cursor:pointer;transition:background .3s,color .3s}
+.form .chips input:checked+span{background:var(--oro-g);color:#120d05;border-color:transparent}
+.form .chips input:focus-visible+span{outline:2px solid var(--oro-c);outline-offset:2px}
+.datos{display:grid;gap:14px;margin-top:30px;font-size:16px;color:#c8ccd2}
+.datos a{display:flex;gap:12px;align-items:center}.datos a:hover{color:var(--oro-c)}
+.datos i{font-style:normal;width:36px;height:36px;border-radius:50%;border:1px solid var(--linea);display:grid;place-items:center;color:var(--oro);font-size:14px;flex:none}
+.mapa{margin-top:28px;border-radius:22px;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--linea)}
+.mapa iframe{width:100%;height:100%;border:0;filter:grayscale(1) invert(.92) contrast(.9) sepia(.15)}
+@media (max-width:900px){.contacto .wrap{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--linea);padding:60px 0 100px;text-align:center;color:#7d848d;font-size:14px}
+footer img{width:min(260px,60vw);margin:0 auto 20px;mix-blend-mode:screen}
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6)}
+.wa svg{width:28px;height:28px;fill:#fff}
+@media (prefers-reduced-motion:reduce){.bajar::after{animation:none}}
+</style>
+</head>
+<body>
+<div class="fx-progress"></div>
+<nav id="nav"><div class="wrap">
+  <a href="#" class="logo" aria-label="Diaman Group"><img src="img/logo.webp" alt="DIAMAN" width="160" height="40"></a>
+  <ul><li><a href="#servicios">Servicios</a></li><li><a href="#porque">Por qué Emiratos</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#viajes">Viajes</a></li><li><a href="#contacto">Contacto</a></li></ul>
+  <a href="#contacto" class="btn fx-btn-fill" data-fx="magnetic">Consulta gratis</a>
+</div></nav>
+
+<section class="vuelo" data-fx="scrub" data-frames="frames/f_###.webp" data-count="136" data-frames-mobile="frames-m/f_###.webp" data-count-mobile="136" data-height="420vh" style="padding:0">
+  <div class="fx-scrub-sticky">
+    <canvas aria-hidden="true"></canvas>
+    <div class="velo"></div>
+    <canvas class="polvo" data-fx="particles" data-color="#e8c77e" data-count="55" aria-hidden="true"></canvas>
+    <div class="capa wrap" data-from="0" data-to="0.3">
+      <span class="eyebrow">Dubái · Emiratos Árabes</span>
+      <h1>Tu empresa en <em>Dubái,</em> sin complicaciones.</h1>
+      <p>Te acompañamos de la A a la Z: licencia, registro, cuenta bancaria y residencia. Tú decides, nosotros nos encargamos del resto.</p>
+      <div class="cta"><a href="#contacto" class="btn fx-btn-fill" data-fx="magnetic">Agenda tu consultoría gratis</a><a href="#servicios" class="btn linea fx-btn-fill">Ver servicios</a></div>
+    </div>
+    <div class="capa wrap" data-from="0.36" data-to="0.64">
+      <span class="num">02 —</span>
+      <p class="t">Vive y trabaja en <em>Emiratos.</em></p>
+      <p>Gestionamos tu residencia y tu visado para que te mudes con todo en regla: simple, seguro y con alguien de confianza a tu lado.</p>
+    </div>
+    <div class="capa wrap" data-from="0.7" data-to="1">
+      <span class="num">03 —</span>
+      <p class="t">Y cuando quieras, <em>disfrútalo.</em></p>
+      <p>Viajes a medida por Emiratos: desde una escapada exprés de 3 días hasta la experiencia más premium que te puedas imaginar.</p>
+      <div class="cta"><a href="#viajes" class="btn linea fx-btn-fill">Ver experiencias</a></div>
+    </div>
+    <div class="barra-vuelo" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="bajar" aria-hidden="true">DESLIZA</div>
+  </div>
+</section>
+
+<div class="socios" aria-label="Socios y aliados">
+  <div data-fx="marquee" data-speed="40"><div class="fila">
+    <span class="k">SOCIO AUTORIZADO Y ALIADOS</span>
+    <img src="img/ifza.webp" alt="IFZA · International Free Zone Authority, socio autorizado" loading="lazy">
+    <img class="fab" src="img/fab.webp" alt="First Abu Dhabi Bank" loading="lazy">
+    <img src="img/emirates.webp" alt="The Emirates" loading="lazy">
+    <img src="img/dubai.webp" alt="Dubai, United Arab Emirates" loading="lazy">
+  </div></div>
+</div>
+
+<section class="suena"><div class="wrap">
+  <div class="head">
+    <div><span class="eyebrow">¿Te suena?</span><h2 data-fx="split" data-by="words" style="margin-top:20px">Dubái suena bien. <em>Empezar, no tanto.</em></h2></div>
+    <p class="lead" data-fx="reveal">Si te pasa alguna de estas cosas, no eres el único. Es justo lo que resolvemos cada día.</p>
+  </div>
+  <div class="grid" data-stagger=".07">
+    <div class="dolor"><span class="x">✓</span><p>No encuentras solución al "tema" de los impuestos.</p></div>
+    <div class="dolor"><span class="x">✓</span><p>Lo ves difícil, arriesgado e inalcanzable.</p></div>
+    <div class="dolor"><span class="x">✓</span><p>En internet hay demasiada información y casi toda confusa.</p></div>
+    <div class="dolor"><span class="x">✓</span><p>Has oído "Dubái" pero no sabes por dónde empezar.</p></div>
+    <div class="dolor"><span class="x">✓</span><p>Te falta una estrategia clara y la guía correcta.</p></div>
+    <div class="dolor"><span class="x">✓</span><p>Necesitas ese "alguien" de confianza que lo haga contigo.</p></div>
+  </div>
+  <p class="remate" data-fx="reveal">Para eso estamos: <b>tu equipo en Emiratos.</b></p>
+</div></section>
+
+<section class="servicios" id="servicios"><div class="wrap">
+  <div class="head">
+    <div><span class="eyebrow">Servicios</span><h2 data-fx="split" data-by="words" style="margin-top:20px">Tres formas de <em>llegar a Dubái.</em></h2></div>
+    <p class="lead" data-fx="reveal">Un enfoque personalizado y completo: te explicamos cada paso y estamos contigo durante todo el proceso.</p>
+  </div>
+  <div class="servs" data-stagger=".1">
+    <article class="serv" data-fx="tilt" data-max="4"><img src="img/manos.webp" alt="Dos socios cerrando un acuerdo" loading="lazy">
+      <span class="n">01</span><h3>Crea tu empresa</h3>
+      <p>Abre o mueve tu empresa a una zona franca de Emiratos y aprovecha todas sus ventajas fiscales.</p>
+      <ul><li>Licencia y registro en zona franca</li><li>Permisos y apertura de cuenta bancaria</li><li>Visado de residencia para ti</li></ul>
+      <a class="mas" href="#contacto">Quiero mi empresa →</a></article>
+    <article class="serv" data-fx="tilt" data-max="4"><img src="img/estudiantes.webp" alt="Estudiantes internacionales" loading="lazy">
+      <span class="alianza">En alianza con The Broad Club</span>
+      <span class="n">02</span><h3>Estudia y trabaja</h3>
+      <p>Asesoría gratuita para estudiar en el extranjero: cursos de inglés, grado o máster.</p>
+      <ul><li>Requisitos de visado</li><li>Alojamiento y financiación</li><li>Emiratos y otros destinos</li></ul>
+      <a class="mas" href="#contacto">Quiero estudiar fuera →</a></article>
+    <article class="serv" data-fx="tilt" data-max="4"><img src="img/burj.webp" alt="Burj Al Arab, Dubái" loading="lazy">
+      <span class="n">03</span><h3>Disfruta Dubái</h3>
+      <p>Planificamos cada detalle de tu viaje para que solo te preocupes de disfrutarlo.</p>
+      <ul><li>Escapadas exprés de 3 días</li><li>Experiencias premium a medida</li><li>Desierto, mar y ciudad</li></ul>
+      <a class="mas" href="#viajes">Ver experiencias →</a></article>
+  </div>
+</div></section>
+
+<section class="porque" id="porque">
+  <div class="foto" data-fx="parallax" data-speed="0.12"><img src="img/noche.webp" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <span class="eyebrow">Por qué Emiratos</span>
+    <p class="big" data-fx="fill">Una economía estable, infraestructura de primer nivel y un entorno fiscal que juega a tu favor. El sitio perfecto para hacer crecer tu negocio.</p>
+    <div class="nums" data-stagger=".08">
+      <div class="num"><b data-fx="counter" data-to="0" data-suffix="%">0%</b><span>impuesto sobre la renta personal</span></div>
+      <div class="num"><b><span data-fx="counter" data-to="10">0</span></b><span>días o menos para tener tu empresa registrada</span></div>
+      <div class="num"><b><span data-fx="counter" data-to="1">0</span> h</b><span>como máximo para contestarte y agendar tu consulta</span></div>
+      <div class="num"><b><span data-fx="counter" data-to="100" data-suffix="%">0</span></b><span>acompañamiento, de la A a la Z</span></div>
+    </div>
+    <p class="nota">Las ventajas fiscales dependen de tu actividad y de la zona franca: te lo explicamos en la consultoría.</p>
+  </div>
+</section>
+
+<section class="proceso" id="proceso"><div class="wrap">
+  <div class="head">
+    <div><span class="eyebrow">Proceso</span><h2 data-fx="split" data-by="words" style="margin-top:20px">Tu empresa en <em>tres pasos.</em></h2></div>
+    <p class="lead" data-fx="reveal">Sin registros previos ni vídeos de 30 minutos. Nos escribes, te escuchamos y nos ponemos en marcha.</p>
+  </div>
+  <div class="pasos" id="pasos">
+    <div class="riel" aria-hidden="true"></div>
+    <div class="paso"><span class="n">1</span><div><h3>Descubre</h3><p>Contáctanos y en menos de una hora te escribimos para agendar tu consultoría gratuita.</p><span class="chip">Consultoría gratis</span></div></div>
+    <div class="paso"><span class="n">2</span><div><h3>Sigue el plan</h3><p>Nos envías la documentación necesaria y del resto nos encargamos nosotros. Estamos contigo en todo el proceso.</p><span class="chip">Nosotros hacemos el papeleo</span></div></div>
+    <div class="paso"><span class="n">3</span><div><h3>¡A trabajar!</h3><p>En menos de 10 días tienes tu empresa registrada en Emiratos y lista para facturar.</p><span class="chip">Menos de 10 días</span></div></div>
+  </div>
+</div></section>
+
+<section class="viajes" id="viajes">
+  <div class="pin">
+    <div class="wrap head" style="margin-bottom:0">
+      <div><span class="eyebrow">Disfruta Dubái</span><h2 data-fx="split" data-by="words" style="margin-top:20px">Experiencias que <em>no se olvidan.</em></h2></div>
+      <p class="lead">Desliza y elige: lo planificamos todo por ti.</p>
+    </div>
+    <div class="pista" id="pista">
+      <figure class="exp"><img src="img/burj.webp" alt="Burj Al Arab desde el aire" loading="lazy"><figcaption><b>Burj Al Arab</b><span>El icono de Dubái, desde dentro</span></figcaption></figure>
+      <figure class="exp"><img src="img/dunas.webp" alt="Todoterreno en las dunas" loading="lazy"><figcaption><b>Safari en el desierto</b><span>Dunas en 4x4 al atardecer</span></figcaption></figure>
+      <figure class="exp"><img src="img/camellos.webp" alt="Camellos en el desierto" loading="lazy"><figcaption><b>Campamento beduino</b><span>Camellos, cena y estrellas</span></figcaption></figure>
+      <figure class="exp"><img src="img/halcon.webp" alt="Cetrero con un halcón en el desierto" loading="lazy"><figcaption><b>Cetrería</b><span>La tradición del halcón</span></figcaption></figure>
+      <figure class="exp"><img src="img/dhow.webp" alt="Dhow iluminado en la Marina" loading="lazy"><figcaption><b>Cena en dhow</b><span>Crucero por la Marina de noche</span></figcaption></figure>
+      <figure class="exp"><img src="img/marina.webp" alt="Dubai Marina de noche" loading="lazy"><figcaption><b>Dubai Marina</b><span>La ciudad que nunca se apaga</span></figcaption></figure>
+      <figure class="exp final"><h3>¿Te lo <em>montamos?</em></h3><p class="lead" style="font-size:16px">De 3 días exprés a una semana premium. Cuéntanos cómo lo imaginas.</p><a href="#contacto" class="btn fx-btn-fill">Planificar mi viaje</a></figure>
+    </div>
+  </div>
+</section>
+
+<section class="oferta"><div class="wrap">
+  <div class="caja" data-fx="reveal" data-dir="scale">
+    <div>
+      <span class="eyebrow">Oferta limitada</span>
+      <h2 style="margin-top:20px">Crea tu empresa con un <em class="pct">15%</em> de descuento.</h2>
+      <p class="lead" style="margin-top:18px">En cualquiera de nuestros planes hasta el 31 de diciembre de 2026.</p>
+      <div style="margin-top:28px"><a href="#contacto" class="btn fx-btn-fill" data-fx="magnetic">Quiero el descuento</a></div>
+    </div>
+    <div>
+      <div class="reloj" id="reloj" aria-live="off"><div><b data-k="d">00</b><span>DÍAS</span></div><div><b data-k="h">00</b><span>HORAS</span></div><div><b data-k="m">00</b><span>MIN</span></div><div><b data-k="s">00</b><span>SEG</span></div></div>
+      <p class="sin">Sin registro previo · Te respondemos en menos de 1 hora</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="contacto" id="contacto"><div class="wrap">
+  <div>
+    <span class="eyebrow">Contacto</span>
+    <h2 data-fx="split" data-by="words" style="margin:20px 0 20px">Hablemos de tu <em>próximo paso.</em></h2>
+    <p class="lead">Rellena el formulario (menos de 1 minuto) y te escribimos por WhatsApp para agendar tu asesoría privada. Sin compromiso.</p>
+    <div class="datos">
+      <a href="https://wa.me/971543758808" target="_blank" rel="noopener"><i>☏</i>+971 54 375 8808</a>
+      <a href="mailto:soporte@diamangroup.com"><i>@</i>soporte@diamangroup.com</a>
+      <a href="https://www.instagram.com/diaman_group/" target="_blank" rel="noopener"><i>◎</i>@diaman_group</a>
+      <a href="https://maps.google.com/?q=Dubai+Silicon+Oasis" target="_blank" rel="noopener"><i>⌖</i>Dubai Silicon Oasis, Dubái · EAU</a>
+    </div>
+    <div class="mapa"><iframe src="https://maps.google.com/maps?q=Dubai%20Silicon%20Oasis&z=13&output=embed" loading="lazy" title="Mapa: Dubai Silicon Oasis" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  </div>
+  <form class="form" id="form" data-fx="reveal">
+    <label>Nombre<input name="n" required autocomplete="name"></label>
+    <label>WhatsApp<input name="t" required inputmode="tel" autocomplete="tel" placeholder="+34 600 000 000"></label>
+    <label>¿Desde qué país?<input name="p" autocomplete="country-name"></label>
+    <div><label id="lbl-int">¿Qué te interesa?</label>
+      <div class="chips" role="group" aria-labelledby="lbl-int">
+        <label><input type="checkbox" name="i" value="crear una empresa" checked><span>Crear empresa</span></label>
+        <label><input type="checkbox" name="i" value="la residencia"><span>Residencia</span></label>
+        <label><input type="checkbox" name="i" value="estudiar fuera"><span>Estudiar</span></label>
+        <label><input type="checkbox" name="i" value="un viaje"><span>Viajar</span></label>
+      </div></div>
+    <button class="btn fx-btn-fill" style="border:0;cursor:pointer;justify-content:center;margin-top:8px">Enviar por WhatsApp →</button>
+  </form>
+</div></section>
+
+<footer>
+  <img src="img/logo-torre.webp" alt="Diaman Group" loading="lazy">
+  <p>© 2026 Diaman Group · Dubai Silicon Oasis, Emiratos Árabes Unidos · Política de privacidad</p>
+  <p style="margin-top:8px;font-size:12px;opacity:.7">Maqueta de propuesta · Plan Top</p>
+</footer>
+<a class="wa" href="https://wa.me/971543758808?text=Hola%20Diaman%2C%20quiero%20informaci%C3%B3n" aria-label="WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.8-1.1-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4 0 .1 0 .7-.2 1.3z"/></svg></a>
+<script src="fx.js" defer></script>
+<script>
+const nav = document.getElementById('nav');
+const vuelo = document.querySelector('.vuelo'), marcas = [...document.querySelectorAll('.barra-vuelo span')];
+const pasos = document.getElementById('pasos'), riel = pasos.querySelector('.riel'), listaPasos = [...pasos.querySelectorAll('.paso')];
+const viajes = document.getElementById('viajes'), pista = document.getElementById('pista');
+const ancho = () => innerWidth > 900;
+function altoViajes() { viajes.style.height = ancho() ? (pista.scrollWidth - innerWidth + innerHeight + 80) + 'px' : ''; }
+addEventListener('load', altoViajes); addEventListener('resize', altoViajes); altoViajes();
+let tick = false;
+function alScroll() {
+  tick = false;
+  nav.classList.toggle('solid', scrollY > 40);
+  // marcas del vuelo (tres escenas)
+  const p = parseFloat(getComputedStyle(vuelo).getPropertyValue('--p')) || 0;
+  marcas.forEach((m, i) => m.style.setProperty('--k', Math.min(1, Math.max(0, p * 3 - i)).toFixed(3)));
+  // línea dorada del proceso
+  const r = pasos.getBoundingClientRect(), k = Math.min(1, Math.max(0, (innerHeight * .6 - r.top) / r.height));
+  riel.style.setProperty('--k', k.toFixed(3));
+  listaPasos.forEach(el => el.classList.toggle('on', el.getBoundingClientRect().top < innerHeight * .6));
+  // galería horizontal
+  if (ancho()) { const v = viajes.getBoundingClientRect(), tot = viajes.offsetHeight - innerHeight, q = Math.min(1, Math.max(0, -v.top / tot));
+    pista.style.transform = `translate3d(${-q * (pista.scrollWidth - innerWidth + 40)}px,0,0)`; }
+}
+addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(alScroll); } }, { passive: true });
+alScroll();
+
+// cuenta atrás hasta el 31/12/2026 23:59 (hora de Dubái, UTC+4)
+const fin = Date.parse('2026-12-31T23:59:59+04:00'), reloj = document.getElementById('reloj');
+const pon = (k, v) => reloj.querySelector(`[data-k="${k}"]`).textContent = String(v).padStart(2, '0');
+(function cuenta() { let s = Math.max(0, Math.floor((fin - Date.now()) / 1000));
+  pon('d', Math.floor(s / 86400)); pon('h', Math.floor(s % 86400 / 3600)); pon('m', Math.floor(s % 3600 / 60)); pon('s', s % 60);
+  setTimeout(cuenta, 1000); })();
+
+// formulario → WhatsApp con el mensaje escrito
+document.getElementById('form').addEventListener('submit', e => {
+  e.preventDefault(); const f = new FormData(e.target), quiero = f.getAll('i');
+  const txt = `Hola Diaman, soy ${f.get('n')}${f.get('p') ? ' (' + f.get('p') + ')' : ''}. Me interesa ${quiero.length ? quiero.join(', ') : 'recibir información'}. Mi WhatsApp: ${f.get('t')}`;
+  window.open('https://wa.me/971543758808?text=' + encodeURIComponent(txt), '_blank', 'noopener');
+});
+</script>
+<script src="../../_base/firma.js" data-modo="propuesta" defer></script>
+</body>
+</html>
