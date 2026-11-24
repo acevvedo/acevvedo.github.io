@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Catálogo de estilos web · @acevvedoo</title>
-<meta name="description" content="Elige el estilo de tu web: cada uno con su vídeo de ejemplo.">
+<title>Packs de webs · @acevvedoo</title>
+<meta name="description" content="Tres packs de webs a medida: Essential, Pro y Luxury, cada uno con webs reales de ejemplo.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="_base/fx.css">
 <link rel="stylesheet" href="_base/fondo.css">
 <link rel="stylesheet" href="_base/marca.css">
@@ -15,52 +15,107 @@
 :root{--bg:#f4f1ec;--fg:#151417;--mut:#77737a;--line:rgba(21,20,23,.12);--azul:#a9c7f5;--lila:#c9b6f2;--burdeos:#7a2b3a;
   --sans:"Inter Tight",system-ui,sans-serif;--serif:"Instrument Serif",Georgia,serif}
 *{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--fg);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:0}
 .wrap{width:min(1240px,100% - 32px);margin-inline:auto}
-header{padding:clamp(120px,12vw,160px) 0 clamp(40px,6vw,70px)}
+header{padding:clamp(120px,12vw,160px) 0 clamp(30px,5vw,50px)}
 header .k{font:600 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--burdeos)}
 h1{font:800 clamp(52px,9vw,140px)/.9 var(--sans);letter-spacing:-.05em;margin:20px 0 26px}
-header p{color:var(--mut);max-width:50ch;font-size:clamp(17px,1.7vw,20px)}
+header p{color:var(--mut);max-width:52ch;font-size:clamp(17px,1.7vw,20px)}
 .pasos{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
 .pasos span{padding:9px 16px;border:1px solid var(--line);border-radius:99px;font-size:14px;background:#fff}
 .pasos b{color:var(--burdeos)}
+.lanza{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:28px;padding:14px 20px;border-radius:20px;background:#151417;color:#fff;width:fit-content;max-width:100%}
+.lanza i{font-style:normal;font:700 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:7px 10px;border-radius:99px;background:var(--lila);color:#151417}
+.lanza span{font-size:15px}
+.lanza b{color:var(--azul)}
 
-.estilos{display:grid;gap:clamp(60px,9vw,120px);padding-bottom:100px}
-.estilo{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(24px,5vw,70px);align-items:center}
-.estilo:nth-child(even) .media{order:-1}
-.num{font:400 clamp(70px,9vw,130px)/.8 var(--serif);font-style:italic;color:var(--burdeos)}
-.estilo h2{font:800 clamp(40px,5.5vw,76px)/.95 var(--sans);letter-spacing:-.045em;margin:10px 0 16px}
-.estilo p{color:var(--mut);max-width:44ch}
-.ficha{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:24px 0 0;font-size:14px;border-top:1px solid var(--line);padding-top:18px}
-.ficha dt{color:var(--mut)}
-.ficha dd{margin:0;font-weight:500}
-.sw{display:flex;gap:6px}
-.sw i{width:20px;height:20px;border-radius:50%;border:1px solid var(--line)}
-.ver{display:inline-flex;gap:8px;align-items:center;margin-top:26px;padding:13px 22px;border-radius:99px;background:var(--fg);color:#fff;font-weight:700;font-size:15px;--fill:var(--burdeos)}
+/* ——— Comparativa de los 3 packs ——— */
+.packs{padding:clamp(50px,7vw,90px) 0 clamp(30px,5vw,60px)}
+.packs > .k,.sec-k{font:600 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--burdeos)}
+.packs h2{font:800 clamp(38px,5.4vw,76px)/.95 var(--sans);letter-spacing:-.045em;margin:16px 0 14px}
+.packs > p{color:var(--mut);max-width:60ch}
+.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;align-items:stretch}
+.pk{position:relative;display:flex;flex-direction:column;border-radius:30px;padding:30px 28px 28px;background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.95);box-shadow:0 30px 70px -45px rgba(40,30,60,.45)}
+.pk.ess{background:linear-gradient(170deg,#e6eefc,#fff 60%)}
+.pk.pro{background:linear-gradient(170deg,#ece4fb,#fff 60%);outline:2px solid #151417;outline-offset:-2px}
+.pk.lux{background:linear-gradient(170deg,#2a1318,#151417 55%);color:#f3eef0;border-color:#3a2329}
+.pk .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pk .nom{font:800 clamp(34px,3.4vw,46px)/1 var(--sans);letter-spacing:-.045em}
+.pk .tag{font:700 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:8px 11px;border-radius:99px;background:#151417;color:#fff;white-space:nowrap}
+.pk.lux .tag{background:#f3eef0;color:#2a1318}
+.pk .lema{font:400 clamp(22px,2vw,27px)/1.15 var(--serif);font-style:italic;margin:14px 0 6px}
+.pk .para{font-size:14px;color:var(--mut)}
+.pk.lux .para{color:#b6a9ad}
+.pk ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:11px;font-size:15px;line-height:1.4;border-top:1px solid var(--line);padding-top:20px}
+.pk.lux ul{border-color:rgba(255,255,255,.14)}
+.pk li{display:grid;grid-template-columns:20px 1fr;gap:10px}
+.pk li::before{content:"";width:18px;height:18px;margin-top:1px;border-radius:50%;background:#151417 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/11px no-repeat}
+.pk.lux li::before{background-color:#c98b97}
+.pk .plazo{margin-top:auto;padding-top:24px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:14px;color:var(--mut)}
+.pk.lux .plazo{color:#b6a9ad}
+.pk .plazo b{font:800 22px/1 var(--sans);letter-spacing:-.03em;color:var(--fg)}
+.pk.lux .plazo b{color:#fff}
+.pk .acc{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+.pk .acc a{flex:1 1 auto;text-align:center;padding:14px 18px;border-radius:99px;font:700 15px/1 var(--sans)}
+.pk .acc .ve{border:1px solid var(--line);background:#fff}
+.pk .acc .wa{background:#151417;color:#fff;--fill:var(--burdeos)}
+.pk.lux .acc .ve{background:transparent;border-color:rgba(255,255,255,.25);color:#fff}
+.pk.lux .acc .wa{background:#f3eef0;color:#2a1318;--fill:#c98b97}
+.incl{display:flex;gap:10px 22px;flex-wrap:wrap;margin-top:22px;font-size:14px;color:var(--mut)}
+.incl b{color:var(--fg);font-weight:600}
+@media (max-width:980px){.tres{grid-template-columns:1fr;max-width:560px}}
 
-/* media: móvil (vídeo vertical) + escritorio detrás */
-.media{position:relative;aspect-ratio:16/11}
-.media .pc{position:absolute;inset:0 12% 10% 0;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(0,0,0,.35);background:#fff}
-.media .pc::before{content:"";display:block;height:22px;background:#e9e6e1 radial-gradient(circle at 12px 11px,#ff6159 4px,transparent 5px) ,radial-gradient(circle at 26px 11px,#ffbd2e 4px,transparent 5px),radial-gradient(circle at 40px 11px,#28c941 4px,transparent 5px)}
-.media .pc img{width:100%;height:calc(100% - 22px);object-fit:cover;object-position:top}
-.media .tel{position:absolute;right:0;bottom:0;width:32%;aspect-ratio:9/19.5;border-radius:26px;border:6px solid #111;overflow:hidden;background:#111;box-shadow:0 30px 50px -20px rgba(0,0,0,.5)}
-.media .tel img,.media .tel video{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
-.media .play{position:absolute;left:50%;top:50%;translate:-50% -50%;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.85);display:none;place-items:center;font-size:14px}
-.media.video .play{display:grid}
-@media (max-width:860px){.estilo{grid-template-columns:1fr}.estilo:nth-child(even) .media{order:0}}
+/* ——— Sección de cada pack con sus ejemplos ——— */
+.grupo{padding:clamp(70px,9vw,120px) 0 clamp(20px,3vw,30px);border-top:1px solid var(--line)}
+.grupo .cab{display:grid;grid-template-columns:1fr auto;gap:20px 40px;align-items:end;margin-bottom:clamp(30px,4vw,50px)}
+.grupo h2{font:800 clamp(52px,8vw,120px)/.88 var(--sans);letter-spacing:-.055em;margin-top:14px}
+.grupo h2 em{color:var(--burdeos)}
+.grupo .cab p{color:var(--mut);max-width:46ch;margin-top:16px}
+.grupo .cab .wa{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:99px;background:#151417;color:#fff;font:700 15px/1 var(--sans);white-space:nowrap;--fill:var(--burdeos)}
+.ejemplos{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,30px)}
+.ej{display:flex;flex-direction:column;color:inherit}
+.ej .media{position:relative;aspect-ratio:16/11.5}
+.ej .pc{position:absolute;inset:0 13% 9% 0;border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:0 26px 50px -30px rgba(0,0,0,.4);background:#fff;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.ej .pc::before{content:"";display:block;height:18px;background:#e9e6e1 radial-gradient(circle at 10px 9px,#ff6159 3px,transparent 4px),radial-gradient(circle at 22px 9px,#ffbd2e 3px,transparent 4px),radial-gradient(circle at 34px 9px,#28c941 3px,transparent 4px)}
+.ej .pc img{width:100%;height:calc(100% - 18px);object-fit:cover;object-position:top;display:block}
+.ej .tel{position:absolute;right:0;bottom:0;width:30%;aspect-ratio:9/19.5;border-radius:20px;border:5px solid #111;overflow:hidden;background:#111;box-shadow:0 26px 40px -18px rgba(0,0,0,.55);transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.ej .tel img,.ej .tel video{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.ej:hover .pc{transform:translateY(-6px)}
+.ej:hover .tel{transform:translateY(-12px) rotate(-2deg)}
+.ej .txt{margin-top:20px}
+.ej .sello{display:inline-block;font:700 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-radius:99px;border:1px solid var(--line);color:var(--mut)}
+.ej .sello.real{background:#151417;border-color:#151417;color:#fff}
+.ej h3{font:800 clamp(24px,2.2vw,30px)/1.05 var(--sans);letter-spacing:-.035em;margin:12px 0 6px}
+.ej p{font-size:15px;color:var(--mut);line-height:1.45}
+.ej .ver{display:inline-flex;gap:6px;margin-top:12px;font:700 15px/1 var(--sans);border-bottom:2px solid var(--burdeos);padding-bottom:5px}
+@media (max-width:980px){.ejemplos{grid-template-columns:1fr 1fr}.grupo .cab{grid-template-columns:1fr}}
+@media (max-width:620px){.ejemplos{grid-template-columns:1fr;gap:44px}}
 
-.prox{border-top:1px solid var(--line);padding:70px 0 40px}
-.prox h2{font:800 clamp(34px,4.5vw,56px)/1 var(--sans);letter-spacing:-.04em;margin-bottom:26px}
-.prox ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.prox li{border:1px dashed var(--line);border-radius:16px;padding:16px;color:var(--mut);font-size:14px}
-.prox li b{display:block;color:var(--fg);font-size:16px}
-@media (max-width:860px){.prox ul{grid-template-columns:1fr 1fr}}
-.extra{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:#151417;color:#fff;border-radius:28px;padding:clamp(28px,5vw,56px);margin:40px 0 80px}
+/* Luxury en oscuro */
+.grupo.lux{background:#151417;color:#f3eef0;border-top:0;border-radius:40px;padding-inline:clamp(20px,4vw,56px);padding-bottom:clamp(50px,6vw,80px);margin-top:clamp(50px,7vw,90px)}
+.grupo.lux .sec-k{color:#c98b97}
+.grupo.lux h2 em{color:#c98b97}
+.grupo.lux .cab p,.grupo.lux .ej p{color:#b6a9ad}
+.grupo.lux .cab .wa{background:#f3eef0;color:#2a1318;--fill:#c98b97}
+.grupo.lux .ej .pc{border-color:rgba(255,255,255,.1)}
+.grupo.lux .ej .pc::before{background-color:#2a2729}
+.grupo.lux .ej .sello{border-color:rgba(255,255,255,.2);color:#b6a9ad}
+.grupo.lux .ej .sello.real{background:#f3eef0;border-color:#f3eef0;color:#2a1318}
+.grupo.lux .ej .ver{border-color:#c98b97}
+
+.aviso{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;margin:clamp(60px,8vw,100px) 0 0;padding:26px 28px;border-radius:24px;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.95)}
+.aviso .ico{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--lila);font:800 20px/1 var(--sans)}
+.aviso h3{font:800 22px/1.15 var(--sans);letter-spacing:-.03em}
+.aviso p{color:var(--mut);margin-top:6px;font-size:15px;max-width:80ch}
+
+.prox{padding:20px 0 40px}
+.extra{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:linear-gradient(140deg,#dfe9fb,#ece4fb);border-radius:28px;padding:clamp(28px,5vw,56px);margin:40px 0 20px}
 .extra h3{font:800 clamp(30px,4vw,50px)/1 var(--sans);letter-spacing:-.04em}
-.extra p{color:#b3afb7;margin-top:10px}
-.extra a{padding:14px 24px;border-radius:99px;background:var(--azul);color:#151417;font-weight:700}
+.extra p{color:#55515a;margin-top:10px}
+.extra a{padding:14px 24px;border-radius:99px;background:#151417;color:#fff;font-weight:700}
 .contacto{border-top:1px solid var(--line);padding:clamp(70px,9vw,110px) 0 20px}
 .contacto .caja{position:relative;overflow:hidden;border-radius:36px;padding:clamp(30px,6vw,72px);background:linear-gradient(150deg,#dfe9fb,#ece4fb 55%,#f6e9ee);border:1px solid rgba(255,255,255,.85);box-shadow:0 30px 80px -40px rgba(60,40,90,.35)}
 .contacto .k{font:600 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--burdeos)}
@@ -78,26 +133,27 @@ header p{color:var(--mut);max-width:50ch;font-size:clamp(17px,1.7vw,20px)}
 .contacto .bts .ig{background:linear-gradient(90deg,#f58529,#dd2a7b 45%,#8134af 80%,#515bd4);--fill:#151417}
 .contacto .bts img,.contacto .bts svg{width:20px;height:20px;flex:none}
 .contacto .nota{margin-top:16px;font-size:14px;color:var(--mut)}
-.contacto.arriba{border-top:0;padding:clamp(40px,6vw,70px) 0 clamp(50px,7vw,90px)}
+.contacto.arriba{border-top:0;padding:clamp(30px,5vw,60px) 0 0}
 .contacto .bajar{display:inline-flex;align-items:center;gap:10px;margin-top:30px;font:700 17px/1 var(--sans);color:var(--fg);text-decoration:none;border-bottom:2px solid var(--burdeos);padding-bottom:6px}
 .contacto .bajar span{display:inline-block;color:var(--burdeos);animation:bajar 1.6s ease-in-out infinite}
 @keyframes bajar{50%{transform:translateY(5px)}}
-@media (max-width:700px){.contacto .dos{grid-template-columns:1fr}.contacto .bts a{flex:1 1 100%;justify-content:center}}
+@media (max-width:700px){.contacto .dos{grid-template-columns:1fr}.contacto .bts a{flex:1 1 100%;justify-content:center}.aviso{grid-template-columns:1fr}}
 </style>
 </head>
 <body data-fondo>
 <div class="barra">
   <a class="ig-tag" href="https://www.instagram.com/acevvedoo/" target="_blank" rel="noopener"><span class="av"><img src="_base/yo.jpg" alt="Nicolás Acevedo"></span><span><b>@acevvedoo</b><small>Webs a medida</small></span></a>
-  <nav><a href="index.html#estilos" class="on">Estilos</a><a href="muestrario/index.html">Efectos</a><a href="index.html#contacto">Contacto</a></nav>
+  <nav><a href="index.html#packs" class="on">Packs</a><a href="muestrario/index.html">Efectos</a><a href="index.html#contacto">Contacto</a></nav>
   <a class="escr fx-btn-fill" data-fx="magnetic" href="https://ig.me/m/acevvedoo" target="_blank" rel="noopener"><img src="_base/ig.png" alt=""><span>Escríbeme</span></a>
 </div>
 <header class="wrap" style="position:relative">
-  <span class="marca-agua" aria-hidden="true" style="right:-2vw;top:10px">Estilos</span>
-  <span class="k" data-fx="reveal">Catálogo de estilos</span>
-  <h1 data-fx="split" data-by="words" data-step=".08">¿Cómo quieres que <em>se sienta</em> tu web?</h1>
-  <p data-fx="reveal" data-delay=".5">Cada estilo tiene un vídeo de una web real de ejemplo. Elige el número que más te guste y la adaptamos a tu negocio, tus colores y tus fotos.</p>
+  <span class="marca-agua" aria-hidden="true" style="right:-2vw;top:10px">Packs</span>
+  <span class="k" data-fx="reveal">Webs a medida · 3 packs</span>
+  <h1 data-fx="split" data-by="words" data-step=".08">Elige el nivel de <em>tu web.</em></h1>
+  <p data-fx="reveal" data-delay=".5">Tres packs claros, cada uno con webs reales de ejemplo. Lo que ves en un pack es exactamente lo que te llevas: sin sorpresas y sin letra pequeña.</p>
   <div class="autor" data-fx="reveal" data-delay=".7"><img src="_base/yo.jpg" alt="">Diseñado y programado por <a href="https://www.instagram.com/acevvedoo/" target="_blank" rel="noopener">@acevvedoo</a></div>
-  <div class="pasos" data-stagger=".08"><span><b>1</b> Mira los vídeos</span><span><b>2</b> Elige un número</span><span><b>3</b> Elige efectos del muestrario</span><span><b>4</b> La hacemos tuya</span></div>
+  <div class="pasos" data-stagger=".08"><span><b>1</b> Compara los 3 packs</span><span><b>2</b> Mira los ejemplos de cada uno</span><span><b>3</b> Elige el que va con tu negocio</span><span><b>4</b> La hacemos tuya</span></div>
+  <div class="lanza" data-fx="reveal" data-delay=".9"><i>Lanzamiento</i><span>Precios especiales <b>hasta el 28 de febrero</b>. Pregúntanos por WhatsApp.</span></div>
 </header>
 
 <section class="wrap contacto arriba" id="por-que">
@@ -109,16 +165,31 @@ header p{color:var(--mut);max-width:50ch;font-size:clamp(17px,1.7vw,20px)}
       <div class="op"><i>Aún no tengo web</i><b>Diseñar mi página</b><span>Empezamos con buen pie: una web que da confianza desde el primer segundo y que lleva a tus clientes directos a escribirte.</span></div>
       <div class="op"><i>Ya tengo una</i><b>Renovar mi página</b><span>Le damos la vuelta entera: moderna, rápida, pensada para el móvil y con tu esencia de siempre.</span></div>
     </div>
-    <a class="bajar" href="index.html#estilos">Mira lo que puedo hacer por tu negocio <span>↓</span></a>
+    <a class="bajar" href="index.html#packs">Mira los packs <span>↓</span></a>
   </div>
 </section>
 
-<main class="wrap estilos" id="estilos"></main>
+<section class="wrap packs" id="packs">
+  <span class="k" data-fx="reveal">Los 3 packs</span>
+  <h2 data-fx="split" data-by="words">¿Cuál va con <em>tu negocio?</em></h2>
+  <p data-fx="reveal">Todos se ven perfectos en el móvil, cargan rápido y llevan a tus clientes directos a escribirte. La diferencia está en cuánto diseño, efectos y páginas quieres.</p>
+  <div class="tres" id="tres"></div>
+  <div class="incl" data-fx="reveal"><span><b>En los 3:</b> adaptada al móvil</span><span>· 30 días de garantía tras la entrega</span><span>· la web y el dominio, a tu nombre</span><span>· plazos desde que nos mandas textos y fotos</span></div>
+</section>
+
+<div id="grupos"></div>
+
+<div class="wrap">
+  <div class="aviso" data-fx="reveal">
+    <span class="ico">?</span>
+    <div><h3>¿Te gusta un diseño de otro pack?</h3><p>Cada ejemplo está en el pack que le corresponde por el trabajo que lleva. Si te enamora uno de un pack superior pero prefieres algo más sencillo, escríbenos y te decimos qué se puede hacer dentro de tu pack.</p></div>
+  </div>
+</div>
 
 <section class="wrap prox">
   <div class="extra">
-    <div><h3>Y además, efectos.</h3><p>Letras animadas, formas líquidas, cristal, partículas, scroll de cine… cada uno con su número.</p></div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap"><a href="muestrario/index.html">Ver el muestrario →</a><a href="index.html#contacto" style="background:#fff">Quiero mi web →</a></div>
+    <div><h3>¿Quieres ver los efectos?</h3><p>Letras animadas, formas líquidas, cristal, partículas, scroll de cine… cada uno con su número.</p></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><a href="muestrario/index.html">Ver el muestrario →</a></div>
   </div>
 </section>
 
@@ -126,89 +197,106 @@ header p{color:var(--mut);max-width:50ch;font-size:clamp(17px,1.7vw,20px)}
   <div class="caja" data-fx="reveal">
     <span class="k">¿Hablamos?</span>
     <h2 data-fx="split" data-by="words">¿Te imaginas tu negocio <em>así?</em></h2>
-    <p class="intro">Elige el estilo que más te guste, o cuéntame tu idea, y te digo cómo quedaría tu página. Si ya tienes web, mándamela y te digo qué le cambiaría.</p>
+    <p class="intro">Dinos qué pack te interesa, o cuéntanos tu idea, y te decimos cómo quedaría tu página. Si ya tienes web, mándanosla y te decimos qué le cambiaríamos.</p>
     <div class="bts">
-      <a class="wa fx-btn-fill" data-fx="magnetic" href="https://wa.me/34642383441?text=Hola%20Nicol%C3%A1s%2C%20vengo%20de%20tu%20cat%C3%A1logo%20de%20webs%20y%20me%20interesa%20una%20p%C3%A1gina%20para%20mi%20negocio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Escríbeme por WhatsApp</a>
+      <a class="wa fx-btn-fill" data-fx="magnetic" href="https://wa.me/34642383441?text=Hola%20Nicol%C3%A1s%2C%20vengo%20de%20tu%20cat%C3%A1logo%20de%20webs%20y%20me%20interesa%20una%20p%C3%A1gina%20para%20mi%20negocio" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Escríbenos por WhatsApp</a>
       <a class="ig fx-btn-fill" data-fx="magnetic" href="https://ig.me/m/acevvedoo" target="_blank" rel="noopener"><img src="_base/ig.png" alt="">Escríbeme por Instagram</a>
     </div>
-    <p class="nota">Te respondo yo en persona · Presupuesto a medida y sin compromiso</p>
+    <p class="nota">Respuesta en persona · Presupuesto sin compromiso</p>
   </div>
 </section>
 
 <footer class="firma-pie">
   <div class="w">
     <div><span class="kk">Hecho a mano, no con plantillas de internet</span><h2><span class="av"><img src="_base/yo.jpg" alt=""></span>@acevvedoo<em>.</em></h2></div>
-    <div><p>Soy Nicolás. Diseño y programo cada web desde cero: tus colores, tu estilo y efectos que no vas a ver en otro sitio. Escríbeme y lo hablamos sin compromiso.</p>
+    <div><p>Soy Nicolás. Diseño y programo cada web: tus colores, tu estilo y efectos que no vas a ver en otro sitio. Escríbeme y lo hablamos sin compromiso.</p>
       <div class="bts"><a class="ig fx-btn-fill" data-fx="magnetic" href="https://ig.me/m/acevvedoo" target="_blank" rel="noopener"><img src="_base/ig.png" alt="">Escríbeme por Instagram</a><a class="wa fx-btn-fill" href="https://wa.me/34642383441?text=Hola%20Nicol%C3%A1s%2C%20vengo%20de%20tu%20cat%C3%A1logo%20de%20webs" target="_blank" rel="noopener">WhatsApp</a></div></div>
   </div>
   <div class="legal"><span>© 2026 Nicolás Acevedo · @acevvedoo</span><span>Madrid · webs para negocios de toda España</span></div>
 </footer>
 <script>
-// Para añadir un estilo: una entrada aquí + carpeta plantillas/NN-nombre/ + vídeo en videos-demo/NN-nombre.mp4 (se detecta solo).
-const ESTILOS = [
-  { id:'01-minimalista', n:'01', nombre:'Minimalista', h:'Limpio, claro y <em>serio.</em>', txt:'Mucho aire, tipografía grande y cero ruido. Transmite confianza y profesionalidad.',
-    para:'Clínicas, abogados, consultoras, arquitectura', colores:['#fbfaf8','#121316','#3a5bd9','#f2f0ec'], letra:'Inter Tight + Inter', efectos:'01 · 06 · 07 · 08', ej:'Clínica dental' },
-  { id:'02-natural', n:'02', nombre:'Natural', h:'Cálido, suave y <em>orgánico.</em>', txt:'Tonos tierra, formas redondeadas y letras con personalidad. Se siente cercano y cuidado.',
-    para:'Peluquerías, estética, cosmética natural, cafeterías', colores:['#f3ece1','#2b2620','#b5654a','#7f8f72'], letra:'Fraunces + DM Sans', efectos:'02 · 03 · 08', ej:'Estudio capilar' },
-  { id:'03-lujo', n:'03', nombre:'Lujo editorial', h:'Oscuro, elegante y <em>exclusivo.</em>', txt:'Fotos a pantalla completa, serif enorme y una vitrina donde cada producto tiene su escenario.',
-    para:'Perfumería, joyería, moda, hoteles, restaurantes', colores:['#0a0a0b','#f1ede6','#c9a27e','#8d8983'], letra:'Instrument Serif + Inter', efectos:'01 · 02 · 10', ej:'Perfumería' },
-  { id:'04-moderno', n:'04', nombre:'Moderno', h:'Atrevido, rápido y <em>divertido.</em>', txt:'Colores vivos, bordes marcados, cintas en movimiento y botones que dan ganas de pulsar.',
-    para:'Gimnasios, academias, marcas jóvenes, eventos', colores:['#f4f2ec','#111111','#3a5bff','#d4ff3a'], letra:'Bricolage Grotesque + DM Sans', efectos:'05 · 06 · 07 · 08', ej:'Gimnasio' },
-  { id:"05-cristal", n:"05", nombre:"Cristal", h:"Brillante, moderno y <em>tecnológico.</em>", txt:"Tarjetas de cristal sobre fondos de color en movimiento. Ideal para enseñar una app o un servicio digital.",
-    para:"Apps, fintech, eventos, tecnología", colores:["#0c0b14","#5b7cfa","#b28cff","#ff7aa8"], letra:"Plus Jakarta Sans", efectos:"00 · 04 · 05 · 06 · 07", ej:"App de finanzas" },
-  { id:"06-oscuro-tech", n:"06", nombre:"Oscuro tech", h:"Oscuro, preciso y <em>de vanguardia.</em>", txt:"Negro profundo, luz que sigue al ratón y un scroll de cine que cuenta tu proceso mientras bajas.",
-    para:"Agencias, SaaS, IA, estudios creativos, música", colores:["#050506","#ededed","#a9c7f5","#86868d"], letra:"Geist + Geist Mono", efectos:"01 · 02 · 06 · 07 · 09", ej:"Agencia digital" },
-  { id:"07-bento", n:"07", nombre:"Bento", h:"Ordenado, cercano y <em>muy visual.</em>", txt:"Todo en bloques como una caja de bento: tu foto, tus números, opiniones y redes de un vistazo.",
-    para:"Marcas personales, coaches, nutricionistas, freelancers", colores:["#f1efea","#a9c7f5","#d9ccf6","#2f4f86"], letra:"Manrope + Instrument Serif", efectos:"01 · 06 · 07 · 08", ej:"Nutricionista" },
-  { id:"08-editorial", n:"08", nombre:"Editorial", h:"Gigante, valiente y <em>de revista.</em>", txt:"Tipografía enorme a todo el ancho, fotos protagonistas y un toque de color. Para trabajos que entran por los ojos.",
-    para:"Fotógrafos, estudios creativos, moda, arquitectura", colores:["#f2f0eb","#0e0e0e","#ff3b00","#6b6966"], letra:"Anton + Inter Tight + Space Mono", efectos:"01 · 08 · cursor", ej:"Fotógrafa" },
-  { id:"09-pastel", n:"09", nombre:"Pastel", h:"Suave, amable y <em>tranquilo.</em>", txt:"Colores pastel, formas redondeadas, sombras suaves y un mini test que lleva al cliente directo a WhatsApp.",
-    para:"Psicología, nutrición, salud infantil, bienestar", colores:["#f7f5fc","#7c95e8","#b59cf0","#ffb59a"], letra:"Outfit", efectos:"03 · 04 · 06 + test", ej:"Centro de psicología" },
-  { id:"10-retro", n:"10", nombre:"Retro", h:"Con solera, cálido y <em>con carácter.</em>", txt:"Papel crema con grano, carta de precios de toda la vida, fotos tipo polaroid y un sello que gira.",
-    para:"Barberías, bares, tiendas vintage, cafeterías", colores:["#f1e6d0","#1b1712","#c8352b","#1f3a68"], letra:"Gloock + Space Mono", efectos:"01 · 08 · cursor", ej:"Barbería" },
-  { id:"11-corporativo", n:"11", nombre:"Corporativo", h:"Serio, claro y <em>de confianza.</em>", txt:"Rejilla limpia, cifras que cuentan solas, detalles en rojo y un formulario directo. Profesional sin ser frío.",
-    para:"Abogados, asesorías, consultoras, B2B, ingenierías", colores:["#ffffff","#0b1220","#0b2545","#d4231a"], letra:"Inter Tight + Inter", efectos:"01 · 02 · 07", ej:"Despacho de abogados" },
-  { id:"12-inmersivo", n:"12", nombre:"Inmersivo", h:"Una experiencia, <em>no una web.</em>", txt:"La portada es un vuelo: al bajar, la cámara viaja por el paisaje hasta la puerta. El nivel más alto.",
-    para:"Turismo, hoteles, inmobiliaria, lanzamientos", colores:["#17201a","#f2ede4","#c99a52","#a9b2a6"], letra:"Cormorant Garamond + Manrope", efectos:"09 · 02 · 01", ej:"Casas rurales" },
+// ——— Los 3 packs. Para mover un ejemplo de pack, cámbialo de lista en EJEMPLOS. ———
+// Sin precios: se mandan aparte por WhatsApp (no van en la web pública).
+const WA = t => 'https://wa.me/34642383441?text=' + encodeURIComponent(t);
+const PACKS = [
+  { id:'essential', cls:'ess', nom:'Essential', tag:'Para empezar', lema:'Tu negocio en internet, bien hecho.', para:'Negocios que necesitan una web bonita, clara y rápida.',
+    h2:'Essen<em>tial</em>', txt:'Elige uno de estos diseños y lo adaptamos a tu negocio: tu logo, tus colores, tus fotos y tus textos. Una sola página con todo lo importante.',
+    items:['1 página con todo lo importante','Uno de nuestros diseños, adaptado a tu marca','Animaciones suaves','Botón directo a WhatsApp','Lista para salir en Google','1 ronda de cambios'], plazo:'3-5 días' },
+  { id:'pro', cls:'pro', nom:'Pro', tag:'El más elegido', lema:'Una web que te hace destacar.', para:'Negocios que quieren diferenciarse y captar más clientes.',
+    h2:'P<em>ro</em>', txt:'Diseño personalizado con tu marca, varias páginas y efectos que llaman la atención. Pensada para que el cliente te escriba.',
+    items:['Hasta 5 páginas','Diseño personalizado con tu marca','2-3 efectos top (cristal, letras animadas, partículas…)','Formulario directo a WhatsApp + mapa','Ficha de Google configurada','2 rondas de cambios'], plazo:'7-10 días' },
+  { id:'luxury', cls:'lux', nom:'Luxury', tag:'Experiencia', lema:'No es una web, es una experiencia.', para:'Marcas que quieren impresionar desde el primer segundo.',
+    h2:'Lux<em>ury</em>', txt:'Diseño desde cero, solo para ti. Scroll de cine, vitrinas 3D y detalles que no vas a ver en ninguna otra web.',
+    items:['Hasta 8 páginas','Diseño desde cero, único','Scroll de cine, 3D o vitrina de producto','Todo lo del Pro + test o calculadora','Pack Google completo + reseñas','3 rondas de cambios'], plazo:'~3 semanas' },
 ];
-const main = document.getElementById('estilos');
-main.innerHTML = ESTILOS.map(e => `
-  <article class="estilo">
-    <div data-fx="reveal">
-      <span class="num">${e.n}</span>
-      <h2>${e.nombre}</h2>
-      <p style="font:400 clamp(24px,2.4vw,32px)/1.1 var(--sans);letter-spacing:-.02em;color:var(--fg);margin-bottom:12px">${e.h}</p>
-      <p>${e.txt}</p>
-      <dl class="ficha">
-        <dt>Ideal para</dt><dd>${e.para}</dd>
-        <dt>Colores</dt><dd class="sw">${e.colores.map(c => `<i style="background:${c}"></i>`).join('')}</dd>
-        <dt>Letras</dt><dd>${e.letra}</dd>
-        <dt>Efectos</dt><dd>${e.efectos}</dd>
-        <dt>Ejemplo</dt><dd>${e.ej} (negocio ficticio)</dd>
-      </dl>
-      <a class="ver fx-btn-fill" data-fx="magnetic" href="plantillas/${e.id}/index.html" data-demo>Ver la web de ejemplo →</a>
-    </div>
-    <div class="media" data-fx="reveal" data-dir="scale" data-id="${e.id}">
-      <div class="pc"><img src="videos-demo/portadas/${e.id}-escritorio.jpg" alt="Estilo ${e.nombre} en ordenador" loading="lazy"></div>
-      <div class="tel"><img src="videos-demo/portadas/${e.id}-movil.jpg" alt="Estilo ${e.nombre} en móvil" loading="lazy"></div>
-      <span class="play">▶</span>
-    </div>
+// real:true = cliente real (con su permiso). Si no, negocio de ejemplo.
+const EJEMPLOS = {
+  essential: [
+    { id:'01-minimalista', url:'plantillas/01-minimalista/index.html', nom:'Clínica Alba', txt:'Minimalista: limpio y serio. Para clínicas, abogados, consultoras.' },
+    { id:'02-natural', url:'plantillas/02-natural/index.html', nom:'Raíz', txt:'Natural: cálido y cercano. Para peluquerías, estética, cafeterías.' },
+    { id:'07-bento', url:'plantillas/07-bento/index.html', nom:'Laura Ríos', txt:'Bento: todo en bloques. Para nutricionistas, coaches, marcas personales.' },
+    { id:'09-pastel', url:'plantillas/09-pastel/index.html', nom:'Calma', txt:'Pastel: suave y amable. Para psicología, bienestar, salud.' },
+    { id:'10-retro', url:'plantillas/10-retro/index.html', nom:'Barbería Navaja', txt:'Retro: con carácter. Para barberías, bares, tiendas vintage.' },
+    { id:'11-corporativo', url:'plantillas/11-corporativo/index.html', nom:'Ortega & Sanz', txt:'Corporativo: confianza. Para abogados, asesorías, empresas.' },
+  ],
+  pro: [
+    { id:'colclinic', url:'clientes/colclinic/index.html', real:true, nom:'Colclinic Dental', txt:'Clínica dental en Madrid. Antes y después deslizable, casos reales y cita por WhatsApp.' },
+    { id:'04-moderno', url:'plantillas/04-moderno/index.html', nom:'PULSO', txt:'Moderno: atrevido y divertido. Para gimnasios, academias, eventos.' },
+    { id:'05-cristal', url:'plantillas/05-cristal/index.html', nom:'flux', txt:'Cristal: brillante y tecnológico. Para apps y servicios digitales.' },
+    { id:'08-editorial', url:'plantillas/08-editorial/index.html', nom:'Inés Vidal', txt:'Editorial: de revista. Para fotógrafos, moda, estudios creativos.' },
+  ],
+  luxury: [
+    { id:'diaman', url:'clientes/diaman/index.html', real:true, nom:'Diaman Group', txt:'Empresas en Dubái. La ciudad se mueve mientras bajas, como en una película.' },
+    { id:'jarv-parfums', url:'clientes/jarv-parfums/index.html', real:true, nom:'JARV Parfums', txt:'Perfumes árabes. Vitrina con huecos de piedra iluminados: tocas un frasco y se abre su ficha.' },
+    { id:'03-lujo', url:'plantillas/03-lujo/index.html', nom:'Maison Ombre', txt:'Lujo editorial: oscuro y exclusivo. Para perfumería, joyería, moda.' },
+    { id:'06-oscuro-tech', url:'plantillas/06-oscuro-tech/index.html', nom:'NODO', txt:'Oscuro tech con scroll de cine. Para agencias, tecnología, música.' },
+    { id:'12-inmersivo', url:'plantillas/12-inmersivo/index.html', nom:'Valle Hondo', txt:'Inmersivo: la portada es un vuelo por el paisaje. Para turismo y hoteles.' },
+  ],
+};
+
+document.getElementById('tres').innerHTML = PACKS.map((p, i) => `
+  <article class="pk ${p.cls}" data-fx="reveal" data-delay="${i * .1}">
+    <div class="top"><span class="nom">${p.nom}</span><span class="tag">${p.tag}</span></div>
+    <p class="lema">${p.lema}</p>
+    <p class="para">${p.para}</p>
+    <ul>${p.items.map(t => `<li>${t}</li>`).join('')}</ul>
+    <div class="plazo"><span>Entrega</span><b>${p.plazo}</b></div>
+    <div class="acc"><a class="ve" href="index.html#${p.id}">Ver ejemplos ↓</a><a class="wa fx-btn-fill" href="${WA(`Hola Nicolás, vengo del catálogo y me interesa el pack ${p.nom}`)}" target="_blank" rel="noopener">Me interesa</a></div>
   </article>`).join('');
 
-// Si existe videos-demo/NN-nombre.mp4 (grabado con el móvil), sustituye la captura del teléfono por el vídeo.
-// Se prueba cargando el vídeo (no con fetch), así funciona también abriendo el catálogo con doble clic (file://).
+document.getElementById('grupos').innerHTML = PACKS.map(p => `
+  <section class="wrap grupo ${p.cls === 'lux' ? 'lux' : ''}" id="${p.id}">
+    <div class="cab">
+      <div data-fx="reveal"><span class="sec-k">Pack · ${EJEMPLOS[p.id].length} ejemplos · entrega ${p.plazo}</span><h2>${p.h2}</h2><p>${p.txt}</p></div>
+      <a class="wa fx-btn-fill" data-fx="magnetic" href="${WA(`Hola Nicolás, vengo del catálogo y me interesa el pack ${p.nom}`)}" target="_blank" rel="noopener">Quiero el ${p.nom} →</a>
+    </div>
+    <div class="ejemplos">${EJEMPLOS[p.id].map((e, i) => `
+      <a class="ej" href="${e.url}" data-demo data-fx="reveal" data-delay="${(i % 3) * .08}">
+        <div class="media" data-id="${e.id}">
+          <div class="pc"><img src="videos-demo/portadas/${e.id}-escritorio.jpg" alt="${e.nom} en ordenador" loading="lazy"></div>
+          <div class="tel"><img src="videos-demo/portadas/${e.id}-movil.jpg" alt="${e.nom} en móvil" loading="lazy"></div>
+        </div>
+        <div class="txt">
+          <span class="sello ${e.real ? 'real' : ''}">${e.real ? 'Cliente real' : 'Ejemplo'}</span>
+          <h3>${e.nom}</h3><p>${e.txt}</p>
+          <span class="ver">Ver la web →</span>
+        </div>
+      </a>`).join('')}
+    </div>
+  </section>`).join('');
+
+// Si existe videos-demo/<id>.mp4 (grabado con el móvil), sustituye la captura del teléfono por el vídeo.
 document.querySelectorAll('.media').forEach(m => {
   const v = Object.assign(document.createElement('video'), { muted: true, loop: true, playsInline: true, preload: 'metadata', poster: `videos-demo/portadas/${m.dataset.id}-movil.jpg` });
   v.setAttribute('playsinline', '');
   v.addEventListener('loadedmetadata', () => {
-    m.querySelector('.tel img').replaceWith(v); m.classList.add('video');
+    m.querySelector('.tel img').replaceWith(v);
     new IntersectionObserver(([en]) => en.isIntersecting ? v.play().catch(()=>{}) : v.pause()).observe(v);
-    m.querySelector('.play').style.display = 'none';
   }, { once: true });
   v.src = `videos-demo/${m.dataset.id}.mp4`;
 });
-// Modo cliente: catálogo?cliente oculta los enlaces a las demos (solo ven vídeos, no el código).
-if (new URLSearchParams(location.search).has('cliente')) document.querySelectorAll('[data-demo], .extra a[href="muestrario/index.html"]').forEach(a => a.remove());
+// Modo cliente: index.html?cliente quita los enlaces a las webs (solo ven las capturas/vídeos).
+if (new URLSearchParams(location.search).has('cliente')) document.querySelectorAll('[data-demo]').forEach(a => { a.removeAttribute('href'); a.querySelector('.ver')?.remove(); });
 </script>
 <script src="_base/fx.js" defer></script>
 <script src="_base/fondo.js" defer></script>

@@ -1,0 +1,113 @@
+/* fx.css — "toques top" para webs de clientes. Sin dependencias.
+   Se usa junto a fx.js. Todo respeta prefers-reduced-motion.
+   Personaliza con variables en :root (--fx-ease, --fx-dur, colores de mesh/glass). */
+
+:root{
+  --fx-ease: cubic-bezier(.22,1,.36,1);      /* expo-out suave: el "feel" premium */
+  --fx-ease-in: cubic-bezier(.64,0,.78,0);
+  --fx-dur: .9s;
+  --fx-dist: 28px;
+  --mesh-1:#a9c7f5; --mesh-2:#c9b6f2; --mesh-3:#7a2b3a; --mesh-4:#f3ede4; --mesh-bg:#0f0f12;
+  --glass-bg: rgba(255,255,255,.08);
+  --glass-brd: rgba(255,255,255,.18);
+  --glass-blur: 18px;
+}
+
+/* ---------- REVEAL (aparece al entrar en pantalla) ---------- */
+.fx-js [data-fx~="reveal"]{opacity:0;transform:translateY(var(--fx-dist));
+  transition:opacity var(--fx-dur) var(--fx-ease),transform var(--fx-dur) var(--fx-ease),filter var(--fx-dur) var(--fx-ease);
+  transition-delay:var(--fx-delay,0s)}
+.fx-js [data-fx~="reveal"][data-dir="left"]{transform:translateX(calc(var(--fx-dist)*-1.5))}
+.fx-js [data-fx~="reveal"][data-dir="right"]{transform:translateX(calc(var(--fx-dist)*1.5))}
+.fx-js [data-fx~="reveal"][data-dir="scale"]{transform:scale(.92)}
+.fx-js [data-fx~="reveal"][data-dir="blur"]{transform:none;filter:blur(14px)}
+/* clip: se recortan los HIJOS (si se recorta el propio elemento, IntersectionObserver no lo ve nunca) */
+.fx-js [data-fx~="reveal"][data-dir="clip"]{transform:none;opacity:1}
+.fx-js [data-fx~="reveal"][data-dir="clip"]>*{clip-path:inset(100% 0 0 0);transition:clip-path 1.1s var(--fx-ease);transition-delay:var(--fx-delay,0s)}
+.fx-js [data-fx~="reveal"][data-dir="clip"].is-in>*{clip-path:inset(0 0 0 0)}
+.fx-js [data-fx~="reveal"].is-in{opacity:1;transform:none;filter:none}
+
+/* ---------- KINETIC TYPE (split por letras/palabras) ---------- */
+.fx-split .fx-w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.fx-split .fx-c,.fx-split .fx-wi{display:inline-block;will-change:transform}
+.fx-js .fx-split .fx-c,.fx-js .fx-split .fx-wi{transform:translateY(110%);
+  transition:transform 1s var(--fx-ease),opacity 1s var(--fx-ease),filter 1s var(--fx-ease);transition-delay:var(--d,0s)}
+.fx-js .fx-split[data-style="blur"] .fx-w{overflow:visible}
+.fx-js .fx-split[data-style="blur"] .fx-c,.fx-js .fx-split[data-style="blur"] .fx-wi{transform:translateY(.25em);opacity:0;filter:blur(12px)}
+.fx-js .fx-split[data-style="fade"] .fx-w{overflow:visible}
+.fx-js .fx-split[data-style="fade"] .fx-c,.fx-js .fx-split[data-style="fade"] .fx-wi{transform:none;opacity:.12}
+.fx-js .fx-split.is-in .fx-c,.fx-js .fx-split.is-in .fx-wi{transform:none;opacity:1;filter:none}
+
+/* Texto que se rellena con el scroll (data-fx="fill") */
+.fx-fill .fx-wi{opacity:.15;transition:opacity .25s linear}
+.fx-fill .fx-wi.on{opacity:1}
+
+/* Texto con degradado que se mueve */
+.fx-gradient-text{background:linear-gradient(90deg,var(--mesh-1),var(--mesh-2),var(--mesh-3),var(--mesh-1));
+  background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:fx-pan 8s linear infinite}
+@keyframes fx-pan{to{background-position:300% 0}}
+/* si el degradado va dentro de un texto partido (split), cada trozo hereda el degradado */
+/* texto con degradado (background-clip:text) dentro de un split: fx.js copia el degradado a cada trozo */
+.fx-gt{-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}
+
+/* ---------- GRADIENT MESH (fondo vivo, solo CSS) ---------- */
+.fx-mesh{position:relative;isolation:isolate;overflow:hidden;background:var(--mesh-bg)}
+.fx-mesh::before,.fx-mesh::after,.fx-mesh>.fx-mesh-extra{content:"";position:absolute;z-index:-1;inset:-30%;filter:blur(70px) saturate(120%);opacity:.85;pointer-events:none}
+.fx-mesh::before{background:
+  radial-gradient(closest-side at 30% 35%,var(--mesh-1),transparent 70%),
+  radial-gradient(closest-side at 70% 60%,var(--mesh-2),transparent 70%);
+  animation:fx-mesh-a 18s ease-in-out infinite alternate}
+.fx-mesh::after{background:
+  radial-gradient(closest-side at 60% 25%,var(--mesh-3),transparent 70%),
+  radial-gradient(closest-side at 25% 75%,var(--mesh-4),transparent 65%);
+  animation:fx-mesh-b 22s ease-in-out infinite alternate;mix-blend-mode:screen;opacity:.6}
+@keyframes fx-mesh-a{to{transform:translate(8%,-6%) rotate(25deg) scale(1.1)}}
+@keyframes fx-mesh-b{to{transform:translate(-10%,8%) rotate(-30deg) scale(.95)}}
+
+/* Grano de película encima (da acabado "caro") */
+.fx-grain::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- GLASSMORPHISM ---------- */
+.fx-glass{background:var(--glass-bg);border:1px solid var(--glass-brd);
+  -webkit-backdrop-filter:blur(var(--glass-blur)) saturate(160%);backdrop-filter:blur(var(--glass-blur)) saturate(160%);
+  box-shadow:0 10px 40px -10px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.25)}
+.fx-glass-light{--glass-bg:rgba(255,255,255,.55);--glass-brd:rgba(255,255,255,.7)}
+
+/* ---------- TILT 3D con brillo ---------- */
+[data-fx~="tilt"]{transform-style:preserve-3d;transition:transform .5s var(--fx-ease);position:relative}
+[data-fx~="tilt"]::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.28),transparent 45%);opacity:var(--go,0);transition:opacity .4s}
+
+/* ---------- MAGNETIC + botón líquido ---------- */
+[data-fx~="magnetic"]{transition:transform .45s var(--fx-ease);will-change:transform}
+.fx-btn-fill{position:relative;overflow:hidden;isolation:isolate}
+.fx-btn-fill::before{content:"";position:absolute;z-index:-1;left:var(--mx,50%);top:var(--my,50%);width:0;height:0;border-radius:50%;
+  background:var(--fill,currentColor);transform:translate(-50%,-50%);transition:width .6s var(--fx-ease),height .6s var(--fx-ease)}
+.fx-btn-fill:hover::before{width:260%;height:600%}
+
+/* ---------- MARQUEE ---------- */
+.fx-marquee{overflow:hidden;white-space:nowrap;max-width:100%;min-width:0;contain:inline-size;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.fx-marquee-track{display:inline-flex;gap:var(--gap,3rem);animation:fx-marquee var(--speed,30s) linear infinite;padding-right:var(--gap,3rem)}
+.fx-marquee:hover .fx-marquee-track{animation-play-state:paused}
+@keyframes fx-marquee{to{transform:translateX(-50%)}}
+
+/* ---------- CURSOR (punto que invierte colores) ---------- */
+.fx-cursor{position:fixed;left:0;top:0;width:14px;height:14px;border-radius:50%;background:#fff;mix-blend-mode:difference;
+  pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s var(--fx-ease),height .3s var(--fx-ease)}
+.fx-cursor.big{width:64px;height:64px}
+@media (hover:none){.fx-cursor{display:none}}
+
+/* ---------- SCRUB (secuencia de fotogramas con scroll) ---------- */
+.fx-scrub{position:relative}
+.fx-scrub-sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.fx-scrub canvas{width:100%;height:100%;display:block}
+
+/* ---------- BARRA DE PROGRESO DE SCROLL ---------- */
+.fx-progress{position:fixed;left:0;top:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(var(--p,0));z-index:9998;background:var(--mesh-1)}
+
+/* ---------- ACCESIBILIDAD ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .fx-js [data-fx~="reveal"],.fx-js [data-fx~="reveal"][data-dir="clip"]>*,.fx-js .fx-split .fx-c,.fx-js .fx-split .fx-wi{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}
+}
