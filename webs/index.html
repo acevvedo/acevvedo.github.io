@@ -138,6 +138,105 @@ header p{color:var(--mut);max-width:52ch;font-size:clamp(17px,1.7vw,20px)}
 .contacto .bajar span{display:inline-block;color:var(--burdeos);animation:bajar 1.6s ease-in-out infinite}
 @keyframes bajar{50%{transform:translateY(5px)}}
 @media (max-width:700px){.contacto .dos{grid-template-columns:1fr}.contacto .bts a{flex:1 1 100%;justify-content:center}.aviso{grid-template-columns:1fr}}
+
+/* ═══════════ COLOR, PRO DESTACADO Y LUXURY ESPACIAL ═══════════ */
+@property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes gira{to{--ang:360deg}}
+@keyframes brillo{to{background-position:200% 0}}
+:root{--azul2:#5b7cfa;--lila2:#9b7cf6;--rosa:#ff8fb1;--arco:linear-gradient(90deg,#5b7cfa,#9b7cf6 50%,#e2698f)}
+.txt-arco,h1 em,.packs h2 em{background:var(--arco);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.pasos span:nth-child(1){background:#e3ecff;border-color:#cddcff}
+.pasos span:nth-child(2){background:#ece4ff;border-color:#dccfff}
+.pasos span:nth-child(3){background:#ffe6ee;border-color:#ffd0de}
+.pasos span:nth-child(4){background:#151417;color:#fff;border-color:#151417}.pasos span:nth-child(4) b{color:var(--lila)}
+.lanza{background:linear-gradient(100deg,#1b1530,#3a1d4f 60%,#5a1f3a);box-shadow:0 20px 50px -25px rgba(120,60,200,.6)}
+.lanza i{background:var(--arco);color:#fff}
+.aviso .ico{background:var(--arco);color:#fff}
+.tres{align-items:center;padding-top:20px}
+
+/* — Pro: mejor calidad/precio — */
+.pk.pro{outline:0;border:0;background:radial-gradient(90% 60% at 100% 0%,#dcd0ff,transparent 60%),radial-gradient(80% 60% at 0% 100%,#d6e4ff,transparent 60%),#fff;
+  transform:translateY(-6px) scale(1.03);z-index:2;box-shadow:0 50px 90px -40px rgba(91,124,250,.6),0 20px 40px -30px rgba(155,124,246,.5)}
+.pk.pro::before,.pk.lux::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:2.5px;pointer-events:none;z-index:3;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:gira 6s linear infinite}
+.pk.pro::before{background:conic-gradient(from var(--ang),#5b7cfa,#9b7cf6,#ff8fb1,#a9c7f5,#5b7cfa)}
+.pk.pro .cinta{position:absolute;top:-17px;left:50%;translate:-50% 0;z-index:4;white-space:nowrap;padding:10px 18px;border-radius:99px;background:var(--arco);color:#fff;
+  font:800 13px/1 var(--sans);letter-spacing:.02em;box-shadow:0 12px 26px -10px rgba(91,124,250,.7)}
+.pk.pro .nom{background:var(--arco);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.05em}
+.pk.pro .tag{background:#151417}
+.pk.pro li::before{background-color:var(--azul2)}
+.pk.pro .acc .wa{background:var(--arco);--fill:#151417}
+.pk.ess li::before{background-color:#7d97d8}
+@media (max-width:980px){.pk.pro{transform:none;margin:14px 0}}
+
+/* — Luxury: espacio — */
+.espacio{position:absolute;inset:0;overflow:hidden;border-radius:inherit;pointer-events:none;z-index:0}
+.espacio canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:auto}
+.espacio .nebula{position:absolute;inset:-20%;background:
+  radial-gradient(40% 35% at 78% 18%,rgba(155,110,255,.55),transparent 70%),
+  radial-gradient(38% 32% at 15% 85%,rgba(226,80,130,.42),transparent 70%),
+  radial-gradient(35% 30% at 92% 88%,rgba(70,120,255,.45),transparent 70%),
+  radial-gradient(30% 25% at 40% 40%,rgba(169,199,245,.12),transparent 70%);
+  filter:blur(10px);animation:deriva 18s ease-in-out infinite alternate}
+@keyframes deriva{to{transform:translate(4%,-3%) rotate(8deg) scale(1.08)}}
+.espacio .titilan{position:absolute;inset:0;background-image:
+  radial-gradient(1.2px 1.2px at 20px 30px,#fff,transparent),radial-gradient(1px 1px at 90px 120px,#fff,transparent),
+  radial-gradient(1.5px 1.5px at 160px 60px,#e6dcff,transparent),radial-gradient(1px 1px at 230px 170px,#fff,transparent),
+  radial-gradient(1.3px 1.3px at 50px 200px,#cfe0ff,transparent),radial-gradient(1px 1px at 280px 20px,#fff,transparent);
+  background-size:300px 230px;animation:titila 4s ease-in-out infinite alternate;opacity:.9}
+@keyframes titila{50%{opacity:.35}}
+.espacio .planeta{position:absolute;width:150px;aspect-ratio:1;right:-46px;top:-40px;border-radius:50%;
+  background:radial-gradient(circle at 32% 30%,#efe8ff 0%,#b79cff 18%,#6a4fd0 45%,#2a1752 72%,#120a24 100%);
+  box-shadow:0 0 60px 6px rgba(155,110,255,.45),inset -18px -14px 40px rgba(0,0,0,.6);animation:flota 9s ease-in-out infinite}
+.espacio .planeta i{position:absolute;inset:38% -38%;border-radius:50%;border:2px solid rgba(230,220,255,.55);border-top-color:transparent;transform:rotate(-18deg);box-shadow:0 0 18px rgba(201,182,242,.5)}
+.espacio .planeta.p2{width:46px;right:auto;left:7%;top:auto;bottom:12%;background:radial-gradient(circle at 30% 30%,#ffe3ec,#e2698f 40%,#5a1f3a 80%);box-shadow:0 0 30px rgba(226,105,143,.5),inset -6px -5px 14px rgba(0,0,0,.5);animation-duration:12s}
+@keyframes flota{50%{transform:translateY(12px) rotate(6deg)}}
+.espacio .fugaz{position:absolute;width:140px;height:1.5px;background:linear-gradient(90deg,#fff,rgba(255,255,255,0));border-radius:2px;opacity:0;transform:rotate(-28deg);filter:drop-shadow(0 0 6px #c9b6f2);animation:fugaz 7s linear infinite}
+.espacio .f1{top:18%;left:70%}.espacio .f2{top:55%;left:95%;animation-delay:3.2s}.espacio .f3{top:8%;left:45%;animation-delay:5.4s}
+@keyframes fugaz{0%{opacity:0;translate:0 0}3%{opacity:1}12%{opacity:0;translate:-340px 180px}100%{opacity:0;translate:-340px 180px}}
+
+.pk.lux{overflow:hidden;border:0;background:#0b0912;transform:translateY(-2px);box-shadow:0 50px 100px -40px rgba(120,70,230,.75),0 0 0 1px rgba(201,182,242,.15)}
+.pk.lux::before{background:conic-gradient(from var(--ang),transparent 0 55%,#9b7cf6 70%,#ff8fb1 80%,#a9c7f5 88%,transparent 100%);animation-duration:4.5s}
+.pk.lux > :not(.espacio){position:relative;z-index:1}
+.pk.lux .nom{background:linear-gradient(90deg,#fff 0%,#d9cbff 25%,#a9c7f5 45%,#ffc2d6 65%,#fff 85%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brillo 5s linear infinite;padding-right:.05em}
+.pk.lux .tag{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.pk.lux li::before{background-color:#9b7cf6;box-shadow:0 0 12px rgba(155,124,246,.8)}
+.pk.lux .acc .wa{background:linear-gradient(90deg,#fff,#e6dcff);color:#1b1530}
+.pk.lux .acc .ve{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+
+.grupo.lux{position:relative;overflow:hidden;background:#07060d;box-shadow:0 60px 120px -60px rgba(120,70,230,.7)}
+.grupo.lux > :not(.espacio){position:relative;z-index:1}
+.grupo.lux .espacio .planeta:not(.p2){width:clamp(180px,24vw,320px);right:-60px;top:-50px}
+.grupo.lux .espacio .p2{width:70px;left:4%;bottom:6%}
+.grupo.lux h2{background:linear-gradient(90deg,#fff 0%,#d9cbff 30%,#a9c7f5 50%,#ffc2d6 70%,#fff 90%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brillo 7s linear infinite}
+.grupo.lux h2 em{color:inherit}
+.grupo.lux .sec-k{color:#c9b6f2}
+.grupo.lux .cab .wa{background:linear-gradient(90deg,#fff,#e6dcff);color:#1b1530;box-shadow:0 0 40px -6px rgba(155,124,246,.7)}
+.grupo.lux .ej .pc{border-color:rgba(201,182,242,.22);box-shadow:0 30px 60px -28px rgba(130,80,255,.65)}
+.grupo.lux .ej:hover .pc{box-shadow:0 30px 70px -20px rgba(155,124,246,.9)}
+.grupo.lux .ej .sello.real{background:linear-gradient(90deg,#fff,#e6dcff);color:#1b1530;border:0}
+.grupo.lux .ej .ver{border-color:#9b7cf6}
+
+/* — Sección Pro: panel de color — */
+.grupo.pro{position:relative;overflow:hidden;border-top:0;border-radius:40px;padding-inline:clamp(20px,4vw,56px);padding-bottom:clamp(50px,6vw,80px);margin-top:clamp(50px,7vw,90px);
+  background:linear-gradient(160deg,#e9efff,#f1eaff 55%,#ffeef4);box-shadow:0 50px 100px -60px rgba(91,124,250,.55)}
+.grupo.pro::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:2.5px;pointer-events:none;background:conic-gradient(from var(--ang),#5b7cfa,#9b7cf6,#ff8fb1,#a9c7f5,#5b7cfa);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:gira 8s linear infinite}
+.grupo.pro > :not(.blob){position:relative;z-index:1}
+.grupo.pro .blob{position:absolute;border-radius:50%;filter:blur(50px);opacity:.55;animation:deriva 14s ease-in-out infinite alternate}
+.grupo.pro .b1{width:380px;height:380px;background:#a9c7f5;top:-120px;right:-80px}
+.grupo.pro .b2{width:300px;height:300px;background:#c9b6f2;bottom:10%;left:-100px;animation-duration:17s}
+.grupo.pro .b3{width:260px;height:260px;background:#ffc2d6;bottom:-80px;right:30%;animation-duration:20s}
+.grupo.pro h2{background:var(--arco);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.grupo.pro h2 em{color:inherit}
+.grupo.pro .sec-k::after{content:"★ Mejor calidad/precio";margin-left:10px;padding:6px 10px;border-radius:99px;background:var(--arco);color:#fff;letter-spacing:.06em}
+.grupo.pro .cab .wa{background:var(--arco);--fill:#151417;box-shadow:0 18px 40px -16px rgba(91,124,250,.8)}
+.grupo.pro .ej .sello.real{background:var(--arco);border:0}
+.grupo.pro .ej .ver{border-color:var(--azul2)}
+.grupo.ess h2 em{color:var(--azul2)}
+.grupo.ess .sec-k{color:var(--azul2)}
+@media (max-width:620px){.grupo.pro .sec-k::after{display:table;margin:10px 0 0}.grupo.lux .espacio .p2{display:none}}
+@media (prefers-reduced-motion:reduce){.pk::before,.grupo::before,.espacio *,.grupo.pro .blob,.pk.lux .nom,.grupo.lux h2{animation:none!important}}
 </style>
 </head>
 <body data-fondo>
@@ -222,7 +321,7 @@ const PACKS = [
   { id:'essential', cls:'ess', nom:'Essential', tag:'Para empezar', lema:'Tu negocio en internet, bien hecho.', para:'Negocios que necesitan una web bonita, clara y rápida.',
     h2:'Essen<em>tial</em>', txt:'Elige uno de estos diseños y lo adaptamos a tu negocio: tu logo, tus colores, tus fotos y tus textos. Una sola página con todo lo importante.',
     items:['1 página con todo lo importante','Uno de nuestros diseños, adaptado a tu marca','Animaciones suaves','Botón directo a WhatsApp','Lista para salir en Google','1 ronda de cambios'], plazo:'3-5 días' },
-  { id:'pro', cls:'pro', nom:'Pro', tag:'El más elegido', lema:'Una web que te hace destacar.', para:'Negocios que quieren diferenciarse y captar más clientes.',
+  { id:'pro', cls:'pro', nom:'Pro', tag:'Recomendado', lema:'Una web que te hace destacar.', para:'Negocios que quieren diferenciarse y captar más clientes.',
     h2:'P<em>ro</em>', txt:'Diseño personalizado con tu marca, varias páginas y efectos que llaman la atención. Pensada para que el cliente te escriba.',
     items:['Hasta 5 páginas','Diseño personalizado con tu marca','2-3 efectos top (cristal, letras animadas, partículas…)','Formulario directo a WhatsApp + mapa','Ficha de Google configurada','2 rondas de cambios'], plazo:'7-10 días' },
   { id:'luxury', cls:'lux', nom:'Luxury', tag:'Experiencia', lema:'No es una web, es una experiencia.', para:'Marcas que quieren impresionar desde el primer segundo.',
@@ -254,8 +353,15 @@ const EJEMPLOS = {
   ],
 };
 
+// Fondo espacial del Luxury: nebulosa + estrellas que parpadean + constelación que huye del ratón + planeta con anillo + estrellas fugaces.
+const ESPACIO = (n, grande) => `<div class="espacio" aria-hidden="true"><span class="nebula"></span><span class="titilan"></span>
+  <canvas class="constelacion" data-fx="particles" data-color="#e6dcff" data-count="${n}" data-links></canvas>
+  <span class="planeta"><i></i></span>${grande ? '<span class="planeta p2"></span>' : ''}
+  <span class="fugaz f1"></span><span class="fugaz f2"></span>${grande ? '<span class="fugaz f3"></span>' : ''}</div>`;
+
 document.getElementById('tres').innerHTML = PACKS.map((p, i) => `
   <article class="pk ${p.cls}" data-fx="reveal" data-delay="${i * .1}">
+    ${p.cls === 'lux' ? ESPACIO(40) : ''}${p.cls === 'pro' ? '<span class="cinta">★ Mejor calidad/precio</span>' : ''}
     <div class="top"><span class="nom">${p.nom}</span><span class="tag">${p.tag}</span></div>
     <p class="lema">${p.lema}</p>
     <p class="para">${p.para}</p>
@@ -265,7 +371,8 @@ document.getElementById('tres').innerHTML = PACKS.map((p, i) => `
   </article>`).join('');
 
 document.getElementById('grupos').innerHTML = PACKS.map(p => `
-  <section class="wrap grupo ${p.cls === 'lux' ? 'lux' : ''}" id="${p.id}">
+  <section class="wrap grupo ${p.cls}" id="${p.id}">
+    ${p.cls === 'lux' ? ESPACIO(110, true) : ''}${p.cls === 'pro' ? '<span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>' : ''}
     <div class="cab">
       <div data-fx="reveal"><span class="sec-k">Pack · ${EJEMPLOS[p.id].length} ejemplos · entrega ${p.plazo}</span><h2>${p.h2}</h2><p>${p.txt}</p></div>
       <a class="wa fx-btn-fill" data-fx="magnetic" href="${WA(`Hola Nicolás, vengo del catálogo y me interesa el pack ${p.nom}`)}" target="_blank" rel="noopener">Quiero el ${p.nom} →</a>
