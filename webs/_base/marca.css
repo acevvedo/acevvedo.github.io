@@ -1,3 +1,4 @@
+/* © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla de Wix ni de ningún constructor). Todos los derechos reservados. */
 /* marca.css — firma personal de @acevvedoo en el catálogo y los precios (barra superior, autor y pie). */
 .barra{position:fixed;top:12px;left:50%;translate:-50% 0;z-index:80;width:min(1180px,100% - 20px);display:flex;align-items:center;justify-content:space-between;gap:10px;
   padding:7px 7px 7px 8px;border-radius:99px;background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.8);

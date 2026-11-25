@@ -1,3 +1,4 @@
+/* © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla de Wix ni de ningún constructor). Todos los derechos reservados. */
 /* firma.js — firma de @acevvedoo en las plantillas y propuestas publicadas.
    Uso: <script src="../../_base/firma.js" data-modo="plantilla" defer></script>
    data-modo="plantilla" → pastilla "← Catálogo · @acevvedoo" abajo a la izquierda.
@@ -18,7 +19,7 @@
   .acv-firma small{display:block;font-weight:500;font-size:11px;opacity:.7;margin-bottom:2px}
   .acv-firma .vuelta{opacity:.75;margin-right:2px}
   @keyframes acv-in{from{opacity:0;transform:translateY(16px)}}
-  @media (max-width:600px){.acv-firma{left:10px;bottom:10px;font-size:12px}.acv-firma small{display:none}}
+  @media (max-width:600px){.acv-firma{left:10px;bottom:10px;font-size:12px}.acv-firma small{font-size:10px}}
   @media print{.acv-firma{display:none}}`;
   const st = document.createElement('style'); st.textContent = css; document.head.append(st);
   const a = document.createElement('a'); a.className = 'acv-firma';
@@ -27,7 +28,7 @@
     a.innerHTML = `<span class="av"><img src="${base}yo.jpg" alt=""></span><span><small>Propuesta de diseño · maqueta</small>por @acevvedoo</span>`;
   } else {
     a.href = cat;
-    a.innerHTML = `<span class="av"><img src="${base}yo.jpg" alt=""></span><span><small>Plantilla de @acevvedoo</small><span class="vuelta">←</span> Ver catálogo</span>`;
+    a.innerHTML = `<span class="av"><img src="${base}yo.jpg" alt=""></span><span><small>Diseño original de @acevvedoo</small><span class="vuelta">←</span> Ver catálogo</span>`;
   }
   a.setAttribute('aria-label', modo === 'propuesta' ? 'Propuesta de diseño de @acevvedoo' : 'Volver al catálogo de @acevvedoo');
   const poner = () => document.body.append(a);

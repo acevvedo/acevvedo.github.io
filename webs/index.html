@@ -1,6 +1,9 @@
 <!doctype html>
+<!-- © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla de Wix ni de ningún constructor). Todos los derechos reservados. -->
 <html lang="es">
 <head>
+<meta name="author" content="Nicolás Acevedo (@acevvedoo)">
+<meta name="copyright" content="© 2026 Nicolás Acevedo · @acevvedoo">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Packs de webs · @acevvedoo</title>
@@ -169,31 +172,20 @@ header p{color:var(--mut);max-width:52ch;font-size:clamp(17px,1.7vw,20px)}
 .pk.ess li::before{background-color:#7d97d8}
 @media (max-width:980px){.pk.pro{transform:none;margin:14px 0}}
 
-/* — Luxury: espacio — */
+/* — Luxury: toques elegantes (brillo de nebulosa suave, foco de luz, polvo dorado-lila que flota, reflejo que cruza, grano) — */
 .espacio{position:absolute;inset:0;overflow:hidden;border-radius:inherit;pointer-events:none;z-index:0}
 .espacio canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:auto}
 .espacio .nebula{position:absolute;inset:-20%;background:
-  radial-gradient(40% 35% at 78% 18%,rgba(155,110,255,.55),transparent 70%),
-  radial-gradient(38% 32% at 15% 85%,rgba(226,80,130,.42),transparent 70%),
-  radial-gradient(35% 30% at 92% 88%,rgba(70,120,255,.45),transparent 70%),
-  radial-gradient(30% 25% at 40% 40%,rgba(169,199,245,.12),transparent 70%);
-  filter:blur(10px);animation:deriva 18s ease-in-out infinite alternate}
-@keyframes deriva{to{transform:translate(4%,-3%) rotate(8deg) scale(1.08)}}
-.espacio .titilan{position:absolute;inset:0;background-image:
-  radial-gradient(1.2px 1.2px at 20px 30px,#fff,transparent),radial-gradient(1px 1px at 90px 120px,#fff,transparent),
-  radial-gradient(1.5px 1.5px at 160px 60px,#e6dcff,transparent),radial-gradient(1px 1px at 230px 170px,#fff,transparent),
-  radial-gradient(1.3px 1.3px at 50px 200px,#cfe0ff,transparent),radial-gradient(1px 1px at 280px 20px,#fff,transparent);
-  background-size:300px 230px;animation:titila 4s ease-in-out infinite alternate;opacity:.9}
-@keyframes titila{50%{opacity:.35}}
-.espacio .planeta{position:absolute;width:150px;aspect-ratio:1;right:-46px;top:-40px;border-radius:50%;
-  background:radial-gradient(circle at 32% 30%,#efe8ff 0%,#b79cff 18%,#6a4fd0 45%,#2a1752 72%,#120a24 100%);
-  box-shadow:0 0 60px 6px rgba(155,110,255,.45),inset -18px -14px 40px rgba(0,0,0,.6);animation:flota 9s ease-in-out infinite}
-.espacio .planeta i{position:absolute;inset:38% -38%;border-radius:50%;border:2px solid rgba(230,220,255,.55);border-top-color:transparent;transform:rotate(-18deg);box-shadow:0 0 18px rgba(201,182,242,.5)}
-.espacio .planeta.p2{width:46px;right:auto;left:7%;top:auto;bottom:12%;background:radial-gradient(circle at 30% 30%,#ffe3ec,#e2698f 40%,#5a1f3a 80%);box-shadow:0 0 30px rgba(226,105,143,.5),inset -6px -5px 14px rgba(0,0,0,.5);animation-duration:12s}
-@keyframes flota{50%{transform:translateY(12px) rotate(6deg)}}
-.espacio .fugaz{position:absolute;width:140px;height:1.5px;background:linear-gradient(90deg,#fff,rgba(255,255,255,0));border-radius:2px;opacity:0;transform:rotate(-28deg);filter:drop-shadow(0 0 6px #c9b6f2);animation:fugaz 7s linear infinite}
-.espacio .f1{top:18%;left:70%}.espacio .f2{top:55%;left:95%;animation-delay:3.2s}.espacio .f3{top:8%;left:45%;animation-delay:5.4s}
-@keyframes fugaz{0%{opacity:0;translate:0 0}3%{opacity:1}12%{opacity:0;translate:-340px 180px}100%{opacity:0;translate:-340px 180px}}
+  radial-gradient(42% 36% at 82% 12%,rgba(140,95,230,.38),transparent 70%),
+  radial-gradient(40% 34% at 12% 92%,rgba(122,43,58,.55),transparent 70%),
+  radial-gradient(34% 30% at 95% 95%,rgba(80,110,220,.25),transparent 70%);
+  filter:blur(14px);animation:deriva 22s ease-in-out infinite alternate}
+@keyframes deriva{to{transform:translate(3%,-2%) rotate(5deg) scale(1.06)}}
+.espacio .foco{position:absolute;left:50%;top:-30%;width:120%;height:90%;translate:-50% 0;background:radial-gradient(50% 50% at 50% 0%,rgba(255,240,250,.16),transparent 70%)}
+.espacio .reflejo{position:absolute;inset:-10% -60%;background:linear-gradient(105deg,transparent 44%,rgba(255,255,255,.09) 49%,rgba(255,255,255,.16) 50%,rgba(255,255,255,.09) 51%,transparent 56%);animation:reflejo 7s cubic-bezier(.6,0,.2,1) infinite}
+@keyframes reflejo{0%,55%{transform:translateX(-45%)}100%{transform:translateX(45%)}}
+.espacio .grano{position:absolute;inset:0;opacity:.09;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.grupo.lux .espacio .reflejo{animation-duration:9s}
 
 .pk.lux{overflow:hidden;border:0;background:#0b0912;transform:translateY(-2px);box-shadow:0 50px 100px -40px rgba(120,70,230,.75),0 0 0 1px rgba(201,182,242,.15)}
 .pk.lux::before{background:conic-gradient(from var(--ang),transparent 0 55%,#9b7cf6 70%,#ff8fb1 80%,#a9c7f5 88%,transparent 100%);animation-duration:4.5s}
@@ -206,8 +198,6 @@ header p{color:var(--mut);max-width:52ch;font-size:clamp(17px,1.7vw,20px)}
 
 .grupo.lux{position:relative;overflow:hidden;background:#07060d;box-shadow:0 60px 120px -60px rgba(120,70,230,.7)}
 .grupo.lux > :not(.espacio){position:relative;z-index:1}
-.grupo.lux .espacio .planeta:not(.p2){width:clamp(180px,24vw,320px);right:-60px;top:-50px}
-.grupo.lux .espacio .p2{width:70px;left:4%;bottom:6%}
 .grupo.lux h2{background:linear-gradient(90deg,#fff 0%,#d9cbff 30%,#a9c7f5 50%,#ffc2d6 70%,#fff 90%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brillo 7s linear infinite}
 .grupo.lux h2 em{color:inherit}
 .grupo.lux .sec-k{color:#c9b6f2}
@@ -235,7 +225,12 @@ header p{color:var(--mut);max-width:52ch;font-size:clamp(17px,1.7vw,20px)}
 .grupo.pro .ej .ver{border-color:var(--azul2)}
 .grupo.ess h2 em{color:var(--azul2)}
 .grupo.ess .sec-k{color:var(--azul2)}
-@media (max-width:620px){.grupo.pro .sec-k::after{display:table;margin:10px 0 0}.grupo.lux .espacio .p2{display:none}}
+@media (max-width:620px){.grupo.pro .sec-k::after{display:table;margin:10px 0 0}}
+.autoria{display:flex;gap:18px;align-items:center;margin-top:26px;padding:18px 22px;border-radius:22px;background:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.95);box-shadow:0 20px 50px -35px rgba(60,40,90,.4)}
+.autoria .sello-a{flex:none;display:grid;place-items:center;width:86px;height:86px;border-radius:50%;background:var(--arco);color:#fff;font:800 13px/1.1 var(--sans);text-align:center;text-transform:uppercase;letter-spacing:.06em;padding:10px;box-shadow:0 14px 30px -12px rgba(91,124,250,.7)}
+.autoria p{font-size:15px;color:#4a4650;max-width:80ch}
+.autoria b{color:var(--fg)}
+@media (max-width:620px){.autoria{flex-direction:column;align-items:flex-start}}
 @media (prefers-reduced-motion:reduce){.pk::before,.grupo::before,.espacio *,.grupo.pro .blob,.pk.lux .nom,.grupo.lux h2{animation:none!important}}
 </style>
 </head>
@@ -274,6 +269,10 @@ header p{color:var(--mut);max-width:52ch;font-size:clamp(17px,1.7vw,20px)}
   <p data-fx="reveal">Todos se ven perfectos en el móvil, cargan rápido y llevan a tus clientes directos a escribirte. La diferencia está en cuánto diseño, efectos y páginas quieres.</p>
   <div class="tres" id="tres"></div>
   <div class="incl" data-fx="reveal"><span><b>En los 3:</b> adaptada al móvil</span><span>· 30 días de garantía tras la entrega</span><span>· la web y el dominio, a tu nombre</span><span>· plazos desde que nos mandas textos y fotos</span></div>
+  <div class="autoria" data-fx="reveal">
+    <span class="sello-a">100 % propio</span>
+    <p><b>Nada de Wix ni plantillas compradas.</b> Cada web de este catálogo está diseñada y programada desde cero por <b>@acevvedoo</b>, con código propio. Por eso carga rápido, no se parece a ninguna otra y se puede adaptar a lo que necesites.</p>
+  </div>
 </section>
 
 <div id="grupos"></div>
@@ -353,15 +352,12 @@ const EJEMPLOS = {
   ],
 };
 
-// Fondo espacial del Luxury: nebulosa + estrellas que parpadean + constelación que huye del ratón + planeta con anillo + estrellas fugaces.
-const ESPACIO = (n, grande) => `<div class="espacio" aria-hidden="true"><span class="nebula"></span><span class="titilan"></span>
-  <canvas class="constelacion" data-fx="particles" data-color="#e6dcff" data-count="${n}" data-links></canvas>
-  <span class="planeta"><i></i></span>${grande ? '<span class="planeta p2"></span>' : ''}
-  <span class="fugaz f1"></span><span class="fugaz f2"></span>${grande ? '<span class="fugaz f3"></span>' : ''}</div>`;
+// Fondo elegante del Luxury: brillo suave, foco de luz, polvo que flota (se aparta del ratón), reflejo que cruza y grano.
+const ESPACIO = n => `<div class="espacio" aria-hidden="true"><span class="nebula"></span><span class="foco"></span><canvas data-fx="particles" data-color="rgba(241,226,255,.55)" data-count="${n}"></canvas><span class="reflejo"></span><span class="grano"></span></div>`;
 
 document.getElementById('tres').innerHTML = PACKS.map((p, i) => `
   <article class="pk ${p.cls}" data-fx="reveal" data-delay="${i * .1}">
-    ${p.cls === 'lux' ? ESPACIO(40) : ''}${p.cls === 'pro' ? '<span class="cinta">★ Mejor calidad/precio</span>' : ''}
+    ${p.cls === 'lux' ? ESPACIO(30) : ''}${p.cls === 'pro' ? '<span class="cinta">★ Mejor calidad/precio</span>' : ''}
     <div class="top"><span class="nom">${p.nom}</span><span class="tag">${p.tag}</span></div>
     <p class="lema">${p.lema}</p>
     <p class="para">${p.para}</p>
@@ -372,7 +368,7 @@ document.getElementById('tres').innerHTML = PACKS.map((p, i) => `
 
 document.getElementById('grupos').innerHTML = PACKS.map(p => `
   <section class="wrap grupo ${p.cls}" id="${p.id}">
-    ${p.cls === 'lux' ? ESPACIO(110, true) : ''}${p.cls === 'pro' ? '<span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>' : ''}
+    ${p.cls === 'lux' ? ESPACIO(60) : ''}${p.cls === 'pro' ? '<span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>' : ''}
     <div class="cab">
       <div data-fx="reveal"><span class="sec-k">Pack · ${EJEMPLOS[p.id].length} ejemplos · entrega ${p.plazo}</span><h2>${p.h2}</h2><p>${p.txt}</p></div>
       <a class="wa fx-btn-fill" data-fx="magnetic" href="${WA(`Hola Nicolás, vengo del catálogo y me interesa el pack ${p.nom}`)}" target="_blank" rel="noopener">Quiero el ${p.nom} →</a>
