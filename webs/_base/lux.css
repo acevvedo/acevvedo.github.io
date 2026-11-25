@@ -53,15 +53,26 @@ body[data-lux-intro]:not(.lux-done)::after{content:"";position:fixed;inset:0;bac
 
 /* ---------- hover list ---------- */
 .lux-hl{list-style:none;padding:0;margin:0}
-.lux-hl>li{position:relative}
+.lux-hl>[data-img]{position:relative}
 .lux-hl-th{display:none}
 .lux-hl-float{position:fixed;left:0;top:0;z-index:30;pointer-events:none;width:clamp(220px,22vw,340px);aspect-ratio:4/5;border-radius:14px;overflow:hidden;
   opacity:0;scale:.6;transition:opacity .45s var(--fx-ease),scale .6s var(--fx-ease);box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
 .lux-hl-float.on{opacity:1;scale:1}
 .lux-hl-float img{width:100%;height:100%;object-fit:cover}
+.lux-hl-float.fit{background:radial-gradient(70% 60% at 50% 45%,#2a2118,#0b0908);border:1px solid rgba(255,255,255,.08)}
+.lux-hl-float.fit img,.lux-hl[data-fit] .lux-hl-th{object-fit:contain;padding:8%}
+.lux-hl[data-fit] .lux-hl-th{background:radial-gradient(70% 60% at 50% 45%,#2a2118,#0b0908)}
 .lux-hl-float.sw img{animation:lux-sw .6s var(--fx-ease)}
 @keyframes lux-sw{from{clip-path:inset(100% 0 0 0);scale:1.2}to{clip-path:inset(0);scale:1}}
-@media (hover:none){.lux-hl-th{display:block;grid-column:1/-1;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;margin-top:14px}}
+@media (hover:none){.lux-hl>[data-img] .lux-hl-th{clip-path:inset(100% 0 0 0);scale:1.15;transition:clip-path 1s var(--fx-ease),scale 1.4s var(--fx-ease),filter .6s}
+  .lux-hl>[data-img].vis .lux-hl-th{clip-path:inset(0 round 12px);scale:1}
+  .lux-hl>[data-img]:not(.on) .lux-hl-th{filter:brightness(.55) saturate(.7)}
+  .lux-hl>[data-img]{transition:opacity .5s}.lux-hl>[data-img]:not(.on){opacity:.55}
+  .lux-hl-th{display:block;grid-column:1/-1;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;margin-top:14px}}
+
+/* toque en móvil */
+.lux-tap{position:fixed;z-index:9990;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;border:1px solid var(--lux-acc);pointer-events:none;animation:lux-tap .7s var(--fx-ease,ease-out) forwards}
+@keyframes lux-tap{to{transform:scale(6);opacity:0}}
 
 /* ---------- spotlight ---------- */
 .lux-spot{position:relative;isolation:isolate}

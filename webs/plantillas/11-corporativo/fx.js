@@ -122,7 +122,17 @@
 
   /* ---------- tilt 3D: data-fx="tilt" data-max="10" ---------- */
   function tilt(root) {
-    if (!fine || reduced) return;
+    if (reduced) return;
+    if (!fine) { // móvil: la tarjeta se inclina un poco según pasa por la pantalla, con brillo que la recorre
+      $$('[data-fx~="tilt"]', root).forEach(el => {
+        const max = (parseFloat(el.dataset.max) || 10) * .9;
+        onScroll.push(() => { const r = el.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+          const p = clamp((r.top + r.height / 2 - innerHeight / 2) / innerHeight, -1, 1);
+          el.style.transform = `perspective(900px) rotateX(${(p * max).toFixed(2)}deg)`;
+          el.style.setProperty('--gx', '50%'); el.style.setProperty('--gy', (50 - p * 60).toFixed(1) + '%'); el.style.setProperty('--go', (1 - Math.abs(p)).toFixed(2) * .6); });
+      });
+      return;
+    }
     $$('[data-fx~="tilt"]', root).forEach(el => {
       const max = parseFloat(el.dataset.max) || 10;
       el.addEventListener('pointermove', e => {
@@ -250,7 +260,7 @@
         const im = imgs[i]?.complete && imgs[i].naturalWidth ? imgs[i] : nearest(i); if (!im) return;
         const s = Math.max(cv.width / im.naturalWidth, cv.height / im.naturalHeight); // object-fit: cover
         const w = im.naturalWidth * s, h = im.naturalHeight * s;
-        ctx.drawImage(im, (cv.width - w) / 2, (cv.height - h) / 2, w, h); cur = i;
+        ctx.imageSmoothingQuality = 'high'; ctx.drawImage(im, (cv.width - w) / 2, (cv.height - h) / 2, w, h); cur = i;
       }
       const layers = $$('[data-from]', sec);
       new ResizeObserver(size).observe(cv);

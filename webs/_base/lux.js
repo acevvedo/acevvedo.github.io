@@ -62,6 +62,10 @@
 
   /* ---------- cursor ---------- */
   function cursor() {
+    if (B.hasAttribute('data-lux-cursor') && !fine && !reduced) {
+      addEventListener('pointerdown', e => { const o = document.createElement('i'); o.className = 'lux-tap'; o.style.left = e.clientX + 'px'; o.style.top = e.clientY + 'px'; B.append(o); setTimeout(() => o.remove(), 700); }, { passive: true });
+      return;
+    }
     if (!B.hasAttribute('data-lux-cursor') || !fine || reduced) return;
     const c = document.createElement('div'); c.className = 'lux-cur'; c.innerHTML = '<span></span>';
     const d = document.createElement('div'); d.className = 'lux-dot';
@@ -114,8 +118,15 @@
     $$('[data-lux~="hoverlist"]').forEach(ul => {
       ul.classList.add('lux-hl');
       $$('[data-img]', ul).forEach(li => { const im = document.createElement('img'); im.src = li.dataset.img; im.alt = ''; im.loading = 'lazy'; im.className = 'lux-hl-th'; li.append(im); });
-      if (!fine) return;
-      const f = document.createElement('div'); f.className = 'lux-hl-float'; f.innerHTML = '<img alt="">'; B.append(f);
+      if (!fine) {
+        const lis = $$(':scope > [data-img]', ul), tio = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('vis')), { threshold: .25 });
+        lis.forEach(li => tio.observe(li));
+        tasks.push(() => { const r = ul.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+          let best = null, bd = 1e9; lis.forEach(li => { const q = li.getBoundingClientRect(), d = Math.abs(q.top + q.height / 2 - innerHeight * .5); if (d < bd) { bd = d; best = li; } });
+          lis.forEach(li => li.classList.toggle('on', li === best)); });
+        return;
+      }
+      const f = document.createElement('div'); f.className = 'lux-hl-float' + (ul.dataset.fit ? ' fit' : ''); f.innerHTML = '<img alt="">'; B.append(f);
       const im = f.querySelector('img');
       let x = 0, y = 0, tx = 0, ty = 0, on = false, px = 0;
       ul.addEventListener('pointermove', e => { tx = e.clientX; ty = e.clientY; const li = e.target.closest('[data-img]'); if (li && im.getAttribute('src') !== li.dataset.img) { im.src = li.dataset.img; f.classList.remove('sw'); void f.offsetWidth; f.classList.add('sw'); } });
@@ -147,7 +158,13 @@
 
   /* ---------- spotlight ---------- */
   function spotlight() {
-    if (!fine) return;
+    if (!fine) {
+      if (reduced) return;
+      const cs = $$('[data-lux~="spotlight"] .lux-spot');
+      tasks.push(() => { const t = performance.now() / 1000; cs.forEach((c, i) => { const r = c.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+        const a = t * .9 + i * 1.7; c.style.setProperty('--x', (r.width / 2 + Math.cos(a) * r.width * .55).toFixed(0) + 'px'); c.style.setProperty('--y', (r.height / 2 + Math.sin(a) * r.height * .55).toFixed(0) + 'px'); }); });
+      return;
+    }
     $$('[data-lux~="spotlight"]').forEach(g => g.addEventListener('pointermove', e => {
       $$('.lux-spot', g).forEach(c => { const r = c.getBoundingClientRect(); c.style.setProperty('--x', (e.clientX - r.left) + 'px'); c.style.setProperty('--y', (e.clientY - r.top) + 'px'); });
     }));
@@ -156,7 +173,8 @@
   /* ---------- velocity ---------- */
   function velocity() {
     if (reduced) return;
-    const els = $$('[data-lux~="velocity"]'); if (!els.length) return;
+    // se inclina el contenido (la pista de la cinta), no la caja: así no ensancha la página en el móvil
+    const els = $$('[data-lux~="velocity"]').map(el => el.querySelector('.fx-marquee-track') || el); if (!els.length) return;
     tasks.push(() => { const k = clamp(vel * -.35, -12, 12); els.forEach(el => el.style.transform = `skewX(${k.toFixed(2)}deg)`); });
   }
 

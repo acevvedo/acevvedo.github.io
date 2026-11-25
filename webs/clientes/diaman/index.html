@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="fx.css">
+<link rel="stylesheet" href="lux.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Diaman Group","url":"https://diamangroup.com/","telephone":"+971 54 375 8808","email":"soporte@diamangroup.com","address":{"@type":"PostalAddress","streetAddress":"Dubai Silicon Oasis","addressLocality":"Dubái","addressCountry":"AE"},"sameAs":["https://www.instagram.com/diaman_group/"]}</script>
 <style>
 /* Diaman: noche de Dubái + oro del logo. Jost (geométrica, como su logotipo) + Cormorant en cursiva para los acentos. */
@@ -112,6 +113,7 @@ nav .btn{padding:12px 20px;font-size:14px}
 .num{border:1px solid var(--linea);border-radius:24px;padding:28px 24px;background:rgba(7,9,13,.5);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .num b{display:block;font:300 clamp(52px,5.4vw,78px)/1 var(--sans);letter-spacing:-.04em;color:var(--oro-c);text-shadow:0 0 30px rgba(214,178,106,.35)}
 .num span{color:var(--mut);font-size:15px;display:block;margin-top:10px}
+.num b span{font:inherit;color:inherit;display:inline;margin:0;letter-spacing:inherit}
 .porque .nota{font-size:12px;color:#6f767f;margin-top:16px}
 @media (max-width:900px){.nums{grid-template-columns:1fr 1fr}}
 
@@ -180,9 +182,16 @@ footer img{width:min(260px,60vw);margin:0 auto 20px;mix-blend-mode:screen}
 .wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6)}
 .wa svg{width:28px;height:28px;fill:#fff}
 @media (prefers-reduced-motion:reduce){.bajar::after{animation:none}}
+/* —— Luxury —— */
+:root{--lux-ibg:#07090d;--lux-ifg:#f4efe6;--lux-acc:#e2c47f;--lux-ifont:"Cormorant Garamond",serif}
+.ciudad .capa{position:relative;z-index:2;text-align:center;padding:0 16px}
+.ciudad .capa h2{font:400 clamp(48px,8.5vw,140px)/.95 var(--serif);margin-top:18px}
+.ciudad .capa h2 em{font-style:italic;background:var(--oro-t);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ciudad .lado{position:absolute;z-index:2;bottom:8vh;left:0;right:0;display:flex;justify-content:space-between;gap:20px;padding:0 clamp(16px,5vw,70px);font-size:14px;color:#cfd3d8}
+.ciudad .lado b{display:block;font:400 clamp(34px,4vw,58px)/1 var(--serif);color:var(--crema)}
 </style>
 </head>
-<body>
+<body data-lux-intro="Diaman" data-lux-smooth data-lux-cursor>
 <div class="fx-progress"></div>
 <nav id="nav"><div class="wrap">
   <a href="#" class="logo" aria-label="Diaman Group"><img src="img/logo.webp" alt="DIAMAN" width="160" height="40"></a>
@@ -190,7 +199,7 @@ footer img{width:min(260px,60vw);margin:0 auto 20px;mix-blend-mode:screen}
   <a href="#contacto" class="btn fx-btn-fill" data-fx="magnetic">Consulta gratis</a>
 </div></nav>
 
-<section class="vuelo" data-fx="scrub" data-frames="frames/f_###.webp" data-count="136" data-frames-mobile="frames-m/f_###.webp" data-count-mobile="136" data-height="420vh" style="padding:0">
+<section class="vuelo" data-fx="scrub" data-frames="frames/f_###.webp" data-count="150" data-frames-mobile="frames-m/f_###.webp" data-count-mobile="150" data-height="420vh" style="padding:0">
   <div class="fx-scrub-sticky">
     <canvas aria-hidden="true"></canvas>
     <div class="velo"></div>
@@ -218,7 +227,7 @@ footer img{width:min(260px,60vw);margin:0 auto 20px;mix-blend-mode:screen}
 </section>
 
 <div class="socios" aria-label="Socios y aliados">
-  <div data-fx="marquee" data-speed="40"><div class="fila">
+  <div data-fx="marquee" data-speed="40" data-lux="velocity"><div class="fila">
     <span class="k">SOCIO AUTORIZADO Y ALIADOS</span>
     <img src="img/ifza.webp" alt="IFZA · International Free Zone Authority, socio autorizado" loading="lazy">
     <img class="fab" src="img/fab.webp" alt="First Abu Dhabi Bank" loading="lazy">
@@ -245,22 +254,22 @@ footer img{width:min(260px,60vw);margin:0 auto 20px;mix-blend-mode:screen}
 
 <section class="servicios" id="servicios"><div class="wrap">
   <div class="head">
-    <div><span class="eyebrow">Servicios</span><h2 data-fx="split" data-by="words" style="margin-top:20px">Tres formas de <em>llegar a Dubái.</em></h2></div>
+    <div><span class="eyebrow" data-lux="scramble">Servicios</span><h2 data-fx="split" data-by="words" style="margin-top:20px">Tres formas de <em>llegar a Dubái.</em></h2></div>
     <p class="lead" data-fx="reveal">Un enfoque personalizado y completo: te explicamos cada paso y estamos contigo durante todo el proceso.</p>
   </div>
   <div class="servs" data-stagger=".1">
-    <article class="serv" data-fx="tilt" data-max="4"><img src="img/manos.webp" alt="Dos socios cerrando un acuerdo" loading="lazy">
+    <article class="serv" data-fx="tilt" data-max="4" data-cursor="Ver"><img src="img/manos.webp" alt="Dos socios cerrando un acuerdo" loading="lazy">
       <span class="n">01</span><h3>Crea tu empresa</h3>
       <p>Abre o mueve tu empresa a una zona franca de Emiratos y aprovecha todas sus ventajas fiscales.</p>
       <ul><li>Licencia y registro en zona franca</li><li>Permisos y apertura de cuenta bancaria</li><li>Visado de residencia para ti</li></ul>
       <a class="mas" href="#contacto">Quiero mi empresa →</a></article>
-    <article class="serv" data-fx="tilt" data-max="4"><img src="img/estudiantes.webp" alt="Estudiantes internacionales" loading="lazy">
+    <article class="serv" data-fx="tilt" data-max="4" data-cursor="Ver"><img src="img/estudiantes.webp" alt="Estudiantes internacionales" loading="lazy">
       <span class="alianza">En alianza con The Broad Club</span>
       <span class="n">02</span><h3>Estudia y trabaja</h3>
       <p>Asesoría gratuita para estudiar en el extranjero: cursos de inglés, grado o máster.</p>
       <ul><li>Requisitos de visado</li><li>Alojamiento y financiación</li><li>Emiratos y otros destinos</li></ul>
       <a class="mas" href="#contacto">Quiero estudiar fuera →</a></article>
-    <article class="serv" data-fx="tilt" data-max="4"><img src="img/burj.webp" alt="Burj Al Arab, Dubái" loading="lazy">
+    <article class="serv" data-fx="tilt" data-max="4" data-cursor="Ver"><img src="img/burj.webp" alt="Burj Al Arab, Dubái" loading="lazy">
       <span class="n">03</span><h3>Disfruta Dubái</h3>
       <p>Planificamos cada detalle de tu viaje para que solo te preocupes de disfrutarlo.</p>
       <ul><li>Escapadas exprés de 3 días</li><li>Experiencias premium a medida</li><li>Desierto, mar y ciudad</li></ul>
@@ -268,10 +277,18 @@ footer img{width:min(260px,60vw);margin:0 auto 20px;mix-blend-mode:screen}
   </div>
 </div></section>
 
+<section class="ciudad" data-lux="expand">
+  <div class="lux-x-sticky">
+    <div class="lux-x-media"><img src="img/noche.webp" alt="Dubái de noche" loading="lazy"></div>
+    <div class="capa" data-from=".5" data-to="1"><span class="eyebrow" style="justify-content:center">Dubái · Emiratos Árabes</span><h2>La ciudad que <em>trabaja para ti.</em></h2></div>
+    <div class="lado" data-from=".68" data-to="1"><span><b>0 %</b>impuesto sobre la renta</span><span style="text-align:right"><b>&lt;10 días</b>para tener tu empresa</span></div>
+  </div>
+</section>
+
 <section class="porque" id="porque">
   <div class="foto" data-fx="parallax" data-speed="0.12"><img src="img/noche.webp" alt="" loading="lazy"></div>
   <div class="wrap">
-    <span class="eyebrow">Por qué Emiratos</span>
+    <span class="eyebrow" data-lux="scramble">Por qué Emiratos</span>
     <p class="big" data-fx="fill">Una economía estable, infraestructura de primer nivel y un entorno fiscal que juega a tu favor. El sitio perfecto para hacer crecer tu negocio.</p>
     <div class="nums" data-stagger=".08">
       <div class="num"><b data-fx="counter" data-to="0" data-suffix="%">0%</b><span>impuesto sobre la renta personal</span></div>
@@ -285,7 +302,7 @@ footer img{width:min(260px,60vw);margin:0 auto 20px;mix-blend-mode:screen}
 
 <section class="proceso" id="proceso"><div class="wrap">
   <div class="head">
-    <div><span class="eyebrow">Proceso</span><h2 data-fx="split" data-by="words" style="margin-top:20px">Tu empresa en <em>tres pasos.</em></h2></div>
+    <div><span class="eyebrow" data-lux="scramble">Proceso</span><h2 data-fx="split" data-by="words" style="margin-top:20px">Tu empresa en <em>tres pasos.</em></h2></div>
     <p class="lead" data-fx="reveal">Sin registros previos ni vídeos de 30 minutos. Nos escribes, te escuchamos y nos ponemos en marcha.</p>
   </div>
   <div class="pasos" id="pasos">
@@ -299,16 +316,16 @@ footer img{width:min(260px,60vw);margin:0 auto 20px;mix-blend-mode:screen}
 <section class="viajes" id="viajes">
   <div class="pin">
     <div class="wrap head" style="margin-bottom:0">
-      <div><span class="eyebrow">Disfruta Dubái</span><h2 data-fx="split" data-by="words" style="margin-top:20px">Experiencias que <em>no se olvidan.</em></h2></div>
+      <div><span class="eyebrow" data-lux="scramble">Disfruta Dubái</span><h2 data-fx="split" data-by="words" style="margin-top:20px">Experiencias que <em>no se olvidan.</em></h2></div>
       <p class="lead">Desliza y elige: lo planificamos todo por ti.</p>
     </div>
     <div class="pista" id="pista">
-      <figure class="exp"><img src="img/burj.webp" alt="Burj Al Arab desde el aire" loading="lazy"><figcaption><b>Burj Al Arab</b><span>El icono de Dubái, desde dentro</span></figcaption></figure>
-      <figure class="exp"><img src="img/dunas.webp" alt="Todoterreno en las dunas" loading="lazy"><figcaption><b>Safari en el desierto</b><span>Dunas en 4x4 al atardecer</span></figcaption></figure>
-      <figure class="exp"><img src="img/camellos.webp" alt="Camellos en el desierto" loading="lazy"><figcaption><b>Campamento beduino</b><span>Camellos, cena y estrellas</span></figcaption></figure>
-      <figure class="exp"><img src="img/halcon.webp" alt="Cetrero con un halcón en el desierto" loading="lazy"><figcaption><b>Cetrería</b><span>La tradición del halcón</span></figcaption></figure>
-      <figure class="exp"><img src="img/dhow.webp" alt="Dhow iluminado en la Marina" loading="lazy"><figcaption><b>Cena en dhow</b><span>Crucero por la Marina de noche</span></figcaption></figure>
-      <figure class="exp"><img src="img/marina.webp" alt="Dubai Marina de noche" loading="lazy"><figcaption><b>Dubai Marina</b><span>La ciudad que nunca se apaga</span></figcaption></figure>
+      <figure class="exp" data-cursor="Ver"><img src="img/burj.webp" alt="Burj Al Arab desde el aire" loading="lazy"><figcaption><b>Burj Al Arab</b><span>El icono de Dubái, desde dentro</span></figcaption></figure>
+      <figure class="exp" data-cursor="Ver"><img src="img/dunas.webp" alt="Todoterreno en las dunas" loading="lazy"><figcaption><b>Safari en el desierto</b><span>Dunas en 4x4 al atardecer</span></figcaption></figure>
+      <figure class="exp" data-cursor="Ver"><img src="img/camellos.webp" alt="Camellos en el desierto" loading="lazy"><figcaption><b>Campamento beduino</b><span>Camellos, cena y estrellas</span></figcaption></figure>
+      <figure class="exp" data-cursor="Ver"><img src="img/halcon.webp" alt="Cetrero con un halcón en el desierto" loading="lazy"><figcaption><b>Cetrería</b><span>La tradición del halcón</span></figcaption></figure>
+      <figure class="exp" data-cursor="Ver"><img src="img/dhow.webp" alt="Dhow iluminado en la Marina" loading="lazy"><figcaption><b>Cena en dhow</b><span>Crucero por la Marina de noche</span></figcaption></figure>
+      <figure class="exp" data-cursor="Ver"><img src="img/marina.webp" alt="Dubai Marina de noche" loading="lazy"><figcaption><b>Dubai Marina</b><span>La ciudad que nunca se apaga</span></figcaption></figure>
       <figure class="exp final"><h3>¿Te lo <em>montamos?</em></h3><p class="lead" style="font-size:16px">De 3 días exprés a una semana premium. Cuéntanos cómo lo imaginas.</p><a href="#contacto" class="btn fx-btn-fill">Planificar mi viaje</a></figure>
     </div>
   </div>
@@ -364,6 +381,7 @@ footer img{width:min(260px,60vw);margin:0 auto 20px;mix-blend-mode:screen}
 </footer>
 <a class="wa" href="https://wa.me/971543758808?text=Hola%20Diaman%2C%20quiero%20informaci%C3%B3n" aria-label="WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.8-1.1-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4 0 .1 0 .7-.2 1.3z"/></svg></a>
 <script src="fx.js" defer></script>
+<script src="lux.js" defer></script>
 <script>
 const nav = document.getElementById('nav');
 const vuelo = document.querySelector('.vuelo'), marcas = [...document.querySelectorAll('.barra-vuelo span')];

@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Hanken+Grotesk:wght@300;400;500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="fx.css">
+<link rel="stylesheet" href="lux.css">
 <style>
 @property --luz{syntax:'<color>';inherits:true;initial-value:rgb(197,138,62)}
 :root{--bg:#070605;--sf:#100d0b;--fg:#f3ece1;--mut:#968d80;--line:rgba(243,236,225,.12);--oro:#cfa962;--oro2:#8a6a32;
@@ -264,9 +265,22 @@ html{scroll-snap-type:y proximity}
 body:has(.zoom.open) .flota{opacity:0;pointer-events:none}
 .z-panel .nota{font-size:12px;color:var(--mut);margin-top:-6px}
 @media (prefers-reduced-motion:reduce){.vit-pista{animation:none}.botella img{transition:opacity .3s}}
+/* —— Luxury —— */
+:root{--lux-ibg:#070605;--lux-ifg:#f3ece1;--lux-acc:#e3c385;--lux-ifont:"Bodoni Moda",serif}
+.estela .lux-x-media img{object-position:50% 50%}
+.estela .lux-x-media::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at center,transparent 30%,rgba(7,6,5,.7))}
+.estela .capa{position:relative;z-index:2;text-align:center;padding:0 16px}
+.estela .capa h2{font-size:clamp(46px,8vw,130px);margin-top:18px}
+.estela .lado{position:absolute;z-index:2;bottom:8vh;left:0;right:0;display:flex;justify-content:space-between;gap:20px;padding:0 clamp(16px,5vw,70px);font-size:14px;color:#cfc6b8}
+.estela .lado b{display:block;font:400 clamp(30px,3.6vw,52px)/1 var(--serif);color:var(--fg)}
+.piramide.lux-hl{list-style:none}
+.piramide>div{transition:background .5s,opacity .5s}
+.piramide>div:hover{background:linear-gradient(180deg,rgba(207,169,98,.07),transparent)}
+.opis blockquote{position:relative}
+.opis blockquote.lux-spot{isolation:isolate;padding:26px;border:1px solid var(--line);border-radius:18px}
 </style>
 </head>
-<body data-fx-cursor>
+<body data-lux-intro="JARV" data-lux-smooth data-lux-cursor>
 <nav><div class="wrap">
   <div class="links cap"><a href="#vitrina">Vitrina</a><a href="#garantias">Garantías</a><a href="#notas">Notas</a><a href="#preguntas">Preguntas</a></div>
   <a href="#" class="logo"><b>JARV</b><small>DUBAI · EST 2026</small></a>
@@ -296,21 +310,29 @@ body:has(.zoom.open) .flota{opacity:0;pointer-events:none}
   <div class="muro"></div>
 </div></section>
 
-<div class="cinta" data-fx="marquee" data-speed="40"><span>Perfumes árabes 100% originales</span><span>Envío gratis desde 40 €</span><span>Bizum · Apple Pay · Google Pay</span><span>Stock físico en España</span><span>Entrega en 24/48 h</span></div>
+<div class="cinta" data-fx="marquee" data-speed="40" data-lux="velocity"><span>Perfumes árabes 100% originales</span><span>Envío gratis desde 40 €</span><span>Bizum · Apple Pay · Google Pay</span><span>Stock físico en España</span><span>Entrega en 24/48 h</span></div>
+
+<section class="estela" data-lux="expand">
+  <div class="lux-x-sticky">
+    <div class="lux-x-media"><img src="img/frasco-jarv.webp" alt="Frasco JARV de cristal tallado" loading="lazy"></div>
+    <div class="capa" data-from=".5" data-to="1"><span class="cap" style="color:var(--fg)">Extrait de parfum · 100 ml</span><h2>Una estela de <em>24 horas.</em></h2></div>
+    <div class="lado" data-from=".68" data-to="1"><span><b>6-12 meses</b>de maceración</span><span style="text-align:right"><b>100 %</b>originales de Emiratos</span></div>
+  </div>
+</section>
 
 <section id="notas" style="padding-top:0"><div class="wrap">
-  <span class="cap">Anatomía de las esencias</span>
+  <span class="cap" data-lux="scramble">Anatomía de las esencias</span>
   <h2 data-fx="split" data-by="words" style="margin-top:18px;max-width:14ch">La pirámide <em>olfativa</em> árabe.</h2>
   <p style="color:var(--mut);max-width:56ch;margin-top:24px" data-fx="reveal">Un perfume de Dubái evoluciona a lo largo de las horas. Así se descompone su estela, del primer destello a lo que queda al día siguiente.</p>
-  <div class="piramide" data-stagger=".14">
-    <div><span class="n">I</span><small class="cap">Primeros 15 – 30 minutos</small><h3>Salida</h3><p>El primer destello. La impresión inmediata que cautiva al proyectarse en el aire al pulverizar.</p></div>
-    <div><span class="n">II</span><small class="cap">De 1 a 6 horas</small><h3>Corazón</h3><p>La personalidad del perfume. Aparece cuando se asientan los cítricos y revela acordes florales, especiados y licorosos.</p></div>
-    <div><span class="n">III</span><small class="cap">+24 a 48 h en piel y ropa</small><h3>Fondo</h3><p>Lo que permanece al día siguiente: resinas preciosas, oud camboyano, almizcles blancos y maderas milenarias.</p></div>
+  <div class="piramide" data-stagger=".14" data-lux="hoverlist" data-fit="1">
+    <div data-img="img/frascos/khamrah-lattafa.webp"><span class="n">I</span><small class="cap">Primeros 15 – 30 minutos</small><h3>Salida</h3><p>El primer destello. La impresión inmediata que cautiva al proyectarse en el aire al pulverizar.</p></div>
+    <div data-img="img/frascos/barakkat-rouge-540.webp"><span class="n">II</span><small class="cap">De 1 a 6 horas</small><h3>Corazón</h3><p>La personalidad del perfume. Aparece cuando se asientan los cítricos y revela acordes florales, especiados y licorosos.</p></div>
+    <div data-img="img/frascos/asad-bourbon.webp"><span class="n">III</span><small class="cap">+24 a 48 h en piel y ropa</small><h3>Fondo</h3><p>Lo que permanece al día siguiente: resinas preciosas, oud camboyano, almizcles blancos y maderas milenarias.</p></div>
   </div>
 </div></section>
 
 <section id="garantias" style="padding-top:0"><div class="wrap">
-  <span class="cap">Autenticidad & pagos</span>
+  <span class="cap" data-lux="scramble">Autenticidad &amp; pagos</span>
   <h2 data-fx="split" data-by="words" style="margin-top:18px">Compra con <em>tranquilidad.</em></h2>
   <div class="garantias" data-stagger=".1">
     <div><span class="cap oro">01</span><h3>100% originales de los Emiratos</h3><p>Importación directa y precintada con sellos holográficos de casas oficiales: <b>Lattafa, Armaf, Fragrance World, Zimaya y Gulf Orchid</b>.</p></div>
@@ -320,19 +342,19 @@ body:has(.zoom.open) .flota{opacity:0;pointer-events:none}
 </div></section>
 
 <section id="opiniones" style="padding-top:0"><div class="wrap">
-  <span class="cap">Experiencias de clientes</span>
+  <span class="cap" data-lux="scramble">Experiencias de clientes</span>
   <h2 data-fx="split" data-by="words" style="margin-top:18px">Lo que dicen de <em>JARV.</em></h2>
-  <div class="opis" data-stagger=".12">
-    <blockquote><span class="est">★★★★★</span><p>“Khamrah es una bestia absoluta. Me lo puse para una cena a las 9 de la noche y a las 2 de la tarde del día siguiente mi abrigo seguía oliendo a canela, dátiles y vainilla. Todo el mundo me preguntó qué llevaba.”</p><footer><b>Carlos M. · Madrid</b>Compró: Lattafa Khamrah 100 ml</footer></blockquote>
-    <blockquote><span class="est">★★★★★</span><p>“Tenía el Baccarat original de 300 euros y pedí Barakkat Rojo por curiosidad. Es impresionante. La apertura de azafrán y almendra es idéntica y en proyección no tiene nada que envidiarle. Pagué por Bizum y me llegó al día siguiente.”</p><footer><b>Elena V. · Valencia</b>Compró: Barakkat Rojo Extrait 100 ml</footer></blockquote>
-    <blockquote><span class="est">★★★★★</span><p>“Asad Bourbon tiene ese toque a licor añejo y cacao que lo hace súper elegante. En climas frescos es imbatible. Además me llegó en 24 h a Sevilla con todo el precinto y hologramas originales.”</p><footer><b>Javier S. · Sevilla</b>Compró: Asad Bourbon 100 ml</footer></blockquote>
+  <div class="opis" data-stagger=".12" data-lux="spotlight">
+    <blockquote class="lux-spot"><span class="est">★★★★★</span><p>“Khamrah es una bestia absoluta. Me lo puse para una cena a las 9 de la noche y a las 2 de la tarde del día siguiente mi abrigo seguía oliendo a canela, dátiles y vainilla. Todo el mundo me preguntó qué llevaba.”</p><footer><b>Carlos M. · Madrid</b>Compró: Lattafa Khamrah 100 ml</footer></blockquote>
+    <blockquote class="lux-spot"><span class="est">★★★★★</span><p>“Tenía el Baccarat original de 300 euros y pedí Barakkat Rojo por curiosidad. Es impresionante. La apertura de azafrán y almendra es idéntica y en proyección no tiene nada que envidiarle. Pagué por Bizum y me llegó al día siguiente.”</p><footer><b>Elena V. · Valencia</b>Compró: Barakkat Rojo Extrait 100 ml</footer></blockquote>
+    <blockquote class="lux-spot"><span class="est">★★★★★</span><p>“Asad Bourbon tiene ese toque a licor añejo y cacao que lo hace súper elegante. En climas frescos es imbatible. Además me llegó en 24 h a Sevilla con todo el precinto y hologramas originales.”</p><footer><b>Javier S. · Sevilla</b>Compró: Asad Bourbon 100 ml</footer></blockquote>
   </div>
 </div></section>
 
 <section id="casa" style="padding-top:0"><div class="wrap casa">
   <figure data-fx="reveal" data-dir="clip"><img src="img/frasco-jarv.webp" alt="Frasco JARV de cristal tallado" loading="lazy" data-fx="parallax" data-speed="-0.06"><figcaption>جارف</figcaption></figure>
   <div>
-    <span class="cap">Savoir-faire oriental</span>
+    <span class="cap" data-lux="scramble">Savoir-faire oriental</span>
     <h2 data-fx="split" data-by="words" style="margin-top:18px">El tiempo y la resina no admiten <em>prisas.</em></h2>
     <p data-fx="reveal">La perfumería de Dubái no se parece a nada occidental. Se rige por el principio del <b>Mukhallat</b>: composiciones ricas donde los aceites no se diluyen en exceso, sino que reposan durante meses en barricas oscuras para que el oud, el azafrán rojo y el ámbar gris armonicen sin asperezas.</p>
     <div class="pasos" data-stagger=".1">
@@ -355,7 +377,7 @@ body:has(.zoom.open) .flota{opacity:0;pointer-events:none}
 </div></section>
 
 <section class="cierre" id="contacto" style="padding-top:0"><div class="wrap">
-  <span class="cap">Atención personalizada</span>
+  <span class="cap" data-lux="scramble">Atención personalizada</span>
   <h2 data-fx="split" data-by="words" data-style="blur" style="margin-top:20px">¿Te ayudamos a <em>elegir?</em></h2>
   <p data-fx="reveal">Escríbenos y te asesoramos de inmediato sobre cualquier fragancia, lote o pedido.</p>
   <div class="bts" data-fx="reveal"><a class="btn oro-b fx-btn-fill" href="https://api.whatsapp.com/send?text=Hola%20JARV%2C%20quiero%20que%20me%20recomend%C3%A9is%20un%20perfume" target="_blank" rel="noopener">Escribir por WhatsApp</a><a class="btn fx-btn-fill" href="mailto:jarvclub@outlook.com">Consultar por email</a></div>
@@ -395,6 +417,8 @@ body:has(.zoom.open) .flota{opacity:0;pointer-events:none}
 
 <script src="perfumes.js"></script>
 <script src="fx.js" defer></script>
+<script src="lux.js" defer></script>
+<script>addEventListener("DOMContentLoaded",()=>document.querySelectorAll(".celda").forEach(c=>c.dataset.cursor="Ver"))</script>
 <script>
 const P = window.PERFUMES, $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const eur = n => n.toFixed(2).replace('.', ',') + ' €';

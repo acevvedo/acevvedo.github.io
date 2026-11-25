@@ -87,6 +87,8 @@
   background:var(--fill,currentColor);transform:translate(-50%,-50%);transition:width .6s var(--fx-ease),height .6s var(--fx-ease)}
 .fx-btn-fill:hover::before{width:260%;height:600%}
 
+@media (hover:none){[data-fx~="magnetic"]:active,.fx-btn-fill:active{transform:scale(.95)!important;transition-duration:.15s}}
+
 /* ---------- MARQUEE ---------- */
 .fx-marquee{overflow:hidden;white-space:nowrap;max-width:100%;min-width:0;contain:inline-size;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .fx-marquee-track{display:inline-flex;gap:var(--gap,3rem);animation:fx-marquee var(--speed,30s) linear infinite;padding-right:var(--gap,3rem)}
