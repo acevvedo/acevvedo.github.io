@@ -19,7 +19,7 @@
 body{background:var(--bg);color:var(--fg);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:0}
+em{font-style:normal}
 .wrap{width:min(1280px,100% - 24px);margin-inline:auto}
 h1,h2,h3{font-weight:800;letter-spacing:-.045em;line-height:.95}
 h2{font-size:clamp(38px,5.4vw,72px)}
@@ -58,7 +58,7 @@ nav ul{display:flex;gap:26px;list-style:none;padding:0;font-weight:500;color:var
 .b-op small{font-weight:600}
 .b-bowl{grid-column:span 7;grid-row:span 2;padding:0;min-height:260px}
 .b-bowl img{width:100%;height:100%;object-fit:cover}
-.b-ig{grid-column:span 5;grid-row:span 2;background:linear-gradient(135deg,#feda75,#fa7e1e 25%,#d62976 50%,#962fbf 75%,#4f5bd5);color:#fff}
+.b-ig{grid-column:span 5;grid-row:span 2;background:var(--burdeos);color:#fff}
 .b-ig b{font-size:28px;letter-spacing:-.04em}
 @media (max-width:1000px){.b-hero,.b-foto{grid-column:span 12}.b-foto{grid-row:span 4;min-height:440px}.b-stat{grid-column:span 6}.b-cita,.b-op,.b-bowl,.b-ig{grid-column:span 6}}
 @media (max-width:600px){.b-cita,.b-op,.b-bowl,.b-ig{grid-column:span 12}.b-bowl{min-height:240px}}
@@ -107,55 +107,55 @@ footer{padding:28px 4px 50px;color:var(--mut);font-size:14px;display:flex;justif
 <nav><div class="wrap">
   <a href="#" class="logo">Laura <em>Ríos</em></a>
   <ul><li><a href="#metodo">Método</a></li><li><a href="#planes">Planes</a></li><li><a href="#opiniones">Opiniones</a></li></ul>
-  <a href="#contacto" class="btn fx-btn-fill" data-fx="magnetic" style="padding:11px 18px;font-size:14px">Primera consulta</a>
+  <a href="#contacto" class="btn"  style="padding:11px 18px;font-size:14px">Primera consulta</a>
 </div></nav>
 
 <main class="wrap bento" data-stagger=".06">
   <div class="b b-hero">
     <span class="chip" style="align-self:start"><i></i>Plazas libres en noviembre</span>
     <div>
-      <h1 data-fx="split" data-by="words" data-step=".07">Comer bien sin <em>contar calorías.</em></h1>
+      <h1 data-fx="reveal">Comer bien sin <em>contar calorías.</em></h1>
       <p style="margin-top:20px">Soy nutricionista y te ayudo a cambiar tu relación con la comida con un plan hecho para tu vida real: tu horario, tus gustos y tu ritmo.</p>
     </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap"><a href="#contacto" class="btn fx-btn-fill" data-fx="magnetic">Reservar consulta gratis →</a></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><a href="#contacto" class="btn" >Reservar consulta gratis →</a></div>
   </div>
   <div class="b b-foto">
     <img src="img/laura.webp" alt="Laura Ríos sonriendo" fetchpriority="high">
-    <div class="nombre fx-glass fx-glass-light"><div><b>Laura Ríos</b><small>Dietista-nutricionista · Col. 12345</small></div><span style="font-size:22px">↗</span></div>
+    <div class="nombre" style="background:#fff"><div><b>Laura Ríos</b><small>Dietista-nutricionista · Col. 12345</small></div><span style="font-size:22px">↗</span></div>
   </div>
-  <div class="b b-stat"><span>personas acompañadas</span><b data-fx="counter" data-to="640" data-suffix="+">0</b></div>
-  <div class="b b-stat l"><span>siguen su plan a los 6 meses</span><b data-fx="counter" data-to="87" data-suffix="%">0</b></div>
-  <div class="b b-cita" data-fx="tilt" data-max="6"><small>Próxima consulta libre</small><div><div class="hora">Jueves · 18:30</div><small>Online o en Madrid centro</small></div></div>
+  <div class="b b-stat"><span>personas acompañadas</span><b>640+</b></div>
+  <div class="b b-stat l"><span>siguen su plan a los 6 meses</span><b>87%</b></div>
+  <div class="b b-cita"><small>Próxima consulta libre</small><div><div class="hora">Jueves · 18:30</div><small>Online o en Madrid centro</small></div></div>
   <div class="b b-op"><p>"Por primera vez no siento que estoy a dieta. He bajado 7 kilos comiendo de todo."</p><small>— Marta, 34 años</small></div>
   <div class="b b-bowl"><img src="img/bowls.webp" alt="Bowls de comida saludable" loading="lazy"></div>
-  <a class="b b-ig" href="#" data-fx="tilt" data-max="6"><small style="font-weight:600">Recetas cada semana</small><div><b>@laura.nutri</b><br><small>48k seguidores en Instagram</small></div></a>
+  <a class="b b-ig" href="#"><small style="font-weight:600">Recetas cada semana</small><div><b>@laura.nutri</b><br><small>48k seguidores en Instagram</small></div></a>
 </main>
 
 <section id="metodo"><div class="wrap">
-  <h2 data-fx="split" data-by="words">Mi <em>método,</em> paso a paso.</h2>
+  <h2 data-fx="reveal">Mi <em>método,</em> paso a paso.</h2>
   <div class="pasos" data-stagger=".08">
-    <div class="paso" data-fx="tilt" data-max="5"><span class="n">01</span><div><h3>Te escucho</h3><p>Primera consulta gratis de 20 minutos para conocerte.</p></div></div>
-    <div class="paso" data-fx="tilt" data-max="5"><span class="n">02</span><div><h3>Analizamos</h3><p>Estudio de composición corporal, hábitos y analíticas.</p></div></div>
-    <div class="paso" data-fx="tilt" data-max="5"><span class="n">03</span><div><h3>Tu plan</h3><p>Menús flexibles con lista de la compra y recetas fáciles.</p></div></div>
-    <div class="paso" data-fx="tilt" data-max="5"><span class="n">04</span><div><h3>Seguimiento</h3><p>Revisiones y chat directo conmigo para no estar sola/o.</p></div></div>
+    <div class="paso"><span class="n">01</span><div><h3>Te escucho</h3><p>Primera consulta gratis de 20 minutos para conocerte.</p></div></div>
+    <div class="paso"><span class="n">02</span><div><h3>Analizamos</h3><p>Estudio de composición corporal, hábitos y analíticas.</p></div></div>
+    <div class="paso"><span class="n">03</span><div><h3>Tu plan</h3><p>Menús flexibles con lista de la compra y recetas fáciles.</p></div></div>
+    <div class="paso"><span class="n">04</span><div><h3>Seguimiento</h3><p>Revisiones y chat directo conmigo para no estar sola/o.</p></div></div>
   </div>
 </div></section>
 
 <section id="planes" style="padding-top:0"><div class="wrap">
-  <h2 data-fx="split" data-by="words">Elige tu <em>plan.</em></h2>
+  <h2 data-fx="reveal">Elige tu <em>plan.</em></h2>
   <div class="planes" data-stagger=".1">
-    <div class="plan"><h3>Consulta</h3><div class="p">45 €<small> /sesión</small></div><ul><li>Valoración completa</li><li>Pautas personalizadas</li><li>Online o presencial</li></ul><a href="#contacto" class="btn fx-btn-fill">Reservar</a></div>
-    <div class="plan dest"><span class="chip" style="align-self:start;color:var(--fg)">Más elegido</span><h3>Plan 3 meses</h3><div class="p">59 €<small> /mes</small></div><ul><li>Menús semanales a medida</li><li>Revisión cada 15 días</li><li>Chat directo conmigo</li><li>Recetario exclusivo</li></ul><a href="#contacto" class="btn fx-btn-fill" data-fx="magnetic">Empezar</a></div>
-    <div class="plan"><h3>Empresas</h3><div class="p">a medida</div><ul><li>Talleres para equipos</li><li>Menús de comedor</li><li>Charlas de bienestar</li></ul><a href="#contacto" class="btn fx-btn-fill">Hablemos</a></div>
+    <div class="plan"><h3>Consulta</h3><div class="p">45 €<small> /sesión</small></div><ul><li>Valoración completa</li><li>Pautas personalizadas</li><li>Online o presencial</li></ul><a href="#contacto" class="btn">Reservar</a></div>
+    <div class="plan dest"><span class="chip" style="align-self:start;color:var(--fg)">Más elegido</span><h3>Plan 3 meses</h3><div class="p">59 €<small> /mes</small></div><ul><li>Menús semanales a medida</li><li>Revisión cada 15 días</li><li>Chat directo conmigo</li><li>Recetario exclusivo</li></ul><a href="#contacto" class="btn" >Empezar</a></div>
+    <div class="plan"><h3>Empresas</h3><div class="p">a medida</div><ul><li>Talleres para equipos</li><li>Menús de comedor</li><li>Charlas de bienestar</li></ul><a href="#contacto" class="btn">Hablemos</a></div>
   </div>
   <div class="duo">
-    <figure data-fx="reveal" data-dir="clip"><img src="img/mesa.webp" alt="Plato con frutas y verduras" loading="lazy"></figure>
-    <figure data-fx="reveal" data-dir="clip" data-delay=".12"><img src="img/desayuno.webp" alt="Desayuno con fruta" loading="lazy"></figure>
+    <figure data-fx="reveal"><img src="img/mesa.webp" alt="Plato con frutas y verduras" loading="lazy"></figure>
+    <figure data-fx="reveal" data-delay=".12"><img src="img/desayuno.webp" alt="Desayuno con fruta" loading="lazy"></figure>
   </div>
 </div></section>
 
-<section id="opiniones" style="padding-top:0;overflow:hidden"><div class="wrap"><h2 data-fx="split" data-by="words">Lo que <em>cuentan.</em></h2></div>
-  <div class="ops" data-fx="marquee" data-speed="50" style="margin-top:40px">
+<section id="opiniones" style="padding-top:0;overflow:hidden"><div class="wrap"><h2 data-fx="reveal">Lo que <em>cuentan.</em></h2></div>
+  <div class="ops" style="margin-top:40px">
     <span class="op"><p>"Me enseñó a comer, no a hacer dieta. Ya no tengo ansiedad por la noche."</p><b>Andrea · Plan 3 meses</b></span>
     <span class="op"><p>"Con mi horario de turnos creía imposible organizarme. Ahora cocino 2 días y listo."</p><b>Jorge · Plan 3 meses</b></span>
     <span class="op"><p>"Mis analíticas han mejorado muchísimo en solo cuatro meses."</p><b>Carmen · Consulta</b></span>
@@ -165,8 +165,8 @@ footer{padding:28px 4px 50px;color:var(--mut);font-size:14px;display:flex;justif
 
 <section id="contacto" style="padding-top:0"><div class="wrap">
   <div class="final">
-    <h2 data-fx="split" data-by="words">Empieza por una <em>charla.</em></h2>
-    <div data-fx="reveal"><p>20 minutos, gratis y sin compromiso. Me cuentas qué te pasa y te digo con sinceridad si puedo ayudarte.</p><a href="https://wa.me/34600000000?text=Hola%20Laura%2C%20quiero%20la%20consulta%20gratis" class="btn fx-btn-fill" data-fx="magnetic" target="_blank" rel="noopener">Escribir por WhatsApp →</a></div>
+    <h2 data-fx="reveal">Empieza por una <em>charla.</em></h2>
+    <div data-fx="reveal"><p>20 minutos, gratis y sin compromiso. Me cuentas qué te pasa y te digo con sinceridad si puedo ayudarte.</p><a href="https://wa.me/34600000000?text=Hola%20Laura%2C%20quiero%20la%20consulta%20gratis" class="btn"  target="_blank" rel="noopener">Escribir por WhatsApp →</a></div>
   </div>
   <footer><span>Laura Ríos · Plantilla 07 · Bento</span><span>Madrid y online</span></footer>
 </div></section>

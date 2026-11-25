@@ -121,6 +121,8 @@ footer{border-top:1px solid var(--line);padding:40px 0 100px;font-size:14px;colo
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .wa{position:fixed;right:18px;bottom:18px;z-index:50;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6)}
 .wa svg{width:28px;height:28px;fill:#fff}
+/* Essential: diseño limpio, sin efectos de Pro/Luxury */
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 0;white-space:normal}
 </style>
 </head>
 <body>
@@ -128,44 +130,44 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <nav id="nav"><div class="wrap">
   <a href="#" class="logo"><i></i>Clínica Alba</a>
   <ul><li><a href="#tratamientos">Tratamientos</a></li><li><a href="#como">Cómo trabajamos</a></li><li><a href="#clinica">La clínica</a></li><li><a href="#opiniones">Opiniones</a></li></ul>
-  <a href="#cita" class="btn fx-btn-fill" data-fx="magnetic" style="padding:12px 20px;font-size:15px">Pedir cita</a>
+  <a href="#cita" class="btn"  style="padding:12px 20px;font-size:15px">Pedir cita</a>
 </div></nav>
 
 <header class="hero"><div class="wrap">
   <div>
     <span class="eyebrow" data-fx="reveal">Odontología · Chamberí, Madrid</span>
-    <h1 data-fx="split" data-by="words" data-step=".07">Sonríe sin pensarlo <span class="soft">dos veces.</span></h1>
+    <h1 data-fx="reveal">Sonríe sin pensarlo <span class="soft">dos veces.</span></h1>
     <p class="lead" data-fx="reveal" data-delay=".5">Tratamientos claros, precios cerrados y un equipo que te explica todo antes de empezar. Primera visita y diagnóstico gratis.</p>
     <div class="cta" data-fx="reveal" data-delay=".65">
-      <a href="#cita" class="btn fx-btn-fill" data-fx="magnetic">Reservar primera visita →</a>
-      <a href="#tratamientos" class="btn ghost fx-btn-fill">Ver tratamientos</a>
+      <a href="#cita" class="btn" >Reservar primera visita →</a>
+      <a href="#tratamientos" class="btn ghost">Ver tratamientos</a>
     </div>
     <div class="rating" data-fx="reveal" data-delay=".8"><b>4,9</b><div><span class="stars">★★★★★</span><br>312 opiniones en Google</div></div>
   </div>
-  <div class="hero-img" data-fx="reveal" data-dir="clip">
-    <img src="img/hero.webp" alt="Paciente sonriendo después de su tratamiento" fetchpriority="high" data-fx="parallax" data-speed="-0.06">
-    <div class="hero-card fx-glass fx-glass-light"><span class="dot"></span><div><b>Hoy hay huecos libres</b><br>Respuesta por WhatsApp en menos de 1 h</div></div>
+  <div class="hero-img" data-fx="reveal">
+    <img src="img/hero.webp" alt="Paciente sonriendo después de su tratamiento" fetchpriority="high">
+    <div class="hero-card" style="background:#fff;box-shadow:0 10px 30px -12px rgba(0,0,0,.25)"><span class="dot"></span><div><b>Hoy hay huecos libres</b><br>Respuesta por WhatsApp en menos de 1 h</div></div>
   </div>
 </div></header>
 
-<div class="trust" data-fx="marquee" data-speed="34"><span>Primera visita gratis</span><span>Financiación sin intereses</span><span>Escáner 3D sin moldes</span><span>Urgencias en el día</span><span>Precios cerrados</span></div>
+<div class="trust"><span>Primera visita gratis</span><span>Financiación sin intereses</span><span>Escáner 3D sin moldes</span><span>Urgencias en el día</span><span>Precios cerrados</span></div>
 
 <section id="tratamientos"><div class="wrap">
   <div class="head">
-    <div><span class="eyebrow">Tratamientos</span><h2 data-fx="split" data-by="words">Lo que hacemos, bien explicado.</h2></div>
+    <div><span class="eyebrow">Tratamientos</span><h2 data-fx="reveal">Lo que hacemos, bien explicado.</h2></div>
     <p class="lead" data-fx="reveal">Sin letra pequeña: cada tratamiento con su duración y precio orientativo.</p>
   </div>
   <div class="grid" data-stagger=".08">
-    <article class="trat" data-fx="tilt" data-max="5"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg></div><div><h3>Blanqueamiento</h3><p>Hasta 4 tonos más blanco en una sesión, sin sensibilidad.</p><small>desde 190 €</small></div></article>
-    <article class="trat" data-fx="tilt" data-max="5"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 9h16M4 15h16M8 5v14M16 5v14"/></svg></div><div><h3>Ortodoncia invisible</h3><p>Alineadores transparentes que nadie nota. Plan en 3D.</p><small>desde 59 €/mes</small></div></article>
-    <article class="trat" data-fx="tilt" data-max="5"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3c-4 0-6 2-6 5 0 4 2 5 2 9 0 2 1 4 2 4s1-3 2-3 1 3 2 3 2-2 2-4c0-4 2-5 2-9 0-3-2-5-6-5z"/></svg></div><div><h3>Implantes</h3><p>Dientes fijos en el día con cirugía guiada.</p><small>desde 890 €</small></div></article>
-    <article class="trat" data-fx="tilt" data-max="5"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M8.5 13.5s1.2 2 3.5 2 3.5-2 3.5-2M9 9.5h.01M15 9.5h.01"/></svg></div><div><h3>Odontopediatría</h3><p>Visitas tranquilas para los peques, sin miedo.</p><small>revisión gratis</small></div></article>
+    <article class="trat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg></div><div><h3>Blanqueamiento</h3><p>Hasta 4 tonos más blanco en una sesión, sin sensibilidad.</p><small>desde 190 €</small></div></article>
+    <article class="trat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 9h16M4 15h16M8 5v14M16 5v14"/></svg></div><div><h3>Ortodoncia invisible</h3><p>Alineadores transparentes que nadie nota. Plan en 3D.</p><small>desde 59 €/mes</small></div></article>
+    <article class="trat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3c-4 0-6 2-6 5 0 4 2 5 2 9 0 2 1 4 2 4s1-3 2-3 1 3 2 3 2-2 2-4c0-4 2-5 2-9 0-3-2-5-6-5z"/></svg></div><div><h3>Implantes</h3><p>Dientes fijos en el día con cirugía guiada.</p><small>desde 890 €</small></div></article>
+    <article class="trat"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M8.5 13.5s1.2 2 3.5 2 3.5-2 3.5-2M9 9.5h.01M15 9.5h.01"/></svg></div><div><h3>Odontopediatría</h3><p>Visitas tranquilas para los peques, sin miedo.</p><small>revisión gratis</small></div></article>
   </div>
 </div></section>
 
 <section class="pasos" id="como"><div class="wrap">
   <span class="eyebrow" style="color:#9fb2f2">Cómo trabajamos</span>
-  <h2 data-fx="split" data-by="words">Tres pasos. Cero sorpresas.</h2>
+  <h2 data-fx="reveal">Tres pasos. Cero sorpresas.</h2>
   <div class="steps" data-stagger=".12">
     <div class="step"><h3>Diagnóstico</h3><p>Escáner 3D y revisión completa. Te enseñamos en pantalla lo que vemos.</p></div>
     <div class="step"><h3>Plan cerrado</h3><p>Precio final por escrito y opciones de financiación. Tú decides sin presión.</p></div>
@@ -175,21 +177,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 <section id="clinica"><div class="wrap">
   <span class="eyebrow">La clínica</span>
-  <h2 data-fx="split" data-by="words" style="max-width:16ch">Un sitio donde apetece venir.</h2>
+  <h2 data-fx="reveal" style="max-width:16ch">Un sitio donde apetece venir.</h2>
   <div class="stats" style="margin-top:56px" data-stagger=".08">
-    <div class="stat"><b data-fx="counter" data-to="15">0</b><span>años en Chamberí</span></div>
-    <div class="stat"><b data-fx="counter" data-to="8400" data-suffix="+">0</b><span>pacientes atendidos</span></div>
-    <div class="stat"><b data-fx="counter" data-to="4.9">0</b><span>valoración media</span></div>
-    <div class="stat"><b data-fx="counter" data-to="0" data-suffix=" €">0</b><span>primera visita</span></div>
+    <div class="stat"><b>15</b><span>años en Chamberí</span></div>
+    <div class="stat"><b>8.400+</b><span>pacientes atendidos</span></div>
+    <div class="stat"><b>4,9</b><span>valoración media</span></div>
+    <div class="stat"><b>0 €</b><span>primera visita</span></div>
   </div>
   <div class="fotos">
-    <figure data-fx="reveal" data-dir="clip"><img src="img/gabinete.webp" alt="Gabinete dental luminoso" loading="lazy"><figcaption class="fx-glass fx-glass-light">Gabinetes con luz natural</figcaption></figure>
-    <figure data-fx="reveal" data-dir="clip" data-delay=".15"><img src="img/espera.webp" alt="Sala de espera minimalista" loading="lazy"><figcaption class="fx-glass fx-glass-light">Sala de espera</figcaption></figure>
+    <figure data-fx="reveal"><img src="img/gabinete.webp" alt="Gabinete dental luminoso" loading="lazy"><figcaption class="fx-glass fx-glass-light">Gabinetes con luz natural</figcaption></figure>
+    <figure data-fx="reveal" data-delay=".15"><img src="img/espera.webp" alt="Sala de espera minimalista" loading="lazy"><figcaption class="fx-glass fx-glass-light">Sala de espera</figcaption></figure>
   </div>
 </div></section>
 
 <section id="opiniones" style="background:var(--sf)"><div class="wrap">
-  <div class="head"><div><span class="eyebrow">Opiniones</span><h2 data-fx="split" data-by="words">Lo dicen ellos.</h2></div><p class="lead" data-fx="reveal"><span class="stars">★★★★★</span> 4,9 de media en 312 reseñas de Google.</p></div>
+  <div class="head"><div><span class="eyebrow">Opiniones</span><h2 data-fx="reveal">Lo dicen ellos.</h2></div><p class="lead" data-fx="reveal"><span class="stars">★★★★★</span> 4,9 de media en 312 reseñas de Google.</p></div>
   <div class="ops" data-stagger=".1">
     <div class="op"><p>"Me explicaron todo con el escáner antes de tocar nada. Por fin un dentista al que no me da miedo ir."</p><div class="who"><img src="img/paciente.webp" alt="" loading="lazy"><div><b>Lucía M.</b>Ortodoncia invisible</div></div></div>
     <div class="op"><p>"Precio cerrado desde el primer día y ni un euro más. El implante quedó perfecto."</p><div class="who"><i>JR</i><div><b>Javier R.</b>Implantes</div></div></div>
@@ -198,7 +200,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 </div></section>
 
 <section><div class="wrap faq">
-  <div><span class="eyebrow">Preguntas</span><h2 data-fx="split" data-by="words">Antes de venir.</h2></div>
+  <div><span class="eyebrow">Preguntas</span><h2 data-fx="reveal">Antes de venir.</h2></div>
   <div data-stagger=".06">
     <details><summary>¿La primera visita es gratis de verdad?</summary><p>Sí. Incluye revisión, escáner 3D y presupuesto por escrito. Sin compromiso.</p></details>
     <details><summary>¿Puedo financiar el tratamiento?</summary><p>Hasta 24 meses sin intereses en tratamientos a partir de 600 €.</p></details>
@@ -209,8 +211,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 <section class="final" id="cita"><div class="wrap">
   <span class="eyebrow">Pide tu cita</span>
-  <h2 data-fx="split" data-by="words">Tu primera visita es <em>gratis.</em></h2>
-  <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20pedir%20cita" class="btn fx-btn-fill" data-fx="magnetic reveal" target="_blank" rel="noopener">Escribir por WhatsApp →</a>
+  <h2 data-fx="reveal">Tu primera visita es <em>gratis.</em></h2>
+  <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20pedir%20cita" class="btn" data-fx="reveal" target="_blank" rel="noopener">Escribir por WhatsApp →</a>
 </div></section>
 
 <footer><div class="wrap"><span>© Clínica Alba · Plantilla 01 · Minimalista</span><span>Calle Ejemplo 12, Madrid · 600 000 000</span></div></footer>

@@ -115,6 +115,18 @@ header p{color:var(--mut);max-width:52ch;font-size:clamp(17px,1.7vw,20px)}
 .aviso p{color:var(--mut);margin-top:6px;font-size:15px;max-width:80ch}
 
 .prox{padding:20px 0 40px}
+.niveles{margin-top:clamp(40px,6vw,70px);padding:clamp(22px,4vw,44px);border-radius:28px;background:#fff;border:1px solid rgba(21,20,23,.08);box-shadow:0 30px 60px -40px rgba(21,20,23,.25)}
+.niveles h3{font:800 clamp(26px,3.2vw,40px)/1 var(--sans);letter-spacing:-.04em}
+.niveles>p{color:#6b6670;margin:10px 0 24px}
+.tabla .fila{display:grid;grid-template-columns:1fr repeat(3,minmax(64px,110px));align-items:center;gap:8px;padding:13px 0;border-top:1px solid rgba(21,20,23,.07);font-size:15px}
+.tabla .fila.cab{border-top:0}
+.tabla .fila.cab b{justify-self:center;font:800 13px/1 var(--sans);letter-spacing:.02em;padding:9px 12px;border-radius:99px;white-space:nowrap}
+.tabla b.ess{background:#e6eefc}.tabla b.pro{background:#ece4fb}.tabla b.lux{background:#2a1318;color:#f3eef0}
+.tabla .grupo span{font:600 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--burdeos);padding-top:10px}
+.tabla i{justify-self:center;font-style:normal;font-weight:800;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px}
+.tabla i.no{color:#c9c4cc}
+.tabla i.si.ess{background:#e6eefc;color:#2c4a86}.tabla i.si.pro{background:#ece4fb;color:#5b3a99}.tabla i.si.lux{background:#2a1318;color:#f1e2ff}
+@media (max-width:600px){.tabla .fila{grid-template-columns:1fr repeat(3,46px);gap:4px;font-size:13.5px}.tabla .fila.cab b{padding:7px 6px;font-size:10.5px}.tabla i{width:26px;height:26px;font-size:12px}}
 .extra{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:linear-gradient(140deg,#dfe9fb,#ece4fb);border-radius:28px;padding:clamp(28px,5vw,56px);margin:40px 0 20px}
 .extra h3{font:800 clamp(30px,4vw,50px)/1 var(--sans);letter-spacing:-.04em}
 .extra p{color:#55515a;margin-top:10px}
@@ -268,6 +280,11 @@ header p{color:var(--mut);max-width:52ch;font-size:clamp(17px,1.7vw,20px)}
   <h2 data-fx="split" data-by="words">¿Cuál va con <em>tu negocio?</em></h2>
   <p data-fx="reveal">Todos se ven perfectos en el móvil, cargan rápido y llevan a tus clientes directos a escribirte. La diferencia está en cuánto diseño, efectos y páginas quieres.</p>
   <div class="tres" id="tres"></div>
+  <div class="niveles" data-fx="reveal">
+    <h3>Qué cambia de un pack a otro</h3>
+    <p>Los tres son bonitos y profesionales. Lo que sube es el nivel de diseño y de efectos.</p>
+    <div class="tabla" id="tabla"></div>
+  </div>
   <div class="incl" data-fx="reveal"><span><b>En los 3:</b> adaptada al móvil</span><span>· 30 días de garantía tras la entrega</span><span>· la web y el dominio, a tu nombre</span><span>· plazos desde que nos mandas textos y fotos</span></div>
   <div class="autoria" data-fx="reveal">
     <span class="sello-a">100 % propio</span>
@@ -319,41 +336,60 @@ const WA = t => 'https://wa.me/34642383441?text=' + encodeURIComponent(t);
 const PACKS = [
   { id:'essential', cls:'ess', nom:'Essential', tag:'Para empezar', lema:'Tu negocio en internet, bien hecho.', para:'Negocios que necesitan una web bonita, clara y rápida.',
     h2:'Essen<em>tial</em>', txt:'Elige uno de estos diseños y lo adaptamos a tu negocio: tu logo, tus colores, tus fotos y tus textos. Una sola página con todo lo importante.',
-    items:['1 página con todo lo importante','Uno de nuestros diseños, adaptado a tu marca','Animaciones suaves','Botón directo a WhatsApp','Lista para salir en Google','1 ronda de cambios'], plazo:'3-5 días' },
+    items:['1 página con todo lo importante','Uno de nuestros diseños, adaptado a tu marca','Diseño limpio con animaciones suaves','Botón directo a WhatsApp','Lista para salir en Google','1 ronda de cambios'], plazo:'3-5 días' },
   { id:'pro', cls:'pro', nom:'Pro', tag:'Recomendado', lema:'Una web que te hace destacar.', para:'Negocios que quieren diferenciarse y captar más clientes.',
     h2:'P<em>ro</em>', txt:'Diseño personalizado con tu marca, varias páginas y efectos que llaman la atención. Pensada para que el cliente te escriba.',
-    items:['Hasta 5 páginas','Diseño personalizado con tu marca','2-3 efectos top (cristal, letras animadas, partículas…)','Formulario directo a WhatsApp + mapa','Ficha de Google configurada','2 rondas de cambios'], plazo:'7-10 días' },
+    items:['Hasta 5 páginas','Diseño personalizado con tu marca','Efectos avanzados: letras animadas, 3D, antes/después…','Formulario directo a WhatsApp + mapa','Ficha de Google configurada','2 rondas de cambios'], plazo:'7-10 días' },
   { id:'luxury', cls:'lux', nom:'Luxury', tag:'Experiencia', lema:'No es una web, es una experiencia.', para:'Marcas que quieren impresionar desde el primer segundo.',
     h2:'Lux<em>ury</em>', txt:'Diseño desde cero, solo para ti. Scroll de cine, vitrinas 3D y detalles que no vas a ver en ninguna otra web.',
-    items:['Hasta 8 páginas','Diseño desde cero, único','Scroll de cine, 3D o vitrina de producto','Todo lo del Pro + test o calculadora','Pack Google completo + reseñas','3 rondas de cambios'], plazo:'~3 semanas' },
+    items:['Hasta 8 páginas','Diseño desde cero, único','Intro animada, scroll de cine y 3D','Todo lo del Pro + test o calculadora','Pack Google completo + reseñas','3 rondas de cambios'], plazo:'~3 semanas' },
 ];
 // real:true = cliente real (con su permiso). Si no, negocio de ejemplo.
 const EJEMPLOS = {
   essential: [
     { id:'01-minimalista', url:'plantillas/01-minimalista/index.html', nom:'Clínica Alba', txt:'Minimalista: limpio y serio. Para clínicas, abogados, consultoras.' },
-    { id:'02-natural', url:'plantillas/02-natural/index.html', nom:'Raíz', txt:'Natural: cálido y cercano. Para peluquerías, estética, cafeterías.' },
     { id:'07-bento', url:'plantillas/07-bento/index.html', nom:'Laura Ríos', txt:'Bento: todo en bloques. Para nutricionistas, coaches, marcas personales.' },
-    { id:'09-pastel', url:'plantillas/09-pastel/index.html', nom:'Calma', txt:'Pastel: suave y amable. Para psicología, bienestar, salud.' },
     { id:'10-retro', url:'plantillas/10-retro/index.html', nom:'Barbería Navaja', txt:'Retro: con carácter. Para barberías, bares, tiendas vintage.' },
     { id:'11-corporativo', url:'plantillas/11-corporativo/index.html', nom:'Ortega & Sanz', txt:'Corporativo: confianza. Para abogados, asesorías, empresas.' },
   ],
   pro: [
     { id:'colclinic', url:'clientes/colclinic/index.html', real:true, nom:'Colclinic Dental', txt:'Clínica dental en Madrid. Antes y después deslizable, casos reales y cita por WhatsApp.' },
     { id:'13-restaurante', url:'plantillas/13-restaurante/index.html', nom:'Casa Merlo', txt:'Restaurante: carta por pestañas, "abierto ahora" en directo y reservas por WhatsApp.' },
+    { id:'02-natural', url:'plantillas/02-natural/index.html', nom:'Raíz', txt:'Estudio capilar natural. Antes y después deslizable, tienda y reservas.' },
+    { id:'09-pastel', url:'plantillas/09-pastel/index.html', nom:'Calma', txt:'Psicología: suave, cercana y con formas que se mueven. Para psicología, bienestar, salud.' },
     { id:'04-moderno', url:'plantillas/04-moderno/index.html', nom:'PULSO', txt:'Moderno: atrevido y divertido. Para gimnasios, academias, eventos.' },
     { id:'05-cristal', url:'plantillas/05-cristal/index.html', nom:'flux', txt:'Cristal: brillante y tecnológico. Para apps y servicios digitales.' },
-    { id:'08-editorial', url:'plantillas/08-editorial/index.html', nom:'Inés Vidal', txt:'Editorial: de revista. Para fotógrafos, moda, estudios creativos.' },
+    { id:'08-editorial', url:'plantillas/08-editorial/index.html', nom:'Inés Vidal', txt:'Editorial: de revista, con visor de fotos a pantalla completa. Para fotógrafos y creativos.' },
   ],
   luxury: [
     { id:'diaman', url:'clientes/diaman/index.html', real:true, nom:'Diaman Group', txt:'Empresas en Dubái. La ciudad se mueve mientras bajas, como en una película.' },
     { id:'jarv-parfums', url:'clientes/jarv-parfums/index.html', real:true, nom:'JARV Parfums', txt:'Perfumes árabes. Vitrina con huecos de piedra iluminados: tocas un frasco y se abre su ficha.' },
-    { id:'03-lujo', url:'plantillas/03-lujo/index.html', nom:'Maison Ombre', txt:'Lujo editorial: oscuro y exclusivo. Para perfumería, joyería, moda.' },
-    { id:'06-oscuro-tech', url:'plantillas/06-oscuro-tech/index.html', nom:'NODO', txt:'Oscuro tech con scroll de cine. Para agencias, tecnología, música.' },
-    { id:'12-inmersivo', url:'plantillas/12-inmersivo/index.html', nom:'Valle Hondo', txt:'Inmersivo: la portada es un vuelo por el paisaje. Para turismo y hoteles.' },
+    { id:'03-lujo', url:'plantillas/03-lujo/index.html', nom:'Maison Ombre', txt:'Perfumería: intro de entrada, un frasco que crece hasta llenar la pantalla y colección en horizontal.' },
+    { id:'06-oscuro-tech', url:'plantillas/06-oscuro-tech/index.html', nom:'NODO', txt:'Estudio digital: una escultura 3D de partículas que cambia de forma mientras bajas.' },
+    { id:'12-inmersivo', url:'plantillas/12-inmersivo/index.html', nom:'Valle Hondo', txt:'Casas rurales: la portada es un vuelo por el paisaje y las casas pasan en horizontal.' },
   ],
 };
 
 // Fondo elegante del Luxury: brillo suave, foco de luz, polvo que flota (se aparta del ratón), reflejo que cruza y grano.
+// Tabla "qué cambia": 1 = lo incluye. Orden: Essential, Pro, Luxury.
+const NIVELES = [
+  ['Diseño', null],
+  ['Diseño limpio y profesional, adaptado al móvil', [1,1,1]],
+  ['Letras combinadas (cursivas elegantes), degradados y marcos con forma', [0,1,1]],
+  ['Diseño único, creado desde cero para tu marca', [0,0,1]],
+  ['Movimiento', null],
+  ['Las secciones aparecen suaves al bajar', [1,1,1]],
+  ['Títulos que entran letra a letra y números que cuentan solos', [0,1,1]],
+  ['Tarjetas en 3D, botones con efecto imán y fotos con profundidad', [0,1,1]],
+  ['Partes interactivas: antes y después, carta, visor de fotos…', [0,1,1]],
+  ['Intro animada al abrir la web', [0,0,1]],
+  ['Scroll de cine: vídeo o escena 3D que avanza mientras bajas', [0,0,1]],
+  ['Galerías que se mueven en horizontal y fotos que siguen al ratón', [0,0,1]],
+  ['Cursor propio y scroll suave con inercia', [0,0,1]],
+];
+document.getElementById('tabla').innerHTML = `<div class="fila cab"><span></span><b class="ess">Essential</b><b class="pro">Pro</b><b class="lux">Luxury</b></div>` +
+  NIVELES.map(([t, v]) => v ? `<div class="fila"><span>${t}</span>${v.map((x, i) => `<i class="${x ? 'si' : 'no'} ${['ess','pro','lux'][i]}" aria-label="${x ? 'Incluido' : 'No incluido'}">${x ? '✓' : '—'}</i>`).join('')}</div>` : `<div class="fila grupo"><span>${t}</span></div>`).join('');
+
 const ESPACIO = n => `<div class="espacio" aria-hidden="true"><span class="nebula"></span><span class="foco"></span><canvas data-fx="particles" data-color="rgba(241,226,255,.55)" data-count="${n}"></canvas><span class="reflejo"></span><span class="grano"></span></div>`;
 
 document.getElementById('tres').innerHTML = PACKS.map((p, i) => `

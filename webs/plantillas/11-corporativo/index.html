@@ -107,21 +107,21 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <nav><div class="wrap">
   <a href="#" class="logo">Ortega <span>&amp;</span> Sanz</a>
   <ul><li><a href="#areas">Áreas</a></li><li><a href="#despacho">Despacho</a></li><li><a href="#equipo">Equipo</a></li></ul>
-  <a href="#contacto" class="btn fx-btn-fill" style="padding:12px 18px">Primera consulta</a>
+  <a href="#contacto" class="btn" style="padding:12px 18px">Primera consulta</a>
 </div></nav>
 
 <header class="hero"><div class="wrap g">
-  <h1 data-fx="split" data-by="words" data-step=".06">Defendemos lo que has construido<span class="r">.</span></h1>
+  <h1 data-fx="reveal">Defendemos lo que has construido<span class="r">.</span></h1>
   <div class="lado" data-fx="reveal" data-delay=".5">
     <p>Despacho de abogados especializado en empresa, familia y patrimonio. Más de 25 años resolviendo asuntos complejos con un trato cercano y honorarios claros.</p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap"><a href="#contacto" class="btn fx-btn-fill" data-fx="magnetic">Solicitar consulta →</a><a href="#areas" class="btn o fx-btn-fill">Áreas</a></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><a href="#contacto" class="btn" >Solicitar consulta →</a><a href="#areas" class="btn o">Áreas</a></div>
   </div>
-  <div class="foto" data-fx="reveal" data-dir="clip"><img src="img/edificio.webp" alt="Fachada de cristal de un edificio de oficinas" fetchpriority="high" data-fx="parallax" data-speed="-0.08"><div class="ficha"><div><b>25</b><span>años</span></div><div><b>1.800+</b><span>casos</span></div><div><b>94 %</b><span>resueltos a favor</span></div></div></div>
+  <div class="foto" data-fx="reveal"><img src="img/edificio.webp" alt="Fachada de cristal de un edificio de oficinas" fetchpriority="high"><div class="ficha"><div><b>25</b><span>años</span></div><div><b>1.800+</b><span>casos</span></div><div><b>94 %</b><span>resueltos a favor</span></div></div></div>
 </div></header>
 
 <section id="areas"><div class="wrap">
   <span class="lbl">Áreas de práctica</span>
-  <h2 data-fx="split" data-by="words" style="margin-top:20px;max-width:18ch">Especialistas en lo que de verdad importa.</h2>
+  <h2 data-fx="reveal" style="margin-top:20px;max-width:18ch">Especialistas en lo que de verdad importa.</h2>
   <div class="areas" data-stagger=".07">
     <a class="area" href="#contacto"><span class="n">01</span><div><h3>Mercantil</h3><p>Constitución de sociedades, pactos de socios, contratos y operaciones.</p></div><span class="mas">Más información →</span></a>
     <a class="area" href="#contacto"><span class="n">02</span><div><h3>Familia</h3><p>Divorcios, custodias y pensiones con la máxima discreción.</p></div><span class="mas">Más información →</span></a>
@@ -135,25 +135,25 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <section id="despacho"><div class="wrap">
   <span class="lbl">El despacho en cifras</span>
   <div class="nums" data-stagger=".08">
-    <div class="num"><b data-fx="counter" data-to="25">0</b><span>años de experiencia</span></div>
-    <div class="num"><b data-fx="counter" data-to="1800" data-suffix="+">0</b><span>asuntos resueltos</span></div>
-    <div class="num"><b data-fx="counter" data-to="12">0</b><span>abogados colegiados</span></div>
-    <div class="num"><b data-fx="counter" data-to="48" data-suffix=" h">0</b><span>para tu primer informe</span></div>
+    <div class="num"><b>25</b><span>años de experiencia</span></div>
+    <div class="num"><b>1.800+</b><span>asuntos resueltos</span></div>
+    <div class="num"><b>12</b><span>abogados colegiados</span></div>
+    <div class="num"><b>48 h</b><span>para tu primer informe</span></div>
   </div>
   <div class="duo">
-    <figure data-fx="reveal" data-dir="clip"><img src="img/reunion.webp" alt="Reunión con clientes firmando un contrato" loading="lazy"></figure>
-    <figure data-fx="reveal" data-dir="clip" data-delay=".12"><img src="img/sala.webp" alt="Sala de reuniones del despacho" loading="lazy"></figure>
+    <figure data-fx="reveal"><img src="img/reunion.webp" alt="Reunión con clientes firmando un contrato" loading="lazy"></figure>
+    <figure data-fx="reveal" data-delay=".12"><img src="img/sala.webp" alt="Sala de reuniones del despacho" loading="lazy"></figure>
   </div>
 </div></section>
 
 <section class="mani"><div class="wrap">
   <span class="lbl">Nuestra forma de trabajar</span>
-  <p data-fx="fill">Te explicamos tu caso en lenguaje claro, te damos un presupuesto cerrado antes de empezar y te informamos de cada paso. Sin letra pequeña.</p>
+  <p data-fx="reveal">Te explicamos tu caso en lenguaje claro, te damos un presupuesto cerrado antes de empezar y te informamos de cada paso. Sin letra pequeña.</p>
 </div></section>
 
 <section id="equipo"><div class="wrap">
   <span class="lbl">Socios</span>
-  <h2 data-fx="split" data-by="words" style="margin-top:20px">Quién lleva tu caso.</h2>
+  <h2 data-fx="reveal" style="margin-top:20px">Quién lleva tu caso.</h2>
   <div class="equipo" data-stagger=".08">
     <div class="socio"><div class="av">MO</div><h3>Marta Ortega</h3><p>Socia fundadora · Mercantil</p></div>
     <div class="socio"><div class="av">JS</div><h3>Javier Sanz</h3><p>Socio fundador · Familia</p></div>
@@ -165,7 +165,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <section class="contacto" id="contacto"><div class="wrap g">
   <div class="datos">
     <span class="lbl">Contacto</span>
-    <h2 data-fx="split" data-by="words" style="margin:20px 0 10px">Cuéntanos tu caso.</h2>
+    <h2 data-fx="reveal" style="margin:20px 0 10px">Cuéntanos tu caso.</h2>
     <p>Respondemos en menos de 24 horas laborables. La primera valoración es gratuita y confidencial.</p>
     <p><b>Teléfono</b>910 000 000</p>
     <p><b>Dirección</b>Paseo Ejemplo 45, 28046 Madrid</p>
@@ -176,7 +176,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     <label>Teléfono o email<input required></label>
     <label>Área<select><option>Mercantil</option><option>Familia</option><option>Herencias</option><option>Laboral</option><option>Inmobiliario</option><option>Otro</option></select></label>
     <label>Tu consulta<textarea rows="4"></textarea></label>
-    <button class="btn fx-btn-fill" style="border:0;cursor:pointer;justify-self:start">Enviar consulta →</button>
+    <button class="btn" style="border:0;cursor:pointer;justify-self:start">Enviar consulta →</button>
   </form>
 </div></section>
 <footer><div class="wrap"><span>Ortega &amp; Sanz Abogados · Plantilla 11 · Corporativo</span><span>Aviso legal · Privacidad · Cookies</span></div></footer>

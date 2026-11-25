@@ -29,7 +29,7 @@ section{padding:clamp(80px,10vw,130px) 0;position:relative}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border:2px solid var(--tinta);border-radius:6px;background:var(--rojo);color:#fff;font:700 15px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;box-shadow:4px 4px 0 var(--tinta);transition:translate .2s,box-shadow .2s}
 .btn:hover{translate:-2px -2px;box-shadow:6px 6px 0 var(--tinta)}
 .btn.c{background:var(--crema);color:var(--tinta)}
-.sticker{display:inline-block;background:var(--azul);color:var(--crema);padding:8px 14px;border-radius:4px;font:700 13px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;rotate:-3deg}
+.sticker{display:inline-block;background:var(--azul);color:var(--crema);padding:8px 14px;border-radius:4px;font:700 13px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}
 
 /* poste de barbero animado */
 .poste{width:22px;border-radius:12px;border:2px solid var(--tinta);overflow:hidden;background:repeating-linear-gradient(-45deg,var(--rojo) 0 12px,#fff 12px 24px,var(--azul) 24px 36px,#fff 36px 48px);background-size:100% 68px;animation:poste 2.2s linear infinite}
@@ -50,7 +50,7 @@ header.top nav{display:flex;gap:26px}
 .hero p{font-size:clamp(17px,1.7vw,20px);max-width:38ch;color:#3b342b}
 .hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
 .marco{position:relative;justify-self:center;width:min(100%,460px)}
-.polaroid{background:#fff;padding:12px 12px 46px;box-shadow:0 20px 40px -18px rgba(0,0,0,.45);rotate:3deg;position:relative}
+.polaroid{background:#fff;padding:12px 12px 46px;box-shadow:0 20px 40px -18px rgba(0,0,0,.45);position:relative}
 .polaroid img{aspect-ratio:4/5;object-fit:cover;width:100%;filter:sepia(.25) contrast(1.05)}
 .polaroid span{position:absolute;left:0;right:0;bottom:12px;text-align:center;font:400 22px var(--serif)}
 .sello{position:absolute;left:-46px;bottom:-30px;width:150px;height:150px;animation:gira 18s linear infinite;z-index:2}
@@ -75,9 +75,9 @@ header.top nav{display:flex;gap:26px}
 
 /* galería polaroids */
 .galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:50px}
-.galeria .polaroid:nth-child(1){rotate:-4deg}.galeria .polaroid:nth-child(2){rotate:2deg;margin-top:40px}.galeria .polaroid:nth-child(3){rotate:-2deg}
+
 .galeria .polaroid{transition:rotate .5s var(--fx-ease),scale .5s var(--fx-ease)}
-.galeria .polaroid:hover{rotate:0deg;scale:1.04}
+
 @media (max-width:760px){.galeria{grid-template-columns:1fr 1fr}.galeria .polaroid:nth-child(2){margin-top:0}.galeria .polaroid:nth-child(3){grid-column:1/-1;width:70%;justify-self:center}}
 
 /* horario + mapa */
@@ -94,9 +94,12 @@ header.top nav{display:flex;gap:26px}
 .final .btn{background:var(--crema);color:var(--tinta)}
 footer{background:var(--tinta);color:var(--crema2);padding:24px 0}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+/* Essential: diseño limpio, sin efectos de Pro/Luxury */
+.cinta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 30px;padding:18px 16px;font-size:clamp(22px,2.6vw,34px)}
+.poste{animation:none!important}
 </style>
 </head>
-<body data-fx-cursor>
+<body>
 <header class="top"><div class="wrap">
   <a href="#" class="logo"><span class="poste"></span>Navaja</a>
   <nav class="mono"><a href="#carta">Precios</a><a href="#trabajos">Trabajos</a><a href="#visita">Visítanos</a></nav>
@@ -106,24 +109,21 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <section class="hero"><div class="wrap">
   <div>
     <span class="sticker" data-fx="reveal">Desde 2012 · Lavapiés</span>
-    <h1 data-fx="split" data-by="chars" data-step=".035">Corte <em>clásico,</em> trato de barrio.</h1>
+    <h1 data-fx="reveal">Corte <em>clásico,</em> trato de barrio.</h1>
     <p data-fx="reveal" data-delay=".6">Navaja, toalla caliente y conversación. Sin prisas y con cita, para que nunca esperes.</p>
-    <div class="cta" data-fx="reveal" data-delay=".75"><a href="#reserva" class="btn" data-fx="magnetic">Reservar cita</a><a href="#carta" class="btn c">Ver precios</a></div>
+    <div class="cta" data-fx="reveal" data-delay=".75"><a href="#reserva" class="btn" >Reservar cita</a><a href="#carta" class="btn c">Ver precios</a></div>
   </div>
-  <div class="marco" data-fx="reveal" data-dir="scale">
+  <div class="marco" data-fx="reveal">
     <div class="polaroid"><img src="img/barbero.webp" alt="Barbero cortando el pelo a un cliente" fetchpriority="high"><span>la casa, 2026</span></div>
-    <div class="sello" aria-hidden="true">
-      <svg viewBox="0 0 150 150"><defs><path id="circ" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs><text><textPath href="#circ">BARBERÍA NAVAJA · LAVAPIÉS · MADRID · </textPath></text></svg>
-      <div class="centro">✂</div>
-    </div>
+
   </div>
 </div>
-<div class="cinta" data-fx="marquee" data-speed="30"><span>Corte</span><span>Barba</span><span>Afeitado clásico</span><span>Toalla caliente</span><span>Cerveza fría</span></div>
+<div class="cinta"><span>Corte</span><span>Barba</span><span>Afeitado clásico</span><span>Toalla caliente</span><span>Cerveza fría</span></div>
 </section>
 
 <section id="carta"><div class="wrap">
   <span class="mono" style="color:var(--rojo)">Nº 01 — La carta</span>
-  <h2 data-fx="split" data-by="words">Precios de <em style="font-style:normal;color:var(--azul)">toda la vida.</em></h2>
+  <h2 data-fx="reveal">Precios de <em style="font-style:normal;color:var(--azul)">toda la vida.</em></h2>
   <div class="carta" data-fx="reveal">
     <h3>— Servicios —</h3>
     <div class="linea"><div><b>Corte de pelo</b><small>lavado + peinado</small></div><i></i><span>16 €</span></div>
@@ -137,7 +137,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 <section id="trabajos" style="padding-top:0"><div class="wrap">
   <span class="mono" style="color:var(--rojo)">Nº 02 — Trabajos</span>
-  <h2 data-fx="split" data-by="words">Lo que sale de esta silla.</h2>
+  <h2 data-fx="reveal">Lo que sale de esta silla.</h2>
   <div class="galeria">
     <div class="polaroid" data-fx="reveal"><img src="img/corte.webp" alt="Corte en proceso" loading="lazy"><span>degradado</span></div>
     <div class="polaroid" data-fx="reveal" data-delay=".12"><img src="img/local.webp" alt="Interior de la barbería" loading="lazy"><span>el local</span></div>
@@ -147,7 +147,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 <section id="visita" style="padding-top:0"><div class="wrap">
   <span class="mono" style="color:var(--rojo)">Nº 03 — Visítanos</span>
-  <h2 data-fx="split" data-by="words">Te esperamos.</h2>
+  <h2 data-fx="reveal">Te esperamos.</h2>
   <div class="info" data-stagger=".1">
     <div class="caja"><h3>Horario</h3><table><tr><td>Lunes</td><td>cerrado</td></tr><tr><td>Martes – Viernes</td><td>10:00 – 20:30</td></tr><tr><td>Sábado</td><td>09:30 – 15:00</td></tr><tr><td>Domingo</td><td>cerrado</td></tr></table></div>
     <div class="caja" style="background:var(--azul);color:var(--crema)"><h3>Dónde</h3><p style="font:400 15px/1.7 var(--mono)">Calle Ejemplo 21<br>28012 · Lavapiés, Madrid<br>Metro Lavapiés (L3)</p><a href="#" class="btn" style="margin-top:20px">Abrir en Maps</a></div>
@@ -156,8 +156,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 <section class="final" id="reserva"><div class="wrap">
   <span class="sticker" style="background:var(--tinta)">Sin esperas</span>
-  <h2 data-fx="split" data-by="chars" data-step=".03">¿Te toca corte?</h2>
-  <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20cita%20en%20Navaja" class="btn" data-fx="magnetic" target="_blank" rel="noopener">Reservar por WhatsApp →</a>
+  <h2 data-fx="reveal">¿Te toca corte?</h2>
+  <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20cita%20en%20Navaja" class="btn"  target="_blank" rel="noopener">Reservar por WhatsApp →</a>
 </div></section>
 <footer><div class="wrap mono"><span>Barbería Navaja · Plantilla 10 · Retro</span><span>@navaja.barberia</span></div></footer>
 <script src="fx.js" defer></script>

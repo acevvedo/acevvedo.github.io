@@ -7,11 +7,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Maison Ombre · Parfums</title>
-<meta name="description" content="Plantilla 03 · Lujo editorial. Perfumería ficticia con vitrina de producto y ficha animada.">
+<meta name="description" content="Plantilla 03 · Luxury. Perfumería ficticia con intro, scroll de cine, colección en horizontal y ficha animada.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="fx.css">
+<link rel="stylesheet" href="lux.css">
 <style>
 :root{--bg:#0a0a0b;--sf:#121113;--fg:#f1ede6;--mut:#8d8983;--line:rgba(241,237,230,.12);--acc:#c9a27e;
   --serif:"Instrument Serif",Georgia,serif;--sans:"Inter",system-ui,sans-serif;--fx-dur:1.3s;--fx-dist:30px}
@@ -104,11 +105,44 @@ nav .right{justify-self:end;display:flex;gap:24px}
 .cierre h2{font-size:clamp(56px,10vw,170px);margin-bottom:40px}
 .news{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:520px;margin:0 auto}
 .news input{flex:1;min-width:220px;background:none;border:0;border-bottom:1px solid rgba(241,237,230,.35);color:var(--fg);font:300 16px var(--sans);padding:14px 4px;outline:none}
+/* —— Luxury —— */
+:root{--lux-ibg:#0a0a0b;--lux-ifg:#f1ede6;--lux-acc:#e8d9c7;--lux-ifont:"Instrument Serif",serif}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;mix-blend-mode:screen}
+.hero h1 em{background:linear-gradient(100deg,#f1ede6 20%,#e8c9c2 45%,#cbb7e8 60%,#f1ede6 80%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brillo 7s ease-in-out infinite}
+@keyframes brillo{0%,100%{background-position:0 0}50%{background-position:100% 0}}
+.scroll-ind{position:absolute;z-index:2;left:50%;bottom:22px;translate:-50% 0;width:1px;height:54px;background:rgba(241,237,230,.2);overflow:hidden}
+.scroll-ind::after{content:"";position:absolute;inset:0;background:var(--fg);animation:baja 2.2s var(--fx-ease) infinite}
+@keyframes baja{from{transform:translateY(-100%)}to{transform:translateY(100%)}}
+.nueve .lux-x-media img{object-position:50% 40%}
+.nueve .capa{position:relative;z-index:2;text-align:center;padding:0 16px}
+.nueve .capa h2{font-size:clamp(54px,10vw,170px)}
+.nueve .capa .cap{display:block;margin-bottom:22px;color:#e9e4dc}
+.nueve .lado{position:absolute;z-index:2;bottom:8vh;left:0;right:0;display:flex;justify-content:space-between;gap:20px;padding:0 clamp(16px,5vw,70px);font-size:14px;color:#cfcac2}
+.nueve .lado b{display:block;font:400 clamp(34px,4vw,56px)/1 var(--serif);color:var(--fg)}
+.col-h .lux-h-sticky{gap:clamp(24px,4vh,46px)}
+.col-h .cab{padding-inline:clamp(16px,6vw,90px);display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.col-h .nicho{width:clamp(240px,25vw,400px);aspect-ratio:3/4.2;flex:none;max-height:62vh}
+.col-h .nicho .n0{position:absolute;z-index:2;top:16px;left:20px;font:400 12px/1 var(--sans);letter-spacing:.2em;color:#cfcac2}
+.col-h .nicho .lbl b em{font-style:italic}
+.col-h .fin{width:clamp(250px,24vw,360px);flex:none;align-self:center;display:flex;flex-direction:column;align-items:flex-start;gap:22px;padding-right:4vw}
+.col-h .fin h3{font-size:clamp(40px,4vw,64px)}
+@media (max-width:700px){.col-h .nicho{width:68vw;max-height:56vh}}
+.notas-l{margin-top:60px;border-top:1px solid var(--line)}
+.notas-l li{display:grid;grid-template-columns:90px 1fr 1.2fr;align-items:center;gap:20px;padding:34px 0;border-bottom:1px solid var(--line);transition:padding .6s var(--fx-ease),color .4s}
+.notas-l .n{font:400 clamp(44px,5vw,80px)/1 var(--serif);font-style:italic;color:var(--acc)}
+.notas-l h3{font-size:clamp(40px,5.5vw,92px);transition:transform .6s var(--fx-ease)}
+.notas-l p{color:var(--mut);max-width:36ch;justify-self:end}
+.notas-l:hover li{color:var(--mut)}
+.notas-l li:hover{color:var(--fg);padding-left:14px}
+.notas-l li:hover h3{transform:translateX(16px);font-style:italic}
+@media (max-width:760px){.notas-l li{grid-template-columns:60px 1fr}.notas-l p{grid-column:1/-1;justify-self:start}}
+.maison figure{position:relative}
+.cierre h2{font-size:clamp(64px,13vw,230px)}
 footer{border-top:1px solid var(--line);padding:36px 0 60px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </style>
 </head>
-<body data-fx-cursor>
+<body data-lux-intro="Ombre" data-lux-smooth data-lux-cursor>
 <nav><div class="wrap">
   <div class="links cap" style="color:#fff"><a href="#coleccion">Colección</a><a href="#notas">Notas</a><a href="#maison">Maison</a></div>
   <a href="#" class="logo">Ombre</a>
@@ -117,12 +151,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <header class="hero">
   <picture><source media="(max-width:700px)" srcset="img/grenat.webp"><img src="img/hero.webp" alt="Frasco de perfume sobre fondo negro" fetchpriority="high"></picture>
+  <canvas data-fx="particles" data-color="rgba(239,227,214,.45)" data-count="28"></canvas>
+  <span class="scroll-ind" aria-hidden="true"></span>
   <div class="txt wrap">
     <span class="cap" data-fx="reveal">Maison de parfum · Desde 1998</span>
     <h1 data-fx="split" data-by="chars" data-style="blur" data-step=".05">Ombre <em>Noire</em></h1>
     <div class="row">
       <p data-fx="reveal" data-delay=".8">Perfumes de autor creados a mano en pequeñas tiradas. Cada frasco, numerado.</p>
-      <a href="#coleccion" class="btn fx-btn-fill" data-fx="magnetic reveal" data-delay="1">Descubrir la colección</a>
+      <a href="#coleccion" class="btn fx-btn-fill" data-fx="magnetic reveal" data-delay="1" data-cursor="Bajar">Descubrir la colección</a>
     </div>
   </div>
 </header>
@@ -132,35 +168,46 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <p data-fx="fill">Un perfume no se lleva: se recuerda. Por eso trabajamos como antes, con materias primas nobles, maceraciones lentas y ninguna prisa.</p>
 </div></section>
 
-<section id="coleccion" style="padding-top:0"><div class="wrap">
-  <div class="vit-head">
-    <div><span class="cap">Colección 2026</span><h2 data-fx="split" data-by="words" style="margin-top:18px">La <em>vitrina.</em></h2></div>
-    <p style="color:var(--mut);max-width:34ch" data-fx="reveal">Toca un frasco para ver su ficha, sus notas y su precio.</p>
+<section class="nueve" data-lux="expand">
+  <div class="lux-x-sticky">
+    <div class="lux-x-media"><img src="img/nuit.webp" alt="Frasco con reflejos azules" loading="lazy"></div>
+    <div class="capa" data-from=".55" data-to="1"><span class="cap">Nº 05 · Edición limitada</span><h2>Nuit <em>Bleue</em></h2></div>
+    <div class="lado" data-from=".7" data-to="1"><span><b>9 meses</b>de maceración</span><span style="text-align:right"><b>300</b>frascos numerados</span></div>
   </div>
-  <div class="vitrina" data-stagger=".1">
-    <div class="nicho" data-n="Noire" data-e="Lune" data-p="185 €" data-img="img/hero.webp" data-d="Cuero, iris y humo de incienso. Para la noche."><img src="img/hero.webp" alt="Ombre Noire" loading="lazy" style="object-position:50% 60%;scale:1.6"><div class="lbl"><b>Noire</b><span>Nº 01</span></div></div>
-    <div class="nicho" data-n="Ambre" data-e="Doré" data-p="165 €" data-img="img/ambar.webp" data-d="Ámbar gris, vainilla de Madagascar y madera de oud."><img src="img/ambar.webp" alt="Ombre Ambre" loading="lazy"><div class="lbl"><b>Ambre</b><span>Nº 02</span></div></div>
-    <div class="nicho" data-n="Cristal" data-e="Blanc" data-p="150 €" data-img="img/cristal.webp" data-d="Almizcle blanco, neroli y pera. Limpio como el lino."><img src="img/cristal.webp" alt="Ombre Cristal" loading="lazy"><div class="lbl"><b>Cristal</b><span>Nº 03</span></div></div>
-    <div class="nicho" data-n="Grenat" data-e="Rouge" data-p="175 €" data-img="img/grenat.webp" data-d="Rosa turca, pimienta rosa y pachuli. Intenso."><img src="img/grenat.webp" alt="Ombre Grenat" loading="lazy"><div class="lbl"><b>Grenat</b><span>Nº 04</span></div></div>
-  </div>
-</div></section>
+</section>
 
-<div class="cinta" data-fx="marquee" data-speed="38"><span>Hecho a mano en Grasse</span><span>Tiradas numeradas</span><span>Envío con muestra de regalo</span><span>Grabado gratuito</span></div>
+<section id="coleccion" class="col-h" data-lux="horizontal">
+  <div class="lux-h-sticky">
+    <div class="cab"><div><span class="cap">Colección 2026</span><h2 data-fx="split" data-by="words" style="margin-top:18px">La <em>vitrina.</em></h2></div>
+      <p style="color:var(--mut);max-width:30ch">Baja para recorrerla. Toca un frasco para ver su ficha.</p></div>
+    <div class="lux-h-track">
+      <div class="nicho" data-cursor="Ver" data-n="Noire" data-e="Lune" data-p="185 €" data-img="img/hero.webp" data-d="Cuero, iris y humo de incienso. Para la noche."><img src="img/hero.webp" alt="Ombre Noire" loading="lazy" style="object-position:50% 60%;scale:1.6"><span class="n0">Nº 01</span><div class="lbl"><b>Noire <em>Lune</em></b><span>185 €</span></div></div>
+      <div class="nicho" data-cursor="Ver" data-n="Ambre" data-e="Doré" data-p="165 €" data-img="img/ambar.webp" data-d="Ámbar gris, vainilla de Madagascar y madera de oud."><img src="img/ambar.webp" alt="Ombre Ambre" loading="lazy"><span class="n0">Nº 02</span><div class="lbl"><b>Ambre <em>Doré</em></b><span>165 €</span></div></div>
+      <div class="nicho" data-cursor="Ver" data-n="Cristal" data-e="Blanc" data-p="150 €" data-img="img/cristal.webp" data-d="Almizcle blanco, neroli y pera. Limpio como el lino."><img src="img/cristal.webp" alt="Ombre Cristal" loading="lazy"><span class="n0">Nº 03</span><div class="lbl"><b>Cristal <em>Blanc</em></b><span>150 €</span></div></div>
+      <div class="nicho" data-cursor="Ver" data-n="Grenat" data-e="Rouge" data-p="175 €" data-img="img/grenat.webp" data-d="Rosa turca, pimienta rosa y pachuli. Intenso."><img src="img/grenat.webp" alt="Ombre Grenat" loading="lazy"><span class="n0">Nº 04</span><div class="lbl"><b>Grenat <em>Rouge</em></b><span>175 €</span></div></div>
+      <div class="nicho" data-cursor="Ver" data-n="Nuit" data-e="Bleue" data-p="210 €" data-img="img/nuit.webp" data-d="Lavanda negra, ámbar azul y musgo de roble. Edición limitada."><img src="img/nuit.webp" alt="Ombre Nuit" loading="lazy"><span class="n0">Nº 05</span><div class="lbl"><b>Nuit <em>Bleue</em></b><span>210 €</span></div></div>
+      <div class="fin"><h3>Cada frasco, <em>numerado a mano.</em></h3><a href="#maison" class="btn fx-btn-fill" data-fx="magnetic">La maison</a></div>
+    </div>
+    <div class="lux-h-bar"><i></i></div>
+  </div>
+</section>
+
+<div class="cinta" data-fx="marquee" data-speed="38" data-lux="velocity"><span>Hecho a mano en Grasse</span><span>Tiradas numeradas</span><span>Envío con muestra de regalo</span><span>Grabado gratuito</span></div>
 
 <section id="notas"><div class="wrap">
-  <span class="cap">Anatomía de un perfume</span>
+  <span class="cap" data-lux="scramble">Anatomía de un perfume</span>
   <h2 data-fx="split" data-by="words" style="margin-top:18px;max-width:14ch">Tres <em>tiempos,</em> una historia.</h2>
-  <div class="piramide" data-stagger=".14">
-    <div><span class="n">I</span><h3>Salida</h3><p>Los primeros quince minutos. Bergamota, pimienta rosa, neroli.</p></div>
-    <div><span class="n">II</span><h3>Corazón</h3><p>El carácter. Iris, rosa turca, jazmín sambac.</p></div>
-    <div><span class="n">III</span><h3>Fondo</h3><p>Lo que queda en la piel al día siguiente. Ámbar, cuero, oud.</p></div>
-  </div>
+  <ul class="notas-l" data-lux="hoverlist">
+    <li data-img="img/cristal.webp"><span class="n">I</span><h3>Salida</h3><p>Los primeros quince minutos. Bergamota, pimienta rosa, neroli.</p></li>
+    <li data-img="img/grenat.webp"><span class="n">II</span><h3>Corazón</h3><p>El carácter. Iris, rosa turca, jazmín sambac.</p></li>
+    <li data-img="img/ambar.webp"><span class="n">III</span><h3>Fondo</h3><p>Lo que queda en la piel al día siguiente. Ámbar, cuero, oud.</p></li>
+  </ul>
 </div></section>
 
-<section id="maison" style="padding-top:0"><div class="wrap maison">
-  <figure data-fx="reveal" data-dir="clip"><img src="img/nuit.webp" alt="Frasco con reflejos azules" loading="lazy" data-fx="parallax" data-speed="-0.06" style="scale:1.12"></figure>
+<section id="maison" data-lux-bg="#1d0f14"><div class="wrap maison">
+  <figure data-fx="reveal" data-dir="clip"><div style="overflow:hidden;height:100%"><img src="img/ambar.webp" alt="Frasco ámbar" loading="lazy" data-lux="zoom" style="width:100%;height:100%;object-fit:cover"></div></figure>
   <div>
-    <span class="cap">Maison</span>
+    <span class="cap" data-lux="scramble">Maison · Grasse</span>
     <h2 data-fx="split" data-by="words" style="margin-top:18px">El tiempo es el <em>ingrediente.</em></h2>
     <p data-fx="reveal">Cada fragancia madura entre seis y nueve meses antes de embotellarse. Trabajamos con cultivadores de Grasse, Calabria y Madagascar, y numeramos cada frasco a mano.</p>
     <div style="margin-top:34px" data-fx="reveal"><a href="#" class="btn fx-btn-fill" data-fx="magnetic">Nuestra historia</a></div>
@@ -168,7 +215,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </div></section>
 
 <section class="cierre"><div class="wrap">
-  <span class="cap">Cartas de la maison</span>
+  <span class="cap" data-lux="scramble">Cartas de la maison</span>
   <h2 data-fx="split" data-by="words" data-style="blur" style="margin-top:20px">Primeras <em>noticias.</em></h2>
   <form class="news" onsubmit="event.preventDefault();this.innerHTML='<p class=cap>Gracias. Te escribiremos pronto.</p>'" data-fx="reveal">
     <input type="email" placeholder="Tu correo electrónico" aria-label="Correo electrónico" required>
@@ -176,7 +223,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </form>
 </div></section>
 
-<footer><div class="wrap cap"><span>Maison Ombre · Plantilla 03 · Lujo</span><span>Madrid · París</span></div></footer>
+<footer><div class="wrap cap"><span>Maison Ombre · Plantilla 03 · Luxury</span><span>Madrid · París</span></div></footer>
 
 <div class="ficha" role="dialog" aria-modal="true" aria-label="Ficha de perfume">
   <div class="foto"><img alt=""></div>
@@ -192,6 +239,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </div>
 
 <script src="fx.js" defer></script>
+<script src="lux.js" defer></script>
 <script>
 // Vitrina → ficha: la foto "vuela" con View Transitions (sin soporte, cambia sin animación)
 const f = document.querySelector('.ficha'), fImg = f.querySelector('.foto img');

@@ -112,6 +112,13 @@ nav ul{display:flex;gap:32px;list-style:none;padding:0;font-size:15px}
 .reserva .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 footer{padding:40px 0 60px;border-top:1px solid var(--line);font-size:14px;color:var(--mut)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.res{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(30px,6vw,90px);align-items:center}
+.res .cmp{aspect-ratio:4/4.6;border-radius:240px 240px 28px 28px;box-shadow:0 40px 80px -40px rgba(43,38,32,.5)}
+.res-n{display:flex;gap:clamp(18px,3vw,40px);flex-wrap:wrap;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+.res-n b{display:block;font:400 clamp(30px,3vw,42px)/1 var(--display);color:var(--terra)}
+.res-n>div>span{font-size:14px;color:var(--mut)}
+.res .cmp .fx-cmp-et{top:auto;bottom:16px}
+@media (max-width:860px){.res{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -179,6 +186,16 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
     <figure data-fx="reveal" data-dir="clip"><img src="img/luz.webp" alt="Pelo con luz de tarde" loading="lazy"></figure>
     <figure data-fx="parallax reveal" data-speed="0.08"><img src="img/salon.webp" alt="" loading="lazy"></figure>
   </div>
+</div></section>
+
+<section id="resultados" style="background:var(--sf)"><div class="wrap res">
+  <div>
+    <span class="eyebrow">Resultados</span>
+    <h2 data-fx="split" data-by="words">El cambio, <em>a la vista.</em></h2>
+    <p class="lead" data-fx="reveal" style="margin-top:18px">Desliza la barra: el mismo pelo antes y después de seis semanas de ritual de hidratación con aceites naturales.</p>
+    <div class="res-n" data-stagger=".1"><div><b><span data-fx="counter" data-to="6">0</span> sem.</b><span>de tratamiento</span></div><div><b>+<span data-fx="counter" data-to="80">0</span> %</b><span>de brillo medido</span></div><div><b><span data-fx="counter" data-to="0">0</span> químicos</b><span>agresivos</span></div></div>
+  </div>
+  <div class="cmp" data-fx="compare reveal"><img src="img/hero.webp" alt="Pelo antes del tratamiento" loading="lazy" style="filter:saturate(.35) brightness(.82) contrast(.86) sepia(.15)"><img src="img/hero.webp" alt="Pelo después del tratamiento" loading="lazy"><span class="fx-cmp-et a">Antes</span><span class="fx-cmp-et d">Después</span></div>
 </div></section>
 
 <section class="ops" id="opiniones"><div class="wrap">

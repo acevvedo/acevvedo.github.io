@@ -264,6 +264,28 @@
     });
   }
 
+  /* ---------- antes / después: <div data-fx="compare"><img class="antes"><img class="despues"></div>
+     Se arrastra la barra (ratón o dedo). Al aparecer hace un barrido para que se entienda solo. ---------- */
+  function compare(root) {
+    $$('[data-fx~="compare"]', root).forEach(el => {
+      if (el.querySelector('.fx-cmp-h')) return;
+      el.classList.add('fx-cmp');
+      const h = document.createElement('div'); h.className = 'fx-cmp-h'; h.innerHTML = '<span>&lsaquo; &rsaquo;</span>';
+      const r = document.createElement('input'); r.type = 'range'; r.min = 0; r.max = 100; r.value = 50; r.className = 'fx-cmp-r'; r.setAttribute('aria-label', 'Comparar antes y después');
+      el.append(h, r);
+      const set = v => el.style.setProperty('--pos', v + '%');
+      r.addEventListener('input', () => set(r.value)); set(50);
+      const cio = new IntersectionObserver(([e]) => {
+        if (!e.isIntersecting || reduced) return; cio.disconnect();
+        const t0 = performance.now(), k = [50, 18, 82, 50];
+        const go = t => { const p = Math.min(1, (t - t0) / 2200), i = Math.min(2, Math.floor(p * 3)), f = p * 3 - i, e2 = f < .5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2;
+          const v = k[i] + (k[i + 1] - k[i]) * e2; set(v); r.value = v; if (p < 1) requestAnimationFrame(go); };
+        setTimeout(() => requestAnimationFrame(go), 400);
+      }, { threshold: .6 });
+      cio.observe(el);
+    });
+  }
+
   /* ---------- barra de progreso: <div class="fx-progress"></div> ---------- */
   function progress() {
     const b = document.querySelector('.fx-progress'); if (!b) return;
@@ -281,7 +303,7 @@
 
   function init(root = document) {
     reveal(root); split(root); fill(root); parallax(root); magnetic(root); tilt(root);
-    counter(root); marquee(root); particles(root); blob(root); scrub(root);
+    counter(root); marquee(root); particles(root); blob(root); scrub(root); compare(root);
     if (root === document) { progress(); cursor(); }
     runScroll();
   }

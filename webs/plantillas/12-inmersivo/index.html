@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="fx.css">
+<link rel="stylesheet" href="lux.css">
 <style>
 :root{--bosque:#17201a;--bosque2:#223026;--crema:#f2ede4;--ocre:#c99a52;--mut:#a9b2a6;
   --serif:"Cormorant Garamond",Georgia,serif;--sans:"Manrope",system-ui,sans-serif;--fx-dur:1.3s;--mesh-1:#c99a52}
@@ -91,9 +92,31 @@ nav ul{display:flex;gap:30px;list-style:none;padding:0;font-size:14px}
 @media (max-width:900px){.form{grid-template-columns:1fr 1fr}.form label{border-right:0;border-bottom:1px solid #e7e1d6}.form .btn{grid-column:1/-1}}
 footer{background:var(--crema);color:#55604f;padding:30px 0 40px;font-size:14px;border-top:1px solid #e1d9ca}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+/* —— Luxury —— */
+:root{--lux-ibg:#17201a;--lux-ifg:#f2ede4;--lux-acc:#e9dcc4;--lux-ifont:"Cormorant Garamond",serif}
+.casas-h .lux-h-sticky{gap:36px}
+.casas-h .cab{padding-inline:clamp(16px,6vw,90px);display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.casas-h .lux-h-track .casa{width:clamp(280px,38vw,600px);flex:none;height:min(58vh,520px);margin:0}
+.casas-h .lux-h-track .casa img{height:100%;width:100%;object-fit:cover}
+.casas-h .fin{width:clamp(260px,26vw,380px);flex:none;align-self:center;display:flex;flex-direction:column;align-items:flex-start;gap:20px;padding-right:5vw}
+.casas-h .fin h3{font-size:clamp(40px,4.4vw,70px)}
+@media (max-width:700px){.casas-h .lux-h-track .casa{width:80vw;height:54vh}}
+.cielo .lux-x-media img{object-position:50% 30%;filter:brightness(.5) saturate(.75) hue-rotate(12deg)}
+.cielo .lux-x-media::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,16,40,.75),rgba(10,16,40,.2) 60%)}
+.cielo canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.cielo .capa2{position:relative;z-index:2;text-align:center;padding:0 16px}
+.cielo .capa2 h2{font-size:clamp(52px,9vw,150px)}
+.cielo .capa2 p{color:#dcd6cb;margin-top:16px}
+.exp-l{margin-top:56px;border-top:1px solid rgba(242,237,228,.15)}
+.exp-l li{display:grid;grid-template-columns:80px 1fr 1.1fr;gap:20px;align-items:center;padding:30px 0;border-bottom:1px solid rgba(242,237,228,.15);transition:padding .6s var(--fx-ease),opacity .4s}
+.exp-l .n{font:italic 400 clamp(36px,4vw,60px)/1 var(--serif);color:var(--ocre)}
+.exp-l h3{font-size:clamp(40px,5vw,84px);transition:transform .6s var(--fx-ease)}
+.exp-l p{color:var(--mut);justify-self:end;max-width:34ch}
+.exp-l:hover li{opacity:.4}.exp-l li:hover{opacity:1;padding-left:14px}.exp-l li:hover h3{transform:translateX(14px);font-style:italic}
+@media (max-width:760px){.exp-l li{grid-template-columns:54px 1fr}.exp-l p{grid-column:1/-1;justify-self:start}}
 </style>
 </head>
-<body>
+<body data-lux-intro="Valle Hondo" data-lux-smooth data-lux-cursor>
 <div class="fx-progress"></div>
 <nav id="nav"><div class="wrap">
   <a href="#" class="logo">Valle <em>Hondo</em></a>
@@ -118,29 +141,40 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   <p data-fx="fill">Tres casas de piedra restauradas a mano en un valle sin carreteras de paso. Sin televisión, con chimenea, y con las mejores estrellas que vas a ver en tu vida.</p>
 </div></section>
 
-<section id="casas" style="padding-top:0"><div class="wrap">
-  <span class="cap">Las casas</span>
-  <h2 data-fx="split" data-by="words" style="margin-top:18px">Elige tu <em>refugio.</em></h2>
-  <div class="casas" data-stagger=".12">
-    <article class="casa"><img src="img/casa.webp" alt="Casa de piedra entre árboles de otoño" loading="lazy"><div class="t"><h3>El Pajar</h3><p>2 personas · chimenea · bañera exenta</p><div class="pr"><span>noche desde</span><b>140 €</b></div></div></article>
-    <article class="casa"><img src="img/valle.webp" alt="Casas de piedra en el valle verde" loading="lazy"><div class="t"><h3>La Borda</h3><p>4-6 personas · jardín · horno de leña</p><div class="pr"><span>noche desde</span><b>210 €</b></div></div></article>
-    <article class="casa"><img src="img/amanecer.webp" alt="Refugio de piedra al amanecer" loading="lazy"><div class="t"><h3>El Refugio</h3><p>2 personas · vistas al pico · desayuno</p><div class="pr"><span>noche desde</span><b>165 €</b></div></div></article>
+<section id="casas" class="casas-h" data-lux="horizontal">
+  <div class="lux-h-sticky">
+    <div class="cab"><div><span class="cap">Las casas</span><h2 data-fx="split" data-by="words" style="margin-top:18px">Elige tu <em>refugio.</em></h2></div><p style="color:var(--mut);max-width:30ch">Tres casas, tres maneras de desconectar. Baja para verlas.</p></div>
+    <div class="lux-h-track">
+      <article class="casa" data-cursor="Ver"><img src="img/casa.webp" alt="Casa de piedra entre árboles de otoño" loading="lazy"><div class="t"><h3>El Pajar</h3><p>2 personas · chimenea · bañera exenta</p><div class="pr"><span>noche desde</span><b>140 €</b></div></div></article>
+      <article class="casa" data-cursor="Ver"><img src="img/valle.webp" alt="Casas de piedra en el valle verde" loading="lazy"><div class="t"><h3>La Borda</h3><p>4-6 personas · jardín · horno de leña</p><div class="pr"><span>noche desde</span><b>210 €</b></div></div></article>
+      <article class="casa" data-cursor="Ver"><img src="img/amanecer.webp" alt="Refugio de piedra al amanecer" loading="lazy"><div class="t"><h3>El Refugio</h3><p>2 personas · vistas al pico · desayuno</p><div class="pr"><span>noche desde</span><b>165 €</b></div></div></article>
+      <div class="fin"><h3>Sin vecinos, <em>sin prisas.</em></h3><a href="#reservar" class="btn lleno fx-btn-fill" data-fx="magnetic">Ver disponibilidad</a></div>
+    </div>
+    <div class="lux-h-bar"><i></i></div>
   </div>
-</div></section>
+</section>
+
+<section class="cielo" data-lux="expand" data-lux-bg="#0d1310">
+  <div class="lux-x-sticky">
+    <div class="lux-x-media"><img src="img/amanecer.webp" alt="Refugio de piedra al amanecer" loading="lazy"></div>
+    <canvas data-fx="particles" data-color="rgba(255,250,235,.7)" data-count="60"></canvas>
+    <div class="capa2" data-from=".5" data-to="1"><span class="cap" style="color:var(--crema)">Sin luz alrededor</span><h2>Las estrellas, <em>de verdad.</em></h2><p>Noche de cielo con telescopio y manta, cada sábado.</p></div>
+  </div>
+</section>
 
 <section id="experiencias" style="padding-top:0"><div class="wrap">
-  <span class="cap">Experiencias</span>
+  <span class="cap" data-lux="scramble">Experiencias</span>
   <h2 data-fx="split" data-by="words" style="margin-top:18px">Para no hacer <em>nada,</em> o todo.</h2>
-  <div class="exp" data-stagger=".1">
-    <div><span class="n">i</span><h3>Rutas</h3><p>Senderos desde la puerta, con mapas y recomendaciones nuestras.</p></div>
-    <div><span class="n">ii</span><h3>Cielo</h3><p>Noche de estrellas con telescopio y manta.</p></div>
-    <div><span class="n">iii</span><h3>Mesa</h3><p>Cesta de producto local y cenas por encargo.</p></div>
-    <div><span class="n">iv</span><h3>Calma</h3><p>Sauna de leña y masajes en la casa.</p></div>
-  </div>
+  <ul class="exp-l" data-lux="hoverlist">
+    <li data-img="img/valle.webp"><span class="n">i</span><h3>Rutas</h3><p>Senderos desde la puerta, con mapas y recomendaciones nuestras.</p></li>
+    <li data-img="img/amanecer.webp"><span class="n">ii</span><h3>Cielo</h3><p>Noche de estrellas con telescopio y manta.</p></li>
+    <li data-img="img/casa.webp"><span class="n">iii</span><h3>Mesa</h3><p>Cesta de producto local y cenas por encargo.</p></li>
+    <li data-img="img/valle.webp"><span class="n">iv</span><h3>Calma</h3><p>Sauna de leña y masajes en la casa.</p></li>
+  </ul>
 </div></section>
 
 <section class="reserva" id="reservar"><div class="wrap">
-  <span class="cap">Reserva directa</span>
+  <span class="cap" data-lux="scramble">Reserva directa</span>
   <h2 data-fx="split" data-by="words" style="margin-top:18px">Mejor precio <em>aquí</em>, siempre.</h2>
   <form class="form" data-fx="reveal" onsubmit="event.preventDefault();this.innerHTML='<p style=&quot;padding:18px;font:500 20px var(--sans)&quot;>¡Gracias! Te confirmamos disponibilidad por email en menos de 2 h.</p>'">
     <label>Llegada<input type="date" required></label>
@@ -151,8 +185,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </form>
   <div class="ventajas"><span>10 % menos que en plataformas</span><span>Cancelación gratis hasta 7 días antes</span><span>Late check-out de regalo</span></div>
 </div></section>
-<footer><div class="wrap"><span>Valle Hondo · Plantilla 12 · Inmersiva</span><span>Pirineo · reservas@vallehondo.example</span></div></footer>
+<footer><div class="wrap"><span>Valle Hondo · Plantilla 12 · Luxury</span><span>Pirineo · reservas@vallehondo.example</span></div></footer>
 <script src="fx.js" defer></script>
+<script src="lux.js" defer></script>
 <script>
 const nav = document.getElementById('nav');
 const sec = document.querySelector('.vuelo'), puntos = [...document.querySelectorAll('.vuelo .esc span')];

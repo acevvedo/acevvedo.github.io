@@ -74,9 +74,17 @@ header.top .r{text-align:right}
 .contacto .mail:hover{color:var(--acc)}
 .pie{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:30px 16px 40px;border-top:1px solid var(--line);margin-top:30px}
 @media (max-width:760px){.pie{grid-template-columns:1fr 1fr}}
+.visor{position:fixed;inset:0;z-index:80;background:rgba(12,12,12,.94);display:grid;place-items:center;padding:clamp(16px,5vw,60px)}
+.visor[hidden]{display:none}
+.visor img{max-width:100%;max-height:86vh;object-fit:contain}
+.visor img.in{animation:vin .6s cubic-bezier(.22,1,.36,1)}
+@keyframes vin{from{opacity:0;scale:.96}}
+.visor button{position:absolute;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;width:48px;height:48px;border-radius:50%;font-size:20px;cursor:pointer}
+.visor .vx{top:16px;right:16px}.visor .vp{left:16px;top:50%}.visor .vn{right:16px;top:50%}
+.visor .vc{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#bbb}
 </style>
 </head>
-<body data-fx-cursor>
+<body>
 <header class="top mono">
   <a href="#">Inés Vidal ©</a>
   <span class="h">Fotógrafa · Madrid</span>
@@ -124,7 +132,23 @@ header.top .r{text-align:right}
   <a class="mail disp" href="mailto:hola@inesvidal.example" data-fx="marquee" data-speed="18"><span>hola@inesvidal.com —&nbsp;</span></a>
   <div class="pie mono"><span>Inés Vidal ©2026</span><a href="#">Instagram ↗</a><a href="#">Vimeo ↗</a><span style="text-align:right">Plantilla 08 · Editorial</span></div>
 </section>
+<div class="visor" role="dialog" aria-modal="true" aria-label="Foto a pantalla completa" hidden><img alt=""><button class="vx" aria-label="Cerrar">×</button><button class="vp" aria-label="Anterior">←</button><button class="vn" aria-label="Siguiente">→</button><span class="vc mono"></span></div>
 <script src="fx.js" defer></script>
+<script>
+// Visor: toca una foto para verla en grande y pasa con las flechas (o deslizando en el móvil)
+(() => {
+  const figs = [...document.querySelectorAll('figure.foto')], v = document.querySelector('.visor'), im = v.querySelector('img'), c = v.querySelector('.vc');
+  let i = 0, x0 = null;
+  const show = n => { i = (n + figs.length) % figs.length; const s = figs[i].querySelector('img'); im.src = s.src; im.alt = s.alt; c.textContent = String(i + 1).padStart(2, '0') + ' / ' + String(figs.length).padStart(2, '0') + ' · ' + (figs[i].querySelector('figcaption span')?.textContent || ''); im.classList.remove('in'); void im.offsetWidth; im.classList.add('in'); };
+  figs.forEach((f, n) => { f.style.cursor = 'zoom-in'; f.addEventListener('click', () => { show(n); v.hidden = false; document.body.style.overflow = 'hidden'; }); });
+  const close = () => { v.hidden = true; document.body.style.overflow = ''; };
+  v.querySelector('.vx').onclick = close; v.querySelector('.vp').onclick = () => show(i - 1); v.querySelector('.vn').onclick = () => show(i + 1);
+  v.addEventListener('click', e => { if (e.target === v) close(); });
+  addEventListener('keydown', e => { if (v.hidden) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+  v.addEventListener('touchstart', e => x0 = e.touches[0].clientX, { passive: true });
+  v.addEventListener('touchend', e => { if (x0 == null) return; const d = e.changedTouches[0].clientX - x0; if (Math.abs(d) > 50) show(i + (d < 0 ? 1 : -1)); x0 = null; });
+})();
+</script>
 <script src="../../_base/firma.js" data-modo="plantilla" defer></script>
 </body>
 </html>
