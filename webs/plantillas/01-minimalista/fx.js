@@ -1,4 +1,4 @@
-/* © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla de Wix ni de ningún constructor). Todos los derechos reservados. */
+/* © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla ni una web prefabricada). Todos los derechos reservados. */
 /* fx.js — librería de "toques top" para webs de clientes. Vanilla, sin dependencias, ~10 KB.
    Uso: <link rel="stylesheet" href="fx.css"> + <script src="fx.js" defer></script>
    Se activa sola leyendo atributos data-fx (pueden combinarse: data-fx="reveal tilt").

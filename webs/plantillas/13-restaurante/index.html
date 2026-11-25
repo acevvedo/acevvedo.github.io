@@ -1,0 +1,362 @@
+<!doctype html>
+<!-- © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla ni una web prefabricada). Todos los derechos reservados. -->
+<html lang="es">
+<head>
+<meta name="author" content="Nicolás Acevedo (@acevvedoo)">
+<meta name="copyright" content="© 2026 Nicolás Acevedo · @acevvedoo">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Casa Merlo · Cocina de mercado en Madrid</title>
+<meta name="description" content="Cocina de mercado a la brasa en Madrid. Mira la carta y reserva tu mesa por WhatsApp.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<style>
+/* Sistema de diseño · Plantilla 13 Restaurante (pack Pro)
+   Crema cálida + tinta + burdeos de vino + oliva. DM Serif Display (títulos) + Figtree (texto). */
+:root{--bg:#f5efe6;--bg2:#ece3d6;--fg:#1e1a17;--mut:#776d64;--acc:#8a2c2c;--acc-2:#5f6b4a;--line:rgba(30,26,23,.14);
+  --serif:"DM Serif Display",Georgia,serif;--sans:"Figtree",system-ui,sans-serif;--ease:cubic-bezier(.22,1,.36,1);--r:22px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+em{font-style:italic;color:var(--acc)}
+.wrap{width:min(1220px,100% - 32px);margin-inline:auto}
+.k{font:700 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--acc)}
+h2{font:400 clamp(44px,6.4vw,92px)/.95 var(--serif);letter-spacing:-.02em}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:99px;font:700 16px/1 var(--sans);background:var(--fg);color:var(--bg);--fill:var(--acc);border:0;cursor:pointer}
+.btn.claro{background:transparent;color:var(--fg);border:1.5px solid var(--fg);--fill:var(--fg)}
+.btn.claro:hover{color:var(--bg)}
+.btn.vino{background:var(--acc);color:#fff;--fill:var(--fg)}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,box-shadow .4s}
+nav.solida{background:rgba(245,239,230,.88);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
+.logo{font:400 30px/1 var(--serif);letter-spacing:-.01em}
+.logo em{color:var(--acc)}
+nav ul{display:flex;gap:30px;list-style:none;padding:0;font-weight:600;font-size:15px}
+nav ul a{position:relative}
+nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1.5px;background:var(--acc);transition:right .4s var(--ease)}
+nav ul a:hover::after{right:0}
+nav .btn{padding:12px 20px;font-size:14px}
+@media (max-width:860px){nav ul{display:none}}
+
+/* portada */
+.hero{padding:120px 0 60px;min-height:100svh;display:grid;align-items:center}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,70px);align-items:center}
+.estado{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:99px;background:#fff;border:1px solid var(--line);font:600 14px/1 var(--sans)}
+.estado i{width:9px;height:9px;border-radius:50%;background:#3c9a5f;box-shadow:0 0 0 4px rgba(60,154,95,.18)}
+.estado.cerrado i{background:var(--acc);box-shadow:0 0 0 4px rgba(138,44,44,.15)}
+.hero h1{font:400 clamp(58px,8.6vw,138px)/.9 var(--serif);letter-spacing:-.025em;margin:26px 0 24px}
+.hero p{font-size:clamp(17px,1.5vw,20px);color:var(--mut);max-width:44ch}
+.hero .bts{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.nota-g{display:flex;align-items:center;gap:12px;margin-top:34px;font-size:14px;color:var(--mut)}
+.nota-g b{font:400 28px/1 var(--serif);color:var(--fg)}
+.nota-g .est{color:var(--acc);letter-spacing:2px;font-size:15px}
+.foto-hero{position:relative;aspect-ratio:4/5;border-radius:999px 999px var(--r) var(--r);overflow:hidden;box-shadow:0 40px 80px -40px rgba(60,30,20,.55)}
+.foto-hero img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.6s var(--ease)}
+.foto-hero.fx-in img,.foto-hero img.ok{transform:scale(1)}
+.sello{position:absolute;left:-34px;bottom:12%;width:132px;height:132px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;box-shadow:0 20px 40px -18px rgba(138,44,44,.8)}
+.sello svg{position:absolute;inset:0;animation:gira 18s linear infinite}
+.sello b{font:400 34px/1 var(--serif)}
+@keyframes gira{to{transform:rotate(360deg)}}
+.hero-col{position:relative}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.foto-hero{aspect-ratio:4/4.4;max-width:520px}.sello{left:auto;right:10px;bottom:-30px;width:110px;height:110px}}
+
+/* cinta */
+.cinta{background:var(--fg);color:var(--bg);padding:20px 0;font:400 clamp(24px,2.6vw,34px)/1 var(--serif)}
+.cinta span{padding:0 22px;white-space:nowrap}
+.cinta span::after{content:"✦";font-family:var(--sans);font-size:.5em;color:#d98b8b;margin-left:44px;vertical-align:middle}
+
+/* platos estrella */
+.sec{padding:clamp(90px,11vw,150px) 0}
+.cab{display:flex;justify-content:space-between;align-items:end;gap:20px 40px;flex-wrap:wrap;margin-bottom:clamp(36px,5vw,60px)}
+.cab p{color:var(--mut);max-width:40ch}
+.platos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.plato{position:relative;border-radius:var(--r);overflow:hidden;background:#fff;box-shadow:0 30px 60px -40px rgba(60,30,20,.5)}
+.plato .im{aspect-ratio:4/3.4;overflow:hidden}
+.plato img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.plato:hover img{transform:scale(1.06)}
+.plato .tx{padding:22px 24px 26px;display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:baseline}
+.plato h3{font:400 28px/1.05 var(--serif)}
+.plato .pr{font:700 18px/1 var(--sans);color:var(--acc);white-space:nowrap}
+.plato p{grid-column:1/-1;color:var(--mut);font-size:15px;line-height:1.45}
+.plato .et{position:absolute;top:16px;left:16px;padding:8px 12px;border-radius:99px;background:rgba(245,239,230,.92);font:700 12px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase}
+@media (max-width:900px){.platos{grid-template-columns:1fr;max-width:520px}}
+
+/* carta */
+.carta{background:var(--bg2)}
+.carta .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,90px);align-items:start}
+.carta .izq{position:sticky;top:120px}
+.carta .izq p{color:var(--mut);margin-top:20px;max-width:36ch}
+.leyenda{display:flex;gap:16px;flex-wrap:wrap;margin-top:26px;font-size:14px;color:var(--mut)}
+.leyenda b{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--acc-2);color:#fff;font-size:11px;margin-right:6px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+.tabs button{font:700 15px/1 var(--sans);padding:13px 20px;border-radius:99px;border:1.5px solid var(--line);background:transparent;color:var(--fg);cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.tabs button[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.lista{display:none;list-style:none;padding:0}
+.lista.on{display:block;animation:entra .6s var(--ease)}
+@keyframes entra{from{opacity:0;transform:translateY(14px)}}
+.lista li{padding:20px 0;border-bottom:1px solid var(--line)}
+.lista .l1{display:flex;align-items:baseline;gap:10px}
+.lista h4{font:400 26px/1.1 var(--serif)}
+.lista .pts{flex:1;border-bottom:2px dotted rgba(30,26,23,.25);transform:translateY(-6px)}
+.lista .pr{font:700 18px/1 var(--sans);white-space:nowrap}
+@media (max-width:480px){.lista h4{font-size:22px}}
+.lista p{color:var(--mut);font-size:15px;margin-top:6px}
+.lista .ic{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--acc-2);color:#fff;font:700 10px/1 var(--sans);margin-left:6px;vertical-align:middle}
+@media (max-width:900px){.carta .wrap{grid-template-columns:1fr}.carta .izq{position:static}}
+
+/* menú del día */
+.menu{position:relative;overflow:hidden;border-radius:36px;background:var(--acc);color:#fff;padding:clamp(34px,6vw,76px);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.menu::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:1.5px solid rgba(255,255,255,.18);box-shadow:0 0 0 60px rgba(255,255,255,.04),0 0 0 120px rgba(255,255,255,.03)}
+.menu .k{color:#f2c9c9}
+.menu h2 em{color:#f2c9c9}
+.menu .precio{font:400 clamp(60px,8vw,110px)/1 var(--serif);margin-top:20px}
+.menu .precio small{font:600 16px/1 var(--sans);opacity:.75;margin-left:8px}
+.menu ul{list-style:none;padding:0;display:grid;gap:18px;position:relative}
+.menu li b{display:block;font:700 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#f2c9c9;margin-bottom:6px}
+.menu li span{font:400 22px/1.3 var(--serif)}
+@media (max-width:900px){.menu{grid-template-columns:1fr}}
+
+/* la casa */
+.casa .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,6vw,80px);align-items:center}
+.casa .foto{border-radius:var(--r);overflow:hidden;aspect-ratio:5/4;box-shadow:0 40px 80px -45px rgba(60,30,20,.6)}
+.casa .foto img{width:100%;height:120%;object-fit:cover}
+.casa p{color:var(--mut);margin-top:22px}
+.cifras{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;border-top:1px solid var(--line);padding-top:26px}
+.cifras b{display:block;font:400 clamp(40px,4.4vw,58px)/1 var(--serif);color:var(--acc)}
+.cifras span{font-size:14px;color:var(--mut)}
+@media (max-width:900px){.casa .wrap{grid-template-columns:1fr}}
+
+/* opiniones */
+.opis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.opi{background:#fff;border-radius:var(--r);padding:30px 28px;border:1px solid var(--line)}
+.opi .est{color:var(--acc);letter-spacing:3px}
+.opi q{display:block;font:400 23px/1.3 var(--serif);margin:16px 0 20px;quotes:"“" "”"}
+.opi span{font-size:14px;color:var(--mut)}
+@media (max-width:900px){.opis{grid-template-columns:1fr}}
+
+/* reservar */
+.reserva{background:var(--fg);color:var(--bg)}
+.reserva .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px)}
+.reserva h2 em{color:#e3a3a3}
+.reserva .k{color:#e3a3a3}
+.reserva .datos{margin-top:30px;display:grid;gap:22px}
+.reserva .datos div{border-top:1px solid rgba(245,239,230,.16);padding-top:16px}
+.reserva .datos b{display:block;font:700 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#e3a3a3;margin-bottom:8px}
+.reserva .datos p,.reserva .datos a{color:rgba(245,239,230,.82)}
+.reserva .datos a{border-bottom:1px solid rgba(245,239,230,.4)}
+.horas{display:grid;grid-template-columns:auto 1fr;gap:4px 20px;color:rgba(245,239,230,.82);font-size:15px}
+form{background:var(--bg);color:var(--fg);border-radius:30px;padding:clamp(26px,4vw,44px);display:grid;gap:16px;align-self:start}
+form h3{font:400 34px/1 var(--serif)}
+form .fila{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:grid;gap:7px;font:600 13px/1 var(--sans);color:var(--mut)}
+input,select,textarea{font:500 16px/1.3 var(--sans);color:var(--fg);background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:14px 15px;width:100%;transition:border-color .3s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--acc)}
+textarea{resize:vertical;min-height:84px}
+.pers{display:flex;gap:6px;flex-wrap:wrap}
+.pers button{width:44px;height:44px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font:700 15px/1 var(--sans);cursor:pointer;color:var(--fg)}
+.pers button[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:#fff}
+form .btn{justify-content:center;width:100%;padding:18px}
+form small{color:var(--mut);font-size:13px;text-align:center}
+@media (max-width:900px){.reserva .wrap{grid-template-columns:1fr}}
+@media (max-width:480px){form .fila{grid-template-columns:1fr}}
+
+footer{background:var(--fg);color:rgba(245,239,230,.6);border-top:1px solid rgba(245,239,230,.12);padding:34px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer .logo{color:var(--bg);font-size:24px}
+.flota{position:fixed;right:16px;bottom:16px;z-index:60;display:none;align-items:center;gap:8px;padding:14px 20px;border-radius:99px;background:var(--acc);color:#fff;font:700 15px/1 var(--sans);box-shadow:0 18px 36px -14px rgba(138,44,44,.8)}
+@media (max-width:860px){.flota{display:inline-flex}}
+</style>
+</head>
+<body>
+<nav id="nav"><div class="wrap">
+  <a class="logo" href="#inicio">Casa <em>Merlo</em></a>
+  <ul><li><a href="#platos">Platos</a></li><li><a href="#carta">La carta</a></li><li><a href="#menu">Menú del día</a></li><li><a href="#casa">La casa</a></li></ul>
+  <a class="btn vino fx-btn-fill" href="#reservar">Reservar mesa</a>
+</div></nav>
+
+<header class="hero" id="inicio"><div class="wrap">
+  <div>
+    <span class="estado" id="estado"><i></i><span>Abierto hoy</span></span>
+    <h1 data-fx="split" data-by="words" data-step=".08">Cocina de mercado, <em>a fuego lento.</em></h1>
+    <p data-fx="reveal" data-delay=".4">Producto de temporada, brasa de encina y vinos de pequeños productores. Una casa para comer bien, sin prisa, en el centro de Madrid.</p>
+    <div class="bts" data-fx="reveal" data-delay=".55"><a class="btn vino fx-btn-fill" data-fx="magnetic" href="#reservar">Reservar mesa →</a><a class="btn claro fx-btn-fill" href="#carta">Ver la carta</a></div>
+    <div class="nota-g" data-fx="reveal" data-delay=".7"><b>4,8</b><span><span class="est">★★★★★</span><br>1.240 opiniones en Google</span></div>
+  </div>
+  <div class="hero-col" data-fx="reveal" data-dir="scale">
+    <div class="foto-hero"><img src="https://images.unsplash.com/photo-1784571248456-b50c5c71203c?w=1200&q=78&auto=format&fit=crop" alt="Paella recién hecha sobre la mesa" onload="this.classList.add('ok')"></div>
+    <div class="sello" aria-hidden="true">
+      <svg viewBox="0 0 132 132"><defs><path id="circ" d="M66,66 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text fill="#fff" font-family="Figtree" font-weight="700" font-size="9.5" letter-spacing="2.4"><textPath href="#circ">DESDE 2014 · BRASA DE ENCINA · MADRID · </textPath></text></svg>
+      <b>CM</b>
+    </div>
+  </div>
+</div></header>
+
+<div class="cinta" data-fx="marquee" data-speed="36"><span>Producto de temporada</span><span>Brasa de encina</span><span>Vinos de pequeños productores</span><span>Postres de la casa</span><span>Arroces por encargo</span></div>
+
+<section class="sec" id="platos"><div class="wrap">
+  <div class="cab"><div><span class="k" data-fx="reveal">Los imprescindibles</span><h2 data-fx="split" data-by="words">Lo que <em>no te puedes</em> perder.</h2></div><p data-fx="reveal">Los platos que la gente vuelve a pedir. Cambian un poco con la temporada, pero siempre están.</p></div>
+  <div class="platos">
+    <article class="plato" data-fx="reveal tilt" data-max="5"><span class="et">El más pedido</span><div class="im"><img src="https://images.unsplash.com/photo-1763467940825-d067fb3baf22?w=900&q=75&auto=format&fit=crop" alt="Calamares fritos" loading="lazy"></div><div class="tx"><h3>Calamares de potera</h3><span class="pr">14 €</span><p>Fritos al momento, con alioli de limón y un toque de pimentón.</p></div></article>
+    <article class="plato" data-fx="reveal tilt" data-max="5" data-delay=".1"><span class="et">Para compartir</span><div class="im"><img src="https://images.unsplash.com/photo-1781115650818-3e3504c4ad67?w=900&q=75&auto=format&fit=crop" alt="Pintxos variados en la barra" loading="lazy"></div><div class="tx"><h3>Pintxos de la barra</h3><span class="pr">desde 3 €</span><p>Cada día salen nuevos de cocina. Pregunta cuáles quedan.</p></div></article>
+    <article class="plato" data-fx="reveal tilt" data-max="5" data-delay=".2"><span class="et">De la lonja</span><div class="im"><img src="https://images.unsplash.com/photo-1556406561-046be8d32d06?w=900&q=75&auto=format&fit=crop" alt="Pescado fresco junto al cuchillo" loading="lazy"></div><div class="tx"><h3>Pescado del día a la brasa</h3><span class="pr">S/M</span><p>Lo que llega de la lonja esa mañana, a la brasa de encina con verduras.</p></div></article>
+  </div>
+</div></section>
+
+<section class="sec carta" id="carta"><div class="wrap">
+  <div class="izq">
+    <span class="k" data-fx="reveal">La carta</span>
+    <h2 data-fx="split" data-by="words">Para pedir <em>sin pensarlo.</em></h2>
+    <p data-fx="reveal">La carta, aquí mismo y siempre al día: nada de PDFs que no se leen en el móvil. Si tienes alguna alergia, avísanos y lo adaptamos.</p>
+    <div class="leyenda" data-fx="reveal"><span><b>V</b>Vegetariano</span><span><b>SG</b>Sin gluten</span></div>
+  </div>
+  <div>
+    <div class="tabs" role="tablist" id="tabs">
+      <button role="tab" aria-selected="true" data-t="compartir">Para compartir</button>
+      <button role="tab" aria-selected="false" data-t="principales">Principales</button>
+      <button role="tab" aria-selected="false" data-t="postres">Postres</button>
+      <button role="tab" aria-selected="false" data-t="vinos">Vinos</button>
+    </div>
+    <div id="listas"></div>
+  </div>
+</div></section>
+
+<section class="sec" id="menu" style="padding-bottom:0"><div class="wrap">
+  <div class="menu" data-fx="reveal">
+    <div>
+      <span class="k">De lunes a viernes · mediodía</span>
+      <h2 style="margin-top:16px">Menú <em>del día</em></h2>
+      <div class="precio">16,90 €<small>pan, bebida y postre o café</small></div>
+    </div>
+    <ul>
+      <li><b>Primeros</b><span>Crema de calabaza asada · Ensalada de tomate de huerta · Lentejas estofadas</span></li>
+      <li><b>Segundos</b><span>Pollo de corral a la brasa · Bacalao confitado · Arroz meloso de setas</span></li>
+      <li><b>Postres</b><span>Tarta de queso de la casa · Fruta de temporada</span></li>
+    </ul>
+  </div>
+</div></section>
+
+<section class="sec casa" id="casa"><div class="wrap">
+  <div class="foto" data-fx="reveal"><img src="https://images.unsplash.com/photo-1780639026821-f680fae0d99d?w=1300&q=75&auto=format&fit=crop" alt="Barra del restaurante con luces cálidas" loading="lazy" data-fx="parallax" data-speed=".08"></div>
+  <div>
+    <span class="k" data-fx="reveal">La casa</span>
+    <h2 data-fx="split" data-by="words">Una barra, una brasa y <em>mucha mesa.</em></h2>
+    <p data-fx="reveal">Abrimos en 2014 con una idea sencilla: cocinar lo que hay en el mercado y que se note. Diez años después seguimos igual, con la misma brasa de encina y el mismo equipo en cocina.</p>
+    <div class="cifras">
+      <div><b data-fx="counter" data-to="10">0</b><span>años de brasa</span></div>
+      <div><b data-fx="counter" data-to="60">0</b><span>mesas cada noche</span></div>
+      <div><b data-fx="counter" data-to="90" data-suffix="%">0</b><span>producto de cercanía</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="cab"><div><span class="k" data-fx="reveal">Opiniones en Google</span><h2 data-fx="split" data-by="words">Lo dicen <em>ellos.</em></h2></div></div>
+  <div class="opis">
+    <div class="opi" data-fx="reveal"><span class="est">★★★★★</span><q>Los calamares, de los mejores de Madrid. Y el servicio, de diez: te recomiendan sin agobiar.</q><span>Marta G. · hace 2 semanas</span></div>
+    <div class="opi" data-fx="reveal" data-delay=".1"><span class="est">★★★★★</span><q>Reservamos por WhatsApp en un minuto para un cumpleaños de 12. Todo perfecto.</q><span>Andrés P. · hace 1 mes</span></div>
+    <div class="opi" data-fx="reveal" data-delay=".2"><span class="est">★★★★★</span><q>El menú del día es una barbaridad por lo que cuesta. Ya vamos cada semana.</q><span>Lucía R. · hace 3 días</span></div>
+  </div>
+</div></section>
+
+<section class="sec reserva" id="reservar"><div class="wrap">
+  <div>
+    <span class="k" data-fx="reveal">Reservas</span>
+    <h2 data-fx="split" data-by="words">Te guardamos <em>la mesa.</em></h2>
+    <div class="datos" data-fx="reveal">
+      <div><b>Dirección</b><p>Calle del Olivo 12, 28012 Madrid<br><a href="https://www.google.com/maps/search/?api=1&query=Madrid" target="_blank" rel="noopener">Cómo llegar →</a></p></div>
+      <div><b>Horario</b><div class="horas"><span>Martes a jueves</span><span>13:00–16:30 · 20:30–23:30</span><span>Viernes y sábado</span><span>13:00–16:30 · 20:30–00:30</span><span>Domingo</span><span>13:00–17:00</span><span>Lunes</span><span>Cerrado</span></div></div>
+      <div><b>Grupos y eventos</b><p>Más de 10 personas, cumpleaños o comidas de empresa: escríbenos y te preparamos un menú cerrado.</p></div>
+    </div>
+  </div>
+  <form id="form" data-fx="reveal" data-delay=".15">
+    <h3>Reservar mesa</h3>
+    <label>Nombre<input name="nombre" required placeholder="Tu nombre" autocomplete="name"></label>
+    <label>Personas<div class="pers" id="pers"></div></label>
+    <div class="fila">
+      <label>Día<input type="date" name="dia" id="dia" required></label>
+      <label>Hora<select name="hora" id="hora"></select></label>
+    </div>
+    <label>Algo que debamos saber <textarea name="nota" placeholder="Alergias, trona para un bebé, es un cumpleaños…"></textarea></label>
+    <button class="btn vino fx-btn-fill" type="submit">Enviar reserva por WhatsApp →</button>
+    <small>Te confirmamos la mesa por WhatsApp en unos minutos.</small>
+  </form>
+</div></section>
+
+<footer><div class="wrap"><span class="logo">Casa <em>Merlo</em></span><span>Calle del Olivo 12, Madrid · Plantilla 13 · Restaurante (negocio de ejemplo)</span></div></footer>
+<a class="flota" href="#reservar">Reservar mesa</a>
+
+<script>
+// Carta: un array por pestaña (nombre, precio, descripción, etiquetas V / SG).
+const CARTA = {
+  compartir: [
+    ['Croquetas de jamón ibérico', '9,50 €', '6 unidades, cremosas por dentro.', ''],
+    ['Calamares de potera', '14 €', 'Con alioli de limón.', 'SG'],
+    ['Tomate de huerta con ventresca', '12 €', 'Aceite de arbequina y cebolleta.', 'SG'],
+    ['Pimientos de Padrón', '8 €', 'Unos pican y otros no.', 'V SG'],
+    ['Tabla de quesos de la sierra', '15 €', 'Con membrillo casero y nueces.', 'V'],
+  ],
+  principales: [
+    ['Arroz meloso de setas y foie', '19 €', 'Mínimo 2 personas.', ''],
+    ['Pescado del día a la brasa', 'S/M', 'Con verduras de temporada.', 'SG'],
+    ['Lomo alto de vaca madurada', '26 €', '400 g, con patatas y pimientos.', 'SG'],
+    ['Pollo de corral a la brasa', '17 €', 'Medio pollo con su jugo.', 'SG'],
+    ['Canelones de verduras asadas', '15 €', 'Con bechamel de trufa.', 'V'],
+  ],
+  postres: [
+    ['Tarta de queso de la casa', '7 €', 'Cremosa, recién horneada.', 'V'],
+    ['Torrija caramelizada', '7 €', 'Con helado de vainilla.', 'V'],
+    ['Coulant de chocolate', '7,50 €', 'Necesita 12 minutos.', 'V'],
+  ],
+  vinos: [
+    ['Tinto de Madrid · Garnacha', '24 €', 'Copa 4,50 €. Fresco y frutal.', ''],
+    ['Ribera del Duero · Crianza', '32 €', 'Copa 5,50 €.', ''],
+    ['Albariño · Rías Baixas', '28 €', 'Copa 5 €. Para el pescado.', ''],
+    ['Cava brut nature', '26 €', 'Para celebrar.', ''],
+  ],
+};
+const listas = document.getElementById('listas');
+listas.innerHTML = Object.entries(CARTA).map(([k, v], i) => `<ul class="lista ${i ? '' : 'on'}" data-l="${k}" role="tabpanel">${v.map(([n, p, d, t]) =>
+  `<li><div class="l1"><h4>${n}${t.split(' ').filter(Boolean).map(x => `<span class="ic" title="${x === 'V' ? 'Vegetariano' : 'Sin gluten'}">${x}</span>`).join('')}</h4><span class="pts"></span><span class="pr">${p}</span></div><p>${d}</p></li>`).join('')}</ul>`).join('');
+document.getElementById('tabs').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  document.querySelectorAll('#tabs button').forEach(x => x.setAttribute('aria-selected', x === b));
+  document.querySelectorAll('.lista').forEach(l => l.classList.toggle('on', l.dataset.l === b.dataset.t));
+});
+
+// Abierto / cerrado ahora mismo, según el horario.
+const HORARIO = { 0: [[13, 17]], 1: [], 2: [[13, 16.5], [20.5, 23.5]], 3: [[13, 16.5], [20.5, 23.5]], 4: [[13, 16.5], [20.5, 23.5]], 5: [[13, 16.5], [20.5, 24.5]], 6: [[13, 16.5], [20.5, 24.5]] };
+(() => {
+  const d = new Date(), h = d.getHours() + d.getMinutes() / 60, hoy = HORARIO[d.getDay()];
+  const fmt = x => `${String(Math.floor(x) % 24).padStart(2, '0')}:${x % 1 ? '30' : '00'}`;
+  const el = document.getElementById('estado'), t = el.querySelector('span');
+  const ahora = hoy.find(([a, b]) => h >= a && h < b);
+  if (ahora) t.textContent = `Abierto ahora · hasta las ${fmt(ahora[1])}`;
+  else { el.classList.add('cerrado'); const sig = hoy.find(([a]) => a > h); t.textContent = sig ? `Cerrado ahora · abrimos a las ${fmt(sig[0])}` : 'Cerrado ahora · mira el horario'; }
+})();
+
+// Formulario de reserva → WhatsApp con todo escrito.
+const pers = document.getElementById('pers'); let n = 2;
+pers.innerHTML = [1, 2, 3, 4, 5, 6, '7+'].map(x => `<button type="button" aria-pressed="${x === 2}" data-n="${x}">${x}</button>`).join('');
+pers.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; n = b.dataset.n; pers.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); });
+const dia = document.getElementById('dia'); const hoyISO = new Date().toISOString().slice(0, 10); dia.min = hoyISO; dia.value = hoyISO;
+document.getElementById('hora').innerHTML = ['13:00', '13:30', '14:00', '14:30', '15:00', '20:30', '21:00', '21:30', '22:00', '22:30'].map(h => `<option${h === '21:00' ? ' selected' : ''}>${h}</option>`).join('');
+document.getElementById('form').addEventListener('submit', e => {
+  e.preventDefault(); const f = new FormData(e.target);
+  const fecha = new Date(f.get('dia') + 'T12:00').toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
+  const msg = `Hola, Casa Merlo. Quiero reservar mesa:\n· Nombre: ${f.get('nombre')}\n· Personas: ${n}\n· Día: ${fecha}\n· Hora: ${f.get('hora')}` + (f.get('nota') ? `\n· Nota: ${f.get('nota')}` : '');
+  window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(msg), '_blank');
+});
+
+// Barra de arriba sólida al bajar.
+const nav = document.getElementById('nav'); addEventListener('scroll', () => nav.classList.toggle('solida', scrollY > 40), { passive: true });
+</script>
+<script src="fx.js" defer></script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>

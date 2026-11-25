@@ -1,9 +1,11 @@
-/* © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla de Wix ni de ningún constructor). Todos los derechos reservados. */
+/* © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla ni una web prefabricada). Todos los derechos reservados. */
 /* firma.js — firma de @acevvedoo en las plantillas y propuestas publicadas.
    Uso: <script src="../../_base/firma.js" data-modo="plantilla" defer></script>
    data-modo="plantilla" → pastilla "← Catálogo · @acevvedoo" abajo a la izquierda.
    data-modo="propuesta" → pastilla "Propuesta de diseño · @acevvedoo" (maqueta para un cliente).
-   Al entregar una web a un cliente, se borra esta línea. */
+   data-modo="credito"   → solo la línea de crédito del pie, sin pastilla (webs ya entregadas).
+   En todos los modos se añade al final de la página una línea discreta: "Diseño y desarrollo web · @acevvedoo".
+   Al entregar una web, mejor escribir esa línea directamente en el footer del cliente (ver README) y quitar este script. */
 (() => {
   const s = document.currentScript, modo = s?.dataset.modo || 'plantilla';
   const base = s.src.replace(/firma\.js.*$/, '');           // carpeta _base/
@@ -20,8 +22,15 @@
   .acv-firma .vuelta{opacity:.75;margin-right:2px}
   @keyframes acv-in{from{opacity:0;transform:translateY(16px)}}
   @media (max-width:600px){.acv-firma{left:10px;bottom:10px;font-size:12px}.acv-firma small{font-size:10px}}
-  @media print{.acv-firma{display:none}}`;
+  @media print{.acv-firma{display:none}}
+  .acv-credito{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;padding:18px 16px 22px;font:500 12px/1.4 "Inter Tight",system-ui,sans-serif;letter-spacing:.02em;color:inherit;background:inherit;text-align:center}
+  .acv-credito span{opacity:.55}
+  .acv-credito a{color:inherit;font-weight:700;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;opacity:.85}
+  .acv-credito a:hover{opacity:1}
+  @media (max-width:600px){.acv-credito{padding-bottom:84px}}`;
   const st = document.createElement('style'); st.textContent = css; document.head.append(st);
+  const cr = document.createElement('div'); cr.className = 'acv-credito';
+  cr.innerHTML = '<span>Diseño y desarrollo web</span><a href="https://www.instagram.com/acevvedoo/" target="_blank" rel="noopener">@acevvedoo</a>';
   const a = document.createElement('a'); a.className = 'acv-firma';
   if (modo === 'propuesta') {
     a.href = 'https://www.instagram.com/acevvedoo/'; a.target = '_blank'; a.rel = 'noopener';
@@ -31,6 +40,6 @@
     a.innerHTML = `<span class="av"><img src="${base}yo.jpg" alt=""></span><span><small>Diseño original de @acevvedoo</small><span class="vuelta">←</span> Ver catálogo</span>`;
   }
   a.setAttribute('aria-label', modo === 'propuesta' ? 'Propuesta de diseño de @acevvedoo' : 'Volver al catálogo de @acevvedoo');
-  const poner = () => document.body.append(a);
+  const poner = () => { document.body.append(cr); if (modo !== 'credito') document.body.append(a); };
   document.body ? poner() : addEventListener('DOMContentLoaded', poner);
 })();

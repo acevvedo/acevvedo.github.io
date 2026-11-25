@@ -1,4 +1,4 @@
-/* © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla de Wix ni de ningún constructor). Todos los derechos reservados. */
+/* © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla ni una web prefabricada). Todos los derechos reservados. */
 /* fondo.js — genera el fondo vivo de <body data-fondo>: manchas, rejilla y formas 3D repartidas por toda la página.
    Las formas van por los márgenes (no tapan contenido), suben más lento que el scroll (profundidad) y se inclinan con el ratón. */
 (() => {
