@@ -1,0 +1,241 @@
+<!doctype html>
+<!-- © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla ni una web prefabricada). Todos los derechos reservados. -->
+<html lang="es">
+<head>
+<meta name="author" content="Nicolás Acevedo (@acevvedoo)">
+<meta name="copyright" content="© 2026 Nicolás Acevedo · @acevvedoo">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Estudio Nácar · Uñas y pestañas</title>
+<meta name="description" content="Plantilla 15 · Estética / Uñas. Centro de estética ficticio.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<style>
+:root{--bg:#fbf7f5;--sf:#f3e7e3;--rosa:#e8cfc7;--fg:#2b1f24;--mut:#7a6a6f;--line:#eaddd8;--acc:#5b2a43;
+  --f:"Urbanist",system-ui,sans-serif;--r:22px;--fx-dur:1s;--fx-dist:18px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--f);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-weight:600;letter-spacing:-.025em;line-height:1.04}
+h2{font-size:clamp(34px,4.4vw,56px)}
+section{padding:clamp(72px,9vw,120px) 0}
+.k{display:inline-flex;align-items:center;gap:10px;font:600 13px/1 var(--f);letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin-bottom:18px}
+.k::before{content:"";width:22px;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;background:var(--acc);color:#fff;font-weight:600;font-size:16px;transition:background .3s,transform .3s}
+.btn:hover{background:#431f32;transform:translateY(-2px)}
+.btn.o{background:transparent;color:var(--fg);border:1.5px solid var(--fg)}
+.btn.o:hover{background:var(--fg);color:#fff}
+
+nav{position:sticky;top:0;z-index:40;background:rgba(251,247,245,.94);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:72px;gap:16px}
+.logo{font:600 22px/1 var(--f);letter-spacing:.02em}
+.logo small{display:block;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);margin-top:4px;font-weight:500}
+nav ul{display:flex;gap:30px;list-style:none;padding:0;font-size:15px;font-weight:500;color:var(--mut)}
+nav ul a:hover{color:var(--fg)}
+nav .btn{padding:11px 20px;font-size:14px}
+@media (max-width:860px){nav ul{display:none}}
+
+/* hero */
+.hero{padding:clamp(36px,5vw,64px) 0 clamp(60px,8vw,100px)}
+.hero .g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,70px);align-items:center}
+.hero h1{font-size:clamp(46px,6.4vw,88px);font-weight:500;letter-spacing:-.04em}
+.hero h1 b{font-weight:700;color:var(--acc)}
+.hero p{color:var(--mut);font-size:clamp(17px,1.4vw,19px);margin:24px 0 32px;max-width:42ch}
+.hero .acc{display:flex;gap:10px;flex-wrap:wrap}
+.hero .mini{display:flex;gap:28px;margin-top:38px;padding-top:26px;border-top:1px solid var(--line)}
+.hero .mini b{display:block;font-size:26px;font-weight:700;letter-spacing:-.03em}
+.hero .mini span{font-size:14px;color:var(--mut)}
+.fotos{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;align-items:end}
+.fotos figure{margin:0;border-radius:var(--r);overflow:hidden}
+.fotos img{width:100%;height:100%;object-fit:cover}
+.fotos .a{aspect-ratio:3/4.3}
+.fotos .b{aspect-ratio:3/3.6;margin-bottom:40px}
+@media (max-width:860px){.hero .g{grid-template-columns:1fr}.hero .mini{gap:20px;flex-wrap:wrap}}
+
+/* banda */
+.banda{background:var(--rosa);padding:22px 0}
+.banda .wrap{display:flex;justify-content:space-around;gap:16px 34px;flex-wrap:wrap;font-weight:600;font-size:16px;text-align:center}
+
+/* servicios con precios */
+.carta{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.bloque{background:#fff;border-radius:var(--r);padding:30px 28px}
+.bloque h3{font-size:24px;margin-bottom:4px}
+.bloque > p{color:var(--mut);font-size:15px;margin-bottom:18px}
+.bloque ul{list-style:none;padding:0}
+.bloque li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:16px}
+.bloque li span{color:var(--mut);font-size:13px;display:block}
+.bloque li b{font-weight:700;white-space:nowrap}
+@media (max-width:900px){.carta{grid-template-columns:1fr}}
+
+/* galería */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:50px}
+.gal figure{margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--fx-ease)}
+.gal figure:hover img{transform:scale(1.04)}
+@media (max-width:760px){.gal{grid-template-columns:1fr 1fr}}
+
+/* por qué */
+.porque{background:var(--sf)}
+.porque .g{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.porque figure{margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:4/4.4}
+.porque figure img{width:100%;height:100%;object-fit:cover}
+.puntos{display:grid;grid-template-columns:1fr 1fr;gap:26px 28px;margin-top:36px}
+.punto h3{font-size:19px;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.punto h3 i{width:30px;height:30px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;font:600 13px var(--f);font-style:normal}
+.punto p{color:var(--mut);font-size:15px}
+@media (max-width:860px){.porque .g{grid-template-columns:1fr}.porque figure{aspect-ratio:4/3}}
+@media (max-width:520px){.puntos{grid-template-columns:1fr}}
+
+/* opiniones */
+.opis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.opi{border:1px solid var(--line);border-radius:var(--r);padding:28px;background:#fff}
+.opi .e{color:var(--acc);letter-spacing:2px;font-size:15px}
+.opi p{margin:14px 0 18px;font-size:17px}
+.opi b{font-size:15px}
+.opi span{display:block;font-size:13px;color:var(--mut)}
+@media (max-width:860px){.opis{grid-template-columns:1fr}}
+
+/* reserva */
+.reserva{background:var(--acc);color:#f8eef0;border-radius:calc(var(--r) + 6px);padding:clamp(34px,5vw,64px);display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(28px,5vw,60px);align-items:center}
+.reserva .k{color:#e9c9d4}
+.reserva h2{color:#fff}
+.reserva p{color:#e3cdd5;margin:18px 0 28px;max-width:42ch}
+.reserva .btn{background:#fff;color:var(--acc)}
+.reserva .btn:hover{background:var(--rosa)}
+.horario{background:rgba(255,255,255,.08);border-radius:var(--r);padding:26px}
+.horario div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:16px}
+.horario div:last-child{border:0}
+.horario b{font-weight:600}
+@media (max-width:860px){.reserva{grid-template-columns:1fr}}
+
+.pie{padding:40px 0 30px;font-size:14px;color:var(--mut)}
+.pie .g{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:30px}
+.pie b{color:var(--fg);display:block;margin-bottom:4px}
+
+.wa-f{position:fixed;right:18px;bottom:18px;z-index:50;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(0,0,0,.35);transition:transform .3s}
+.wa-f:hover{transform:scale(1.06)}
+.wa-f svg{width:30px;height:30px;fill:#fff}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="#" class="logo">Nácar<small>Uñas &amp; pestañas</small></a>
+  <ul><li><a href="#servicios">Servicios</a></li><li><a href="#trabajos">Trabajos</a></li><li><a href="#estudio">El estudio</a></li><li><a href="#reservar">Horario</a></li></ul>
+  <a href="#reservar" class="btn">Reservar cita</a>
+</div></nav>
+
+<header class="hero"><div class="wrap g">
+  <div>
+    <span class="k" data-fx="reveal">Estudio de uñas en Sevilla</span>
+    <h1 data-fx="reveal" data-delay=".08">Uñas bonitas que te duran <b>tres semanas.</b></h1>
+    <p data-fx="reveal" data-delay=".16">Manicura, pedicura y pestañas con productos de calidad, en un estudio tranquilo y con cita, para que no esperes ni un minuto.</p>
+    <div class="acc" data-fx="reveal" data-delay=".24">
+      <a class="btn" href="https://wa.me/34600000000?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+      <a class="btn o" href="#servicios">Ver precios</a>
+    </div>
+    <div class="mini" data-fx="reveal" data-delay=".3">
+      <div><b>4,9 ★</b><span>en Google</span></div>
+      <div><b>3.200+</b><span>clientas</span></div>
+      <div><b>21 días</b><span>de duración media</span></div>
+    </div>
+  </div>
+  <div class="fotos">
+    <figure class="a" data-fx="reveal" data-delay=".1"><img src="img/hero.webp" alt="Mano con manicura rosa nude" fetchpriority="high"></figure>
+    <figure class="b" data-fx="reveal" data-delay=".22"><img src="img/manicura.webp" alt="Manicurista trabajando las uñas de una clienta" loading="lazy"></figure>
+  </div>
+</div></header>
+
+<div class="banda"><div class="wrap"><span>Solo con cita</span><span>Material esterilizado</span><span>Productos veganos</span><span>Parking al lado</span></div></div>
+
+<section id="servicios"><div class="wrap">
+  <span class="k">Servicios y precios</span>
+  <h2 data-fx="reveal">Precios claros, sin sorpresas.</h2>
+  <div class="carta" data-stagger=".08">
+    <div class="bloque"><h3>Manos</h3><p>Incluye limado, cutículas y crema.</p><ul>
+      <li><div>Manicura básica<span>30 min</span></div><b>15 €</b></li>
+      <li><div>Semipermanente<span>45 min · dura 2-3 semanas</span></div><b>22 €</b></li>
+      <li><div>Uñas de gel<span>75 min · con forma a tu gusto</span></div><b>35 €</b></li>
+      <li><div>Relleno de gel<span>60 min</span></div><b>28 €</b></li>
+    </ul></div>
+    <div class="bloque"><h3>Pies</h3><p>Con baño, exfoliación y masaje.</p><ul>
+      <li><div>Pedicura básica<span>40 min</span></div><b>20 €</b></li>
+      <li><div>Pedicura semipermanente<span>55 min</span></div><b>28 €</b></li>
+      <li><div>Pedicura completa spa<span>70 min</span></div><b>38 €</b></li>
+    </ul></div>
+    <div class="bloque"><h3>Pestañas y cejas</h3><p>Mirada natural o con más volumen.</p><ul>
+      <li><div>Lifting de pestañas<span>60 min · con tinte</span></div><b>35 €</b></li>
+      <li><div>Extensiones pelo a pelo<span>90 min</span></div><b>55 €</b></li>
+      <li><div>Diseño de cejas<span>20 min</span></div><b>12 €</b></li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="trabajos" style="padding-top:0"><div class="wrap">
+  <span class="k">Trabajos</span>
+  <h2 data-fx="reveal">Algunas de nuestras clientas.</h2>
+  <div class="gal" data-stagger=".08">
+    <figure><img src="img/blanca.webp" alt="Manicura rosa sobre tela blanca" loading="lazy"></figure>
+    <figure><img src="img/esmaltes.webp" alt="Estantería con esmaltes de colores" loading="lazy"></figure>
+    <figure><img src="img/pestanas.webp" alt="Aplicación de extensiones de pestañas" loading="lazy"></figure>
+    <figure><img src="img/hero.webp" alt="Uñas en tono nude" loading="lazy" style="object-position:50% 70%"></figure>
+  </div>
+</div></section>
+
+<section class="porque" id="estudio"><div class="wrap g">
+  <figure data-fx="reveal"><img src="img/manicura.webp" alt="Detalle de manicura en el estudio" loading="lazy"></figure>
+  <div>
+    <span class="k">El estudio</span>
+    <h2 data-fx="reveal">Un ratito solo para ti.</h2>
+    <div class="puntos" data-stagger=".08">
+      <div class="punto"><h3><i>1</i>Sin esperas</h3><p>Trabajamos solo con cita. Llegas y empezamos.</p></div>
+      <div class="punto"><h3><i>2</i>Higiene total</h3><p>Material esterilizado y limas nuevas para cada clienta.</p></div>
+      <div class="punto"><h3><i>3</i>Duran de verdad</h3><p>Si se te levanta una uña en la primera semana, te la arreglamos gratis.</p></div>
+      <div class="punto"><h3><i>4</i>Te asesoramos</h3><p>Te ayudamos a elegir forma y color según tu mano y tu estilo.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="opiniones"><div class="wrap">
+  <span class="k">Opiniones</span>
+  <h2 data-fx="reveal">Lo que dicen de nosotras.</h2>
+  <div class="opis" data-stagger=".08">
+    <div class="opi"><span class="e">★★★★★</span><p>“Me hice el semipermanente para una boda y me duró casi un mes. Ya no voy a otro sitio.”</p><b>Carmen R.</b><span>Clienta desde 2023</span></div>
+    <div class="opi"><span class="e">★★★★★</span><p>“El lifting de pestañas me cambió la cara. Natural y sin tener que maquillarme.”</p><b>Paula M.</b><span>Lifting de pestañas</span></div>
+    <div class="opi"><span class="e">★★★★★</span><p>“Puntuales, limpias y súper detallistas. Se nota que les gusta lo que hacen.”</p><b>Irene S.</b><span>Uñas de gel</span></div>
+  </div>
+</div></section>
+
+<section id="reservar" style="padding-top:0"><div class="wrap">
+  <div class="reserva" data-fx="reveal">
+    <div>
+      <span class="k">Reserva tu cita</span>
+      <h2>Escríbenos y te damos hueco esta semana.</h2>
+      <p>Mándanos un WhatsApp con el servicio que quieres y el día que te viene bien. Te contestamos en minutos.</p>
+      <a class="btn" href="https://wa.me/34600000000?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener">Reservar por WhatsApp →</a>
+    </div>
+    <div class="horario">
+      <div><span>Lunes a viernes</span><b>10:00 – 20:00</b></div>
+      <div><span>Sábados</span><b>10:00 – 14:00</b></div>
+      <div><span>Domingos</span><b>Cerrado</b></div>
+      <div><span>Dirección</span><b>C/ Ejemplo 8, Sevilla</b></div>
+    </div>
+  </div>
+</div></section>
+
+<footer class="pie"><div class="wrap g">
+  <div><b>Estudio Nácar</b>Uñas y pestañas · Plantilla 15 · Estética</div>
+  <div><b>Teléfono</b>600 000 000</div>
+  <div><b>Instagram</b>@estudionacar</div>
+  <div>Aviso legal · Privacidad · Cookies</div>
+</div></footer>
+
+<a class="wa-f" href="https://wa.me/34600000000?text=Hola%2C%20quiero%20reservar%20cita" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.1-4.7-4.1-4.9-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+<script src="fx.js" defer></script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!doctype html>
+<!-- © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla ni una web prefabricada). Todos los derechos reservados. -->
+<html lang="es">
+<head>
+<meta name="author" content="Nicolás Acevedo (@acevvedoo)">
+<meta name="copyright" content="© 2026 Nicolás Acevedo · @acevvedoo">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reformas Duarte · Cocinas, baños y reformas integrales</title>
+<meta name="description" content="Plantilla 14 · Oficios / Reformas. Empresa de reformas ficticia.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<style>
+:root{--bg:#f5f2ec;--sf:#ebe6dd;--fg:#1d1b18;--mut:#6b655c;--line:#d9d2c6;--acc:#c4532a;--osc:#22201c;
+  --f:"Archivo",system-ui,sans-serif;--r:14px;--fx-dur:.9s;--fx-dist:18px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--f);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-weight:800;letter-spacing:-.03em;line-height:1.02}
+h2{font-size:clamp(34px,4.6vw,58px);max-width:18ch}
+section{padding:clamp(72px,9vw,120px) 0}
+.k{display:inline-block;font:700 13px/1 var(--f);letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:18px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:999px;background:var(--acc);color:#fff;font-weight:700;font-size:16px;transition:background .3s,transform .3s}
+.btn:hover{background:#a8441f;transform:translateY(-2px)}
+.btn.o{background:transparent;color:var(--fg);border:1.5px solid var(--fg)}
+.btn.o:hover{background:var(--fg);color:#fff}
+.btn svg{width:18px;height:18px}
+
+nav{position:sticky;top:0;z-index:40;background:rgba(245,242,236,.94);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:70px;gap:16px}
+.logo{font:800 21px/1 var(--f);letter-spacing:-.03em;display:flex;align-items:center;gap:10px}
+.logo i{width:26px;height:26px;border-radius:7px;background:var(--acc);display:grid;place-items:center;color:#fff;font:800 14px var(--f);font-style:normal}
+.logo,nav .btn{white-space:nowrap}
+@media (max-width:420px){nav .btn{padding:10px 14px;font-size:13px}.logo{font-size:18px}}
+nav ul{display:flex;gap:28px;list-style:none;padding:0;font-size:15px;font-weight:500;color:var(--mut)}
+nav ul a:hover{color:var(--fg)}
+nav .btn{padding:11px 18px;font-size:14px}
+@media (max-width:860px){nav ul{display:none}}
+
+/* hero */
+.hero{padding:clamp(40px,6vw,72px) 0 0}
+.hero .g{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(44px,6.6vw,92px);letter-spacing:-.045em}
+.hero h1 b{color:var(--acc);font-weight:800}
+.hero p{color:var(--mut);font-size:clamp(17px,1.4vw,19px);margin:24px 0 30px;max-width:46ch}
+.hero .acc{display:flex;gap:10px;flex-wrap:wrap}
+.hero .sello{display:flex;gap:10px;align-items:center;margin-top:30px;font-size:14px;color:var(--mut)}
+.hero .sello b{color:var(--fg)}
+.estrellas{color:var(--acc);letter-spacing:2px}
+.hero .foto{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/4.6}
+.hero .foto img{width:100%;height:100%;object-fit:cover}
+.hero .foto .tag{position:absolute;left:16px;bottom:16px;background:var(--bg);border-radius:10px;padding:12px 16px;font-size:14px;line-height:1.35}
+.hero .foto .tag b{display:block;font-size:16px}
+.datos{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(48px,6vw,80px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.datos div{padding:26px 0 26px 22px;border-left:1px solid var(--line)}
+.datos div:first-child{border-left:0;padding-left:0}
+.datos b{display:block;font:800 clamp(30px,3.4vw,44px)/1 var(--f);letter-spacing:-.04em}
+.datos span{font-size:14px;color:var(--mut)}
+@media (max-width:860px){.hero .g{grid-template-columns:1fr}.hero .foto{aspect-ratio:4/3.4}
+  .datos{grid-template-columns:1fr 1fr}.datos div{padding:22px 0 22px 18px}.datos div:nth-child(3){border-left:0;padding-left:0}.datos div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* servicios */
+.cab{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+.cab p{color:var(--mut);max-width:40ch}
+.servs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.serv{background:#fff;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .4s var(--fx-ease),box-shadow .4s}
+.serv:hover{transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(29,27,24,.35)}
+.serv figure{margin:0;aspect-ratio:4/3;overflow:hidden}
+.serv img{width:100%;height:100%;object-fit:cover}
+.serv div{padding:20px 20px 24px}
+.serv h3{font-size:21px;letter-spacing:-.02em;margin-bottom:6px}
+.serv p{color:var(--mut);font-size:15px;line-height:1.5}
+@media (max-width:980px){.servs{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.servs{grid-template-columns:1fr}}
+
+/* proceso */
+.proceso{background:var(--osc);color:#f1ede6}
+.proceso .k{color:#e98a62}
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px;counter-reset:p}
+.paso{border-top:2px solid #47433c;padding-top:22px}
+.paso::before{counter-increment:p;content:"0" counter(p);display:block;font:800 15px var(--f);color:#e98a62;margin-bottom:16px}
+.paso h3{font-size:22px;margin-bottom:8px}
+.paso p{color:#b9b2a7;font-size:15px}
+@media (max-width:860px){.pasos{grid-template-columns:1fr 1fr;row-gap:34px}}
+@media (max-width:520px){.pasos{grid-template-columns:1fr}}
+
+/* trabajos */
+.obras{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:280px 280px;gap:18px}
+.obra{position:relative;border-radius:var(--r);overflow:hidden;margin:0}
+.obra img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--fx-ease)}
+.obra:hover img{transform:scale(1.04)}
+.obra figcaption{position:absolute;left:12px;bottom:12px;background:var(--bg);border-radius:8px;padding:7px 12px;font-size:13px;font-weight:600}
+.obra.a{grid-row:1/3}
+.obra.c{grid-column:2/4}
+@media (max-width:860px){.obras{grid-template-columns:1fr 1fr;grid-template-rows:auto}.obra{aspect-ratio:4/3.2}.obra.a,.obra.c{grid-row:auto;grid-column:1/-1;aspect-ratio:16/10}}
+
+/* opiniones */
+.opis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.opi{background:#fff;border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:16px}
+.opi p{font-size:17px;line-height:1.55}
+.opi footer{margin-top:auto;font-size:14px;color:var(--mut)}
+.opi footer b{color:var(--fg);display:block;font-size:15px}
+@media (max-width:860px){.opis{grid-template-columns:1fr}}
+
+/* zona + presupuesto */
+.pres{background:var(--sf)}
+.pres .g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px)}
+.pres .lista{list-style:none;padding:0;margin-top:28px;display:grid;gap:12px}
+.pres .lista li{display:flex;gap:12px;align-items:flex-start}
+.pres .lista li::before{content:"✓";flex:none;width:24px;height:24px;border-radius:50%;background:var(--acc);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800;margin-top:2px}
+.zona{margin-top:30px;font-size:15px;color:var(--mut)}
+.zona b{color:var(--fg)}
+form{background:#fff;border-radius:var(--r);padding:clamp(22px,3vw,34px);display:grid;gap:14px}
+form h3{font-size:24px;margin-bottom:4px}
+label{font-size:13px;font-weight:600;color:var(--mut)}
+input,select,textarea{width:100%;margin-top:6px;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font:400 16px var(--f);color:var(--fg);outline:none;transition:border-color .3s}
+input:focus,select:focus,textarea:focus{border-color:var(--acc)}
+form .btn{border:0;cursor:pointer;justify-content:center}
+form small{font-size:13px;color:var(--mut);text-align:center}
+@media (max-width:860px){.pres .g{grid-template-columns:1fr}}
+
+.pie{background:var(--osc);color:#a59e93;padding:44px 0 30px;font-size:14px}
+.pie .g{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.pie .logo{color:#f1ede6;margin-bottom:12px}
+.pie b{color:#f1ede6;display:block;margin-bottom:4px}
+.pie .bajo{border-top:1px solid #3a3731;margin-top:30px;padding-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+.wa-f{position:fixed;right:18px;bottom:18px;z-index:50;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(0,0,0,.35);transition:transform .3s}
+.wa-f:hover{transform:scale(1.06)}
+.wa-f svg{width:30px;height:30px;fill:#fff}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="#" class="logo"><i>D</i>Reformas Duarte</a>
+  <ul><li><a href="#servicios">Servicios</a></li><li><a href="#proceso">Cómo trabajamos</a></li><li><a href="#trabajos">Trabajos</a></li><li><a href="#opiniones">Opiniones</a></li></ul>
+  <a href="#presupuesto" class="btn">Presupuesto gratis</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="g">
+    <div>
+      <span class="k" data-fx="reveal">Reformas en Valencia y alrededores</span>
+      <h1 data-fx="reveal" data-delay=".08">Reformamos tu casa <b>sin sustos</b> ni retrasos.</h1>
+      <p data-fx="reveal" data-delay=".16">Cocinas, baños y reformas completas con un solo equipo, un precio cerrado por escrito y una fecha de entrega que se cumple.</p>
+      <div class="acc" data-fx="reveal" data-delay=".24">
+        <a class="btn" href="https://wa.me/34600000000?text=Hola%2C%20quiero%20pedir%20presupuesto%20para%20una%20reforma" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.1-4.7-4.1-4.9-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>Pedir presupuesto</a>
+        <a class="btn o" href="#trabajos">Ver trabajos</a>
+      </div>
+      <div class="sello" data-fx="reveal" data-delay=".3"><span class="estrellas">★★★★★</span><span><b>4,9 en Google</b> · 180 opiniones</span></div>
+    </div>
+    <div class="foto" data-fx="reveal" data-delay=".12"><img src="img/hero.webp" alt="Cocina reformada con isla blanca y taburetes negros" fetchpriority="high"><div class="tag"><b>Cocina en Ruzafa</b>Entregada en 4 semanas</div></div>
+  </div>
+  <div class="datos" data-stagger=".08">
+    <div><b>18</b><span>años reformando</span></div>
+    <div><b>650+</b><span>obras terminadas</span></div>
+    <div><b>5 años</b><span>de garantía por escrito</span></div>
+    <div><b>48 h</b><span>para tu presupuesto</span></div>
+  </div>
+</div></header>
+
+<section id="servicios"><div class="wrap">
+  <div class="cab">
+    <div><span class="k">Servicios</span><h2 data-fx="reveal">Todo lo que tu casa necesita, con un solo equipo.</h2></div>
+    <p data-fx="reveal">Fontaneros, electricistas, albañiles y pintores propios. Tú hablas con una sola persona de principio a fin.</p>
+  </div>
+  <div class="servs" data-stagger=".08">
+    <a class="serv" href="#presupuesto"><figure><img src="img/hero.webp" alt="Cocina reformada" loading="lazy"></figure><div><h3>Cocinas</h3><p>Diseño, muebles, encimeras y electrodomésticos instalados.</p></div></a>
+    <a class="serv" href="#presupuesto"><figure><img src="img/bano.webp" alt="Baño reformado con ducha de obra" loading="lazy"></figure><div><h3>Baños</h3><p>Cambio de bañera por ducha, alicatado y muebles a medida.</p></div></a>
+    <a class="serv" href="#presupuesto"><figure><img src="img/yeso.webp" alt="Manos alisando yeso en una pared" loading="lazy"></figure><div><h3>Pintura y pladur</h3><p>Paredes lisas, techos, falsos techos y cambios de distribución.</p></div></a>
+    <a class="serv" href="#presupuesto"><figure><img src="img/salon.webp" alt="Salón reformado y luminoso" loading="lazy"></figure><div><h3>Reforma integral</h3><p>Tu piso entero, llave en mano, con licencias incluidas.</p></div></a>
+  </div>
+</div></section>
+
+<section class="proceso" id="proceso"><div class="wrap">
+  <span class="k">Cómo trabajamos</span>
+  <h2 data-fx="reveal">Cuatro pasos y te damos las llaves.</h2>
+  <div class="pasos" data-stagger=".1">
+    <div class="paso"><h3>Visita gratis</h3><p>Vamos a tu casa, medimos y escuchamos lo que quieres.</p></div>
+    <div class="paso"><h3>Precio cerrado</h3><p>En 48 h tienes el presupuesto por partidas. Sin sorpresas al final.</p></div>
+    <div class="paso"><h3>Obra limpia</h3><p>Protegemos tu casa, recogemos cada día y te mandamos fotos del avance.</p></div>
+    <div class="paso"><h3>Entrega y garantía</h3><p>Revisamos todo contigo y te dejamos 5 años de garantía por escrito.</p></div>
+  </div>
+</div></section>
+
+<section id="trabajos"><div class="wrap">
+  <div class="cab">
+    <div><span class="k">Trabajos recientes</span><h2 data-fx="reveal">Casas de vecinos tuyos.</h2></div>
+    <p data-fx="reveal">Algunas de las obras que hemos entregado este año.</p>
+  </div>
+  <div class="obras" data-stagger=".08">
+    <figure class="obra a"><img src="img/planos.webp" alt="Encargado revisando planos en una obra" loading="lazy"><figcaption>Piso completo · Benimaclet</figcaption></figure>
+    <figure class="obra"><img src="img/bano.webp" alt="Baño con mampara de cristal" loading="lazy"><figcaption>Baño · Campanar</figcaption></figure>
+    <figure class="obra"><img src="img/baldosa.webp" alt="Operario cortando baldosa" loading="lazy"><figcaption>Suelos · Patraix</figcaption></figure>
+    <figure class="obra c"><img src="img/salon.webp" alt="Salón abierto a la cocina" loading="lazy"><figcaption>Salón y cocina · Ruzafa</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="opiniones" style="padding-top:0"><div class="wrap">
+  <div class="cab">
+    <div><span class="k">Opiniones</span><h2 data-fx="reveal">Lo que dicen en Google.</h2></div>
+    <p data-fx="reveal"><span class="estrellas">★★★★★</span> 4,9 de media con 180 opiniones.</p>
+  </div>
+  <div class="opis" data-stagger=".08">
+    <blockquote class="opi"><span class="estrellas">★★★★★</span><p>“Nos dieron un precio y una fecha, y cumplieron las dos cosas. La cocina quedó mejor que en el render.”</p><footer><b>Marta G.</b>Cocina · Ruzafa</footer></blockquote>
+    <blockquote class="opi"><span class="estrellas">★★★★★</span><p>“Cada tarde nos mandaban fotos por WhatsApp. Daba gusto llegar a casa y verla recogida.”</p><footer><b>Andrés P.</b>Baño · Campanar</footer></blockquote>
+    <blockquote class="opi"><span class="estrellas">★★★★★</span><p>“Reformamos el piso entero sin tener que pelearnos con cinco gremios distintos. Muy recomendables.”</p><footer><b>Lucía y Jorge</b>Reforma integral · Benimaclet</footer></blockquote>
+  </div>
+</div></section>
+
+<section class="pres" id="presupuesto"><div class="wrap g">
+  <div>
+    <span class="k">Presupuesto sin compromiso</span>
+    <h2 data-fx="reveal">Cuéntanos tu reforma y te llamamos hoy.</h2>
+    <ul class="lista" data-stagger=".06">
+      <li>Visita y presupuesto gratis, sin compromiso</li>
+      <li>Precio cerrado por escrito antes de empezar</li>
+      <li>Fecha de entrega en el contrato</li>
+      <li>5 años de garantía en toda la obra</li>
+    </ul>
+    <p class="zona"><b>Trabajamos en:</b> Valencia ciudad, Burjassot, Paterna, Mislata, Torrent, Alboraya y alrededores.</p>
+  </div>
+  <form data-fx="reveal" onsubmit="event.preventDefault();const d=new FormData(this);window.open('https://wa.me/34600000000?text='+encodeURIComponent('Hola, soy '+d.get('n')+'. Quiero presupuesto para: '+d.get('t')+'. '+d.get('m')),'_blank')">
+    <h3>Pide tu presupuesto</h3>
+    <label>Nombre<input name="n" required autocomplete="name"></label>
+    <label>Teléfono<input name="tel" required type="tel" autocomplete="tel"></label>
+    <label>¿Qué quieres reformar?<select name="t"><option>Cocina</option><option>Baño</option><option>Pintura o pladur</option><option>Reforma integral</option><option>Otra cosa</option></select></label>
+    <label>Cuéntanos un poco<textarea name="m" rows="3" placeholder="Metros, barrio, cuándo te gustaría empezar…"></textarea></label>
+    <button class="btn">Enviar por WhatsApp →</button>
+    <small>Te contestamos en menos de 2 horas en horario laboral.</small>
+  </form>
+</div></section>
+
+<footer class="pie"><div class="wrap">
+  <div class="g">
+    <div><div class="logo"><i>D</i>Reformas Duarte</div>Reformas de cocinas, baños y viviendas completas.</div>
+    <div><b>Teléfono</b>600 000 000</div>
+    <div><b>Dirección</b>Calle Ejemplo 12, 46006 Valencia</div>
+    <div><b>Horario</b>Lunes a viernes, 8:00 – 18:00</div>
+  </div>
+  <div class="bajo"><span>Reformas Duarte · Plantilla 14 · Oficios</span><span>Aviso legal · Privacidad · Cookies</span></div>
+</div></footer>
+
+<a class="wa-f" href="https://wa.me/34600000000?text=Hola%2C%20quiero%20pedir%20presupuesto" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.1-4.7-4.1-4.9-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+<script src="fx.js" defer></script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>
