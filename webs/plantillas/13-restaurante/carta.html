@@ -1,0 +1,75 @@
+<!doctype html>
+<!-- © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla ni una web prefabricada). Todos los derechos reservados. -->
+<html lang="es">
+<head>
+<meta name="author" content="Nicolás Acevedo (@acevvedoo)">
+<meta name="copyright" content="© 2026 Nicolás Acevedo · @acevvedoo">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La carta · Casa Merlo</title>
+<meta name="description" content="La carta completa de Casa Merlo: para compartir, principales a la brasa, postres caseros y vinos de pequeños productores.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<link rel="stylesheet" href="merlo.css">
+<style>
+.indice{position:sticky;top:78px;z-index:20;background:rgba(245,239,230,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-block:1px solid var(--line)}
+.indice .wrap{display:flex;gap:8px;overflow-x:auto;padding:12px 0;scrollbar-width:none}
+.indice a{flex:none;font:700 14px/1 var(--sans);padding:12px 18px;border-radius:99px;border:1.5px solid var(--line);transition:background .3s,color .3s,border-color .3s}
+.indice a.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.bloque{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(30px,6vw,90px);padding:clamp(70px,8vw,110px) 0;border-bottom:1px solid var(--line);scroll-margin-top:140px}
+.bloque .izq{position:sticky;top:170px;align-self:start}
+.bloque .izq h2{font-size:clamp(44px,5.4vw,80px)}
+.bloque .foto{margin-top:26px;aspect-ratio:4/3.2;border-radius:var(--r);overflow:hidden;box-shadow:0 30px 60px -40px rgba(60,30,20,.5)}
+.bloque .foto img{width:100%;height:100%;object-fit:cover}
+.bloque .lista{display:block}
+@media (max-width:900px){.bloque{grid-template-columns:1fr}.bloque .izq{position:static}.bloque .foto{aspect-ratio:16/9}}
+.alerg{background:var(--bg2);border-radius:var(--r);padding:clamp(26px,4vw,40px);display:flex;gap:24px 40px;justify-content:space-between;flex-wrap:wrap;align-items:center;margin-top:clamp(60px,7vw,100px)}
+.alerg p{color:var(--mut);max-width:60ch}
+</style>
+</head>
+<body>
+<nav id="nav"></nav>
+<header class="ph"><div class="wrap ph-g">
+  <div>
+    <span class="miga"><a href="index.html">Inicio</a> · La carta</span>
+    <h1 data-fx="split" data-by="words" data-step=".08">La <em>carta.</em></h1>
+    <p data-fx="reveal" data-delay=".3">Cocina de mercado: la carta cambia un poco cada temporada según lo que llega. Lo que ves aquí es lo que hay hoy, siempre al día.</p>
+    <div class="leyenda" data-fx="reveal" data-delay=".4"><span><b>V</b>Vegetariano</span><span><b>SG</b>Sin gluten</span></div>
+  </div>
+  <div class="ph-foto" data-fx="reveal" data-dir="scale"><img src="https://images.unsplash.com/photo-1755811248324-c70c1f10a7fd?w=1200&q=75&auto=format&fit=crop" alt="Mesa llena de platos para compartir"></div>
+</div></header>
+<div class="indice"><div class="wrap" id="indice"></div></div>
+<main class="wrap" id="carta-completa"></main>
+<section class="sec" id="menu" style="padding-bottom:0"><div class="wrap">
+  <div class="menu" data-fx="reveal">
+    <div><span class="k">De lunes a viernes · mediodía</span><h2 style="margin-top:16px">Menú <em>del día</em></h2><div class="precio">16,90 €<small>pan, bebida y postre o café</small></div></div>
+    <ul><li><b>Primeros</b><span>Crema de calabaza asada · Ensalada de tomate de huerta · Lentejas estofadas</span></li><li><b>Segundos</b><span>Pollo de corral a la brasa · Bacalao confitado · Arroz meloso de setas</span></li><li><b>Postres</b><span>Tarta de queso de la casa · Fruta de temporada</span></li></ul>
+  </div>
+  <div class="alerg" data-fx="reveal"><p><b style="color:var(--fg)">¿Alergias o intolerancias?</b> Avísanos al reservar o díselo a tu camarero. Tenemos la información de los 14 alérgenos de cada plato y adaptamos lo que se pueda.</p><a class="btn claro fx-btn-fill" href="reservas.html">Reservar mesa</a></div>
+</div></section>
+<div style="height:clamp(90px,11vw,150px)"></div>
+<section class="sec" style="padding-top:0"><div class="wrap"><div class="cta-r" data-fx="reveal">
+  <div><span class="k" style="color:#f2c9c9">Reservas</span><h2 style="margin-top:14px">¿Te guardamos <em>la mesa?</em></h2></div>
+  <a class="btn fx-btn-fill" data-fx="magnetic" href="reservas.html">Reservar por WhatsApp →</a>
+</div></div></section>
+<footer class="pie" id="pie"></footer>
+<script src="merlo.js"></script>
+<script>
+const FOTOS = { compartir: 'https://images.unsplash.com/photo-1763467940825-d067fb3baf22?w=900&q=75&auto=format&fit=crop', principales: 'https://images.unsplash.com/photo-1783688265288-8fcbf40f1320?w=900&q=75&auto=format&fit=crop', postres: 'https://images.unsplash.com/photo-1778694277039-5cbf0b9a1fcf?w=900&q=75&auto=format&fit=crop', vinos: 'https://images.unsplash.com/photo-1768508950434-fc76c9f3ed9f?w=900&q=75&auto=format&fit=crop' };
+const TXT = { compartir: 'Para el centro de la mesa y pedir de todo un poco.', principales: 'Carnes y pescados a la brasa de encina.', postres: 'Todos hechos en casa, cada mañana.', vinos: 'De pequeños productores. Pregunta por la copa del día.' };
+document.getElementById('indice').innerHTML = Object.entries(CARTA).map(([k, [t]], i) => `<a href="#${k}" class="${i ? '' : 'on'}">${t}</a>`).join('');
+document.getElementById('carta-completa').innerHTML = Object.entries(CARTA).map(([k, [t, v]]) => `
+  <section class="bloque" id="${k}">
+    <div class="izq"><span class="k">${v.length} platos</span><h2 style="margin-top:14px">${t}</h2><p style="color:var(--mut);margin-top:14px;max-width:32ch">${TXT[k]}</p><div class="foto"><img src="${FOTOS[k]}" alt="${t}" loading="lazy"></div></div>
+    <ul class="lista" data-fx="reveal">${v.map(CARTA_FILA).join('')}</ul>
+  </section>`).join('');
+const links = [...document.querySelectorAll('#indice a')];
+const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; links.forEach(a => a.classList.toggle('on', a.hash === '#' + e.target.id)); }), { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('.bloque').forEach(b => io.observe(b));
+</script>
+<script src="fx.js" defer></script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>

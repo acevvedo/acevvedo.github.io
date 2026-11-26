@@ -14,6 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Hanken+Grotesk:wght@300;400;500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="fx.css">
 <link rel="stylesheet" href="lux.css">
+<link rel="stylesheet" href="comun.css">
 <style>
 @property --luz{syntax:'<color>';inherits:true;initial-value:rgb(197,138,62)}
 :root{--bg:#070605;--sf:#100d0b;--fg:#f3ece1;--mut:#968d80;--line:rgba(243,236,225,.12);--oro:#cfa962;--oro2:#8a6a32;
@@ -135,6 +136,18 @@ html{scroll-snap-type:y proximity}
   .grupo .placa b{font-size:13.5px}.grupo .placa span{font-size:11px;letter-spacing:0;margin-top:4px}.placa s{display:none}
   .placa i{font-size:8px;padding:2px 5px;margin-left:4px;letter-spacing:.08em}
   .vit{padding-bottom:30px}
+}
+
+/* PC: pared compuesta (no lineal): huecos de 3 tamaños a distintas alturas, colocados a mano en POS */
+@media (min-width:641px){
+  .muro{--W:min(calc(100vw - 72px),1560px);position:relative;height:calc(var(--W) * var(--alto,70) / 100)}
+  .muro .grupo{display:contents}
+  .muro .celda{position:absolute;left:calc(var(--x) * 1%);top:calc(var(--W) * var(--y) / 100);width:calc(var(--w) * 1%)}
+  .muro .placa b{font-size:clamp(13px,calc(var(--w) * .118vw),27px)}
+  .muro .placa span{font-size:clamp(11px,calc(var(--w) * .078vw),15px)}
+  .muro .placa span{white-space:nowrap}
+  .muro .celda:not(.xl) .placa s{display:none}
+  .muro .celda.xl .placa::before{content:"El más pedido";display:block;font:400 10px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--oro);margin-bottom:8px}
 }
 
 /* cinta */
@@ -281,11 +294,7 @@ body:has(.zoom.open) .flota{opacity:0;pointer-events:none}
 </style>
 </head>
 <body data-lux-intro="JARV" data-lux-smooth data-lux-cursor>
-<nav><div class="wrap">
-  <div class="links cap"><a href="#vitrina">Vitrina</a><a href="#garantias">Garantías</a><a href="#notas">Notas</a><a href="#preguntas">Preguntas</a></div>
-  <a href="#" class="logo"><b>JARV</b><small>DUBAI · EST 2026</small></a>
-  <div class="right cap"><a href="#opiniones">Opiniones</a><a class="contacto" href="#contacto">Contacto</a></div>
-</div></nav>
+<nav id="nav"></nav>
 
 <header class="hero">
   <div class="fondo"></div>
@@ -308,6 +317,7 @@ body:has(.zoom.open) .flota{opacity:0;pointer-events:none}
     <p data-fx="reveal">Frascos con existencias limitadas por lote de importación. Pincha en cualquiera para acercarte y ver sus notas, su fijación y su precio.</p>
   </div>
   <div class="muro"></div>
+  <div style="display:flex;justify-content:center;margin-top:clamp(40px,5vw,70px)" data-fx="reveal"><a class="btn oro-b fx-btn-fill" data-fx="magnetic" href="coleccion.html">Ver toda la colección</a></div>
 </div></section>
 
 <div class="cinta" data-fx="marquee" data-speed="40" data-lux="velocity"><span>Perfumes árabes 100% originales</span><span>Envío gratis desde 40 €</span><span>Bizum · Apple Pay · Google Pay</span><span>Stock físico en España</span><span>Entrega en 24/48 h</span></div>
@@ -387,13 +397,7 @@ body:has(.zoom.open) .flota{opacity:0;pointer-events:none}
   </form>
 </div></section>
 
-<footer class="pie"><div class="wrap">
-  <div><span class="ar">جارف بارفان</span><b class="l">JARV PARFUMS</b><p style="color:var(--mut);font-size:14px;max-width:34ch">Jarv Dubai · Colección 2026 · Fragancias orientales puras.</p><p style="margin-top:12px;font-size:14px"><a href="mailto:jarvclub@outlook.com" class="oro">jarvclub@outlook.com</a></p></div>
-  <div><span class="cap">Colección</span><ul><li><a href="#vitrina">La vitrina</a></li><li><a href="#notas">Pirámide de notas</a></li></ul></div>
-  <div><span class="cap">Garantías</span><ul><li>Bizum · Apple Pay · Google Pay</li><li>Transferencia bancaria</li><li>Envío express 24/48 h</li><li>100% originales de los Emiratos</li></ul></div>
-  <div><span class="cap">Ayuda</span><ul><li><a href="#garantias">Originalidad</a></li><li><a href="#opiniones">Opiniones</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li></ul></div>
-  <div class="legal cap"><span>© 2026 JARV Parfums · Jarv Dubai</span><span>Todos los derechos reservados</span></div>
-</div></footer>
+<footer class="pie" id="pie"></footer>
 
 <!-- Zoom al hueco + ficha -->
 <div class="zoom" role="dialog" aria-modal="true" aria-label="Ficha de perfume">
@@ -416,6 +420,7 @@ body:has(.zoom.open) .flota{opacity:0;pointer-events:none}
 <a class="flota" href="https://api.whatsapp.com/send?text=Hola%20JARV%2C%20quiero%20informaci%C3%B3n%20sobre%20vuestros%20perfumes" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg></a>
 
 <script src="perfumes.js"></script>
+<script src="comun.js"></script>
 <script src="fx.js" defer></script>
 <script src="lux.js" defer></script>
 <script>addEventListener("DOMContentLoaded",()=>document.querySelectorAll(".celda").forEach(c=>c.dataset.cursor="Ver"))</script>
@@ -429,11 +434,15 @@ const reducido = matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* ---------- VITRINA: un hueco 3D por perfume ---------- */
 const muro = $('.muro');
 const celda = (p, i) => `
-  <button class="celda" data-i="${i}" style="--c:${luz(p)}" aria-label="Ver ${titulo(p.nombre)}">
+  <button class="celda${POS[i] && POS[i][2] > 12 ? ' xl' : ''}" data-i="${i}" style="--c:${luz(p)};--x:${POS[i]?.[0] ?? 0};--y:${POS[i]?.[1] ?? 0};--w:${POS[i]?.[2] ?? 10}" aria-label="Ver ${titulo(p.nombre)}">
     <div class="hueco"><i class="luz"></i><div class="frasco3d"><i class="sombra"></i><div class="refl" aria-hidden="true"><img src="${p.img}" alt="" loading="lazy"></div><div class="bot" style="--img:url(${p.img})"><img src="${p.img}" alt="${titulo(p.nombre)}" loading="lazy"></div></div></div>
     <div class="placa"><b>${titulo(p.nombre).replace(/ \(.*\)/, '')}</b><span>${p.precioAnterior ? `<s>${eur(p.precioAnterior)}</s>` : ''}${eur(p.precio)}${p.stockReal === 0 ? '<i class="ago">Agotado</i>' : p.descuento ? `<i>-${p.descuento}%</i>` : ''}</span></div>
   </button>`;
 // de 5 en 5: en móvil cada grupo ocupa una pantalla entera
+// PC: [x %, y (% del ancho), ancho %] por perfume, en el orden de perfumes.js
+const POS = [[42.75,6,14.5],[61.5,14,10.5],[28,14,10.5],[4,24,8.4],[17,38,10.5],[45.8,42,8.4],[72.5,38,10.5],[87.6,24,8.4],[16,4,8.4],[75.6,4,8.4]];
+const ALTO = Math.max(...POS.map(([x, y, w]) => y + w * 1.892 + 7));
+muro.style.setProperty('--alto', ALTO.toFixed(1));
 muro.innerHTML = Array.from({ length: Math.ceil(P.length / 5) }, (_, g) => '<div class="grupo">' + P.slice(g * 5, g * 5 + 5).map((p, k) => celda(p, g * 5 + k)).join('') + '</div>').join('');
 
 // Cada hueco se ve desde el centro de la pared: los de los lados enseñan más su pared interior (perspectiva real)
@@ -479,7 +488,7 @@ function enfoca(i) {
   const h = $('.hueco', celdas[i]);
   h.style.setProperty('--px', '50%'); h.style.setProperty('--py', '36%');
   const movil = innerWidth <= 860, nw = h.offsetWidth, nh = h.offsetHeight;
-  const nx = h.offsetLeft, ny = h.offsetTop;
+  let nx = 0, ny = 0; for (let e = h; e && e !== clon; e = e.offsetParent) { nx += e.offsetLeft; ny += e.offsetTop; }
   const s = movil ? Math.min(innerHeight * .62 / nh, innerWidth * .78 / nw) : Math.min(innerHeight * .74 / nh, innerWidth * .4 / nw);
   const cx = movil ? innerWidth / 2 : innerWidth * .27, cy = movil ? innerHeight * .35 : innerHeight * .47;
   clon.style.transform = `translate(${cx - rectMuro.left - (nx + nw / 2) * s}px,${cy - rectMuro.top - (ny + nh / 2) * s}px) scale(${s})`;
@@ -545,7 +554,7 @@ function deslizaA(y) {
 ['wheel', 'touchstart'].forEach(ev => addEventListener(ev, () => { cancelAnimationFrame(deslizaA.f); document.documentElement.style.scrollSnapType = ''; }, { passive: true }));
 $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
   const id = a.getAttribute('href');
-  const dest = id === '#' ? null : id === '#vitrina' ? $('.grupo') : $(id);
+  const dest = id === '#' ? null : id === '#vitrina' ? (innerWidth > 640 ? $('.vit') : $('.grupo')) : $(id);
   if (id !== '#' && !dest) return;
   e.preventDefault();
   deslizaA(dest ? dest.getBoundingClientRect().top + scrollY - (dest.classList.contains('grupo') ? 0 : 70) : 0);

@@ -1,0 +1,132 @@
+<!doctype html>
+<!-- © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla ni una web prefabricada). Todos los derechos reservados. -->
+<html lang="es">
+<head>
+<meta name="author" content="Nicolás Acevedo (@acevvedoo)">
+<meta name="copyright" content="© 2026 Nicolás Acevedo · @acevvedoo">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Encuentra tu perfume · JARV Parfums</title>
+<meta name="description" content="Tres preguntas y te decimos qué perfume árabe de JARV va contigo.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#070605">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Hanken+Grotesk:wght@300;400;500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<link rel="stylesheet" href="lux.css">
+<link rel="stylesheet" href="comun.css">
+<style>
+:root{--lux-ibg:#070605;--lux-ifg:#f3ece1;--lux-acc:#e3c385;--lux-ifont:"Bodoni Moda",serif}
+
+.test{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,100px);align-items:center;padding:clamp(120px,12vw,150px) 0 80px}
+.t-izq .cap{color:var(--oro)}
+.t-izq h1{font-size:clamp(54px,7.4vw,124px);line-height:.95;margin-top:18px}
+.t-izq h1 em{color:var(--oro)}
+.t-izq p{color:var(--mut);max-width:44ch;margin-top:22px}
+.barra{height:1px;background:var(--line);margin-top:40px;max-width:420px;position:relative}
+.barra i{position:absolute;inset:0;background:var(--oro);transform-origin:0 50%;transform:scaleX(0);transition:transform .8s var(--fx-ease)}
+.paso-n{margin-top:14px}
+.t-der{position:relative;min-height:440px;overflow:hidden;padding:2px}
+.preg{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:14px;opacity:0;translate:40px 0;pointer-events:none;transition:opacity .6s,translate .8s var(--fx-ease)}
+.preg.on{opacity:1;translate:0 0;pointer-events:auto}
+.preg.sale{translate:-40px 0}
+.preg h2{font-size:clamp(34px,3.4vw,54px);margin-bottom:14px}
+.op{display:flex;align-items:center;gap:18px;text-align:left;width:100%;background:none;border:1px solid var(--line);color:var(--fg);border-radius:4px;padding:20px 22px;cursor:pointer;font:400 17px/1.3 var(--sans);transition:border-color .4s,background .4s}
+.op:hover,.op:focus-visible{border-color:var(--oro);background:rgba(207,169,98,.06)}
+.op i{font:italic 400 22px var(--serif);color:var(--oro);font-style:italic;min-width:26px}
+.op small{display:block;color:var(--mut);font-size:13px;margin-top:3px}
+.res{display:none;padding:0 0 clamp(80px,9vw,130px)}
+.res.on{display:block}
+.res-g{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.res-g .escena{position:relative;height:min(74svh,720px);display:grid;place-items:center;background:#050404;overflow:hidden}
+.res-g .escena::before{content:"";position:absolute;inset:0;background:url(img/pared.webp) center/cover;filter:brightness(.34) contrast(1.25)}
+.res-g .hueco{position:relative;height:86%;width:auto;aspect-ratio:807/1527}
+.res-g h2{font-size:clamp(50px,6vw,104px)}
+.res-g .insp{font:italic 400 22px/1.3 var(--serif);color:#cfc6b9;margin-top:14px}
+.res-g .por{color:var(--mut);margin-top:20px;max-width:46ch}
+.res-g .bts{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.alt{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin-top:70px;max-width:620px}
+.alt .hueco{width:70%;margin-inline:auto}
+.otra{background:none;border:0;color:var(--mut);cursor:pointer;font:400 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;margin-top:40px;padding:0}
+.otra:hover{color:var(--oro)}
+@media (max-width:900px){.test{grid-template-columns:1fr;min-height:0;gap:40px}.t-der{min-height:470px}.res-g{grid-template-columns:1fr}.res-g .escena{height:60svh}.alt{grid-template-columns:1fr 1fr;gap:16px}}
+
+</style>
+</head>
+<body data-lux-smooth data-lux-cursor>
+<nav id="nav"></nav>
+<main class="wrap test">
+  <div class="t-izq">
+    <span class="cap" data-lux="scramble">Test olfativo · 30 segundos</span>
+    <h1 data-fx="split" data-by="words">Encuentra tu <em>perfume.</em></h1>
+    <p data-fx="reveal" data-delay=".3">Tres preguntas rápidas y te decimos qué fragancia de la colección va contigo. Sin registros, sin correos.</p>
+    <div class="barra"><i></i></div><span class="cap paso-n">Pregunta 1 de 3</span>
+  </div>
+  <div class="t-der"></div>
+</main>
+<section class="res" id="resultado"><div class="wrap">
+  <span class="cap" style="color:var(--oro)">Tu perfume es</span>
+  <div class="res-g" style="margin-top:30px">
+    <div class="escena"></div>
+    <div class="txt"></div>
+  </div>
+</div></section>
+<footer class="pie" id="pie"></footer>
+<script src="perfumes.js"></script>
+<script src="comun.js"></script>
+<script src="fx.js" defer></script>
+<script src="lux.js" defer></script>
+<script>
+
+const P = window.PERFUMES, J = window.JARV, $ = s => document.querySelector(s);
+const PREG = [
+  { t: '¿Qué te atrae más?', k: 'fam', o: [['gourmand', 'Dulce y goloso', 'Vainilla, caramelo, frutas'], ['oriental', 'Especiado y profundo', 'Oud, cuero, licor, cacao'], ['alta-gama', 'Elegante y luminoso', 'Azafrán, ámbar, flores blancas'], ['firma', 'Fresco y versátil', 'Para llevar a diario']] },
+  { t: '¿Cuándo lo vas a llevar?', k: 'mom', o: [['dia', 'En el día a día', 'Trabajo, clase, planes'], ['noche', 'Noches y eventos', 'Cenas, fiestas, gala'], ['cita', 'En citas', 'Que te recuerden'], ['todo', 'Siempre', 'Un perfume firma']] },
+  { t: '¿Cuánto quieres que se note?', k: 'int', o: [['suave', 'Cercano', 'Solo quien se acerca'], ['media', 'Que se note', 'Deja rastro al pasar'], ['fuerte', 'Que deje huella', 'Se queda en la habitación']] },
+];
+const MOM = { dia: /diario|día|oficina|universidad|trabajo|primavera|verano|tarde/i, noche: /noche|gala|etiqueta|fiesta|evento/i, cita: /cita|román/i, todo: /toda|firma|día y noche|signature/i };
+const INT = { suave: /tierna|coqueta|luminosa|dulce/i, media: /magnética|elegante|adictiva|sensual|seductora|versátil/i, fuerte: /nuclear|enorme|imponente|proyectiva|pesada|inolvidable/i };
+const r = {}; let n = 0;
+const der = $('.t-der');
+der.innerHTML = PREG.map((q, i) => `<div class="preg" data-i="${i}"><h2>${q.t}</h2>${q.o.map(([v, a, b], j) => `<button class="op" data-v="${v}"><i>${'abcd'[j]}</i><span>${a}<small>${b}</small></span></button>`).join('')}</div>`).join('');
+const muestra = i => {
+  der.querySelectorAll('.preg').forEach((el, k) => { el.classList.toggle('on', k === i); el.classList.toggle('sale', k < i); });
+  $('.barra i').style.transform = `scaleX(${i / PREG.length})`;
+  $('.paso-n').textContent = `Pregunta ${i + 1} de ${PREG.length}`;
+};
+der.onclick = e => {
+  const b = e.target.closest('.op'); if (!b) return;
+  r[PREG[n].k] = b.dataset.v; n++;
+  if (n < PREG.length) return muestra(n);
+  $('.barra i').style.transform = 'scaleX(1)'; $('.paso-n').textContent = 'Listo';
+  resultado();
+};
+function resultado() {
+  const pun = P.map(p => {
+    let s = 0;
+    if (p.categoria === r.fam) s += 4;
+    if (MOM[r.mom].test(p.ocasion)) s += 2;
+    if (INT[r.int].test(p.estela)) s += 2;
+    if (p.stockReal === 0) s -= 1.5;
+    return [s + Math.random() * .1, p];
+  }).sort((a, b) => b[0] - a[0]).map(x => x[1]);
+  const [g, ...rest] = pun;
+  const motivo = { gourmand: 'te van los aromas dulces', oriental: 'buscas algo especiado y profundo', 'alta-gama': 'quieres un toque elegante y luminoso', firma: 'quieres algo fresco para cualquier momento' }[r.fam];
+  $('#resultado .escena').innerHTML = J.nicho(g, true);
+  $('#resultado .txt').innerHTML = `<span class="cap marca" style="color:var(--oro)">${g.marca}</span><h2 style="margin-top:12px">${J.titulo(g.nombre)}</h2><p class="insp">${g.inspiracion}</p>
+    <p class="por">Porque ${motivo}. Estela ${g.estela.toLowerCase()} y fijación de ${g.fijacion.toLowerCase()}.</p>
+    <div class="bts"><button class="btn oro-b fx-btn-fill pide">Pedir por WhatsApp · ${J.eur(g.precio)}</button><a class="btn fx-btn-fill" href="perfume.html?p=${g.id}">Ver ficha completa</a></div>
+    <span class="cap" style="display:block;margin-top:60px">También encajan contigo</span>
+    <div class="alt">${rest.slice(0, 2).map(p => J.tarjeta(p)).join('')}</div>
+    <button class="otra">↺ Repetir el test</button>`;
+  $('#resultado .pide').onclick = () => J.pedir(g);
+  $('#resultado .otra').onclick = () => { n = 0; $('#resultado').classList.remove('on'); muestra(0); scrollTo({ top: 0, behavior: 'smooth' }); };
+  $('#resultado').classList.add('on');
+  setTimeout(() => $('#resultado').scrollIntoView({ behavior: 'smooth' }), 250);
+}
+muestra(0);
+
+</script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>

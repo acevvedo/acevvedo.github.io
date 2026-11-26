@@ -1,0 +1,106 @@
+<!doctype html>
+<!-- © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla ni una web prefabricada). Todos los derechos reservados. -->
+<html lang="es">
+<head>
+<meta name="author" content="Nicolás Acevedo (@acevvedoo)">
+<meta name="copyright" content="© 2026 Nicolás Acevedo · @acevvedoo">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Casa · JARV Parfums</title>
+<meta name="description" content="Cómo se hace un perfume de Dubái: maceración de meses, ingredientes de origen puro y fijación extrema.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#070605">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Hanken+Grotesk:wght@300;400;500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<link rel="stylesheet" href="lux.css">
+<link rel="stylesheet" href="comun.css">
+<style>
+:root{--lux-ibg:#070605;--lux-ifg:#f3ece1;--lux-acc:#e3c385;--lux-ifont:"Bodoni Moda",serif}
+
+.ph{min-height:88svh;display:flex;align-items:flex-end}
+.ph h1{font-size:clamp(62px,12vw,210px)}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,100px);align-items:start}
+.intro .big{font:400 clamp(28px,3vw,44px)/1.25 var(--serif)}
+.intro .big em{color:var(--oro)}
+.intro p{color:var(--mut);font-size:17px}
+.intro p + p{margin-top:18px}
+.intro b{color:var(--fg);font-weight:400}
+.mukh .capa{position:relative;z-index:2;text-align:center;padding:0 16px}
+.mukh .capa h2{font-size:clamp(50px,9vw,150px)}
+.mukh .capa .ar{display:block;font:400 clamp(30px,3vw,48px)/1 var(--arabe);color:var(--oro);margin-bottom:10px}
+.mukh .lux-x-media::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at center,rgba(7,6,5,.2),rgba(7,6,5,.75))}
+.origen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+.origen .lux-spot{border:1px solid var(--line);border-radius:18px;padding:34px 30px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between}
+.origen b{font:400 clamp(30px,2.6vw,40px)/1 var(--serif)}
+.origen span{color:var(--oro);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.origen p{color:var(--mut);font-size:15px;margin-top:12px}
+.linea{margin-top:60px;border-top:1px solid var(--line)}
+.linea>div{display:grid;grid-template-columns:140px 1fr 1.3fr;gap:24px;padding:30px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.linea i{font:italic 400 clamp(38px,4vw,60px)/1 var(--serif);color:var(--oro)}
+.linea b{font:400 clamp(24px,2.2vw,32px)/1.15 var(--serif)}
+.linea p{color:var(--mut)}
+.cita{text-align:center;max-width:22ch;margin-inline:auto;font:italic 400 clamp(36px,4.6vw,72px)/1.15 var(--serif)}
+.cita em{color:var(--oro)}
+@media (max-width:860px){.intro,.origen{grid-template-columns:1fr}.linea>div{grid-template-columns:1fr;gap:8px}}
+
+</style>
+</head>
+<body data-lux-smooth data-lux-cursor>
+<nav id="nav"></nav>
+<header class="ph"><div class="wrap">
+  <span class="agua" aria-hidden="true" lang="ar">بيت</span>
+  <span class="miga"><a href="index.html">Inicio</a> · La Casa</span>
+  <h1 data-fx="split" data-by="words">La <em>Casa.</em></h1>
+  <p data-fx="reveal" data-delay=".3">Detrás de cada frasco hay meses de espera, aceites que no se diluyen y una forma de entender el perfume que no se parece a nada occidental.</p>
+</div></header>
+<section style="padding-top:clamp(40px,5vw,70px)"><div class="wrap intro">
+  <p class="big" data-fx="reveal">En Dubái un perfume no se fabrica: <em>se deja madurar.</em></p>
+  <div data-fx="reveal" data-delay=".15">
+    <p>La perfumería del Golfo se rige por el principio del <b>Mukhallat</b>: composiciones ricas en aceites puros que reposan durante meses en barricas oscuras, hasta que el oud, el azafrán y el ámbar gris se funden sin asperezas.</p>
+    <p>En JARV seleccionamos solo casas oficiales de los Emiratos (<b>Lattafa, Armaf, Fragrance World, Zimaya y Gulf Orchid</b>) y traemos cada lote precintado, con holograma y código de fábrica.</p>
+  </div>
+</div></section>
+<section class="mukh" data-lux="expand">
+  <div class="lux-x-sticky">
+    <div class="lux-x-media"><img src="img/frasco-jarv.webp" alt="Frasco JARV de cristal tallado" loading="lazy"></div>
+    <div class="capa" data-from=".45" data-to="1"><span class="ar" lang="ar">مخلط</span><h2>Mukh<em>allat.</em></h2><p class="cap" style="color:#d8cfc2;margin-top:18px">El arte de mezclar sin prisas</p></div>
+  </div>
+</section>
+<section><div class="wrap">
+  <span class="cap" data-lux="scramble">Ingredientes de origen</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:18px;max-width:16ch">Cada nota viene de <em>donde nace.</em></h2>
+  <div class="origen" data-lux="spotlight" data-stagger=".08">
+    <div class="lux-spot"><span>Madagascar</span><div><b>Vainilla</b><p>Vainas curadas al sol que dan la base cremosa de los gourmand.</p></div></div>
+    <div class="lux-spot"><span>Persia</span><div><b>Azafrán</b><p>La especia más cara del mundo, el destello rojo de la alta perfumería.</p></div></div>
+    <div class="lux-spot"><span>Damasco</span><div><b>Rosa</b><p>Rosa damascena destilada, el corazón de los florales orientales.</p></div></div>
+    <div class="lux-spot"><span>Camboya</span><div><b>Oud</b><p>Madera de agar resinada, profunda y ahumada. El alma del perfume árabe.</p></div></div>
+    <div class="lux-spot"><span>Océano Índico</span><div><b>Ámbar gris</b><p>Fija las notas en la piel y les da ese brillo salino y cálido.</p></div></div>
+    <div class="lux-spot"><span>Arabia</span><div><b>Mirra</b><p>Resina sagrada y balsámica que alarga la estela durante días.</p></div></div>
+  </div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <span class="cap" data-lux="scramble">Del aceite al frasco</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:18px">El tiempo no admite <em>prisas.</em></h2>
+  <div class="linea" data-stagger=".1">
+    <div><i>I</i><b>Selección</b><p>Las casas aliadas eligen cada lote de aceite por su origen y su pureza.</p></div>
+    <div><i>II</i><b>Maceración</b><p>De 6 a 12 meses de reposo en barricas oscuras antes de embotellar.</p></div>
+    <div><i>III</i><b>Concentración</b><p>Entre un 25 % y un 35 % de aceites puros, nivel Extrait y Eau de Parfum Intense.</p></div>
+    <div><i>IV</i><b>Importación</b><p>Precintado en origen con holograma y código de lote, directo a nuestro stock en España.</p></div>
+  </div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <p class="cita" data-fx="reveal">“Un buen perfume árabe se sigue oliendo <em>al día siguiente.</em>”</p>
+  <div style="text-align:center;margin-top:44px" data-fx="reveal"><a class="btn oro-b fx-btn-fill" data-fx="magnetic" href="coleccion.html">Ver la colección</a></div>
+</div></section>
+<footer class="pie" id="pie"></footer>
+<script src="perfumes.js"></script>
+<script src="comun.js"></script>
+<script src="fx.js" defer></script>
+<script src="lux.js" defer></script>
+<script>
+
+</script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>

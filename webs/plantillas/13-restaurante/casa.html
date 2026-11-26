@@ -1,0 +1,103 @@
+<!doctype html>
+<!-- © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla ni una web prefabricada). Todos los derechos reservados. -->
+<html lang="es">
+<head>
+<meta name="author" content="Nicolás Acevedo (@acevvedoo)">
+<meta name="copyright" content="© 2026 Nicolás Acevedo · @acevvedoo">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La casa · Casa Merlo</title>
+<meta name="description" content="Casa Merlo: una barra, una brasa de encina y mucha mesa en el centro de Madrid desde 2014.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<link rel="stylesheet" href="merlo.css">
+<style>
+.hist{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.hist p{color:var(--mut);margin-top:20px}
+.hist .marco{aspect-ratio:4/5;border-radius:999px 999px var(--r) var(--r);overflow:hidden;box-shadow:0 40px 80px -40px rgba(60,30,20,.55)}
+.hist .marco img{width:100%;height:120%;object-fit:cover}
+.linea{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}
+.hito{border-top:2px solid var(--fg);padding-top:20px}
+.hito b{display:block;font:400 46px/1 var(--serif);color:var(--acc)}
+.hito h3{font:400 24px/1.1 var(--serif);margin:12px 0 8px}
+.hito p{color:var(--mut);font-size:15px}
+.prov{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.pv{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 28px}
+.pv span{font:700 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--acc-2)}
+.pv h3{font:400 28px/1.05 var(--serif);margin:14px 0 8px}
+.pv p{color:var(--mut);font-size:15px}
+.gal{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:260px 260px;gap:16px;margin-top:50px}
+.gal figure{margin:0;border-radius:var(--r);overflow:hidden}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.gal figure:hover img{transform:scale(1.05)}
+.gal .a{grid-row:1/3}
+.gal .d{grid-column:2/4}
+@media (max-width:900px){.hist{grid-template-columns:1fr}.linea{grid-template-columns:1fr 1fr}.prov{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}.gal .a{grid-row:auto;grid-column:1/-1}.gal .d{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<nav id="nav"></nav>
+<header class="ph"><div class="wrap ph-g">
+  <div>
+    <span class="miga"><a href="index.html">Inicio</a> · La casa</span>
+    <h1 data-fx="split" data-by="words" data-step=".08">La <em>casa.</em></h1>
+    <p data-fx="reveal" data-delay=".3">Una barra, una brasa de encina y mucha mesa. Así empezó todo en 2014 y así seguimos.</p>
+  </div>
+  <div class="ph-foto" data-fx="reveal" data-dir="scale"><img src="https://images.unsplash.com/photo-1780639026821-f680fae0d99d?w=1200&q=75&auto=format&fit=crop" alt="Barra del restaurante con luces cálidas"></div>
+</div></header>
+<section class="sec" style="padding-top:clamp(40px,5vw,70px)"><div class="wrap hist">
+  <div class="marco" data-fx="reveal"><img src="https://images.unsplash.com/photo-1769034416234-9e1a8a21cccb?w=1000&q=75&auto=format&fit=crop" alt="Cocinero junto a la brasa encendida" loading="lazy" data-fx="parallax" data-speed=".08"></div>
+  <div>
+    <span class="k" data-fx="reveal">Nuestra historia</span>
+    <h2 data-fx="split" data-by="words" style="margin-top:16px">Cocinar lo que hay <em>y que se note.</em></h2>
+    <p data-fx="reveal">Casa Merlo nació de una idea muy sencilla: ir al mercado cada mañana, cocinar lo mejor que haya y hacerlo a la brasa de encina, como en casa de los abuelos.</p>
+    <p data-fx="reveal">Diez años después seguimos con el mismo equipo en cocina, la misma brasa y las mismas ganas de que vuelvas.</p>
+    <div class="cifras">
+      <div><b data-fx="counter" data-to="10">0</b><span>años de brasa</span></div>
+      <div><b data-fx="counter" data-to="60">0</b><span>mesas cada noche</span></div>
+      <div><b data-fx="counter" data-to="12">0</b><span>personas en el equipo</span></div>
+    </div>
+  </div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <span class="k" data-fx="reveal">Diez años</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:16px">De una barra <em>a lo de hoy.</em></h2>
+  <div class="linea">
+    <div class="hito" data-fx="reveal"><b>2014</b><h3>Abrimos la barra</h3><p>Ocho taburetes, pintxos y la primera brasa.</p></div>
+    <div class="hito" data-fx="reveal" data-delay=".08"><b>2017</b><h3>Llega el comedor</h3><p>Ampliamos el local y nace la carta de brasa.</p></div>
+    <div class="hito" data-fx="reveal" data-delay=".16"><b>2020</b><h3>Menú del día</h3><p>Cocina de mercado a mediodía a precio de barrio.</p></div>
+    <div class="hito" data-fx="reveal" data-delay=".24"><b>2024</b><h3>Salón privado</h3><p>Un espacio para grupos, cumpleaños y empresas.</p></div>
+  </div>
+</div></section>
+<section class="sec carta"><div class="wrap" style="display:block">
+  <span class="k" data-fx="reveal">Producto</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:16px">De quién <em>compramos.</em></h2>
+  <div class="prov">
+    <div class="pv" data-fx="reveal tilt" data-max="4"><span>Lonja de Madrid</span><h3>Pescado del día</h3><p>Lo elegimos cada mañana. Si no hay bueno, ese día no hay pescado.</p></div>
+    <div class="pv" data-fx="reveal tilt" data-max="4" data-delay=".1"><span>Sierra de Guadarrama</span><h3>Carne y quesos</h3><p>Ganaderías pequeñas a menos de 100 km de la cocina.</p></div>
+    <div class="pv" data-fx="reveal tilt" data-max="4" data-delay=".2"><span>Vega del Jarama</span><h3>Huerta</h3><p>Tomate, pimientos y verdura de temporada de una huerta familiar.</p></div>
+  </div>
+</div></section>
+<section class="sec"><div class="wrap">
+  <span class="k" data-fx="reveal">Así se ve</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:16px">Ven <em>a verlo.</em></h2>
+  <div class="gal">
+    <figure class="a" data-fx="reveal"><img src="https://images.unsplash.com/photo-1778694277039-5cbf0b9a1fcf?w=1000&q=75&auto=format&fit=crop" alt="Cena a la luz de las velas" loading="lazy"></figure>
+    <figure data-fx="reveal" data-delay=".08"><img src="https://images.unsplash.com/photo-1781115650818-3e3504c4ad67?w=700&q=75&auto=format&fit=crop" alt="Pintxos en la barra" loading="lazy"></figure>
+    <figure data-fx="reveal" data-delay=".16"><img src="https://images.unsplash.com/photo-1784571248456-b50c5c71203c?w=700&q=75&auto=format&fit=crop" alt="Arroz en la mesa" loading="lazy"></figure>
+    <figure class="d" data-fx="reveal" data-delay=".1"><img src="https://images.unsplash.com/photo-1783688265288-8fcbf40f1320?w=1100&q=75&auto=format&fit=crop" alt="Brasa de leña en el comedor" loading="lazy"></figure>
+  </div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap"><div class="cta-r" data-fx="reveal">
+  <div><span class="k" style="color:#f2c9c9">Reservas</span><h2 style="margin-top:14px">¿Te guardamos <em>la mesa?</em></h2></div>
+  <a class="btn fx-btn-fill" data-fx="magnetic" href="reservas.html">Reservar por WhatsApp →</a>
+</div></div></section>
+<footer class="pie" id="pie"></footer>
+<script src="merlo.js"></script>
+<script></script>
+<script src="fx.js" defer></script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>

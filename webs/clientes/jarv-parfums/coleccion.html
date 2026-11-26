@@ -1,0 +1,85 @@
+<!doctype html>
+<!-- © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla ni una web prefabricada). Todos los derechos reservados. -->
+<html lang="es">
+<head>
+<meta name="author" content="Nicolás Acevedo (@acevvedoo)">
+<meta name="copyright" content="© 2026 Nicolás Acevedo · @acevvedoo">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La colección · JARV Parfums</title>
+<meta name="description" content="Todos los perfumes árabes de JARV: gourmand, orientales, alta perfumería y perfumes firma. Frascos de 100 ml originales de los Emiratos.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#070605">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Hanken+Grotesk:wght@300;400;500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<link rel="stylesheet" href="lux.css">
+<link rel="stylesheet" href="comun.css">
+<style>
+:root{--lux-ibg:#070605;--lux-ifg:#f3ece1;--lux-acc:#e3c385;--lux-ifont:"Bodoni Moda",serif}
+
+.filtros{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,70px)}
+.filtros button{background:none;border:1px solid var(--line);color:var(--fg);border-radius:99px;padding:12px 20px;font:400 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:border-color .4s,background .4s,color .4s}
+.filtros button sup{color:var(--oro);margin-left:4px;font-size:10px}
+.filtros button:hover{border-color:var(--oro)}
+.filtros button.on{background:var(--oro);border-color:var(--oro);color:#120d06}
+.filtros button.on sup{color:#120d06}
+.rej{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(40px,4vw,64px) clamp(20px,2.6vw,40px)}
+.rej .tarj{transition:opacity .5s,scale .5s var(--fx-ease)}
+.rej .tarj.fuera{display:none}
+.rej .tarj.entra{animation:entra .7s var(--fx-ease) both}
+@keyframes entra{from{opacity:0;translate:0 24px}}
+.rej .hueco{width:76%;margin-inline:auto}
+@media (max-width:980px){.rej{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.rej{grid-template-columns:1fr 1fr;gap:34px 14px}.rej .hueco{width:88%}.tarj b{font-size:18px}.tarj .ins{font-size:13px}}
+.vit-fondo{position:relative;background:#050404}
+.vit-fondo::before{content:"";position:absolute;inset:0;background:url(img/pared.webp) center/cover;filter:brightness(.3) contrast(1.25);pointer-events:none}
+.vit-fondo>.wrap{position:relative}
+.ayuda{display:flex;justify-content:space-between;align-items:center;gap:24px 40px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:clamp(70px,8vw,120px);padding-top:40px}
+.ayuda h2{font-size:clamp(36px,4.4vw,64px)}
+
+</style>
+</head>
+<body data-lux-smooth data-lux-cursor>
+<nav id="nav"></nav>
+<header class="ph"><div class="wrap">
+  <span class="agua" aria-hidden="true" lang="ar">عطر</span>
+  <span class="miga"><a href="index.html">Inicio</a> · Colección</span>
+  <h1 data-fx="split" data-by="words">La <em>colección.</em></h1>
+  <p data-fx="reveal" data-delay=".3">Diez perfumes de los Emiratos, todos en frasco completo de 100 ml y con existencias limitadas por lote. Pincha en uno para ver sus notas, su fijación y medidas.</p>
+</div></header>
+<section class="vit-fondo" style="padding-top:clamp(60px,7vw,100px)"><div class="wrap">
+  <div class="filtros" role="tablist" aria-label="Filtrar por familia"></div>
+  <div class="rej"></div>
+  <div class="ayuda">
+    <div><span class="cap">¿No sabes cuál elegir?</span><h2 style="margin-top:14px">Te lo decimos en <em>tres preguntas.</em></h2></div>
+    <a class="btn oro-b fx-btn-fill" data-fx="magnetic" href="test.html">Encontrar mi perfume</a>
+  </div>
+</div></section>
+<footer class="pie" id="pie"></footer>
+<script src="perfumes.js"></script>
+<script src="comun.js"></script>
+<script src="fx.js" defer></script>
+<script src="lux.js" defer></script>
+<script>
+
+const P = window.PERFUMES, J = window.JARV, rej = document.querySelector('.rej'), fil = document.querySelector('.filtros');
+rej.innerHTML = P.map(p => J.tarjeta(p, true)).join('');
+const fams = ['todos', ...new Set(P.map(p => p.categoria))];
+fil.innerHTML = fams.map(f => `<button role="tab" data-f="${f}" class="${f === 'todos' ? 'on' : ''}">${f === 'todos' ? 'Todos' : J.FAM[f] || f}<sup>${f === 'todos' ? P.length : P.filter(p => p.categoria === f).length}</sup></button>`).join('');
+const filtra = f => {
+  fil.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.f === f));
+  rej.querySelectorAll('.tarj').forEach((t, i) => {
+    const ve = f === 'todos' || t.dataset.fam === f;
+    t.classList.toggle('fuera', !ve); t.classList.remove('entra');
+    if (ve) { void t.offsetWidth; t.style.animationDelay = (i % 8) * .05 + 's'; t.classList.add('entra'); }
+  });
+  history.replaceState(null, '', f === 'todos' ? 'coleccion.html' : '?familia=' + f);
+};
+fil.onclick = e => { const b = e.target.closest('button'); if (b) filtra(b.dataset.f); };
+const ini = new URLSearchParams(location.search).get('familia'); if (ini && fams.includes(ini)) filtra(ini);
+
+</script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>

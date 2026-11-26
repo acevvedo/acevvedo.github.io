@@ -1,0 +1,71 @@
+<!doctype html>
+<!-- © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla ni una web prefabricada). Todos los derechos reservados. -->
+<html lang="es">
+<head>
+<meta name="author" content="Nicolás Acevedo (@acevvedoo)">
+<meta name="copyright" content="© 2026 Nicolás Acevedo · @acevvedoo">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reservas · Casa Merlo</title>
+<meta name="description" content="Reserva tu mesa en Casa Merlo por WhatsApp en un minuto. Horario, cómo llegar y preguntas frecuentes.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<link rel="stylesheet" href="merlo.css">
+<style>
+.ph{padding-bottom:30px}
+.res-sec{padding-top:30px}
+.faq{max-width:860px;margin-top:40px}
+.faq details{border-bottom:1px solid var(--line);padding:22px 0}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font:400 clamp(22px,2.2vw,28px)/1.2 var(--serif)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:400 28px/1 var(--sans);color:var(--acc);transition:rotate .4s}
+.faq details[open] summary::after{rotate:45deg}
+.faq p{color:var(--mut);padding-top:12px;max-width:64ch}
+</style>
+</head>
+<body>
+<nav id="nav"></nav>
+<header class="ph"><div class="wrap">
+  <span class="miga"><a href="index.html">Inicio</a> · Reservas</span>
+  <h1 data-fx="split" data-by="words" data-step=".08">Reserva <em>tu mesa.</em></h1>
+  <span class="estado"><i></i><span>Abierto hoy</span></span>
+</div></header>
+<section class="sec reserva res-sec" id="reservar"><div class="wrap">
+  <div>
+    <span class="k" data-fx="reveal">En un minuto</span>
+    <h2 data-fx="split" data-by="words">Te guardamos <em>la mesa.</em></h2>
+    <div class="datos" data-fx="reveal">
+      <div><b>Dirección</b><p>Calle del Olivo 12, 28012 Madrid<br><a href="https://www.google.com/maps/search/?api=1&query=Madrid" target="_blank" rel="noopener">Cómo llegar →</a></p></div>
+      <div><b>Horario</b><div class="horas"><span>Martes a jueves</span><span>13:00–16:30 · 20:30–23:30</span><span>Viernes y sábado</span><span>13:00–16:30 · 20:30–00:30</span><span>Domingo</span><span>13:00–17:00</span><span>Lunes</span><span>Cerrado</span></div></div>
+      <div><b>Más de 10 personas</b><p>Mira nuestros <a href="eventos.html">menús para grupos y eventos</a>.</p></div>
+    </div>
+  </div>
+  <form id="form" data-fx="reveal" data-delay=".15">
+    <h3>Reservar mesa</h3>
+    <label>Nombre<input name="nombre" required placeholder="Tu nombre" autocomplete="name"></label>
+    <label>Personas<div class="pers" id="pers"></div></label>
+    <div class="fila"><label>Día<input type="date" name="dia" id="dia" required></label><label>Hora<select name="hora" id="hora"></select></label></div>
+    <label>Algo que debamos saber <textarea name="nota" placeholder="Alergias, trona para un bebé, es un cumpleaños…"></textarea></label>
+    <button class="btn vino fx-btn-fill" type="submit">Enviar reserva por WhatsApp →</button>
+    <small>Te confirmamos la mesa por WhatsApp en unos minutos.</small>
+  </form>
+</div></section>
+<section class="sec"><div class="wrap">
+  <span class="k" data-fx="reveal">Antes de venir</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:16px">Preguntas <em>frecuentes.</em></h2>
+  <div class="faq" data-fx="reveal">
+    <details><summary>¿Puedo ir sin reserva?</summary><p>Sí, la barra es siempre sin reserva. Para comedor los fines de semana te recomendamos reservar.</p></details>
+    <details><summary>¿Y si llego tarde o tengo que cancelar?</summary><p>Escríbenos por WhatsApp. Te guardamos la mesa 15 minutos y puedes cancelar sin coste hasta 2 horas antes.</p></details>
+    <details><summary>¿Tenéis opciones sin gluten o vegetarianas?</summary><p>Sí, están marcadas en la carta y adaptamos platos. Avísanos al reservar.</p></details>
+    <details><summary>¿Se puede ir con niños o con perro?</summary><p>Niños siempre bienvenidos: tenemos tronas y menú infantil. Perros pequeños en la barra.</p></details>
+  </div>
+</div></section>
+<footer class="pie" id="pie"></footer>
+<script src="merlo.js"></script>
+<script></script>
+<script src="fx.js" defer></script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>

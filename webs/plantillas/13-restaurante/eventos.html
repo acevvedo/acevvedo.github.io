@@ -1,0 +1,98 @@
+<!doctype html>
+<!-- © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla ni una web prefabricada). Todos los derechos reservados. -->
+<html lang="es">
+<head>
+<meta name="author" content="Nicolás Acevedo (@acevvedoo)">
+<meta name="copyright" content="© 2026 Nicolás Acevedo · @acevvedoo">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grupos y eventos · Casa Merlo</title>
+<meta name="description" content="Menús cerrados para grupos, cumpleaños y comidas de empresa en Casa Merlo, con salón privado para 24 personas.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<link rel="stylesheet" href="merlo.css">
+<style>
+.menus{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.mc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:34px 30px;display:flex;flex-direction:column;gap:16px;transition:transform .5s var(--ease),box-shadow .5s}
+.mc:hover{transform:translateY(-6px);box-shadow:0 30px 60px -40px rgba(60,30,20,.5)}
+.mc.dest{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.mc.dest .k,.mc.dest li::before{color:#e3a3a3}
+.mc h3{font:400 34px/1 var(--serif)}
+.mc .pr{font:400 54px/1 var(--serif);color:var(--acc)}
+.mc.dest .pr{color:#e3a3a3}
+.mc .pr small{font:600 14px/1 var(--sans);color:var(--mut);margin-left:6px}
+.mc ul{list-style:none;padding:0;display:grid;gap:10px;font-size:15px}
+.mc li{display:flex;gap:10px}
+.mc li::before{content:"✦";color:var(--acc);font-size:12px;margin-top:4px}
+.mc .btn{margin-top:auto;justify-content:center}
+.esp{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:50px}
+.esp article{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:16/11;color:#fff}
+.esp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.esp article::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(20,12,10,.8))}
+.esp .tx{position:absolute;z-index:1;left:26px;right:26px;bottom:24px}
+.esp h3{font:400 34px/1 var(--serif)}
+.esp p{opacity:.85;margin-top:6px;font-size:15px}
+.esp .cap{position:absolute;z-index:1;top:18px;left:18px;background:rgba(245,239,230,.92);color:var(--fg);padding:8px 12px;border-radius:99px;font:700 12px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase}
+@media (max-width:900px){.menus,.esp{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav id="nav"></nav>
+<header class="ph"><div class="wrap ph-g">
+  <div>
+    <span class="miga"><a href="index.html">Inicio</a> · Grupos y eventos</span>
+    <h1 data-fx="split" data-by="words" data-step=".08">Grupos y <em>eventos.</em></h1>
+    <p data-fx="reveal" data-delay=".3">Cumpleaños, cenas de empresa o la comida de la familia. Menús cerrados para que solo tengas que preocuparte de pasarlo bien.</p>
+  </div>
+  <div class="ph-foto" data-fx="reveal" data-dir="scale"><img src="https://images.unsplash.com/photo-1768508950434-fc76c9f3ed9f?w=1200&q=75&auto=format&fit=crop" alt="Grupo brindando en una cena"></div>
+</div></header>
+<section class="sec" style="padding-top:clamp(40px,5vw,70px)"><div class="wrap">
+  <span class="k" data-fx="reveal">Menús cerrados · desde 10 personas</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:16px">Elige tu <em>menú.</em></h2>
+  <div class="menus">
+    <div class="mc" data-fx="reveal tilt" data-max="4"><span class="k">Para empezar</span><h3>Menú Mercado</h3><div class="pr">35 €<small>por persona</small></div><ul><li>4 entrantes para compartir</li><li>Principal a elegir: carne, pescado o arroz</li><li>Postre casero</li><li>Agua, vino de la casa y café</li></ul><a class="btn claro fx-btn-fill" href="#pedir" data-m="Menú Mercado">Lo quiero</a></div>
+    <div class="mc dest" data-fx="reveal tilt" data-max="4" data-delay=".1"><span class="k">El más pedido</span><h3>Menú Brasa</h3><div class="pr">45 €<small>por persona</small></div><ul><li>5 entrantes para compartir</li><li>Lomo alto madurado o pescado de lonja</li><li>Surtido de postres</li><li>Ribera crianza, agua y café</li></ul><a class="btn vino fx-btn-fill" href="#pedir" data-m="Menú Brasa">Lo quiero</a></div>
+    <div class="mc" data-fx="reveal tilt" data-max="4" data-delay=".2"><span class="k">Para celebrar</span><h3>Menú Celebración</h3><div class="pr">55 €<small>por persona</small></div><ul><li>Aperitivo de bienvenida con cava</li><li>6 entrantes y principal a elegir</li><li>Tarta personalizada</li><li>Vinos maridados y café</li></ul><a class="btn claro fx-btn-fill" href="#pedir" data-m="Menú Celebración">Lo quiero</a></div>
+  </div>
+</div></section>
+<section class="sec carta"><div class="wrap" style="display:block">
+  <span class="k" data-fx="reveal">Espacios</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:16px">Dónde os <em>sentamos.</em></h2>
+  <div class="esp">
+    <article data-fx="reveal"><img src="https://images.unsplash.com/photo-1778694277039-5cbf0b9a1fcf?w=1000&q=75&auto=format&fit=crop" alt="Salón privado con luz de velas" loading="lazy"><span class="cap">Hasta 24 personas</span><div class="tx"><h3>Salón privado</h3><p>Solo para vosotros, con música propia si queréis.</p></div></article>
+    <article data-fx="reveal" data-delay=".1"><img src="https://images.unsplash.com/photo-1755811248324-c70c1f10a7fd?w=1000&q=75&auto=format&fit=crop" alt="Mesa larga para compartir" loading="lazy"><span class="cap">Hasta 14 personas</span><div class="tx"><h3>Mesa larga del comedor</h3><p>Junto a la brasa, para grupos que quieren ambiente.</p></div></article>
+  </div>
+</div></section>
+<section class="sec reserva" id="pedir"><div class="wrap">
+  <div>
+    <span class="k" data-fx="reveal">Pide presupuesto</span>
+    <h2 data-fx="split" data-by="words">Cuéntanos <em>qué celebráis.</em></h2>
+    <div class="datos" data-fx="reveal"><div><b>Sin compromiso</b><p>Te mandamos la propuesta por WhatsApp y la ajustamos a lo que necesitéis.</p></div><div><b>Alergias y niños</b><p>Adaptamos cualquier menú y tenemos menú infantil.</p></div></div>
+  </div>
+  <form id="ev" data-fx="reveal" data-delay=".15">
+    <h3>Pedir presupuesto</h3>
+    <label>Nombre<input name="n" required autocomplete="name"></label>
+    <div class="fila"><label>Personas<input name="p" type="number" min="10" value="12" required></label><label>Fecha<input name="f" type="date" required></label></div>
+    <label>Menú<select name="m"><option>Menú Mercado</option><option selected>Menú Brasa</option><option>Menú Celebración</option><option>Aún no lo sé</option></select></label>
+    <label>¿Qué celebráis?<textarea name="t" placeholder="Cumpleaños, comida de empresa, despedida…"></textarea></label>
+    <button class="btn vino fx-btn-fill" type="submit">Enviar por WhatsApp →</button>
+  </form>
+</div></section>
+<footer class="pie" id="pie"></footer>
+<script src="merlo.js"></script>
+<script>
+const ev = document.getElementById('ev');
+ev.f.min = new Date().toISOString().slice(0, 10);
+document.querySelectorAll('[data-m]').forEach(a => a.addEventListener('click', () => ev.m.value = a.dataset.m));
+ev.addEventListener('submit', e => {
+  e.preventDefault(); const d = new FormData(ev);
+  const msg = `Hola, Casa Merlo. Quiero presupuesto para un grupo:\n· Nombre: ${d.get('n')}\n· Personas: ${d.get('p')}\n· Fecha: ${d.get('f')}\n· Menú: ${d.get('m')}` + (d.get('t') ? `\n· Celebramos: ${d.get('t')}` : '');
+  window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(msg), '_blank');
+});
+</script>
+<script src="fx.js" defer></script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>

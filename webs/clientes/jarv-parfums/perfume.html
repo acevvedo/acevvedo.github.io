@@ -1,0 +1,121 @@
+<!doctype html>
+<!-- © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla ni una web prefabricada). Todos los derechos reservados. -->
+<html lang="es">
+<head>
+<meta name="author" content="Nicolás Acevedo (@acevvedoo)">
+<meta name="copyright" content="© 2026 Nicolás Acevedo · @acevvedoo">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Perfume · JARV Parfums</title>
+<meta name="description" content="Ficha completa del perfume: notas de salida, corazón y fondo, fijación, estela, medidas del frasco y precio.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#070605">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Hanken+Grotesk:wght@300;400;500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<link rel="stylesheet" href="lux.css">
+<link rel="stylesheet" href="comun.css">
+<style>
+:root{--lux-ibg:#070605;--lux-ifg:#f3ece1;--lux-acc:#e3c385;--lux-ifont:"Bodoni Moda",serif}
+
+.ficha{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(30px,6vw,100px);padding:clamp(110px,12vw,140px) 0 clamp(80px,9vw,130px);align-items:start}
+.escena{position:sticky;top:96px;height:calc(100svh - 130px);display:grid;place-items:center;background:#050404;overflow:hidden;border-radius:2px}
+.escena::before{content:"";position:absolute;inset:0;background:url(img/pared.webp) center/cover;filter:brightness(.34) contrast(1.25)}
+.escena::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 70% at 50% 50%,transparent 40%,rgba(0,0,0,.8));pointer-events:none}
+.escena .hueco{position:relative;z-index:1;height:84%;width:auto;aspect-ratio:807/1527}
+.escena .num{position:absolute;z-index:2;left:20px;bottom:18px;font:italic 400 15px var(--serif);color:var(--mut)}
+.info{display:flex;flex-direction:column;gap:22px;padding-top:10px}
+.info .top{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.info .tag{font-size:12px;padding:6px 11px;border:1px solid var(--line);border-radius:99px}
+.info h1{font-size:clamp(56px,7vw,120px);line-height:.98}
+.info .marca{color:var(--oro)}
+.info .insp{font:italic 400 clamp(20px,1.8vw,26px)/1.3 var(--serif);color:#cfc6b9}
+.info .desc{color:var(--mut);max-width:60ch;font-size:17px}
+.compra{display:flex;align-items:center;gap:16px 22px;flex-wrap:wrap;padding:22px 0;border-block:1px solid var(--line)}
+.precio{font:400 46px/1 var(--serif)}
+.precio s{font:300 16px var(--sans);color:var(--mut);margin-left:10px}
+.pir{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pir>div{border-top:1px solid var(--line);padding-top:16px}
+.pir b{display:block;font-weight:400;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--oro);margin-bottom:4px}
+.pir small{display:block;color:var(--mut);font-size:12px;margin-bottom:10px}
+.datos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;font-size:14px;color:var(--mut)}
+.datos b{display:block;font-weight:400;color:var(--fg);font-size:16px;margin-top:4px}
+.info details{border:1px solid var(--line);border-radius:4px;padding:16px 20px;font-size:14px;color:var(--mut)}
+.info details summary{cursor:pointer;color:var(--fg)}
+.info dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin-top:14px}
+.info dt{color:var(--fg)}.info dd{margin:0}
+.segur{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;color:var(--mut)}
+.segur div{border:1px solid var(--line);border-radius:4px;padding:14px}
+.segur b{display:block;color:var(--fg);font-weight:400;font-size:14px}
+.pasa{display:flex;justify-content:space-between;gap:20px;padding-top:6px}
+.pasa a{font:italic 400 18px var(--serif);color:var(--mut);transition:color .3s}
+.pasa a:hover{color:var(--oro)}
+.rel{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,2.6vw,40px);margin-top:50px}
+.rel .hueco{width:72%;margin-inline:auto}
+@media (max-width:900px){
+  .ficha{grid-template-columns:1fr;padding-top:90px}
+  .escena{position:relative;top:0;height:64svh}
+  .pir,.datos,.segur{grid-template-columns:1fr}
+  .rel{grid-template-columns:1fr 1fr;gap:34px 14px}.rel .hueco{width:86%}
+}
+
+</style>
+</head>
+<body data-lux-smooth data-lux-cursor>
+<nav id="nav"></nav>
+<main class="wrap ficha">
+  <div class="escena" data-fx="reveal"></div>
+  <div class="info">
+    <span class="miga"><a href="index.html">Inicio</a> · <a href="coleccion.html">Colección</a> · <a class="f-fam" href="coleccion.html"></a></span>
+    <div class="top"><span class="cap f-tipo"></span><span class="tag f-stock"></span></div>
+    <div><span class="cap marca f-marca"></span><h1 class="f-nom" style="margin-top:12px"></h1><p class="insp f-insp" style="margin-top:14px"></p></div>
+    <div class="compra"><span class="precio f-pre"></span><span class="cap">100 ml · formato completo</span><button class="btn oro-b fx-btn-fill f-add" data-fx="magnetic">Pedir por WhatsApp</button></div>
+    <p class="desc f-desc"></p>
+    <div class="pir"><div><b>Salida</b><small>Primeros 15 – 30 min</small><span class="f-sal"></span></div><div><b>Corazón</b><small>De 1 a 6 horas</small><span class="f-cor"></span></div><div><b>Fondo</b><small>+24 h en piel y ropa</small><span class="f-fon"></span></div></div>
+    <div class="datos"><div>Ocasión<b class="f-oca"></b></div><div>Fijación en piel<b class="f-fij"></b></div><div>Estela<b class="f-est"></b></div></div>
+    <details><summary>Medidas y anatomía del frasco (1:1)</summary><dl class="f-med"></dl></details>
+    <div class="segur"><div><b>Envío 24/48 h</b>Gratis desde 40 €</div><div><b>Bizum, Apple Pay</b>Google Pay o transferencia</div><div><b>100 % original</b>Precinto y holograma</div></div>
+    <span class="cap f-ean"></span>
+    <div class="pasa"><a class="f-ant" href="#">← Anterior</a><a class="f-sig" href="#">Siguiente →</a></div>
+  </div>
+</main>
+<section style="padding-top:0"><div class="wrap">
+  <span class="cap" data-lux="scramble">Misma familia</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:18px;font-size:clamp(40px,5vw,80px)">También te puede <em>gustar.</em></h2>
+  <div class="rel"></div>
+</div></section>
+<footer class="pie" id="pie"></footer>
+<script src="perfumes.js"></script>
+<script src="comun.js"></script>
+<script src="fx.js" defer></script>
+<script src="lux.js" defer></script>
+<script>
+
+const P = window.PERFUMES, J = window.JARV, $ = s => document.querySelector(s);
+const id = new URLSearchParams(location.search).get('p');
+const i = Math.max(0, P.findIndex(p => p.id === id)), p = P[i];
+document.title = J.titulo(p.nombre) + ' · ' + p.marca + ' · JARV Parfums';
+document.querySelector('meta[name=description]').content = p.descripcion;
+$('.escena').innerHTML = J.nicho(p, true) + `<span class="num">${String(i + 1).padStart(2, '0')} / ${String(P.length).padStart(2, '0')}</span>`;
+$('.f-fam').textContent = J.FAM[p.categoria] || p.categoria; $('.f-fam').href = 'coleccion.html?familia=' + p.categoria;
+$('.f-tipo').textContent = p.tipo; $('.f-stock').textContent = p.stockTag; $('.f-marca').textContent = p.marca;
+$('.f-nom').textContent = J.titulo(p.nombre); $('.f-insp').textContent = p.inspiracion; $('.f-desc').textContent = p.descripcion;
+const chips = a => a.map(n => `<span class="chip">${n}</span>`).join('');
+$('.f-sal').innerHTML = chips(p.salida); $('.f-cor').innerHTML = chips(p.corazon); $('.f-fon').innerHTML = chips(p.fondo);
+$('.f-oca').textContent = p.ocasion; $('.f-fij').textContent = p.fijacion; $('.f-est').textContent = p.estela;
+const d = p.dimensiones;
+$('.f-med').innerHTML = [['Altura total', d.alturaTotal], ['Desglose', d.desgloseAltura], ['Ancho', d.ancho], ['Profundidad', d.profundidad], ['Base', d.baseGrosor], ['Peso', d.pesoBruto], ['Formato', d.formato], ['Detalles', d.detallesFisicos]].filter(x => x[1]).map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join('');
+$('.f-pre').innerHTML = J.eur(p.precio) + (p.precioAnterior ? `<s>${J.eur(p.precioAnterior)}</s>` : '');
+$('.f-add').textContent = p.stockReal === 0 ? 'Agotado · reservar por WhatsApp' : 'Pedir por WhatsApp';
+$('.f-add').onclick = () => J.pedir(p);
+$('.f-ean').textContent = 'Ref. EAN ' + p.ean;
+const ant = P[(i + P.length - 1) % P.length], sig = P[(i + 1) % P.length];
+$('.f-ant').href = 'perfume.html?p=' + ant.id; $('.f-ant').textContent = '← ' + J.titulo(ant.nombre);
+$('.f-sig').href = 'perfume.html?p=' + sig.id; $('.f-sig').textContent = J.titulo(sig.nombre) + ' →';
+const otros = P.filter(x => x !== p).sort((a, b) => (b.categoria === p.categoria) - (a.categoria === p.categoria)).slice(0, 4);
+$('.rel').innerHTML = otros.map(x => J.tarjeta(x)).join('');
+
+</script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>

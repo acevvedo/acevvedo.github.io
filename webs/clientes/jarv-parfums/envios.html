@@ -1,0 +1,93 @@
+<!doctype html>
+<!-- © 2026 Nicolás Acevedo (@acevvedoo). Diseño y código originales, escritos desde cero (no es una plantilla ni una web prefabricada). Todos los derechos reservados. -->
+<html lang="es">
+<head>
+<meta name="author" content="Nicolás Acevedo (@acevvedoo)">
+<meta name="copyright" content="© 2026 Nicolás Acevedo · @acevvedoo">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compra y envíos · JARV Parfums</title>
+<meta name="description" content="Cómo comprar en JARV: sin carrito, por WhatsApp. Pago por Bizum, Apple Pay, Google Pay o transferencia. Envío gratis desde 40 € en 24/48 h.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#070605">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Hanken+Grotesk:wght@300;400;500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fx.css">
+<link rel="stylesheet" href="lux.css">
+<link rel="stylesheet" href="comun.css">
+<style>
+:root{--lux-ibg:#070605;--lux-ifg:#f3ece1;--lux-acc:#e3c385;--lux-ifont:"Bodoni Moda",serif}
+
+.pasos3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px;counter-reset:p}
+.pasos3>div{border:1px solid var(--line);border-radius:18px;padding:34px 30px 38px;position:relative}
+.pasos3>div::before{counter-increment:p;content:counter(p,upper-roman);display:block;font:italic 400 54px/1 var(--serif);color:var(--oro);margin-bottom:26px}
+.pasos3 h3{font-size:30px;margin-bottom:10px}
+.pasos3 p{color:var(--mut);font-size:15px}
+.tabla{margin-top:56px;border-top:1px solid var(--line)}
+.tabla>div{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.tabla b{font:400 clamp(22px,2vw,30px)/1.1 var(--serif)}
+.tabla span{color:var(--mut)}
+.tabla em{color:var(--oro);font-style:normal}
+.pagos{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}
+.pagos span{border:1px solid var(--line);border-radius:99px;padding:12px 20px;font-size:14px}
+.faq{max-width:900px;margin:50px auto 0}
+.faq details{border-bottom:1px solid var(--line);padding:24px 0}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font:400 clamp(22px,2.2vw,30px)/1.2 var(--serif)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--sans);font-weight:300;color:var(--oro);transition:rotate .4s}
+.faq details[open] summary::after{rotate:45deg}
+.faq .r{color:var(--mut);padding-top:14px;max-width:70ch}
+.faq .r p + p{margin-top:10px}
+.faq .r b{color:var(--fg);font-weight:400}
+@media (max-width:860px){.pasos3{grid-template-columns:1fr}.tabla>div{grid-template-columns:1fr;gap:6px}}
+
+</style>
+</head>
+<body data-lux-smooth data-lux-cursor>
+<nav id="nav"></nav>
+<header class="ph"><div class="wrap">
+  <span class="agua" aria-hidden="true" lang="ar">شحن</span>
+  <span class="miga"><a href="index.html">Inicio</a> · Compra y envíos</span>
+  <h1 data-fx="split" data-by="words">Compra y <em>envíos.</em></h1>
+  <p data-fx="reveal" data-delay=".3">Sin carritos ni formularios eternos: nos escribes, te confirmamos stock y te llega en 24/48 horas.</p>
+</div></header>
+<section style="padding-top:clamp(30px,4vw,60px)"><div class="wrap">
+  <span class="cap" data-lux="scramble">Cómo comprar</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:18px">Tres pasos y es <em>tuyo.</em></h2>
+  <div class="pasos3" data-lux="spotlight" data-stagger=".1">
+    <div class="lux-spot"><h3>Elige</h3><p>Pincha en tu perfume y pulsa «Pedir por WhatsApp». El mensaje se escribe solo con el nombre y el precio.</p></div>
+    <div class="lux-spot"><h3>Confirma</h3><p>Te contestamos al momento con el stock, el envío y la forma de pago que prefieras.</p></div>
+    <div class="lux-spot"><h3>Recibe</h3><p>Sale con número de seguimiento y en 24/48 h laborables lo tienes en casa.</p></div>
+  </div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+  <span class="cap" data-lux="scramble">Envíos</span>
+  <h2 data-fx="split" data-by="words" style="margin-top:18px">Rápido y <em>con seguimiento.</em></h2>
+  <div class="tabla" data-stagger=".08">
+    <div><b>Península</b><span>Entrega en 24/48 h laborables</span><span><em>Gratis</em> desde 40 € · si no, 2,99 €</span></div>
+    <div><b>Seguimiento</b><span>Número de envío al salir el paquete</span><span>Por WhatsApp o email</span></div>
+    <div><b>Embalaje</b><span>Caja protegida, frasco precintado de fábrica</span><span>Con holograma y código de lote</span></div>
+  </div>
+  <span class="cap" style="display:block;margin-top:60px">Formas de pago</span>
+  <div class="pagos" data-fx="reveal"><span>Bizum</span><span>Apple Pay</span><span>Google Pay</span><span>Transferencia bancaria</span><span>Sin comisiones</span></div>
+</div></section>
+<section id="preguntas" style="padding-top:0"><div class="wrap">
+  <div style="text-align:center"><span class="cap">Dudas frecuentes</span><h2 data-fx="split" data-by="words" style="margin-top:18px">Todo lo que necesitas <em>saber.</em></h2></div>
+  <div class="faq" data-fx="reveal">
+    <details><summary>¿Son perfumes 100% originales con precinto de fábrica?</summary><div class="r"><p>Totalmente. Todas nuestras fragancias vienen directamente de los distribuidores oficiales en los Emiratos Árabes Unidos (Lattafa Perfumes, Armaf, Riiffs, Gulf Orchid, Zimaya).</p><p>Cada frasco de 100 ml se entrega nuevo, en su caja con celofán termosellado, holograma oficial y código de lote grabado.</p></div></details>
+    <details><summary>¿Cuánto tarda y cuánto cuesta el envío?</summary><div class="r"><p>Es <b>gratis desde 40 €</b>. Para compras menores cuesta <b>2,99 €</b>. Entregamos en toda España peninsular en <b>24 a 48 horas laborables</b>.</p></div></details>
+    <details><summary>¿Por qué no hay carrito?</summary><div class="r"><p>Porque preferimos atenderte en persona: confirmamos el stock real del lote, te asesoramos si dudas y te pasamos el pago que prefieras. Es más rápido que rellenar un formulario.</p></div></details>
+    <details><summary>¿Por qué duran más que los de diseñador?</summary><div class="r"><p>Por la concentración: llevan <b>un 25 % a 35 % de aceites puros</b>, frente al 10-15 % habitual. Sus bases de oud, ámbar y vainilla fijan el perfume entre 16 y 24 horas en piel, y días en la ropa.</p></div></details>
+  </div>
+</div></section>
+<footer class="pie" id="pie"></footer>
+<script src="perfumes.js"></script>
+<script src="comun.js"></script>
+<script src="fx.js" defer></script>
+<script src="lux.js" defer></script>
+<script>
+
+</script>
+<script src="../../_base/firma.js" data-modo="plantilla" defer></script>
+</body>
+</html>
