@@ -122,7 +122,17 @@
 
   /* ---------- tilt 3D: data-fx="tilt" data-max="10" ---------- */
   function tilt(root) {
-    if (!fine || reduced) return;
+    if (reduced) return;
+    if (!fine) { // móvil: la tarjeta se inclina un poco según pasa por la pantalla, con brillo que la recorre
+      $$('[data-fx~="tilt"]', root).forEach(el => {
+        const max = (parseFloat(el.dataset.max) || 10) * .9;
+        onScroll.push(() => { const r = el.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+          const p = clamp((r.top + r.height / 2 - innerHeight / 2) / innerHeight, -1, 1);
+          el.style.transform = `perspective(900px) rotateX(${(p * max).toFixed(2)}deg)`;
+          el.style.setProperty('--gx', '50%'); el.style.setProperty('--gy', (50 - p * 60).toFixed(1) + '%'); el.style.setProperty('--go', (1 - Math.abs(p)).toFixed(2) * .6); });
+      });
+      return;
+    }
     $$('[data-fx~="tilt"]', root).forEach(el => {
       const max = parseFloat(el.dataset.max) || 10;
       el.addEventListener('pointermove', e => {
@@ -250,7 +260,7 @@
         const im = imgs[i]?.complete && imgs[i].naturalWidth ? imgs[i] : nearest(i); if (!im) return;
         const s = Math.max(cv.width / im.naturalWidth, cv.height / im.naturalHeight); // object-fit: cover
         const w = im.naturalWidth * s, h = im.naturalHeight * s;
-        ctx.drawImage(im, (cv.width - w) / 2, (cv.height - h) / 2, w, h); cur = i;
+        ctx.imageSmoothingQuality = 'high'; ctx.drawImage(im, (cv.width - w) / 2, (cv.height - h) / 2, w, h); cur = i;
       }
       const layers = $$('[data-from]', sec);
       new ResizeObserver(size).observe(cv);
@@ -261,6 +271,28 @@
         const i = Math.round(p * (count - 1)); last = i; if (i !== cur) { load(i); paint(i); }
         layers.forEach(l => { const a = +l.dataset.from, b = +l.dataset.to; l.classList.toggle('is-in', p >= a && p <= b); });
       });
+    });
+  }
+
+  /* ---------- antes / después: <div data-fx="compare"><img class="antes"><img class="despues"></div>
+     Se arrastra la barra (ratón o dedo). Al aparecer hace un barrido para que se entienda solo. ---------- */
+  function compare(root) {
+    $$('[data-fx~="compare"]', root).forEach(el => {
+      if (el.querySelector('.fx-cmp-h')) return;
+      el.classList.add('fx-cmp');
+      const h = document.createElement('div'); h.className = 'fx-cmp-h'; h.innerHTML = '<span>&lsaquo; &rsaquo;</span>';
+      const r = document.createElement('input'); r.type = 'range'; r.min = 0; r.max = 100; r.value = 50; r.className = 'fx-cmp-r'; r.setAttribute('aria-label', 'Comparar antes y después');
+      el.append(h, r);
+      const set = v => el.style.setProperty('--pos', v + '%');
+      r.addEventListener('input', () => set(r.value)); set(50);
+      const cio = new IntersectionObserver(([e]) => {
+        if (!e.isIntersecting || reduced) return; cio.disconnect();
+        const t0 = performance.now(), k = [50, 18, 82, 50];
+        const go = t => { const p = Math.min(1, (t - t0) / 2200), i = Math.min(2, Math.floor(p * 3)), f = p * 3 - i, e2 = f < .5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2;
+          const v = k[i] + (k[i + 1] - k[i]) * e2; set(v); r.value = v; if (p < 1) requestAnimationFrame(go); };
+        setTimeout(() => requestAnimationFrame(go), 400);
+      }, { threshold: .6 });
+      cio.observe(el);
     });
   }
 
@@ -281,7 +313,7 @@
 
   function init(root = document) {
     reveal(root); split(root); fill(root); parallax(root); magnetic(root); tilt(root);
-    counter(root); marquee(root); particles(root); blob(root); scrub(root);
+    counter(root); marquee(root); particles(root); blob(root); scrub(root); compare(root);
     if (root === document) { progress(); cursor(); }
     runScroll();
   }
